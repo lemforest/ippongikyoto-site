@@ -143,6 +143,7 @@ for (const page of manifest.pages) {
     uniqueImages.set(local, { url: local, source })
   }
   const images = [...uniqueImages.values()]
+  const productGallery = kind === 'product' ? [...new Set(main.find('.woocommerce-product-gallery img').map((_, element) => localMedia($(element).attr('src'))).get().filter(Boolean))] : []
   const videos = [...new Set(page.embeds.map(localMedia).filter((value) => value?.endsWith('.mp4')))]
   const links = containers.find('a[href]').map((_, element) => {
     const href = $(element).attr('href')
@@ -155,7 +156,7 @@ for (const page of manifest.pages) {
   pages.push({
     path, lang: page.language, kind, title: page.title.replace(/\s*- ippongikyoto\.com$/, ''),
     description: page.description, sourceUrl: page.url, text: await readFile(join(archive, page.main_text), 'utf8'),
-    blocks, images, featureImage: featureImage(kind, path, images), videos, links, alternates,
+    blocks, images, productGallery, featureImage: featureImage(kind, path, images), videos, links, alternates,
   })
 }
 

@@ -18,6 +18,7 @@ export interface SitePage {
   text: string
   blocks: ContentBlock[]
   images: { url: string; source: string }[]
+  productGallery?: string[]
   featureImage?: string
   videos: string[]
   links: { href: string; text: string }[]

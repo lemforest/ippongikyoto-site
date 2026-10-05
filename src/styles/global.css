@@ -192,6 +192,8 @@ html[lang='ja'] .page-hero h1, html[lang='th'] .page-hero h1 { font-size: clamp(
 .product-hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 8%; align-items: center; padding-top: 82px; padding-bottom: 100px; }
 .product-hero-media { min-height: 550px; display: flex; align-items: center; justify-content: center; background: #edf0eb; }
 .product-hero-media img { max-height: 520px; width: 90%; object-fit: contain; }
+.product-gallery { display: flex; gap: 18px; padding-bottom: 70px; }
+.product-gallery img { width: min(28%, 260px); height: auto; aspect-ratio: 1; object-fit: contain; background: #edf0eb; }
 .product-hero-copy h1 { font-family: var(--display); font-weight: 500; font-size: clamp(48px, 4.6vw, 78px); color: var(--forest); line-height: 1.05; margin: 22px 0; }
 .product-hero-copy > p:not(.product-price) { color: var(--muted); max-width: 540px; }
 .product-hero-copy .product-price { font-family: var(--display); font-size: 35px; color: var(--forest); margin: 0 0 24px; }

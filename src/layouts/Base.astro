@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css'
-import pages from '../data/pages.json'
+import { catalogPages, productPath } from '../data/catalog'
 import type { Locale, SitePage } from '../data/types'
 
 interface Props { page: SitePage }
@@ -19,7 +19,8 @@ const nav = {
   th: { home: 'หน้าแรก', message: 'ข้อความจากผู้แทน', about: 'ข้อมูลบริษัท', webinar: 'สัมมนาออนไลน์', product: 'PROTAI', faq: 'คำถามที่พบบ่อย', contact: 'ติดต่อเรา', original: 'เว็บไซต์เดิม', language: 'ภาษา' },
 }[lang]
 const names = { en: 'EN', ja: 'JP', fr: 'FR', th: 'TH' }
-const knownPaths = new Set(pages.map((item) => item.path))
+const knownPaths = new Set(catalogPages.map((item) => item.path))
+const productHref = productPath(lang)
 const localeLinks = (Object.entries(names) as [Locale, string][]).map(([locale, name]) => {
   const alternate = page.alternates?.[locale]
   return { locale, name, href: alternate && knownPaths.has(alternate) ? alternate : home[locale] }
@@ -50,7 +51,7 @@ const cleanTitle = page.title?.replace(/\s*- ippongikyoto\.com$/, '') || 'IPPONG
           <a class={page.path === message[lang] ? 'active' : ''} href={message[lang]}>{nav.message}</a>
           <a class={page.path === about[lang] ? 'active' : ''} href={about[lang]}>{nav.about}</a>
           <a class={page.path === webinar[lang] ? 'active' : ''} href={webinar[lang]}>{nav.webinar}</a>
-          <a href="/product/protai-eye-skin-care-mistg/">{nav.product}</a>
+          <a class={page.kind === 'product' ? 'active' : ''} href={productHref}>{nav.product}</a>
           <a class={page.path === faq[lang] ? 'active' : ''} href={faq[lang]}>{nav.faq}</a>
           <a class={page.path === contact[lang] ? 'active' : ''} href={contact[lang]}>{nav.contact}</a>
         </nav>
@@ -62,7 +63,7 @@ const cleanTitle = page.title?.replace(/\s*- ippongikyoto\.com$/, '') || 'IPPONG
         </div>
       </div>
       <nav class="mobile-nav" id="mobile-navigation" aria-label="Mobile navigation" hidden>
-        <a href={home[lang]}>{nav.home}</a><a href={message[lang]}>{nav.message}</a><a href={about[lang]}>{nav.about}</a><a href={webinar[lang]}>{nav.webinar}</a><a href="/product/protai-eye-skin-care-mistg/">{nav.product}</a><a href={faq[lang]}>{nav.faq}</a><a href={contact[lang]}>{nav.contact}</a>
+        <a href={home[lang]}>{nav.home}</a><a href={message[lang]}>{nav.message}</a><a href={about[lang]}>{nav.about}</a><a href={webinar[lang]}>{nav.webinar}</a><a href={productHref}>{nav.product}</a><a href={faq[lang]}>{nav.faq}</a><a href={contact[lang]}>{nav.contact}</a>
       </nav>
     </header>
     <main id="main"><slot /></main>

@@ -1,0 +1,15 @@
+---
+import pages from '../data/pages.json'
+import Page from '../components/Page.astro'
+import type { SitePage } from '../data/types'
+
+export function getStaticPaths() {
+  return pages.filter((page) => page.path !== '/').map((page) => ({
+    params: { path: page.path.replace(/^\/|\/$/g, '') },
+    props: { page },
+  }))
+}
+
+const page = Astro.props.page as SitePage
+---
+<Page page={page} />

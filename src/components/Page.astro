@@ -1,0 +1,96 @@
+---
+import Base from '../layouts/Base.astro'
+import Blocks from './Blocks.astro'
+import type { SitePage } from '../data/types'
+
+interface Props { page: SitePage }
+const { page } = Astro.props
+const lang = page.lang || 'en'
+const ui = {
+  en: { chapter: 'A quieter way to care', discover: 'Discover PROTAI', story: 'Our story', film: 'Watch the film', product: 'The daily ritual', productText: 'Two formats for a considered routine.', view: 'Explore the product', original: 'Continue to the original store', contact: 'Get in touch', questions: 'Questions, answered', register: 'Go to registration', source: 'View original page', archive: 'The original transaction remains on the existing site.', details: 'Product details', gallery: 'Visual archive' },
+  ja: { chapter: '目もとから、静かなケアを', discover: 'PROTAIを見る', story: '私たちについて', film: '動画を見る', product: '日々のケア', productText: '毎日の習慣に寄り添う、ふたつの形。', view: '製品を見る', original: '元のショップで購入する', contact: 'お問い合わせ', questions: 'よくある質問', register: 'お申し込み', source: '元のページを見る', archive: 'お買い物は現在、元のサイトで承っています。', details: '製品について', gallery: '写真資料' },
+  fr: { chapter: 'Un soin qui prend son temps', discover: 'Découvrir PROTAI', story: 'Notre histoire', film: 'Voir le film', product: 'Le rituel quotidien', productText: 'Deux formats pour une routine attentive.', view: 'Découvrir le produit', original: 'Continuer sur la boutique d’origine', contact: 'Nous contacter', questions: 'Vos questions', register: 'S’inscrire', source: 'Voir la page d’origine', archive: 'Les achats restent disponibles sur le site d’origine.', details: 'Détails du produit', gallery: 'Images' },
+  th: { chapter: 'ช่วงเวลาแห่งการดูแลอย่างอ่อนโยน', discover: 'รู้จัก PROTAI', story: 'เรื่องราวของเรา', film: 'ชมวิดีโอ', product: 'การดูแลในทุกวัน', productText: 'สองรูปแบบสำหรับการดูแลอย่างตั้งใจ', view: 'ดูผลิตภัณฑ์', original: 'ซื้อผ่านร้านค้าเดิม', contact: 'ติดต่อเรา', questions: 'คำถามที่พบบ่อย', register: 'ลงทะเบียน', source: 'ดูหน้าเว็บไซต์เดิม', archive: 'การสั่งซื้อยังดำเนินการผ่านเว็บไซต์เดิม', details: 'รายละเอียดผลิตภัณฑ์', gallery: 'ภาพประกอบ' },
+}[lang]
+const heroLines = page.text.split('\n').filter(Boolean).slice(0, lang === 'en' ? 3 : 2)
+const isHome = page.kind === 'home'
+const homeLines = page.text.split('\n').map((line) => line.trim()).filter(Boolean)
+const homeHeadingPositions = isHome ? [1, 4, 6, 8].map((index) => homeLines.findIndex((line) => line === page.blocks[index]?.text)) : []
+const homeIntroBody = isHome ? homeLines.slice(homeHeadingPositions[0] + 2, homeHeadingPositions[1]) : []
+const homeOriginBody = isHome ? homeLines.slice(homeHeadingPositions[1] + 1, homeHeadingPositions[2]) : []
+const homeReasonsBody = isHome ? homeLines.slice(homeHeadingPositions[2] + 1, homeHeadingPositions[3]) : []
+const homeWhoBody = isHome ? homeLines.slice(homeHeadingPositions[3] + 1) : []
+const firstParagraph = page.blocks.find((block) => block.type === 'p')?.text || ''
+const image = page.featureImage
+const firstVideo = page.videos[0]
+const isFaq = page.kind === 'faq'
+const isProduct = page.kind === 'product'
+const isShop = page.kind === 'shop'
+const isContact = page.kind === 'contact'
+const isWebinar = page.kind === 'webinar'
+const isCommerce = page.kind === 'commerce'
+const productOne = '/product/protai-eye-skin-care-mistg/'
+const productTwo = '/product/protai-eye-skin-care-mist-10ml-x-2-20ml/'
+const preserveLines = /representative|representant|代表挨拶|ข้อความจากผู้แทน/i.test(page.path)
+const fallback = preserveLines || page.blocks.map((block) => block.text || '').join('').length < page.text.length * .75
+const fallbackLines = page.text.split('\n').map((line) => line.trim()).filter(Boolean)
+
+const faqEntries: { question: string; answer: string[] }[] = []
+if (isFaq) {
+  let current: { question: string; answer: string[] } | undefined
+  for (const line of fallbackLines) {
+    if (/^Q\s*\d+[.．、]/i.test(line)) {
+      current = { question: line, answer: [] }
+      faqEntries.push(current)
+    } else if (current) current.answer.push(line)
+  }
+}
+const registrationMatch = page.text.match(/https:\/\/prosunfun\.protai\.com\.tw\/[^\s]+/)
+const registration = page.links.find((link) => /prosunfun|registration|seminar/i.test(link.href)) ||
+  (registrationMatch ? { href: registrationMatch[0], text: ui.register } : null)
+const price = page.text.match(/¥[\d,]+/)?.[0]
+const productImage = page.path.includes('20ml') ? '/media/2025/10/20ml-3.webp' : '/media/2025/10/10ml-4.webp'
+const productParts = isProduct ? page.text.split('(English Introduction)') : []
+const productEnglishLines = (productParts[1] || '').split('\n').map((line) => line.trim()).filter(Boolean)
+const productJapaneseAll = (productParts[0] || '').split('\n').map((line) => line.trim()).filter(Boolean)
+const productJapaneseLines = productJapaneseAll.slice(Math.max(0, productJapaneseAll.findIndex((line) => line.includes('🌿 PROTAI'))))
+const productLead = productEnglishLines.slice(1, 5).join(' ')
+const contactData = {
+  en: { heading: 'Let’s get in touch', intro: 'You can find us at', note: '', faq: '/faq/', office: 'OFFICE', address: '#402 Daini-Kyoto-Bldg., 227 Daikokucho, Aburanokoji Higashi-iru, Shichijyo-Dori, Shimogyo-ku, Kyoto-shi, Kyoto 600-8223, Japan', hours: 'BUSINESS HOURS', schedule: 'Weekdays: 10:00AM – 5:00PM JST (Closed on weekends, public holidays, and New Year holidays)' },
+  ja: { heading: 'つながる', intro: 'この度は弊社のホームページをご覧いただき誠にありがとうございます。', note: '製品に対するご質問や使い方などについては、「よくある質問」にてまとめておりますので、よろしければお役立てください。', faq: '/ja/faq_jp/', office: 'OFFICE', address: '〒600-8223京都府京都市下京区大黒町227 第2京都ビル402', hours: '営業時間', schedule: '平日 10:00～17:00（日本時間） ※土日祝・年末年始は休業' },
+  fr: { heading: 'Pour nous contacter', intro: 'Merci de votre visite sur notre site.', note: 'Si vous avez des questions, demandes ou renseignements concernant nos produits ou services, n’hésitez pas à nous contacter. Pour les questions courantes, veuillez d’abord consulter notre page FAQ.', faq: '/fr/faq-fr/', office: 'Adresse du bureau', address: '#402 Daini-Kyoto-Bldg., 227 Daikokucho, Aburanokoji Higashi-iru, Shichijyo-Dori, Shimogyo-ku, Kyoto-shi, Kyoto 600-8223, Japon', hours: 'Heures d’ouverture', schedule: 'Du lundi au vendredi : de 10h00 à 17h00 (heure japonaise) (Fermé le week-end, les jours fériés et pendant les congés du Nouvel An)' },
+  th: { heading: 'ช่องทางการติดต่อ', intro: 'ขอขอบคุณมากที่มาเยี่ยมชมเว็บไซต์ของเรา', note: 'หากคุณมีคำถามเกี่ยวกับผลิตภัณฑ์ของเราหรือวิธีการใช้งาน โปรดดูส่วน “คำถามที่พบบ่อย”', faq: '/th/คำถามที่พบบ่อย-faq-th/', office: 'ที่ตั้ง', address: 'เขตชิโมเกียว เมืองเกียวโต จังหวัดเกียวโต 227 อาคารไดโคคุโชะที่ 2 เกียวโต 402', hours: 'เวลาทำการ', schedule: 'วันธรรมดา 10:00-17:00 น. (เวลาประเทศญี่ปุ่น) ปิดบริการวัน เสาร์-อาทิตย์ วันหยุดนักขัตฤกษ์ และเทศกาลปีใหม่' },
+}[lang]
+---
+<Base page={page}>
+  {isHome ? <>
+    <section class="home-hero" data-hero>
+      <div class="hero-copy"><p class="chapter-label" data-reveal>IPPONGI · Kyoto</p><h1>{heroLines.map((line) => <span class="hero-title-line">{line}{' '}</span>)}</h1><p class="hero-intro" data-reveal>{page.blocks[2]?.text}</p><div class="hero-actions" data-reveal><a class="text-link" href="#discover">{ui.discover}<span aria-hidden="true">↗</span></a><a class="quiet-link" href="#film">{ui.film}<span aria-hidden="true">↗</span></a></div></div>
+      <div class="hero-visual"><div class="hero-image-mask"><img src={image} alt="IPPONGI eye care visual" fetchpriority="high" /></div><span class="image-index">01 / PROTAI</span></div>
+      <div class="hero-sideword" aria-hidden="true">IPPONGI KYOTO</div>
+    </section>
+    <section class="intro-section section-wrap" id="discover"><div class="section-number" data-reveal>01 — PROTAI</div><div class="intro-heading" data-reveal><span class="fine-line"></span><h2>{page.blocks[1]?.text}</h2><p>{page.blocks[2]?.text}</p></div><div class="intro-content" data-reveal>{homeIntroBody.map((line) => <p>{line}</p>)}<a class="text-link" href="/about/">{ui.story}<span aria-hidden="true">↗</span></a></div></section>
+    <section class="origin-section"><div class="origin-image" data-float-photo><img src="/media/2025/07/1-July.webp" alt="Night sky from the original IPPONGI visual collection" loading="lazy" /></div><div class="origin-panel" data-reveal><span class="section-number">02 — ORIGIN</span><h2>{page.blocks[4]?.text}</h2>{homeOriginBody.slice(0, 3).map((line) => <p>{line}</p>)}</div></section>
+    <section class="origin-notes section-wrap" data-reveal>{homeOriginBody.slice(3).map((line) => <p>{line}</p>)}</section>
+    <section class="reasons-section section-wrap"><div class="section-lead" data-reveal><span class="section-number">03 — PROTAI</span><h2>{page.blocks[6]?.text}</h2></div><div class="reasons-list">{homeReasonsBody.slice(0, 3).map((line, index) => <div class="reason-row" data-reveal><span>{String(index + 1).padStart(2, '0')}</span><p>{line.replace(/^[^\p{L}\p{N}]+/u, '')}</p></div>)}</div><p class="reasons-summary" data-reveal>{homeReasonsBody.slice(3).join(' ')}</p></section>
+    <section class="who-section"><div class="who-image"><img src="/media/2025/07/3-July.webp" alt="Eye portrait from the original IPPONGI visual collection" loading="lazy" /></div><div class="who-content" data-reveal><span class="section-number">04 — PROTAI</span><h2>{page.blocks[8]?.text}</h2><ul>{homeWhoBody.slice(0, 4).map((line) => <li>{line.replace(/^●\s*/, '')}</li>)}</ul>{homeWhoBody.slice(4).map((line) => <p>{line}</p>)}</div></section>
+    <section class="product-section section-wrap"><div class="section-lead" data-reveal><span class="section-number">05 — DAILY CARE</span><h2>{ui.product}</h2><p>{ui.productText}</p></div><div class="product-grid" data-reveal><a class="product-card" href={productOne}><div class="product-photo"><img src="/media/2025/10/10ml-4.webp" alt="PROTAI Eye Skin Care Mist 10ml" loading="lazy" /></div><div class="product-caption"><span>01 / PROTAI</span><h3>Eye Skin Care Mist · 10ml</h3><p>¥15,400</p><span class="card-arrow">↗</span></div></a><a class="product-card" href={productTwo}><div class="product-photo"><img src="/media/2025/10/20ml-3.webp" alt="PROTAI Eye Skin Care Mist 10ml x 2" loading="lazy" /></div><div class="product-caption"><span>02 / PROTAI</span><h3>Eye Skin Care Mist · 10ml × 2</h3><p>¥26,400</p><span class="card-arrow">↗</span></div></a></div></section>
+    <section class="film-section section-wrap" id="film"><div class="film-heading" data-reveal><span class="section-number">06 — FILM</span><h2>{ui.film}</h2></div><div class="film-gallery">{page.videos.map((video, index) => <div class:list={['film-entry', index > 0 && 'film-entry-secondary']} data-reveal><div class="film-frame"><video controls preload="none" poster={index === 0 ? '/media/2025/07/0-July.webp' : '/media/2025/07/1-July.webp'} playsinline aria-label={`${ui.film} ${index + 1}`}><source src={video} type="video/mp4" /></video></div><p class="film-caption">PROTAI / IPPONGI Kyoto — {String(index + 1).padStart(2, '0')}</p></div>)}</div></section>
+    <section class="closing-section section-wrap" data-reveal><span class="section-number">07 — IPPONGI</span><blockquote>“Eyes are the windows to the soul.”</blockquote><a class="text-link" href="/about/">{ui.story}<span aria-hidden="true">↗</span></a></section>
+  </> : isFaq ? <>
+    <section class="page-hero page-hero-plain"><span class="section-number" data-reveal>IPPONGI / {ui.questions}</span><h1 data-reveal>{page.title}</h1><p data-reveal>{ui.questions}</p></section>
+    <section class="faq-section section-wrap"><div class="faq-list">{faqEntries.map((entry, index) => <details class="faq-item" open={index === 0}><summary><span>{String(index + 1).padStart(2, '0')}</span><strong>{entry.question.replace(/^Q\s*\d+[.．、]\s*/i, '')}</strong><i aria-hidden="true">+</i></summary><div class="faq-answer">{entry.answer.map((line) => <p>{line}</p>)}</div></details>)}</div>{page.images.length > 0 && <div class="faq-gallery"><h2>{ui.gallery}</h2><div class="small-gallery">{page.images.slice(0, 6).map((item) => <img src={item.url} alt="IPPONGI FAQ illustration" loading="lazy" />)}</div></div>}</section>
+  </> : isProduct ? <>
+    <section class="product-hero section-wrap"><div class="product-hero-media" data-reveal><img src={productImage} alt={page.title} fetchpriority="high" /></div><div class="product-hero-copy" data-reveal><span class="section-number">PROTAI / MADE IN JAPAN</span><h1>{page.title}</h1><p class="product-price">{price}</p><p>{productLead}</p><a class="primary-link" href={page.sourceUrl} target="_blank" rel="noopener noreferrer">{ui.original} ↗</a><small>{ui.archive}</small></div></section>
+    <section class="detail-section section-wrap"><div class="detail-sidebar"><span class="section-number">01 — {ui.details}</span><h2>{ui.details}</h2></div><div class="detail-body"><div class="prose-flow">{productEnglishLines.map((line) => /^【.*】/.test(line) ? <h2 data-reveal>{line.replace(/[【】]/g, '')}</h2> : <p data-reveal>{line}</p>)}</div><details class="translation-details"><summary>日本語の商品説明 <span aria-hidden="true">＋</span></summary><div class="prose-flow">{productJapaneseLines.map((line) => <p>{line}</p>)}</div></details></div></section>
+  </> : isShop ? <>
+    <section class="page-hero page-hero-plain"><span class="section-number">IPPONGI / PROTAI</span><h1>{page.title}</h1><p>{ui.productText}</p></section><section class="product-section section-wrap shop-list"><div class="product-grid"><a class="product-card" href={productOne}><div class="product-photo"><img src="/media/2025/10/10ml-4.webp" alt="PROTAI 10ml" loading="lazy" /></div><div class="product-caption"><h3>PROTAI · 10ml</h3><p>¥15,400</p><span class="card-arrow">↗</span></div></a><a class="product-card" href={productTwo}><div class="product-photo"><img src="/media/2025/10/20ml-3.webp" alt="PROTAI 10ml × 2" loading="lazy" /></div><div class="product-caption"><h3>PROTAI · 10ml × 2</h3><p>¥26,400</p><span class="card-arrow">↗</span></div></a></div></section>
+  </> : isContact ? <>
+    <section class="page-hero page-hero-plain"><span class="section-number">IPPONGI / KYOTO</span><h1>{page.title}</h1><p>{contactData.intro}</p>{contactData.note && <div class="contact-note"><p>{contactData.note}</p><a href={contactData.faq}>FAQ ↗</a></div>}</section><section class="contact-section section-wrap"><div class="contact-invite" data-reveal><h2>{contactData.heading}</h2><a href="mailto:support@ippongikyoto.com">support@ippongikyoto.com ↗</a></div><div class="contact-details" data-reveal><div><span>{contactData.office}</span><p>{contactData.address}</p></div><div><span>{contactData.hours}</span><p>{contactData.schedule}</p></div></div></section>
+  </> : <>
+    <section class:list={['page-hero', image ? 'page-hero-image' : 'page-hero-plain']}><div class="page-hero-copy"><span class="section-number" data-reveal>IPPONGI / {page.kind.toUpperCase()}</span><h1 data-reveal>{page.title}</h1><p data-reveal>{firstParagraph.slice(0, 300)}</p>{isWebinar && registration && <a class="primary-link" href={registration.href} target="_blank" rel="noopener noreferrer">{ui.register} ↗</a>}{isCommerce && <a class="primary-link" href={page.sourceUrl} target="_blank" rel="noopener noreferrer">{ui.original} ↗</a>}</div>{image && <div class="page-hero-media"><img src={image} alt="IPPONGI source visual" loading="eager" /></div>}</section>
+    {firstVideo && <section class="film-section section-wrap"><div class="film-frame"><video controls preload="none" playsinline aria-label={ui.film}><source src={firstVideo} type="video/mp4" /></video></div></section>}
+    <section class="detail-section section-wrap"><div class="detail-sidebar"><span class="section-number">01 — {ui.story}</span><h2>{page.title}</h2></div><div class="detail-body">{fallback ? <div class="prose-flow">{fallbackLines.map((line) => <p data-reveal>{line}</p>)}</div> : <Blocks blocks={page.blocks} skipFirstHeading />}</div></section>
+    {page.images.length > 1 && <section class="gallery-section section-wrap"><div class="section-lead"><span class="section-number">02 — {ui.gallery}</span><h2>{ui.gallery}</h2></div><div class="editorial-gallery">{page.images.map((item, index) => <figure data-reveal><img src={item.url} alt={`IPPONGI source visual ${index + 1}`} loading="lazy" /><figcaption>{String(index + 1).padStart(2, '0')} / IPPONGI</figcaption></figure>)}</div></section>}
+  </>}
+</Base>

@@ -1,0 +1,8 @@
+---
+import pages from '../data/pages.json'
+import Page from '../components/Page.astro'
+import type { SitePage } from '../data/types'
+
+const page = pages.find((item) => item.path === '/') as unknown as SitePage
+---
+<Page page={page} />

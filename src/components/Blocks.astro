@@ -1,0 +1,20 @@
+---
+import type { ContentBlock } from '../data/types'
+
+interface Props { blocks?: ContentBlock[]; skipFirstHeading?: boolean }
+const { blocks = [], skipFirstHeading = false } = Astro.props
+let headingSkipped = false
+const filtered = blocks.filter((block) => {
+  if (skipFirstHeading && !headingSkipped && /^h[1-4]$/.test(block.type)) { headingSkipped = true; return false }
+  return true
+})
+---
+<div class="prose-flow">
+  {filtered.map((block) => {
+    if (block.type === 'table') return <div class="table-scroll"><table><tbody>{block.rows?.map((row) => <tr>{row.map((cell) => <td>{cell}</td>)}</tr>)}</tbody></table></div>
+    if (/^h[1-4]$/.test(block.type)) return <h2 data-reveal>{block.text}</h2>
+    if (block.type === 'blockquote') return <blockquote data-reveal>{block.text}</blockquote>
+    if (block.type === 'li') return <p class="list-line" data-reveal>{block.text}</p>
+    return <p data-reveal>{block.text}</p>
+  })}
+</div>

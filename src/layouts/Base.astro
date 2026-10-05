@@ -1,0 +1,84 @@
+---
+import '../styles/global.css'
+import pages from '../data/pages.json'
+import type { Locale, SitePage } from '../data/types'
+
+interface Props { page: SitePage }
+const { page } = Astro.props
+const lang: Locale = page.lang || 'en'
+const home = { en: '/', ja: '/ja/', fr: '/fr/', th: '/th/' }
+const about = { en: '/about/', ja: '/ja/会社案内/', fr: '/fr/qui-sommes-nous/', th: '/th/ข้อมูลบริษัท/' }
+const faq = { en: '/faq/', ja: '/ja/faq_jp/', fr: '/fr/faq-fr/', th: '/th/คำถามที่พบบ่อย-faq-th/' }
+const contact = { en: '/contact/', ja: '/ja/お問い合わせ/', fr: '/fr/contactez-nous/', th: '/th/ติดต่อเรา/' }
+const nav = {
+  en: { home: 'Home', about: 'Our story', product: 'PROTAI', faq: 'FAQ', contact: 'Contact', original: 'Original website', language: 'Language' },
+  ja: { home: 'ホーム', about: '会社案内', product: 'PROTAI', faq: 'よくある質問', contact: 'お問い合わせ', original: '元のサイト', language: '言語' },
+  fr: { home: 'Accueil', about: 'Notre histoire', product: 'PROTAI', faq: 'FAQ', contact: 'Contact', original: 'Site d’origine', language: 'Langue' },
+  th: { home: 'หน้าแรก', about: 'ข้อมูลบริษัท', product: 'PROTAI', faq: 'คำถามที่พบบ่อย', contact: 'ติดต่อเรา', original: 'เว็บไซต์เดิม', language: 'ภาษา' },
+}[lang]
+const names = { en: 'EN', ja: 'JP', fr: 'FR', th: 'TH' }
+const knownPaths = new Set(pages.map((item) => item.path))
+const localeLinks = (Object.entries(names) as [Locale, string][]).map(([locale, name]) => {
+  const alternate = page.alternates?.[locale]
+  return { locale, name, href: alternate && knownPaths.has(alternate) ? alternate : home[locale] }
+})
+const cleanTitle = page.title?.replace(/\s*- ippongikyoto\.com$/, '') || 'IPPONGI Kyoto'
+---
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f7f7f2" />
+    <meta name="description" content={page.description || cleanTitle} />
+    <title>{cleanTitle} | IPPONGI Kyoto</title>
+    <link rel="icon" href="/media/2025/05/ippongi-lgo.webp" type="image/webp" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600&family=Noto+Sans+JP:wght@400;500&family=Noto+Sans+Thai:wght@400;500&family=Noto+Serif+JP:wght@400;500&family=Noto+Serif+Thai:wght@400;500&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="top-rule" aria-hidden="true"></div>
+    <header class="site-header" id="top">
+      <div class="header-inner">
+        <a class="wordmark" href={home[lang]} aria-label="IPPONGI Kyoto — Home"><span>IPPONGI</span><small>KYOTO</small></a>
+        <nav class="desktop-nav" aria-label="Primary navigation">
+          <a class={page.path === home[lang] ? 'active' : ''} href={home[lang]}>{nav.home}</a>
+          <a class={page.path === about[lang] ? 'active' : ''} href={about[lang]}>{nav.about}</a>
+          <a href="/product/protai-eye-skin-care-mistg/">{nav.product}</a>
+          <a class={page.path === faq[lang] ? 'active' : ''} href={faq[lang]}>{nav.faq}</a>
+          <a class={page.path === contact[lang] ? 'active' : ''} href={contact[lang]}>{nav.contact}</a>
+        </nav>
+        <div class="header-actions">
+          <details class="locale-switcher"><summary aria-label={nav.language}>{names[lang]} <span aria-hidden="true">⌄</span></summary><div class="locale-list">
+            {localeLinks.map(({ locale, name, href }) => <a href={href} lang={locale} aria-current={locale === lang ? 'page' : undefined}>{name}</a>)}
+          </div></details>
+          <button class="menu-toggle" type="button" aria-label="Open menu" aria-controls="mobile-navigation" aria-expanded="false"><span></span><span></span></button>
+        </div>
+      </div>
+      <nav class="mobile-nav" id="mobile-navigation" aria-label="Mobile navigation" hidden>
+        <a href={home[lang]}>{nav.home}</a><a href={about[lang]}>{nav.about}</a><a href="/product/protai-eye-skin-care-mistg/">{nav.product}</a><a href={faq[lang]}>{nav.faq}</a><a href={contact[lang]}>{nav.contact}</a>
+      </nav>
+    </header>
+    <main id="main"><slot /></main>
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-brand"><span class="footer-kicker">From Kyoto, with care.</span><strong>IPPONGI</strong><p>Eyes are the windows to the soul.</p></div>
+        <div class="footer-contact"><span>CONTACT</span><a href="mailto:support@ippongikyoto.com">support@ippongikyoto.com</a><p>#402 Daini-Kyoto-Bldg., 227 Daikokucho,<br />Shimogyo-ku, Kyoto 600-8223, Japan</p></div>
+        <div class="footer-meta"><a href={page.sourceUrl} target="_blank" rel="noopener noreferrer">{nav.original} ↗</a><a href="#top">Back to top ↑</a><small>© IPPONGI Kyoto · Independent design preview</small></div>
+      </div>
+    </footer>
+    <script>
+      import '../scripts/motion'
+      const toggle = document.querySelector<HTMLButtonElement>('.menu-toggle')
+      const mobile = document.querySelector<HTMLElement>('.mobile-nav')
+      toggle?.addEventListener('click', () => {
+        const open = toggle.getAttribute('aria-expanded') !== 'true'
+        toggle.setAttribute('aria-expanded', String(open))
+        if (mobile) mobile.hidden = !open
+        document.body.classList.toggle('menu-open', open)
+      })
+    </script>
+  </body>
+</html>

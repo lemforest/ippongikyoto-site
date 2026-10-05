@@ -1,4 +1,4 @@
-import { readFile, mkdir, copyFile, writeFile } from 'node:fs/promises'
+import { readFile, mkdir, copyFile, writeFile, access } from 'node:fs/promises'
 import { basename, dirname, extname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { load } from 'cheerio'
@@ -33,8 +33,10 @@ for (const item of selected.values()) {
     outputPath = mediaKey(item.path).replace(/^media\//, '').replace(/\.[^.]+$/, '.webp')
     const target = join(destination, outputPath)
     await mkdir(dirname(target), { recursive: true })
-    await sharp(input).rotate().resize({ width: 1800, withoutEnlargement: true })
-      .webp({ quality: 82, effort: 5 }).toFile(target)
+    try { await access(target) } catch {
+      await sharp(input).rotate().resize({ width: 1800, withoutEnlargement: true })
+        .webp({ quality: 82, effort: 5 }).toFile(target)
+    }
   } else if (extension === '.mp4' || extension === '.webm') {
     if (videoHashes.has(item.sha256)) {
       outputPath = videoHashes.get(item.sha256)
@@ -85,11 +87,28 @@ function featureImage(kind, path, images) {
 
 function blocksFrom($, containers) {
   const blocks = []
-  containers.find('h1,h2,h3,h4,p,li,blockquote,table').each((_, element) => {
+  containers.find('h1,h2,h3,h4,h5,h6,p,li,blockquote,table,img').each((_, element) => {
     const tag = element.tagName?.toLowerCase()
+    if (tag === 'img') {
+      const url = localMedia($(element).attr('src'))
+      if (url) blocks.push({ type: 'image', url, alt: $(element).attr('alt') || '' })
+      return
+    }
     if (tag === 'p' && ($(element).closest('li,table').length > 0)) return
     if (tag === 'li' && $(element).parents('li').length > 0) return
-    const text = $(element).text().replace(/\s+/g, ' ').trim()
+    if (tag === 'p' && $(element).find('img').length && !$(element).text().trim()) return
+    if (tag === 'p' && $(element).find('br').length) {
+      const withBreaks = ($(element).html() || '').replace(/<br\s*\/?\s*>/gi, '\n')
+      const textWithBreaks = load(`<div>${withBreaks}</div>`)('div').text()
+      for (const paragraph of textWithBreaks.split(/\n\s*\n/)) {
+        const text = paragraph.replace(/\s+/g, ' ').trim()
+        if (text) blocks.push({ type: 'p', text })
+      }
+      return
+    }
+    const inlineText = $(element).clone()
+    inlineText.find('br').replaceWith(' ')
+    const text = inlineText.text().replace(/\s+/g, ' ').trim()
     if (!text || text.length < 2) return
     if (/^(Add to cart|Read more|Submit|This field is required\.)$/i.test(text)) return
     if (tag === 'table') {

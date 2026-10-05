@@ -4,6 +4,8 @@ export interface ContentBlock {
   type: string
   text?: string
   rows?: string[][]
+  url?: string
+  alt?: string
 }
 
 export interface SitePage {

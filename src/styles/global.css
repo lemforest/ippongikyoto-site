@@ -220,7 +220,7 @@ html[lang='ja'] .page-hero h1, html[lang='th'] .page-hero h1 { font-size: clamp(
   .hero-copy h1 { font-size: clamp(50px, 6vw, 82px); }
   .origin-panel { padding-inline: 7vw; }
 }
-@media (max-width: 780px) {
+@media (max-width: 1180px) {
   .desktop-nav { display: none; }
   .header-inner { min-height: 70px; justify-content: space-between; }
   .wordmark { width: auto; }
@@ -230,6 +230,8 @@ html[lang='ja'] .page-hero h1, html[lang='th'] .page-hero h1 { font-size: clamp(
   .menu-toggle span { display: block; height: 1px; width: 24px; background: var(--forest); }
   .mobile-nav:not([hidden]) { display: flex; flex-direction: column; gap: 0; padding: 12px 20px 22px; background: var(--ground); border-top: 1px solid var(--line); }
   .mobile-nav a { display: block; padding: 10px 0; font-size: 18px; border-bottom: 1px solid var(--line); }
+}
+@media (max-width: 780px) {
   .section-wrap { width: min(100% - 40px, 1280px); }
   .home-hero { display: flex; flex-direction: column; min-height: 0; }
   .hero-copy { order: 1; padding: 62px 26px 54px; }

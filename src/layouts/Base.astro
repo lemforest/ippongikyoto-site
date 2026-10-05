@@ -8,13 +8,15 @@ const { page } = Astro.props
 const lang: Locale = page.lang || 'en'
 const home = { en: '/', ja: '/ja/', fr: '/fr/', th: '/th/' }
 const about = { en: '/about/', ja: '/ja/会社案内/', fr: '/fr/qui-sommes-nous/', th: '/th/ข้อมูลบริษัท/' }
+const message = { en: '/a-message-from-the-representative-2/', ja: '/ja/a-message-from-the-representative/', fr: '/fr/message-du-representant/', th: '/th/ข้อความจากผู้แทน/' }
+const webinar = { en: '/webminar/', ja: '/ja/ウェビナー/', fr: '/webminar/', th: '/th/สัมมนาออนไลน์/' }
 const faq = { en: '/faq/', ja: '/ja/faq_jp/', fr: '/fr/faq-fr/', th: '/th/คำถามที่พบบ่อย-faq-th/' }
 const contact = { en: '/contact/', ja: '/ja/お問い合わせ/', fr: '/fr/contactez-nous/', th: '/th/ติดต่อเรา/' }
 const nav = {
-  en: { home: 'Home', about: 'Our story', product: 'PROTAI', faq: 'FAQ', contact: 'Contact', original: 'Original website', language: 'Language' },
-  ja: { home: 'ホーム', about: '会社案内', product: 'PROTAI', faq: 'よくある質問', contact: 'お問い合わせ', original: '元のサイト', language: '言語' },
-  fr: { home: 'Accueil', about: 'Notre histoire', product: 'PROTAI', faq: 'FAQ', contact: 'Contact', original: 'Site d’origine', language: 'Langue' },
-  th: { home: 'หน้าแรก', about: 'ข้อมูลบริษัท', product: 'PROTAI', faq: 'คำถามที่พบบ่อย', contact: 'ติดต่อเรา', original: 'เว็บไซต์เดิม', language: 'ภาษา' },
+  en: { home: 'Home', message: 'Founder’s note', about: 'Our story', webinar: 'Webinar', product: 'PROTAI', faq: 'FAQ', contact: 'Contact', original: 'Original website', language: 'Language' },
+  ja: { home: 'ホーム', message: '代表挨拶', about: '会社案内', webinar: 'ウェビナー', product: 'PROTAI', faq: 'よくある質問', contact: 'お問い合わせ', original: '元のサイト', language: '言語' },
+  fr: { home: 'Accueil', message: 'Mot du fondateur', about: 'Notre histoire', webinar: 'Webinaire (EN)', product: 'PROTAI', faq: 'FAQ', contact: 'Contact', original: 'Site d’origine', language: 'Langue' },
+  th: { home: 'หน้าแรก', message: 'ข้อความจากผู้แทน', about: 'ข้อมูลบริษัท', webinar: 'สัมมนาออนไลน์', product: 'PROTAI', faq: 'คำถามที่พบบ่อย', contact: 'ติดต่อเรา', original: 'เว็บไซต์เดิม', language: 'ภาษา' },
 }[lang]
 const names = { en: 'EN', ja: 'JP', fr: 'FR', th: 'TH' }
 const knownPaths = new Set(pages.map((item) => item.path))
@@ -45,7 +47,9 @@ const cleanTitle = page.title?.replace(/\s*- ippongikyoto\.com$/, '') || 'IPPONG
         <a class="wordmark" href={home[lang]} aria-label="IPPONGI Kyoto — Home"><span>IPPONGI</span><small>KYOTO</small></a>
         <nav class="desktop-nav" aria-label="Primary navigation">
           <a class={page.path === home[lang] ? 'active' : ''} href={home[lang]}>{nav.home}</a>
+          <a class={page.path === message[lang] ? 'active' : ''} href={message[lang]}>{nav.message}</a>
           <a class={page.path === about[lang] ? 'active' : ''} href={about[lang]}>{nav.about}</a>
+          <a class={page.path === webinar[lang] ? 'active' : ''} href={webinar[lang]}>{nav.webinar}</a>
           <a href="/product/protai-eye-skin-care-mistg/">{nav.product}</a>
           <a class={page.path === faq[lang] ? 'active' : ''} href={faq[lang]}>{nav.faq}</a>
           <a class={page.path === contact[lang] ? 'active' : ''} href={contact[lang]}>{nav.contact}</a>
@@ -58,7 +62,7 @@ const cleanTitle = page.title?.replace(/\s*- ippongikyoto\.com$/, '') || 'IPPONG
         </div>
       </div>
       <nav class="mobile-nav" id="mobile-navigation" aria-label="Mobile navigation" hidden>
-        <a href={home[lang]}>{nav.home}</a><a href={about[lang]}>{nav.about}</a><a href="/product/protai-eye-skin-care-mistg/">{nav.product}</a><a href={faq[lang]}>{nav.faq}</a><a href={contact[lang]}>{nav.contact}</a>
+        <a href={home[lang]}>{nav.home}</a><a href={message[lang]}>{nav.message}</a><a href={about[lang]}>{nav.about}</a><a href={webinar[lang]}>{nav.webinar}</a><a href="/product/protai-eye-skin-care-mistg/">{nav.product}</a><a href={faq[lang]}>{nav.faq}</a><a href={contact[lang]}>{nav.contact}</a>
       </nav>
     </header>
     <main id="main"><slot /></main>

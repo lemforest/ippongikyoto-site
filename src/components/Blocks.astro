@@ -8,6 +8,7 @@ const filtered = blocks.filter((block) => {
   if (skipFirstHeading && !headingSkipped && /^h[1-4]$/.test(block.type)) { headingSkipped = true; return false }
   return true
 })
+const bulletParts = (text: string) => text.split(/\s*●\s*/).map((part) => part.trim()).filter(Boolean)
 ---
 <div class="prose-flow">
   {filtered.map((block) => {
@@ -17,6 +18,10 @@ const filtered = blocks.filter((block) => {
     if (/^h[1-4]$/.test(block.type)) return <h2 data-reveal>{block.text}</h2>
     if (block.type === 'blockquote') return <blockquote data-reveal>{block.text}</blockquote>
     if (block.type === 'li') return <p class="list-line" data-reveal>{block.text}</p>
+    if (block.type === 'p' && (block.text?.match(/●/g)?.length || 0) >= 2) {
+      const [intro, ...items] = bulletParts(block.text || '')
+      return <div class="prose-bullet-group" data-reveal><p class="prose-bullet-intro">{intro}</p><ul>{items.map((item) => <li>{item}</li>)}</ul></div>
+    }
     return <p data-reveal>{block.runs ? block.runs.map((run) => run.bold && run.italic ? <strong><em>{run.text}</em></strong> : run.bold ? <strong>{run.text}</strong> : run.italic ? <em>{run.text}</em> : run.text) : block.text}</p>
   })}
 </div>

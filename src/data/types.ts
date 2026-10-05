@@ -3,6 +3,7 @@ export type Locale = 'en' | 'ja' | 'fr' | 'th'
 export interface ContentBlock {
   type: string
   text?: string
+  runs?: { text: string; bold: boolean; italic: boolean }[]
   rows?: string[][]
   url?: string
   alt?: string

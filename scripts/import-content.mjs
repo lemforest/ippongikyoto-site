@@ -85,7 +85,48 @@ function featureImage(kind, path, images) {
   return found?.url || images[0]?.url
 }
 
-function blocksFrom($, containers) {
+function richParagraphBlocks(element) {
+  const characters = []
+  function visit(node, bold = false, italic = false) {
+    if (node.type === 'text') {
+      for (const char of node.data || '') characters.push({ char, bold, italic })
+      return
+    }
+    if (node.name === 'br') {
+      characters.push({ char: '\n', bold: false, italic: false })
+      return
+    }
+    const nextBold = bold || node.name === 'strong' || node.name === 'b'
+    const nextItalic = italic || node.name === 'em' || node.name === 'i'
+    for (const child of node.children || []) visit(child, nextBold, nextItalic)
+  }
+  for (const child of element.children || []) visit(child)
+  const paragraphs = []
+  let start = 0
+  for (let index = 0; index <= characters.length; index++) {
+    const atEnd = index === characters.length
+    const doubleBreak = characters[index]?.char === '\n' && characters[index + 1]?.char === '\n'
+    if (!atEnd && !doubleBreak) continue
+    const runs = []
+    for (const item of characters.slice(start, index)) {
+      const char = /\s/.test(item.char) ? ' ' : item.char
+      if (char === ' ' && (!runs.length || runs.at(-1).text.endsWith(' '))) continue
+      const bold = item.bold
+      const italic = item.italic
+      const last = runs.at(-1)
+      if (last && last.bold === bold && last.italic === italic) last.text += char
+      else runs.push({ text: char, bold, italic })
+    }
+    if (runs.at(-1)?.text.endsWith(' ')) runs.at(-1).text = runs.at(-1).text.trimEnd()
+    const text = runs.map((run) => run.text).join('').trim()
+    if (text) paragraphs.push({ type: 'p', text, runs: runs.filter((run) => run.text) })
+    if (doubleBreak) index++
+    start = index + 1
+  }
+  return paragraphs
+}
+
+function blocksFrom($, containers, richText = false) {
   const blocks = []
   containers.find('h1,h2,h3,h4,h5,h6,p,li,blockquote,table,img').each((_, element) => {
     const tag = element.tagName?.toLowerCase()
@@ -97,6 +138,10 @@ function blocksFrom($, containers) {
     if (tag === 'p' && ($(element).closest('li,table').length > 0)) return
     if (tag === 'li' && $(element).parents('li').length > 0) return
     if (tag === 'p' && $(element).find('img').length && !$(element).text().trim()) return
+    if (tag === 'p' && richText) {
+      blocks.push(...richParagraphBlocks(element))
+      return
+    }
     if (tag === 'p' && $(element).find('br').length) {
       const withBreaks = ($(element).html() || '').replace(/<br\s*\/?\s*>/gi, '\n')
       const textWithBreaks = load(`<div>${withBreaks}</div>`)('div').text()
@@ -135,7 +180,7 @@ for (const page of manifest.pages) {
   let containers = main.find('.entry-content').first()
   if (kind === 'product') containers = main.find('.summary, .woocommerce-Tabs-panel--description')
   if (!containers.length) containers = main
-  const blocks = blocksFrom($, containers)
+  const blocks = blocksFrom($, containers, /representative|representant|代表挨拶|ข้อความจากผู้แทน/i.test(path))
   const uniqueImages = new Map()
   for (const source of page.assets) {
     const local = localMedia(source)

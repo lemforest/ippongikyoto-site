@@ -17,6 +17,6 @@ const filtered = blocks.filter((block) => {
     if (/^h[1-4]$/.test(block.type)) return <h2 data-reveal>{block.text}</h2>
     if (block.type === 'blockquote') return <blockquote data-reveal>{block.text}</blockquote>
     if (block.type === 'li') return <p class="list-line" data-reveal>{block.text}</p>
-    return <p data-reveal>{block.text}</p>
+    return <p data-reveal>{block.runs ? block.runs.map((run) => run.bold && run.italic ? <strong><em>{run.text}</em></strong> : run.bold ? <strong>{run.text}</strong> : run.italic ? <em>{run.text}</em> : run.text) : block.text}</p>
   })}
 </div>

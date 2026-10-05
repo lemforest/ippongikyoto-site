@@ -38,11 +38,15 @@ const isCommerce = page.kind === 'commerce'
 const productOne = '/product/protai-eye-skin-care-mistg/'
 const productTwo = '/product/protai-eye-skin-care-mist-10ml-x-2-20ml/'
 const preserveLines = /representative|representant|代表挨拶|ข้อความจากผู้แทน/i.test(page.path)
+const isEnglishFounder = page.path === '/a-message-from-the-representative-2/'
 const fallback = !preserveLines && page.blocks.map((block) => block.text || '').join('').length < page.text.length * .75
 const fallbackLines = page.text.split('\n').map((line) => line.trim()).filter(Boolean)
 const sourceBlocks = page.blocks.filter((block) => block.type !== 'image' || !!block.url)
 const leadImage = preserveLines ? sourceBlocks.find((block) => block.type === 'image')?.url : undefined
-const bodyBlocks = leadImage ? sourceBlocks.filter((block) => block.type !== 'image' || block.url !== leadImage) : sourceBlocks
+const bodyBlocks = sourceBlocks.filter((block) =>
+  (!leadImage || block.type !== 'image' || block.url !== leadImage) &&
+  (!isEnglishFounder || block.text?.trim() !== 'Hello everyone,'),
+)
 const faqImagesByQuestion: Record<number, typeof page.blocks> = {}
 if (isFaq) {
   let question = 1
@@ -108,8 +112,8 @@ const contactData = {
   </> : isContact ? <>
     <section class="page-hero page-hero-plain"><span class="section-number">IPPONGI / KYOTO</span><h1>{page.title}</h1><p>{contactData.intro}</p>{contactData.note && <div class="contact-note"><p>{contactData.note}</p><a href={contactData.faq}>FAQ ↗</a></div>}</section><section class="contact-section section-wrap"><div class="contact-invite" data-reveal><h2>{contactData.heading}</h2><a href="mailto:support@ippongikyoto.com">support@ippongikyoto.com ↗</a></div><div class="contact-details" data-reveal><div><span>{contactData.office}</span><p>{contactData.address}</p></div><div><span>{contactData.hours}</span><p>{contactData.schedule}</p></div></div></section>
   </> : <>
-    <section class:list={['page-hero', leadImage ? 'page-hero-image' : 'page-hero-plain']}><div class="page-hero-copy"><span class="section-number" data-reveal>IPPONGI / {page.kind.toUpperCase()}</span><h1 data-reveal>{page.title}</h1><p data-reveal>{firstParagraph.slice(0, 300)}</p>{isWebinar && registration && <a class="primary-link" href={registration.href} target="_blank" rel="noopener noreferrer">{ui.register} ↗</a>}{isCommerce && <a class="primary-link" href={page.sourceUrl} target="_blank" rel="noopener noreferrer">{ui.original} ↗</a>}</div>{leadImage && <div class="page-hero-media page-hero-portrait"><img src={leadImage} alt={page.title} loading="eager" /></div>}</section>
+    <section class:list={['page-hero', leadImage ? 'page-hero-image' : 'page-hero-plain', isEnglishFounder && 'founder-hero']}><div class="page-hero-copy"><span class="section-number" data-reveal>IPPONGI / {page.kind.toUpperCase()}</span><h1 data-reveal>{isEnglishFounder ? <><span class="founder-heading-line">A Message from</span>{' '}<span class="founder-heading-line">the Representative</span></> : page.title}</h1>{!isEnglishFounder && <p data-reveal>{firstParagraph.slice(0, 300)}</p>}{isWebinar && registration && <a class="primary-link" href={registration.href} target="_blank" rel="noopener noreferrer">{ui.register} ↗</a>}{isCommerce && <a class="primary-link" href={page.sourceUrl} target="_blank" rel="noopener noreferrer">{ui.original} ↗</a>}</div>{leadImage && <div class="page-hero-media page-hero-portrait"><img src={leadImage} alt={page.title} loading="eager" /></div>}</section>
     {firstVideo && <section class="film-section section-wrap"><div class="film-frame"><video controls preload="none" playsinline aria-label={ui.film}><source src={firstVideo} type="video/mp4" /></video></div></section>}
-    <section class="detail-section section-wrap"><div class="detail-sidebar"><span class="section-number">01 — {ui.story}</span><h2>{page.title}</h2></div><div class="detail-body">{fallback ? <div class="prose-flow">{fallbackLines.map((line) => <p data-reveal>{line}</p>)}</div> : <Blocks blocks={bodyBlocks} skipFirstHeading />}</div></section>
+    <section class:list={['detail-section', 'section-wrap', isEnglishFounder && 'founder-detail']}><div class="detail-sidebar"><span class="section-number">01 — {ui.story}</span>{!isEnglishFounder && <h2>{page.title}</h2>}</div><div class="detail-body">{fallback ? <div class="prose-flow">{fallbackLines.map((line) => <p data-reveal>{line}</p>)}</div> : <Blocks blocks={bodyBlocks} skipFirstHeading />}</div></section>
   </>}
 </Base>

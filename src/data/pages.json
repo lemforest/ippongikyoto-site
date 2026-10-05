@@ -173,83 +173,393 @@
       },
       {
         "type": "p",
-        "text": "Hello everyone,"
+        "text": "Hello everyone,",
+        "runs": [
+          {
+            "text": "Hello everyone,",
+            "bold": false,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "My name is WEIFAN CHIA, the Managing Partner of IPPONGI LLC Japan and Special Assistant to PROSUNFUN Biotech R&D Co., Ltd. in Taiwan."
+        "text": "My name is WEIFAN CHIA, the Managing Partner of IPPONGI LLC Japan and Special Assistant to PROSUNFUN Biotech R&D Co., Ltd. in Taiwan.",
+        "runs": [
+          {
+            "text": "My name is ",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "WEIFAN CHIA",
+            "bold": true,
+            "italic": false
+          },
+          {
+            "text": ", the Managing Partner of ",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "IPPONGI LLC Japan",
+            "bold": true,
+            "italic": false
+          },
+          {
+            "text": " and Special Assistant to ",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "PROSUNFUN Biotech R&D Co., Ltd.",
+            "bold": true,
+            "italic": false
+          },
+          {
+            "text": " in Taiwan.",
+            "bold": false,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "I would like to share a little about the vision behind our brand, PROTAI, and the belief that drives us — to bring the ultimate wellness to life itself."
+        "text": "I would like to share a little about the vision behind our brand, PROTAI, and the belief that drives us — to bring the ultimate wellness to life itself.",
+        "runs": [
+          {
+            "text": "I would like to share a little about the vision behind our brand, ",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "PROTAI",
+            "bold": true,
+            "italic": false
+          },
+          {
+            "text": ", and the belief that drives us — ",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "to bring the ultimate wellness to life itself.",
+            "bold": false,
+            "italic": true
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "In one simple phrase, PROTAI is the peptide of happiness."
+        "text": "In one simple phrase, PROTAI is the peptide of happiness.",
+        "runs": [
+          {
+            "text": "In one simple phrase, ",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "PROTAI is the peptide of happiness.",
+            "bold": true,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "Allow me to tell you why this mission is so deeply personal to me, and how it all began."
+        "text": "Allow me to tell you why this mission is so deeply personal to me, and how it all began.",
+        "runs": [
+          {
+            "text": "Allow me to tell you why this mission is so deeply personal to me, and how it all began.",
+            "bold": false,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "I founded the PROTAI Beauty & Wellness brand here in Japan, but its origin lies in PROSUNFUN Biotech in Taiwan — a company that has spent more than a decade researching thousands of peptide sequences. Among them, the team discovered a unique peptide with the potential to help regenerate optic nerves."
+        "text": "I founded the PROTAI Beauty & Wellness brand here in Japan, but its origin lies in PROSUNFUN Biotech in Taiwan — a company that has spent more than a decade researching thousands of peptide sequences. Among them, the team discovered a unique peptide with the potential to help regenerate optic nerves.",
+        "runs": [
+          {
+            "text": "I founded the ",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "PROTAI Beauty & Wellness brand",
+            "bold": true,
+            "italic": false
+          },
+          {
+            "text": " here in Japan, but its origin lies in ",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "PROSUNFUN Biotech",
+            "bold": true,
+            "italic": false
+          },
+          {
+            "text": " in Taiwan — a company that has spent more than a decade researching thousands of peptide sequences. Among them, the team discovered a ",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "unique peptide with the potential to help regenerate optic nerves.",
+            "bold": true,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "In 2022, when my father fell ill, I returned to Taiwan after many years. Until then, I hadn’t fully understood the kind of research his company was pursuing. As I read through the PROTAI research data for the first time, I immediately felt — this is something truly special for the world."
+        "text": "In 2022, when my father fell ill, I returned to Taiwan after many years. Until then, I hadn’t fully understood the kind of research his company was pursuing. As I read through the PROTAI research data for the first time, I immediately felt — this is something truly special for the world.",
+        "runs": [
+          {
+            "text": "In 2022, when my father fell ill, I returned to Taiwan after many years. Until then, I hadn’t fully understood the kind of research his company was pursuing. As I read through the PROTAI research data for the first time, I immediately felt — ",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "this is something truly special for the world.",
+            "bold": false,
+            "italic": true
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "From that moment, I started from zero in Taiwan — searching for distribution channels and partners who shared the same passion. With tremendous support, we achieved a total of 80,000 bottles sold by September 2025, helping many people regain comfort and confidence in their eyes."
+        "text": "From that moment, I started from zero in Taiwan — searching for distribution channels and partners who shared the same passion. With tremendous support, we achieved a total of 80,000 bottles sold by September 2025, helping many people regain comfort and confidence in their eyes.",
+        "runs": [
+          {
+            "text": "From that moment, I started from zero in Taiwan — searching for distribution channels and partners who shared the same passion. With tremendous support, we achieved a total of ",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "80,000 bottles sold by September 2025",
+            "bold": true,
+            "italic": false
+          },
+          {
+            "text": ", helping many people regain comfort and confidence in their eyes.",
+            "bold": false,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "Through these experiences, I came to realize something profound: It is not only the peptide itself that matters, but also the heart of the people who wish to use it meaningfully."
+        "text": "Through these experiences, I came to realize something profound: It is not only the peptide itself that matters, but also the heart of the people who wish to use it meaningfully.",
+        "runs": [
+          {
+            "text": "Through these experiences, I came to realize something profound: It is not only the ",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "peptide itself",
+            "bold": true,
+            "italic": false
+          },
+          {
+            "text": " that matters, but also the ",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "heart of the people",
+            "bold": true,
+            "italic": false
+          },
+          {
+            "text": " ",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "who wish to use it meaningfully.",
+            "bold": true,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "Rather than presenting PROTAI as just another biotechnology product, I see it as a gentle expression of care — a way to bring healing and vitality into the daily lives of those struggling with fatigue, stress, or dryness."
+        "text": "Rather than presenting PROTAI as just another biotechnology product, I see it as a gentle expression of care — a way to bring healing and vitality into the daily lives of those struggling with fatigue, stress, or dryness.",
+        "runs": [
+          {
+            "text": "Rather than presenting PROTAI as just another biotechnology product, I see it as a gentle expression of care — a way to bring ",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "healing and vitality",
+            "bold": true,
+            "italic": false
+          },
+          {
+            "text": " into the daily lives of those struggling with fatigue, stress, or dryness.",
+            "bold": false,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "We often say, “The eyes are the windows to the soul.” And when those windows are tired, many people have told us,"
+        "text": "We often say, “The eyes are the windows to the soul.” And when those windows are tired, many people have told us,",
+        "runs": [
+          {
+            "text": "We often say, ",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "“The eyes are the windows to the soul.”",
+            "bold": false,
+            "italic": true
+          },
+          {
+            "text": " And when those windows are tired, many people have told us,",
+            "bold": false,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "“PROTAI has truly comforted me.”"
+        "text": "“PROTAI has truly comforted me.”",
+        "runs": [
+          {
+            "text": "“PROTAI has truly comforted me.”",
+            "bold": false,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "These voices come not only from the elderly, but also from students preparing for exams, professionals working long hours in front of screens, and countless others in our modern, digital world. To all of them, we wish to deliver moisture, relief, and happiness."
+        "text": "These voices come not only from the elderly, but also from students preparing for exams, professionals working long hours in front of screens, and countless others in our modern, digital world. To all of them, we wish to deliver moisture, relief, and happiness.",
+        "runs": [
+          {
+            "text": "These voices come not only from the elderly, but also from students preparing for exams, professionals working long hours in front of screens, and countless others in our modern, digital world. To all of them, we wish to deliver ",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "moisture, relief, and happiness.",
+            "bold": true,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "That is why I call PROTAI — the peptide of happiness. Its mission is simple yet powerful: to make our world, and our everyday lives, a little brighter and more fulfilled. That, to me, is the true value of PROTAI."
+        "text": "That is why I call PROTAI — the peptide of happiness. Its mission is simple yet powerful: to make our world, and our everyday lives, a little brighter and more fulfilled. That, to me, is the true value of PROTAI.",
+        "runs": [
+          {
+            "text": "That is why I call PROTAI — ",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "the peptide of happiness.",
+            "bold": true,
+            "italic": false
+          },
+          {
+            "text": " Its mission is simple yet powerful: to make our world, and our everyday lives, a little brighter and more fulfilled. That, to me, is the true value of PROTAI.",
+            "bold": false,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "By combining the advanced biotechnology of our Taiwanese parent company with the precision and craftsmanship of Japan, my goal is to deliver this gift to those who need it most — in the most authentic and human way possible. This has become not only my dream, but my life’s purpose."
+        "text": "By combining the advanced biotechnology of our Taiwanese parent company with the precision and craftsmanship of Japan, my goal is to deliver this gift to those who need it most — in the most authentic and human way possible. This has become not only my dream, but my life’s purpose.",
+        "runs": [
+          {
+            "text": "By combining the advanced biotechnology of our Taiwanese parent company with the precision and craftsmanship of Japan, my goal is to deliver this gift to those who need it most — in the most authentic and human way possible. This has become not only my dream, but my life’s purpose.",
+            "bold": false,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "Since encountering PROTAI, I too have found healing through it. And each time someone understands its value and feels its gentle effect, I experience a deep sense of joy and meaning."
+        "text": "Since encountering PROTAI, I too have found healing through it. And each time someone understands its value and feels its gentle effect, I experience a deep sense of joy and meaning.",
+        "runs": [
+          {
+            "text": "Since encountering PROTAI, I too have found healing through it. And each time someone understands its value and feels its gentle effect, I experience a deep sense of joy and meaning.",
+            "bold": false,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "Throughout 2025, I have devoted all my time and heart to shaping PROTAI here in Japan. More than any result, I believe what truly matters is that our work continues to bring happiness to others."
+        "text": "Throughout 2025, I have devoted all my time and heart to shaping PROTAI here in Japan. More than any result, I believe what truly matters is that our work continues to bring happiness to others.",
+        "runs": [
+          {
+            "text": "Throughout 2025, I have devoted all my time and heart to shaping PROTAI here in Japan. More than any result, I believe what truly matters is that our work continues to bring happiness to others.",
+            "bold": false,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "In Taiwan, I’ve met so many people whose lives were quietly transformed by PROTAI — each encounter felt like witnessing a small miracle."
+        "text": "In Taiwan, I’ve met so many people whose lives were quietly transformed by PROTAI — each encounter felt like witnessing a small miracle.",
+        "runs": [
+          {
+            "text": "In Taiwan, I’ve met so many people whose lives were quietly transformed by PROTAI — each encounter felt like witnessing a small miracle.",
+            "bold": false,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "Now, I would like to invite you to share that same miracle — through IPPONGI, a wellness brand born in Kyoto, Japan — and to dream together with us."
+        "text": "Now, I would like to invite you to share that same miracle — through IPPONGI, a wellness brand born in Kyoto, Japan — and to dream together with us.",
+        "runs": [
+          {
+            "text": "Now, I would like to invite you to share that same miracle — through ",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "IPPONGI",
+            "bold": true,
+            "italic": false
+          },
+          {
+            "text": ", a wellness brand born in ",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "Kyoto, Japan",
+            "bold": true,
+            "italic": false
+          },
+          {
+            "text": " — and to dream together with us.",
+            "bold": false,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "Thank you sincerely for taking the time to read this message. From the bottom of my heart, I offer you my deepest gratitude."
+        "text": "Thank you sincerely for taking the time to read this message. From the bottom of my heart, I offer you my deepest gratitude.",
+        "runs": [
+          {
+            "text": "Thank you sincerely for taking the time to read this message. From the bottom of my heart, I offer you my deepest gratitude.",
+            "bold": false,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "h3",
@@ -1705,87 +2015,419 @@
       },
       {
         "type": "p",
-        "text": "Bonjour à toutes et à tous,"
+        "text": "Bonjour à toutes et à tous,",
+        "runs": [
+          {
+            "text": "Bonjour à toutes et à tous,",
+            "bold": false,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "Je m’appelle WEIFAN CHIA, associé gérant de IPPONGI LLC Japon et assistant spécial de PROSUNFUN Biotech R&D Co., Ltd. à Taïwan."
+        "text": "Je m’appelle WEIFAN CHIA, associé gérant de IPPONGI LLC Japon et assistant spécial de PROSUNFUN Biotech R&D Co., Ltd. à Taïwan.",
+        "runs": [
+          {
+            "text": "Je m’appelle ",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "WEIFAN CHIA",
+            "bold": true,
+            "italic": false
+          },
+          {
+            "text": ", associé gérant de ",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "IPPONGI LLC Japon",
+            "bold": true,
+            "italic": false
+          },
+          {
+            "text": " et assistant spécial de ",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "PROSUNFUN Biotech R&D Co., Ltd.",
+            "bold": true,
+            "italic": false
+          },
+          {
+            "text": " à Taïwan.",
+            "bold": false,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "J’aimerais partager avec vous la vision qui anime notre marque PROTAI, ainsi que la conviction profonde qui la guide : apporter le bien-être absolu à la vie elle-même."
+        "text": "J’aimerais partager avec vous la vision qui anime notre marque PROTAI, ainsi que la conviction profonde qui la guide : apporter le bien-être absolu à la vie elle-même.",
+        "runs": [
+          {
+            "text": "J’aimerais partager avec vous la vision qui anime notre marque ",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "PROTAI",
+            "bold": true,
+            "italic": false
+          },
+          {
+            "text": ", ainsi que la conviction profonde qui la guide : ",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "apporter le bien-être absolu à la vie elle-même.",
+            "bold": true,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "En une phrase, PROTAI est le peptide du bonheur."
+        "text": "En une phrase, PROTAI est le peptide du bonheur.",
+        "runs": [
+          {
+            "text": "En une phrase, ",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "PROTAI est le peptide du bonheur.",
+            "bold": true,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "Permettez-moi de vous expliquer pourquoi cette mission est si personnelle pour moi, et comment tout a commencé."
+        "text": "Permettez-moi de vous expliquer pourquoi cette mission est si personnelle pour moi, et comment tout a commencé.",
+        "runs": [
+          {
+            "text": "Permettez-moi de vous expliquer pourquoi cette mission est si personnelle pour moi, et comment tout a commencé.",
+            "bold": false,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "J’ai fondé la marque PROTAI Beauty & Wellness ici au Japon, mais ses origines se trouvent chez PROSUNFUN Biotech à Taïwan — une entreprise qui consacre depuis plus de dix ans ses recherches à l’étude de milliers de séquences peptidiques. Parmi elles, notre équipe a découvert un peptide unique capable de favoriser la régénération du nerf optique."
+        "text": "J’ai fondé la marque PROTAI Beauty & Wellness ici au Japon, mais ses origines se trouvent chez PROSUNFUN Biotech à Taïwan — une entreprise qui consacre depuis plus de dix ans ses recherches à l’étude de milliers de séquences peptidiques. Parmi elles, notre équipe a découvert un peptide unique capable de favoriser la régénération du nerf optique.",
+        "runs": [
+          {
+            "text": "J’ai fondé la marque ",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "PROTAI Beauty & Wellness",
+            "bold": true,
+            "italic": false
+          },
+          {
+            "text": " ici au Japon, mais ses origines se trouvent chez ",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "PROSUNFUN Biotech",
+            "bold": true,
+            "italic": false
+          },
+          {
+            "text": " à Taïwan — une entreprise qui consacre depuis plus de dix ans ses recherches à l’étude de milliers de séquences peptidiques. Parmi elles, notre équipe a découvert un peptide unique capable de favoriser la régénération du nerf optique.",
+            "bold": false,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "En 2022, lorsque mon père est tombé malade, je suis rentré à Taïwan après de longues années passées à l’étranger. Jusqu’alors, je ne mesurais pas pleinement la portée des recherches menées par son entreprise. En consultant pour la première fois les données scientifiques de PROTAI, j’ai ressenti immédiatement : voilà quelque chose d’extraordinaire pour l’humanité."
+        "text": "En 2022, lorsque mon père est tombé malade, je suis rentré à Taïwan après de longues années passées à l’étranger. Jusqu’alors, je ne mesurais pas pleinement la portée des recherches menées par son entreprise. En consultant pour la première fois les données scientifiques de PROTAI, j’ai ressenti immédiatement : voilà quelque chose d’extraordinaire pour l’humanité.",
+        "runs": [
+          {
+            "text": "En 2022, lorsque mon père est tombé malade, je suis rentré à Taïwan après de longues années passées à l’étranger. Jusqu’alors, je ne mesurais pas pleinement la portée des recherches menées par son entreprise. En consultant pour la première fois les données scientifiques de PROTAI, j’ai ressenti immédiatement : ",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "voilà quelque chose d’extraordinaire pour l’humanité.",
+            "bold": true,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "À partir de ce moment-là, je suis reparti de zéro à Taïwan, à la recherche de partenaires et de canaux de distribution partageant la même passion. Grâce à un soutien immense, nous avons atteint 80 000 flacons vendus en septembre 2025, aidant d’innombrables personnes à retrouver confort et confiance dans leurs yeux."
+        "text": "À partir de ce moment-là, je suis reparti de zéro à Taïwan, à la recherche de partenaires et de canaux de distribution partageant la même passion. Grâce à un soutien immense, nous avons atteint 80 000 flacons vendus en septembre 2025, aidant d’innombrables personnes à retrouver confort et confiance dans leurs yeux.",
+        "runs": [
+          {
+            "text": "À partir de ce moment-là, je suis reparti de zéro à Taïwan, à la recherche de partenaires et de canaux de distribution partageant la même passion. Grâce à un soutien immense, nous avons atteint ",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "80 000 flacons vendus en septembre 2025",
+            "bold": true,
+            "italic": false
+          },
+          {
+            "text": ", aidant d’innombrables personnes à retrouver confort et confiance dans leurs yeux.",
+            "bold": false,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "De cette expérience est née une conviction profonde : ce qui compte, ce n’est pas seulement le peptide en lui-même, mais aussi le cœur de ceux qui souhaitent l’utiliser avec bienveillance."
+        "text": "De cette expérience est née une conviction profonde : ce qui compte, ce n’est pas seulement le peptide en lui-même, mais aussi le cœur de ceux qui souhaitent l’utiliser avec bienveillance.",
+        "runs": [
+          {
+            "text": "De cette expérience est née une conviction profonde : ce qui compte, ce n’est pas seulement le peptide en lui-même, mais aussi ",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "le cœur de ceux qui souhaitent l’utiliser avec bienveillance.",
+            "bold": true,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "Plutôt que de présenter PROTAI comme un simple produit de biotechnologie, je le vois comme une expression douce du soin — une manière d’apporter guérison et vitalité dans la vie quotidienne de celles et ceux qui souffrent de fatigue, de stress ou de sécheresse oculaire."
+        "text": "Plutôt que de présenter PROTAI comme un simple produit de biotechnologie, je le vois comme une expression douce du soin — une manière d’apporter guérison et vitalité dans la vie quotidienne de celles et ceux qui souffrent de fatigue, de stress ou de sécheresse oculaire.",
+        "runs": [
+          {
+            "text": "Plutôt que de présenter PROTAI comme un simple produit de biotechnologie, je le vois comme ",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "une expression douce du soin",
+            "bold": true,
+            "italic": false
+          },
+          {
+            "text": " — une manière d’apporter guérison et vitalité dans la vie quotidienne de celles et ceux qui souffrent de fatigue, de stress ou de sécheresse oculaire.",
+            "bold": false,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "Nous disons souvent que « les yeux sont le miroir de l’âme ». Et lorsque ces miroirs se fatiguent, beaucoup nous confient :"
+        "text": "Nous disons souvent que « les yeux sont le miroir de l’âme ». Et lorsque ces miroirs se fatiguent, beaucoup nous confient :",
+        "runs": [
+          {
+            "text": "Nous disons souvent que ",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "« les yeux sont le miroir de l’âme ».",
+            "bold": true,
+            "italic": false
+          },
+          {
+            "text": " Et lorsque ces miroirs se fatiguent, beaucoup nous confient :",
+            "bold": false,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "« PROTAI m’a réellement apporté du réconfort. »"
+        "text": "« PROTAI m’a réellement apporté du réconfort. »",
+        "runs": [
+          {
+            "text": "« PROTAI m’a réellement apporté du réconfort. »",
+            "bold": false,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "Ces témoignages viennent non seulement de personnes âgées, mais aussi d’étudiants préparant des examens, de professionnels passant de longues heures devant des écrans, et de tant d’autres dans notre monde numérique moderne. À chacun d’eux, nous souhaitons offrir hydratation, soulagement et bonheur."
+        "text": "Ces témoignages viennent non seulement de personnes âgées, mais aussi d’étudiants préparant des examens, de professionnels passant de longues heures devant des écrans, et de tant d’autres dans notre monde numérique moderne. À chacun d’eux, nous souhaitons offrir hydratation, soulagement et bonheur.",
+        "runs": [
+          {
+            "text": "Ces témoignages viennent non seulement de personnes âgées, mais aussi d’étudiants préparant des examens, de professionnels passant de longues heures devant des écrans, et de tant d’autres dans notre monde numérique moderne. À chacun d’eux, nous souhaitons offrir ",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "hydratation, soulagement et bonheur.",
+            "bold": true,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "C’est pour cela que j’appelle PROTAI — le peptide du bonheur. Sa mission est simple, mais puissante : rendre notre monde, et notre quotidien, un peu plus lumineux et plus épanoui."
+        "text": "C’est pour cela que j’appelle PROTAI — le peptide du bonheur. Sa mission est simple, mais puissante : rendre notre monde, et notre quotidien, un peu plus lumineux et plus épanoui.",
+        "runs": [
+          {
+            "text": "C’est pour cela que j’appelle PROTAI — ",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "le peptide du bonheur.",
+            "bold": true,
+            "italic": false
+          },
+          {
+            "text": " Sa mission est simple, mais puissante : ",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "rendre notre monde, et notre quotidien, un peu plus lumineux et plus épanoui.",
+            "bold": true,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "Voilà, selon moi, la véritable valeur de PROTAI."
+        "text": "Voilà, selon moi, la véritable valeur de PROTAI.",
+        "runs": [
+          {
+            "text": "Voilà, selon moi, la véritable valeur de PROTAI.",
+            "bold": false,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "En combinant la biotechnologie de pointe taïwanaise et le savoir-faire japonais, mon objectif est de transmettre cette solution à ceux qui en ont le plus besoin — avec authenticité et humanité."
+        "text": "En combinant la biotechnologie de pointe taïwanaise et le savoir-faire japonais, mon objectif est de transmettre cette solution à ceux qui en ont le plus besoin — avec authenticité et humanité.",
+        "runs": [
+          {
+            "text": "En combinant ",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "la biotechnologie de pointe taïwanaise",
+            "bold": true,
+            "italic": false
+          },
+          {
+            "text": " et ",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "le savoir-faire japonais",
+            "bold": true,
+            "italic": false
+          },
+          {
+            "text": ", mon objectif est de transmettre cette solution à ceux qui en ont le plus besoin — avec ",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "authenticité et humanité.",
+            "bold": true,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "Ce projet est devenu non seulement mon rêve, mais le sens même de ma vie. Depuis ma rencontre avec PROTAI, j’ai moi aussi trouvé une forme de guérison intérieure. Et chaque fois que quelqu’un en perçoit la valeur et en ressent la douceur, j’éprouve une joie profonde et un véritable sentiment d’accomplissement."
+        "text": "Ce projet est devenu non seulement mon rêve, mais le sens même de ma vie. Depuis ma rencontre avec PROTAI, j’ai moi aussi trouvé une forme de guérison intérieure. Et chaque fois que quelqu’un en perçoit la valeur et en ressent la douceur, j’éprouve une joie profonde et un véritable sentiment d’accomplissement.",
+        "runs": [
+          {
+            "text": "Ce projet est devenu non seulement mon rêve, mais le sens même de ma vie. Depuis ma rencontre avec PROTAI, j’ai moi aussi trouvé une forme de guérison intérieure. Et chaque fois que quelqu’un en perçoit la valeur et en ressent la douceur, j’éprouve une joie profonde et un véritable sentiment d’accomplissement.",
+            "bold": false,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "Tout au long de l’année 2025, j’ai consacré mon temps et mon cœur à faire grandir PROTAI ici, au Japon. Plus que les résultats, je crois que l’essentiel réside dans la capacité de notre travail à apporter du bonheur autour de nous."
+        "text": "Tout au long de l’année 2025, j’ai consacré mon temps et mon cœur à faire grandir PROTAI ici, au Japon. Plus que les résultats, je crois que l’essentiel réside dans la capacité de notre travail à apporter du bonheur autour de nous.",
+        "runs": [
+          {
+            "text": "Tout au long de l’année 2025, j’ai consacré ",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "mon temps et mon cœur",
+            "bold": true,
+            "italic": false
+          },
+          {
+            "text": " à faire grandir PROTAI ici, au Japon. Plus que les résultats, je crois que l’essentiel réside dans ",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "la capacité de notre travail à apporter du bonheur autour de nous.",
+            "bold": true,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "À Taïwan, j’ai rencontré tant de personnes dont la vie a été transformée, silencieusement mais profondément, par PROTAI — chaque rencontre ressemblait à un petit miracle."
+        "text": "À Taïwan, j’ai rencontré tant de personnes dont la vie a été transformée, silencieusement mais profondément, par PROTAI — chaque rencontre ressemblait à un petit miracle.",
+        "runs": [
+          {
+            "text": "À Taïwan, j’ai rencontré tant de personnes dont la vie a été transformée, silencieusement mais profondément, par PROTAI — chaque rencontre ressemblait à un petit miracle.",
+            "bold": false,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "Aujourd’hui, je souhaite vous inviter à partager ce même miracle — à travers IPPONGI, une marque de bien-être, née à Kyoto, et à rêver avec nous d’un monde plus harmonieux et lumineux."
+        "text": "Aujourd’hui, je souhaite vous inviter à partager ce même miracle — à travers IPPONGI, une marque de bien-être, née à Kyoto, et à rêver avec nous d’un monde plus harmonieux et lumineux.",
+        "runs": [
+          {
+            "text": "Aujourd’hui, je souhaite vous inviter à partager ce même miracle — à travers ",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "IPPONGI",
+            "bold": true,
+            "italic": false
+          },
+          {
+            "text": ", une marque de bien-être, née à Kyoto, et à ",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "rêver avec nous d’un monde plus harmonieux et lumineux.",
+            "bold": true,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "Je vous remercie sincèrement pour le temps que vous avez consacré à lire ce message. Du fond du cœur, je vous adresse ma plus profonde gratitude."
+        "text": "Je vous remercie sincèrement pour le temps que vous avez consacré à lire ce message. Du fond du cœur, je vous adresse ma plus profonde gratitude.",
+        "runs": [
+          {
+            "text": "Je vous remercie sincèrement pour le temps que vous avez consacré à lire ce message. Du fond du cœur, je vous adresse ma plus profonde gratitude.",
+            "bold": false,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "h3",
@@ -2378,87 +3020,234 @@
       },
       {
         "type": "p",
-        "text": "皆さま、こんにちは。"
+        "text": "皆さま、こんにちは。",
+        "runs": [
+          {
+            "text": "皆さま、こんにちは。",
+            "bold": false,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "日本一凡木合同会社の代表社員、そして台湾のPROSUNFUNバイオテック研究開発 株式会社のスペシャルアシスタントを務めております、"
+        "text": "日本一凡木合同会社の代表社員、そして台湾のPROSUNFUNバイオテック研究開発 株式会社のスペシャルアシスタントを務めております、",
+        "runs": [
+          {
+            "text": "日本一凡木合同会社の代表社員、そして台湾のPROSUNFUNバイオテック研究開発 株式会社のスペシャルアシスタントを務めております、",
+            "bold": false,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "CHIA WEIFAN（チャ・ウェイファン）と申します。"
+        "text": "CHIA WEIFAN（チャ・ウェイファン）と申します。",
+        "runs": [
+          {
+            "text": "CHIA WEIFAN（チャ・ウェイファン）と申します。",
+            "bold": false,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "「PROTAI」というブランドを通して、"
+        "text": "「PROTAI」というブランドを通して、",
+        "runs": [
+          {
+            "text": "「PROTAI」というブランドを通して、",
+            "bold": false,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "私たちが目指す「命に最高のウェルネスを与える」という想いについて、 少しお話しさせていただきます。"
+        "text": "私たちが目指す「命に最高のウェルネスを与える」という想いについて、 少しお話しさせていただきます。",
+        "runs": [
+          {
+            "text": "私たちが目指す「命に最高のウェルネスを与える」という想いについて、 少しお話しさせていただきます。",
+            "bold": false,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "一言で簡単に言いますと、PROTAI は幸せのペプチドです"
+        "text": "一言で簡単に言いますと、PROTAI は幸せのペプチドです",
+        "runs": [
+          {
+            "text": "一言で簡単に言いますと、PROTAI は幸せのペプチドです",
+            "bold": false,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "私自身がなぜこの活動に心を込めているのか、 その原点を皆さまと共有したいと思います。"
+        "text": "私自身がなぜこの活動に心を込めているのか、 その原点を皆さまと共有したいと思います。",
+        "runs": [
+          {
+            "text": "私自身がなぜこの活動に心を込めているのか、 その原点を皆さまと共有したいと思います。",
+            "bold": false,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "私は日本で「PROTAI」というBeauty & Wellnessブランドを立ち上げました。 しかしその原点は、台湾のPROSUNFUNバイオテック研究開発社にあります。 同社では10年以上にわたり、数千種類におよぶペプチド配列の研究を続けてきました。 そして、その中から「視神経を修復できる可能性を持つペプチド」を発見したのです。"
+        "text": "私は日本で「PROTAI」というBeauty & Wellnessブランドを立ち上げました。 しかしその原点は、台湾のPROSUNFUNバイオテック研究開発社にあります。 同社では10年以上にわたり、数千種類におよぶペプチド配列の研究を続けてきました。 そして、その中から「視神経を修復できる可能性を持つペプチド」を発見したのです。",
+        "runs": [
+          {
+            "text": "私は日本で「PROTAI」というBeauty & Wellnessブランドを立ち上げました。 しかしその原点は、台湾のPROSUNFUNバイオテック研究開発社にあります。 同社では10年以上にわたり、数千種類におよぶペプチド配列の研究を続けてきました。 そして、その中から「視神経を修復できる可能性を持つペプチド」を発見したのです。",
+            "bold": false,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "2022年、父の病気をきっかけに、私は久しぶりに台湾へ帰りました。 それまで、父の会社がどのような研究をしていたのか、実はよく知りませんでした。 台湾で初めてPROTAIの研究データを読み、"
+        "text": "2022年、父の病気をきっかけに、私は久しぶりに台湾へ帰りました。 それまで、父の会社がどのような研究をしていたのか、実はよく知りませんでした。 台湾で初めてPROTAIの研究データを読み、",
+        "runs": [
+          {
+            "text": "2022年、父の病気をきっかけに、私は久しぶりに台湾へ帰りました。 それまで、父の会社がどのような研究をしていたのか、実はよく知りませんでした。 台湾で初めてPROTAIの研究データを読み、",
+            "bold": false,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "「これは世界にとって本当に特別なものだ」と直感しました。"
+        "text": "「これは世界にとって本当に特別なものだ」と直感しました。",
+        "runs": [
+          {
+            "text": "「これは世界にとって本当に特別なものだ」と直感しました。",
+            "bold": false,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "それから私は台湾でゼロから販路を探し、 多くの方々の協力を得て、今年の9月までに累計8万本の販売実績を達成することができました。 多くの人々が目の悩みから解放され、笑顔を取り戻す姿を見てきました。"
+        "text": "それから私は台湾でゼロから販路を探し、 多くの方々の協力を得て、今年の9月までに累計8万本の販売実績を達成することができました。 多くの人々が目の悩みから解放され、笑顔を取り戻す姿を見てきました。",
+        "runs": [
+          {
+            "text": "それから私は台湾でゼロから販路を探し、 多くの方々の協力を得て、今年の9月までに累計8万本の販売実績を達成することができました。 多くの人々が目の悩みから解放され、笑顔を取り戻す姿を見てきました。",
+            "bold": false,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "その経験の中で、私は気づきました。 「大切なのは、ペプチドそのものだけでなく、 それを“活かしたい”と思う人の心である」ということに。"
+        "text": "その経験の中で、私は気づきました。 「大切なのは、ペプチドそのものだけでなく、 それを“活かしたい”と思う人の心である」ということに。",
+        "runs": [
+          {
+            "text": "その経験の中で、私は気づきました。 「大切なのは、ペプチドそのものだけでなく、 それを“活かしたい”と思う人の心である」ということに。",
+            "bold": false,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "PROTAIをただのバイオテクノロジー製品として伝えるのではなく、 “命に最高のウェルネスを与える”という想いを、 日々疲れやストレス、乾燥に悩む人々の暮らしの中へ、 少しずつ、やさしく届けることが本質だと気づいたのです。"
+        "text": "PROTAIをただのバイオテクノロジー製品として伝えるのではなく、 “命に最高のウェルネスを与える”という想いを、 日々疲れやストレス、乾燥に悩む人々の暮らしの中へ、 少しずつ、やさしく届けることが本質だと気づいたのです。",
+        "runs": [
+          {
+            "text": "PROTAIをただのバイオテクノロジー製品として伝えるのではなく、 “命に最高のウェルネスを与える”という想いを、 日々疲れやストレス、乾燥に悩む人々の暮らしの中へ、 少しずつ、やさしく届けることが本質だと気づいたのです。",
+            "bold": false,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "「瞳（ひとみ）は、心の窓」です。 その“心の窓”が疲れたとき、 「このPROTAIで癒されました」と言ってくださる方が、これまで本当にたくさんいらっしゃいました。 それはご年配の方だけでなく、受験に励む学生さん、長時間デスクワークをする ビジネスパーソン、そして、スマートフォンやパソコンを手放せない 現代のすべての人々へ―― 私たちは「潤い」と「癒し」を届けたいと思っています。"
+        "text": "「瞳（ひとみ）は、心の窓」です。 その“心の窓”が疲れたとき、 「このPROTAIで癒されました」と言ってくださる方が、これまで本当にたくさんいらっしゃいました。 それはご年配の方だけでなく、受験に励む学生さん、長時間デスクワークをする ビジネスパーソン、そして、スマートフォンやパソコンを手放せない 現代のすべての人々へ―― 私たちは「潤い」と「癒し」を届けたいと思っています。",
+        "runs": [
+          {
+            "text": "「瞳（ひとみ）は、心の窓」です。 その“心の窓”が疲れたとき、 「このPROTAIで癒されました」と言ってくださる方が、これまで本当にたくさんいらっしゃいました。 それはご年配の方だけでなく、受験に励む学生さん、長時間デスクワークをする ビジネスパーソン、そして、スマートフォンやパソコンを手放せない 現代のすべての人々へ―― 私たちは「潤い」と「癒し」を届けたいと思っています。",
+            "bold": false,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "だから私は、PROTAIを一言で表すなら、 「幸せのペプチド」だと思っています。 このペプチドの使命は、 私たちの世界を、そして日々の暮らしを、 ほんの少しだけ幸せにすること。 それが、私が信じるPROTAIの価値です。"
+        "text": "だから私は、PROTAIを一言で表すなら、 「幸せのペプチド」だと思っています。 このペプチドの使命は、 私たちの世界を、そして日々の暮らしを、 ほんの少しだけ幸せにすること。 それが、私が信じるPROTAIの価値です。",
+        "runs": [
+          {
+            "text": "だから私は、PROTAIを一言で表すなら、 「幸せのペプチド」だと思っています。 このペプチドの使命は、 私たちの世界を、そして日々の暮らしを、 ほんの少しだけ幸せにすること。 それが、私が信じるPROTAIの価値です。",
+            "bold": false,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "台湾の親会社の技術を活かしながら、 日本で生産し、日本らしい姿で必要とする人々のもとへ届ける。 その積み重ねこそが、私の願いであり、人生の使命です。"
+        "text": "台湾の親会社の技術を活かしながら、 日本で生産し、日本らしい姿で必要とする人々のもとへ届ける。 その積み重ねこそが、私の願いであり、人生の使命です。",
+        "runs": [
+          {
+            "text": "台湾の親会社の技術を活かしながら、 日本で生産し、日本らしい姿で必要とする人々のもとへ届ける。 その積み重ねこそが、私の願いであり、人生の使命です。",
+            "bold": false,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "私は、PROTAIに出会い、自らも癒されました。 だからこそ、その価値を一人ひとりに伝え、 理解してもらえた瞬間に、心からの喜びと生き甲斐を感じるのです。"
+        "text": "私は、PROTAIに出会い、自らも癒されました。 だからこそ、その価値を一人ひとりに伝え、 理解してもらえた瞬間に、心からの喜びと生き甲斐を感じるのです。",
+        "runs": [
+          {
+            "text": "私は、PROTAIに出会い、自らも癒されました。 だからこそ、その価値を一人ひとりに伝え、 理解してもらえた瞬間に、心からの喜びと生き甲斐を感じるのです。",
+            "bold": false,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "2025年は、PROTAIを日本で形にするために、 すべての時間を注いできました。 結果よりも大切なのは、 この活動が、誰かの幸せへとつながることだと信じています。"
+        "text": "2025年は、PROTAIを日本で形にするために、 すべての時間を注いできました。 結果よりも大切なのは、 この活動が、誰かの幸せへとつながることだと信じています。",
+        "runs": [
+          {
+            "text": "2025年は、PROTAIを日本で形にするために、 すべての時間を注いできました。 結果よりも大切なのは、 この活動が、誰かの幸せへとつながることだと信じています。",
+            "bold": false,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "これまで、台湾でPROTAIを通じて幸せになった人たちと、たくさん出会いました。 それは、まるで小さな奇跡の連続のようでした。"
+        "text": "これまで、台湾でPROTAIを通じて幸せになった人たちと、たくさん出会いました。 それは、まるで小さな奇跡の連続のようでした。",
+        "runs": [
+          {
+            "text": "これまで、台湾でPROTAIを通じて幸せになった人たちと、たくさん出会いました。 それは、まるで小さな奇跡の連続のようでした。",
+            "bold": false,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "どうか皆さんも、その奇跡を―― 日本・京都で生まれたウェルネスブランド「一凡木」を通して、 一緒に夢見ていただけませんか。"
+        "text": "どうか皆さんも、その奇跡を―― 日本・京都で生まれたウェルネスブランド「一凡木」を通して、 一緒に夢見ていただけませんか。",
+        "runs": [
+          {
+            "text": "どうか皆さんも、その奇跡を―― 日本・京都で生まれたウェルネスブランド「一凡木」を通して、 一緒に夢見ていただけませんか。",
+            "bold": false,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "以上、ご拝読していただいたみんなさん、 心より感謝を申し上げます。"
+        "text": "以上、ご拝読していただいたみんなさん、 心より感謝を申し上げます。",
+        "runs": [
+          {
+            "text": "以上、ご拝読していただいたみんなさん、 心より感謝を申し上げます。",
+            "bold": false,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "h3",
@@ -5119,107 +5908,434 @@
       },
       {
         "type": "p",
-        "text": "สวัสดีทุกท่านครับ"
+        "text": "สวัสดีทุกท่านครับ",
+        "runs": [
+          {
+            "text": "สวัสดีทุกท่านครับ",
+            "bold": false,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "ผมชื่อ เว่ยฟาน เฉีย (WEIFAN CHIA) เป็น หุ้นส่วนผู้จัดการของ IPPONGI LLC ประเทศญี่ปุ่น และ ผู้ช่วยพิเศษของบริษัท PROSUNFUN Biotech R&D Co., Ltd. ประเทศไต้หวัน"
+        "text": "ผมชื่อ เว่ยฟาน เฉีย (WEIFAN CHIA) เป็น หุ้นส่วนผู้จัดการของ IPPONGI LLC ประเทศญี่ปุ่น และ ผู้ช่วยพิเศษของบริษัท PROSUNFUN Biotech R&D Co., Ltd. ประเทศไต้หวัน",
+        "runs": [
+          {
+            "text": "ผมชื่อ ",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "เว่ยฟาน เฉีย (WEIFAN CHIA)",
+            "bold": true,
+            "italic": false
+          },
+          {
+            "text": " เป็น ",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "หุ้นส่วนผู้จัดการของ IPPONGI LLC ประเทศญี่ปุ่น",
+            "bold": true,
+            "italic": false
+          },
+          {
+            "text": " และ ",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "ผู้ช่วยพิเศษของบริษัท PROSUNFUN Biotech R&D Co., Ltd. ประเทศไต้หวัน",
+            "bold": true,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "วันนี้ผมอยากแบ่งปันเรื่องราวเบื้องหลังวิสัยทัศน์ของแบรนด์ PROTAI และความเชื่อที่เป็นแรงผลักดันของเรา — นั่นคือ “การนำพาความเป็นอยู่ที่ดีสูงสุดมาสู่ชีวิต”"
+        "text": "วันนี้ผมอยากแบ่งปันเรื่องราวเบื้องหลังวิสัยทัศน์ของแบรนด์ PROTAI และความเชื่อที่เป็นแรงผลักดันของเรา — นั่นคือ “การนำพาความเป็นอยู่ที่ดีสูงสุดมาสู่ชีวิต”",
+        "runs": [
+          {
+            "text": "วันนี้ผมอยากแบ่งปันเรื่องราวเบื้องหลังวิสัยทัศน์ของแบรนด์ ",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "PROTAI",
+            "bold": true,
+            "italic": false
+          },
+          {
+            "text": " และความเชื่อที่เป็นแรงผลักดันของเรา — นั่นคือ “การนำพาความเป็นอยู่ที่ดีสูงสุดมาสู่ชีวิต”",
+            "bold": false,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "กล่าวอย่างเรียบง่าย — PROTAI คือ เปปไทด์แห่งความสุข"
+        "text": "กล่าวอย่างเรียบง่าย — PROTAI คือ เปปไทด์แห่งความสุข",
+        "runs": [
+          {
+            "text": "กล่าวอย่างเรียบง่าย — ",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "PROTAI คือ เปปไทด์แห่งความสุข",
+            "bold": true,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "ขออนุญาตเล่าถึงเหตุผลว่าทำไมพันธกิจนี้จึงเป็นสิ่งที่ผมรู้สึกอย่างลึกซึ้งในหัวใจ และเรื่องราวทั้งหมดเริ่มต้นขึ้นได้อย่างไร"
+        "text": "ขออนุญาตเล่าถึงเหตุผลว่าทำไมพันธกิจนี้จึงเป็นสิ่งที่ผมรู้สึกอย่างลึกซึ้งในหัวใจ และเรื่องราวทั้งหมดเริ่มต้นขึ้นได้อย่างไร",
+        "runs": [
+          {
+            "text": "ขออนุญาตเล่าถึงเหตุผลว่าทำไมพันธกิจนี้จึงเป็นสิ่งที่ผมรู้สึกอย่างลึกซึ้งในหัวใจ และเรื่องราวทั้งหมดเริ่มต้นขึ้นได้อย่างไร",
+            "bold": false,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "แบรนด์ PROTAI Beauty & Wellness ถูกก่อตั้งขึ้นในประเทศญี่ปุ่น แต่ต้นกำเนิดแท้จริงของมันอยู่ที่ PROSUNFUN Biotech ประเทศไต้หวัน ซึ่งเป็นบริษัทที่ทุ่มเททำการวิจัยลำดับกรดอะมิโนของเปปไทด์มานานกว่าสิบปี"
+        "text": "แบรนด์ PROTAI Beauty & Wellness ถูกก่อตั้งขึ้นในประเทศญี่ปุ่น แต่ต้นกำเนิดแท้จริงของมันอยู่ที่ PROSUNFUN Biotech ประเทศไต้หวัน ซึ่งเป็นบริษัทที่ทุ่มเททำการวิจัยลำดับกรดอะมิโนของเปปไทด์มานานกว่าสิบปี",
+        "runs": [
+          {
+            "text": "แบรนด์ ",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "PROTAI Beauty & Wellness",
+            "bold": true,
+            "italic": false
+          },
+          {
+            "text": " ถูกก่อตั้งขึ้นในประเทศญี่ปุ่น แต่ต้นกำเนิดแท้จริงของมันอยู่ที่ ",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "PROSUNFUN Biotech",
+            "bold": true,
+            "italic": false
+          },
+          {
+            "text": " ประเทศไต้หวัน ซึ่งเป็นบริษัทที่ทุ่มเททำการวิจัยลำดับกรดอะมิโนของเปปไทด์มานานกว่าสิบปี",
+            "bold": false,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "ในระหว่างการวิจัยนั้น ทีมงานได้ค้นพบเปปไทด์ชนิดหนึ่ง ซึ่งมีศักยภาพในการช่วยกระตุ้นการฟื้นฟูของเส้นประสาทตา"
+        "text": "ในระหว่างการวิจัยนั้น ทีมงานได้ค้นพบเปปไทด์ชนิดหนึ่ง ซึ่งมีศักยภาพในการช่วยกระตุ้นการฟื้นฟูของเส้นประสาทตา",
+        "runs": [
+          {
+            "text": "ในระหว่างการวิจัยนั้น ทีมงานได้ค้นพบเปปไทด์ชนิดหนึ่ง ซึ่งมีศักยภาพในการช่วยกระตุ้นการฟื้นฟูของเส้นประสาทตา",
+            "bold": false,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "ในปี 2022 เมื่อบิดาของผมล้มป่วย ผมได้กลับไปยังไต้หวันหลังจากจากบ้านมาหลายปี และในตอนนั้นเอง ผมเพิ่งได้เข้าใจอย่างแท้จริงว่าบริษัทของท่านกำลังทำการวิจัยที่ยิ่งใหญ่เพียงใด"
+        "text": "ในปี 2022 เมื่อบิดาของผมล้มป่วย ผมได้กลับไปยังไต้หวันหลังจากจากบ้านมาหลายปี และในตอนนั้นเอง ผมเพิ่งได้เข้าใจอย่างแท้จริงว่าบริษัทของท่านกำลังทำการวิจัยที่ยิ่งใหญ่เพียงใด",
+        "runs": [
+          {
+            "text": "ในปี ",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "2022",
+            "bold": true,
+            "italic": false
+          },
+          {
+            "text": " เมื่อบิดาของผมล้มป่วย ผมได้กลับไปยังไต้หวันหลังจากจากบ้านมาหลายปี และในตอนนั้นเอง ผมเพิ่งได้เข้าใจอย่างแท้จริงว่าบริษัทของท่านกำลังทำการวิจัยที่ยิ่งใหญ่เพียงใด",
+            "bold": false,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "เมื่อผมได้อ่านข้อมูลการวิจัยของ PROTAI เป็นครั้งแรก ผมรู้ทันทีว่า “สิ่งนี้พิเศษอย่างแท้จริง และมีคุณค่าต่อโลกใบนี้”"
+        "text": "เมื่อผมได้อ่านข้อมูลการวิจัยของ PROTAI เป็นครั้งแรก ผมรู้ทันทีว่า “สิ่งนี้พิเศษอย่างแท้จริง และมีคุณค่าต่อโลกใบนี้”",
+        "runs": [
+          {
+            "text": "เมื่อผมได้อ่านข้อมูลการวิจัยของ PROTAI เป็นครั้งแรก ผมรู้ทันทีว่า “สิ่งนี้พิเศษอย่างแท้จริง และมีคุณค่าต่อโลกใบนี้”",
+            "bold": false,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "จากจุดนั้น ผมเริ่มต้นใหม่จากศูนย์ในไต้หวัน ตามหาช่องทางการจัดจำหน่ายและพันธมิตรที่มีความเชื่อและความหลงใหลเช่นเดียวกัน และด้วยแรงสนับสนุนอันยิ่งใหญ่ของทุกฝ่าย เราประสบความสำเร็จในการจำหน่าย 80,000 ขวดภายในเดือนกันยายน 2025 ช่วยให้ผู้คนจำนวนมากกลับมารู้สึกสบายและมั่นใจในดวงตาของตนเองอีกครั้ง"
+        "text": "จากจุดนั้น ผมเริ่มต้นใหม่จากศูนย์ในไต้หวัน ตามหาช่องทางการจัดจำหน่ายและพันธมิตรที่มีความเชื่อและความหลงใหลเช่นเดียวกัน และด้วยแรงสนับสนุนอันยิ่งใหญ่ของทุกฝ่าย เราประสบความสำเร็จในการจำหน่าย 80,000 ขวดภายในเดือนกันยายน 2025 ช่วยให้ผู้คนจำนวนมากกลับมารู้สึกสบายและมั่นใจในดวงตาของตนเองอีกครั้ง",
+        "runs": [
+          {
+            "text": "จากจุดนั้น ผมเริ่มต้นใหม่จากศูนย์ในไต้หวัน ตามหาช่องทางการจัดจำหน่ายและพันธมิตรที่มีความเชื่อและความหลงใหลเช่นเดียวกัน และด้วยแรงสนับสนุนอันยิ่งใหญ่ของทุกฝ่าย เราประสบความสำเร็จในการจำหน่าย ",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "80,000 ขวดภายในเดือนกันยายน 2025",
+            "bold": true,
+            "italic": false
+          },
+          {
+            "text": " ช่วยให้ผู้คนจำนวนมากกลับมารู้สึกสบายและมั่นใจในดวงตาของตนเองอีกครั้ง",
+            "bold": false,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "ผ่านประสบการณ์ทั้งหมดนี้ ผมได้ตระหนักถึงบางสิ่งที่ลึกซึ้ง — สิ่งสำคัญไม่ใช่เพียงตัวเปปไทด์เท่านั้น แต่คือ “หัวใจของผู้คน” ที่ต้องการใช้มันเพื่อส่งต่อความหมายและการเยียวยา"
+        "text": "ผ่านประสบการณ์ทั้งหมดนี้ ผมได้ตระหนักถึงบางสิ่งที่ลึกซึ้ง — สิ่งสำคัญไม่ใช่เพียงตัวเปปไทด์เท่านั้น แต่คือ “หัวใจของผู้คน” ที่ต้องการใช้มันเพื่อส่งต่อความหมายและการเยียวยา",
+        "runs": [
+          {
+            "text": "ผ่านประสบการณ์ทั้งหมดนี้ ผมได้ตระหนักถึงบางสิ่งที่ลึกซึ้ง — สิ่งสำคัญไม่ใช่เพียงตัวเปปไทด์เท่านั้น แต่คือ “หัวใจของผู้คน” ที่ต้องการใช้มันเพื่อส่งต่อความหมายและการเยียวยา",
+            "bold": false,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "สำหรับผม PROTAI ไม่ใช่แค่ผลิตภัณฑ์ทางชีวเทคโนโลยี แต่มันคือ “สัญลักษณ์ของความใส่ใจ” เป็นวิธีการที่อ่อนโยนในการมอบพลังชีวิตและการเยียวยา ให้แก่ผู้คนที่ต้องเผชิญกับความเหนื่อยล้า ความเครียด และความแห้งกร้านในชีวิตประจำวัน"
+        "text": "สำหรับผม PROTAI ไม่ใช่แค่ผลิตภัณฑ์ทางชีวเทคโนโลยี แต่มันคือ “สัญลักษณ์ของความใส่ใจ” เป็นวิธีการที่อ่อนโยนในการมอบพลังชีวิตและการเยียวยา ให้แก่ผู้คนที่ต้องเผชิญกับความเหนื่อยล้า ความเครียด และความแห้งกร้านในชีวิตประจำวัน",
+        "runs": [
+          {
+            "text": "สำหรับผม ",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "PROTAI ไม่ใช่แค่ผลิตภัณฑ์ทางชีวเทคโนโลยี",
+            "bold": true,
+            "italic": false
+          },
+          {
+            "text": " แต่มันคือ “สัญลักษณ์ของความใส่ใจ” เป็นวิธีการที่อ่อนโยนในการมอบพลังชีวิตและการเยียวยา ให้แก่ผู้คนที่ต้องเผชิญกับความเหนื่อยล้า ความเครียด และความแห้งกร้านในชีวิตประจำวัน",
+            "bold": false,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "เรามักกล่าวกันว่า “ดวงตาคือหน้าต่างของจิตวิญญาณ” และเมื่อหน้าต่างนั้นเหนื่อยล้า หลายคนบอกกับเราว่า “PROTAI ได้มอบความสบายให้กับฉันจริง ๆ”"
+        "text": "เรามักกล่าวกันว่า “ดวงตาคือหน้าต่างของจิตวิญญาณ” และเมื่อหน้าต่างนั้นเหนื่อยล้า หลายคนบอกกับเราว่า “PROTAI ได้มอบความสบายให้กับฉันจริง ๆ”",
+        "runs": [
+          {
+            "text": "เรามักกล่าวกันว่า “ดวงตาคือหน้าต่างของจิตวิญญาณ” และเมื่อหน้าต่างนั้นเหนื่อยล้า หลายคนบอกกับเราว่า ",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "“PROTAI ได้มอบความสบายให้กับฉันจริง ๆ”",
+            "bold": true,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "เสียงเหล่านั้นไม่ได้มาจากผู้สูงอายุเท่านั้น แต่ยังมาจากนักเรียนที่กำลังเตรียมสอบ พนักงานออฟฟิศที่ทำงานหน้าคอมพิวเตอร์เป็นเวลานาน รวมถึงผู้คนอีกมากมายในโลกดิจิทัลยุคปัจจุบัน"
+        "text": "เสียงเหล่านั้นไม่ได้มาจากผู้สูงอายุเท่านั้น แต่ยังมาจากนักเรียนที่กำลังเตรียมสอบ พนักงานออฟฟิศที่ทำงานหน้าคอมพิวเตอร์เป็นเวลานาน รวมถึงผู้คนอีกมากมายในโลกดิจิทัลยุคปัจจุบัน",
+        "runs": [
+          {
+            "text": "เสียงเหล่านั้นไม่ได้มาจากผู้สูงอายุเท่านั้น แต่ยังมาจากนักเรียนที่กำลังเตรียมสอบ พนักงานออฟฟิศที่ทำงานหน้าคอมพิวเตอร์เป็นเวลานาน รวมถึงผู้คนอีกมากมายในโลกดิจิทัลยุคปัจจุบัน",
+            "bold": false,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "สำหรับทุกคนเหล่านั้น เราต้องการมอบ “ความชุ่มชื้น ความผ่อนคลาย และความสุข” นั่นจึงเป็นเหตุผลที่ผมเรียก PROTAI ว่า ‘เปปไทด์แห่งความสุข’"
+        "text": "สำหรับทุกคนเหล่านั้น เราต้องการมอบ “ความชุ่มชื้น ความผ่อนคลาย และความสุข” นั่นจึงเป็นเหตุผลที่ผมเรียก PROTAI ว่า ‘เปปไทด์แห่งความสุข’",
+        "runs": [
+          {
+            "text": "สำหรับทุกคนเหล่านั้น เราต้องการมอบ “ความชุ่มชื้น ความผ่อนคลาย และความสุข” นั่นจึงเป็นเหตุผลที่ผมเรียก ",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "PROTAI ว่า ‘เปปไทด์แห่งความสุข’",
+            "bold": true,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "พันธกิจของมันเรียบง่ายแต่ทรงพลัง — เพื่อทำให้โลกของเรา และชีวิตประจำวันของเรา สดใสขึ้น อบอุ่นขึ้น และเต็มไปด้วยความหมายมากยิ่งขึ้น"
+        "text": "พันธกิจของมันเรียบง่ายแต่ทรงพลัง — เพื่อทำให้โลกของเรา และชีวิตประจำวันของเรา สดใสขึ้น อบอุ่นขึ้น และเต็มไปด้วยความหมายมากยิ่งขึ้น",
+        "runs": [
+          {
+            "text": "พันธกิจของมันเรียบง่ายแต่ทรงพลัง — เพื่อทำให้โลกของเรา และชีวิตประจำวันของเรา สดใสขึ้น อบอุ่นขึ้น และเต็มไปด้วยความหมายมากยิ่งขึ้น",
+            "bold": false,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "นี่แหละครับ คือ “คุณค่าที่แท้จริงของ PROTAI”"
+        "text": "นี่แหละครับ คือ “คุณค่าที่แท้จริงของ PROTAI”",
+        "runs": [
+          {
+            "text": "นี่แหละครับ คือ “คุณค่าที่แท้จริงของ PROTAI”",
+            "bold": false,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "ด้วยการผสมผสานระหว่าง เทคโนโลยีชีวภาพชั้นสูงจากไต้หวัน และ ความประณีตในงานฝีมือของญี่ปุ่น เป้าหมายของผมคือการส่งมอบของขวัญชิ้นนี้ให้กับผู้ที่ต้องการมันมากที่สุด ในวิธีที่ “ซื่อสัตย์ อ่อนโยน และมีมนุษยธรรมที่สุด”"
+        "text": "ด้วยการผสมผสานระหว่าง เทคโนโลยีชีวภาพชั้นสูงจากไต้หวัน และ ความประณีตในงานฝีมือของญี่ปุ่น เป้าหมายของผมคือการส่งมอบของขวัญชิ้นนี้ให้กับผู้ที่ต้องการมันมากที่สุด ในวิธีที่ “ซื่อสัตย์ อ่อนโยน และมีมนุษยธรรมที่สุด”",
+        "runs": [
+          {
+            "text": "ด้วยการผสมผสานระหว่าง ",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "เทคโนโลยีชีวภาพชั้นสูงจากไต้หวัน",
+            "bold": true,
+            "italic": false
+          },
+          {
+            "text": " และ ",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "ความประณีตในงานฝีมือของญี่ปุ่น",
+            "bold": true,
+            "italic": false
+          },
+          {
+            "text": " เป้าหมายของผมคือการส่งมอบของขวัญชิ้นนี้ให้กับผู้ที่ต้องการมันมากที่สุด ในวิธีที่ “ซื่อสัตย์ อ่อนโยน และมีมนุษยธรรมที่สุด”",
+            "bold": false,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "สิ่งนี้ได้กลายเป็น “ความฝันและเป้าหมายชีวิตของผม”"
+        "text": "สิ่งนี้ได้กลายเป็น “ความฝันและเป้าหมายชีวิตของผม”",
+        "runs": [
+          {
+            "text": "สิ่งนี้ได้กลายเป็น “ความฝันและเป้าหมายชีวิตของผม”",
+            "bold": false,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "ตั้งแต่วันที่ผมได้รู้จักกับ PROTAI ผมเองก็ได้รับการเยียวยาจากมันเช่นกัน และทุกครั้งที่มีใครสักคนเข้าใจในคุณค่าของมัน และรู้สึกถึงพลังอ่อนโยนนั้น ผมรู้สึกถึง “ความสุขและความหมายอันลึกซึ้ง”"
+        "text": "ตั้งแต่วันที่ผมได้รู้จักกับ PROTAI ผมเองก็ได้รับการเยียวยาจากมันเช่นกัน และทุกครั้งที่มีใครสักคนเข้าใจในคุณค่าของมัน และรู้สึกถึงพลังอ่อนโยนนั้น ผมรู้สึกถึง “ความสุขและความหมายอันลึกซึ้ง”",
+        "runs": [
+          {
+            "text": "ตั้งแต่วันที่ผมได้รู้จักกับ PROTAI ผมเองก็ได้รับการเยียวยาจากมันเช่นกัน และทุกครั้งที่มีใครสักคนเข้าใจในคุณค่าของมัน และรู้สึกถึงพลังอ่อนโยนนั้น ผมรู้สึกถึง “ความสุขและความหมายอันลึกซึ้ง”",
+            "bold": false,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "ตลอดปี 2025 ผมได้ทุ่มเททั้งแรงกายและแรงใจ เพื่อสร้างสรรค์แบรนด์ PROTAI ให้เติบโตอย่างมั่นคงในประเทศญี่ปุ่น"
+        "text": "ตลอดปี 2025 ผมได้ทุ่มเททั้งแรงกายและแรงใจ เพื่อสร้างสรรค์แบรนด์ PROTAI ให้เติบโตอย่างมั่นคงในประเทศญี่ปุ่น",
+        "runs": [
+          {
+            "text": "ตลอดปี ",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "2025",
+            "bold": true,
+            "italic": false
+          },
+          {
+            "text": " ผมได้ทุ่มเททั้งแรงกายและแรงใจ เพื่อสร้างสรรค์แบรนด์ PROTAI ให้เติบโตอย่างมั่นคงในประเทศญี่ปุ่น",
+            "bold": false,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "และเหนือสิ่งอื่นใด ผมเชื่อมั่นว่า “สิ่งที่มีค่าที่สุดคือการได้เห็นความสุขของผู้คนที่เราได้ช่วยเหลือ”"
+        "text": "และเหนือสิ่งอื่นใด ผมเชื่อมั่นว่า “สิ่งที่มีค่าที่สุดคือการได้เห็นความสุขของผู้คนที่เราได้ช่วยเหลือ”",
+        "runs": [
+          {
+            "text": "และเหนือสิ่งอื่นใด ผมเชื่อมั่นว่า “สิ่งที่มีค่าที่สุดคือการได้เห็นความสุขของผู้คนที่เราได้ช่วยเหลือ”",
+            "bold": false,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "ที่ไต้หวัน ผมได้พบกับผู้คนมากมาย ซึ่งชีวิตของพวกเขาเปลี่ยนแปลงไปอย่างเงียบงันด้วย PROTAI และในแต่ละการพบเจอนั้น มันคือ “ปาฏิหาริย์เล็ก ๆ” ที่น่าประทับใจ"
+        "text": "ที่ไต้หวัน ผมได้พบกับผู้คนมากมาย ซึ่งชีวิตของพวกเขาเปลี่ยนแปลงไปอย่างเงียบงันด้วย PROTAI และในแต่ละการพบเจอนั้น มันคือ “ปาฏิหาริย์เล็ก ๆ” ที่น่าประทับใจ",
+        "runs": [
+          {
+            "text": "ที่ไต้หวัน ผมได้พบกับผู้คนมากมาย ซึ่งชีวิตของพวกเขาเปลี่ยนแปลงไปอย่างเงียบงันด้วย PROTAI และในแต่ละการพบเจอนั้น มันคือ “ปาฏิหาริย์เล็ก ๆ” ที่น่าประทับใจ",
+            "bold": false,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "วันนี้ ผมอยากเชิญชวนทุกท่านมาร่วมแบ่งปัน “ปาฏิหาริย์นั้น” ผ่าน IPPONGI — แบรนด์แห่งสุขภาวะที่ถือกำเนิดขึ้นในเกียวโต ประเทศญี่ปุ่น และร่วมกันสร้าง “ความฝันแห่งการเยียวยา” ให้เป็นจริง"
+        "text": "วันนี้ ผมอยากเชิญชวนทุกท่านมาร่วมแบ่งปัน “ปาฏิหาริย์นั้น” ผ่าน IPPONGI — แบรนด์แห่งสุขภาวะที่ถือกำเนิดขึ้นในเกียวโต ประเทศญี่ปุ่น และร่วมกันสร้าง “ความฝันแห่งการเยียวยา” ให้เป็นจริง",
+        "runs": [
+          {
+            "text": "วันนี้ ผมอยากเชิญชวนทุกท่านมาร่วมแบ่งปัน “ปาฏิหาริย์นั้น” ผ่าน ",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "IPPONGI",
+            "bold": true,
+            "italic": false
+          },
+          {
+            "text": " — แบรนด์แห่งสุขภาวะที่ถือกำเนิดขึ้นในเกียวโต ประเทศญี่ปุ่น และร่วมกันสร้าง “ความฝันแห่งการเยียวยา” ให้เป็นจริง",
+            "bold": false,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "ขอขอบพระคุณทุกท่านอย่างสุดซึ้ง ที่สละเวลาอันมีค่าเพื่ออ่านข้อความนี้"
+        "text": "ขอขอบพระคุณทุกท่านอย่างสุดซึ้ง ที่สละเวลาอันมีค่าเพื่ออ่านข้อความนี้",
+        "runs": [
+          {
+            "text": "ขอขอบพระคุณทุกท่านอย่างสุดซึ้ง ที่สละเวลาอันมีค่าเพื่ออ่านข้อความนี้",
+            "bold": false,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "p",
-        "text": "จากใจจริงของผม ขอขอบคุณด้วยความเคารพอย่างสูง"
+        "text": "จากใจจริงของผม ขอขอบคุณด้วยความเคารพอย่างสูง",
+        "runs": [
+          {
+            "text": "จากใจจริงของผม ",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "ขอขอบคุณด้วยความเคารพอย่างสูง",
+            "bold": true,
+            "italic": false
+          }
+        ]
       },
       {
         "type": "h3",

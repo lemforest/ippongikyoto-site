@@ -45,7 +45,7 @@ const cleanTitle = page.title?.replace(/\s*- ippongikyoto\.com$/, '') || 'IPPONG
     <div class="top-rule" aria-hidden="true"></div>
     <header class="site-header" id="top">
       <div class="header-inner">
-        <a class="wordmark" href={home[lang]} aria-label="IPPONGI Kyoto — Home"><span>IPPONGI</span><small>KYOTO</small></a>
+        <a class="wordmark" href={home[lang]} aria-label="IPPONGI Kyoto — Home"><span class="wordmark-mark" aria-hidden="true"><img src="/brand/ippongi-logo-20250512.png" alt="" width="1493" height="1740" /></span><span class="wordmark-type"><span>IPPONGI</span><small>KYOTO</small></span></a>
         <nav class="desktop-nav" aria-label="Primary navigation">
           <a class={page.path === home[lang] ? 'active' : ''} href={home[lang]}>{nav.home}</a>
           <a class={page.path === message[lang] ? 'active' : ''} href={message[lang]}>{nav.message}</a>

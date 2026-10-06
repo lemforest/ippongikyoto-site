@@ -31,12 +31,12 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
 .top-rule { height: 5px; background: linear-gradient(90deg, var(--forest) 0 58%, var(--mist) 58% 83%, var(--apricot) 83%); }
 .site-header { position: sticky; z-index: 50; top: 0; background: rgb(247 247 242 / 94%); backdrop-filter: blur(18px); border-bottom: 1px solid var(--line); }
 .header-inner { display: flex; align-items: center; width: min(100% - 72px, 1460px); min-height: 78px; margin: auto; gap: 4vw; }
-.wordmark { display: flex; align-items: center; flex: none; width: 160px; gap: 9px; line-height: 1; color: var(--forest); }
+.wordmark { display: flex; align-items: center; flex: none; width: 205px; gap: 9px; line-height: 1; color: var(--forest); }
 .wordmark-mark { display: block; flex: none; width: 46px; height: 46px; overflow: hidden; }
 .wordmark-mark img { width: 46px; height: auto; max-width: none; }
 .wordmark-type { display: flex; flex-direction: column; min-width: 0; }
-.wordmark-type > span { font-family: var(--display); font-size: 22px; font-weight: 600; letter-spacing: .025em; }
-.wordmark-type small { font-size: 8px; letter-spacing: .25em; padding-left: 2px; margin-top: 4px; }
+.wordmark-type > span { font-family: 'Cormorant Garamond', 'Iowan Old Style', Georgia, serif; font-size: 29px; font-weight: 500; letter-spacing: .045em; }
+.wordmark-type small { font-size: 9px; letter-spacing: .28em; padding-left: 3px; margin-top: 4px; }
 .desktop-nav { display: flex; align-items: center; justify-content: center; flex: 1; gap: clamp(20px, 2.7vw, 46px); }
 .desktop-nav a { position: relative; white-space: nowrap; font-size: 13px; font-weight: 500; color: var(--ink); transition: color .25s ease; }
 .desktop-nav a::after { content: ''; position: absolute; left: 0; right: 100%; bottom: -9px; height: 1px; background: var(--forest); transition: right .35s cubic-bezier(.2,.7,.2,1); }
@@ -265,7 +265,7 @@ html[lang='ja'] .product-hero-copy h1 { font-size: clamp(32px, 3.2vw, 50px); lin
   .wordmark { width: auto; }
   .wordmark-mark { width: 42px; height: 42px; }
   .wordmark-mark img { width: 42px; }
-  .wordmark-type > span { font-size: 21px; }
+  .wordmark-type > span { font-size: 25px; }
   .header-actions { width: auto; }
   .menu-toggle { display: flex; flex-direction: column; justify-content: center; gap: 6px; width: 36px; height: 36px; padding: 5px; border: 0; background: transparent; }
   .menu-toggle span { display: block; height: 1px; width: 24px; background: var(--forest); }

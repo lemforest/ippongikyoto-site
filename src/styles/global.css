@@ -261,6 +261,7 @@ html[lang='ja'] .product-hero-copy h1 { font-size: clamp(32px, 3.2vw, 50px); lin
 }
 .contact-note a { display: inline-block; margin-top: 12px; border-bottom: 1px solid var(--forest); font-size: 13px; }
 .contact-invite h2 { font-family: var(--display); font-size: clamp(50px, 5vw, 80px); font-weight: 500; margin: 0 0 20px; color: var(--forest); }
+.contact-section-fr .contact-invite h2 { line-height: 1.08; }
 .contact-invite a { font-size: clamp(17px, 2vw, 25px); border-bottom: 1px solid var(--forest); overflow-wrap: anywhere; }
 .contact-details { display: grid; gap: 45px; }
 .contact-details span { display: block; font-size: 12px; font-weight: 600; margin-bottom: 8px; color: var(--forest); }

@@ -261,9 +261,10 @@ html[lang='ja'] .product-hero-copy h1 { font-size: clamp(32px, 3.2vw, 50px); lin
 }
 .contact-note a { display: inline-block; margin-top: 12px; border-bottom: 1px solid var(--forest); font-size: 13px; }
 .contact-invite h2 { font-family: var(--display); font-size: clamp(50px, 5vw, 80px); font-weight: 500; margin: 0 0 20px; color: var(--forest); }
-.contact-section-fr .contact-invite h2 { line-height: 1.08; }
+.contact-section-fr .contact-invite h2, .contact-section-th .contact-invite h2 { line-height: 1.08; }
 .contact-invite a { font-size: clamp(17px, 2vw, 25px); border-bottom: 1px solid var(--forest); overflow-wrap: anywhere; }
 .contact-details { display: grid; gap: 45px; }
+.contact-section-th .contact-details { gap: 20px; align-content: start; }
 .contact-details span { display: block; font-size: 12px; font-weight: 600; margin-bottom: 8px; color: var(--forest); }
 .contact-details p { margin: 0; color: var(--muted); }
 
@@ -272,7 +273,7 @@ html[lang='ja'] .product-hero-copy h1 { font-size: clamp(32px, 3.2vw, 50px); lin
 .footer-inner { width: min(100% - 96px, 1280px); margin: auto; padding: 72px 0 55px; display: grid; grid-template-columns: 1.25fr 1fr .7fr; gap: 7%; }
 .footer-brand { display: flex; flex-direction: column; align-items: flex-start; }
 .footer-kicker { font-family: var(--display); font-size: 19px; color: var(--muted); }
-.footer-brand strong { font-family: var(--display); font-size: 68px; font-weight: 500; line-height: 1.2; color: var(--forest); }
+.footer-brand strong { font-family: 'Cormorant Garamond', 'Iowan Old Style', Georgia, serif; font-size: 68px; font-weight: 500; line-height: 1.2; color: var(--forest); }
 .footer-brand p { margin: 0; color: var(--muted); }
 .footer-contact span { font-size: 11px; font-weight: 600; }
 .footer-contact a { display: block; margin: 14px 0 22px; border-bottom: 1px solid var(--forest); width: fit-content; }

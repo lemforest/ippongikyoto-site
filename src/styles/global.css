@@ -67,7 +67,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
 
 /* Homepage: optical portrait, editorial chapters, quiet product presentation. */
 .home-hero { position: relative; display: grid; grid-template-columns: minmax(0, 46%) minmax(0, 54%); min-height: min(780px, 87vh); width: min(100%, 1600px); margin: auto; overflow: hidden; }
-.hero-copy { position: relative; z-index: 1; align-self: center; padding: 75px max(6vw, calc((100vw - 1280px) / 2)) 94px max(48px, calc((100vw - 1280px) / 2)); }
+.hero-copy { position: relative; z-index: 1; align-self: center; padding: 75px clamp(44px, 6vw, 90px) 94px clamp(48px, calc((100vw - 1280px) / 2), 130px); }
 .chapter-label { margin: 0 0 34px; }
 .hero-copy h1 { margin: 0; max-width: 620px; font-family: var(--display); font-weight: 500; font-size: clamp(56px, 6.6vw, 112px); letter-spacing: -.04em; line-height: .96; color: var(--forest); }
 .hero-title-line { display: block; }
@@ -155,6 +155,18 @@ html[lang='ja'] .reasons-summary { font-size: clamp(18px, 1.65vw, 21px); }
 .who-content li::before { content: '—'; position: absolute; left: 0; color: var(--muted); }
 .who-content p { margin: 23px 0 0; color: var(--muted); }
 .product-section { padding-top: 146px; padding-bottom: 146px; }
+.testimonials-section { padding: 108px 0 120px; background: #e9ece6; }
+.testimonials-heading { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .75fr); align-items: end; gap: 10%; margin-bottom: 46px; }
+.testimonials-heading h2 { margin: 16px 0 0; font-family: var(--display); font-size: clamp(46px, 5vw, 76px); font-weight: 500; line-height: 1.08; color: var(--forest); }
+.testimonials-heading > p { max-width: 430px; margin: 0; color: var(--muted); font-size: 16px; line-height: 1.8; }
+.testimonials-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.testimonial-card { display: flex; flex-direction: column; min-width: 0; min-height: 340px; margin: 0; padding: 32px 34px 28px; background: var(--paper); border: 1px solid var(--line); border-radius: 12px; }
+.testimonial-index { color: var(--muted); font-size: 11px; font-weight: 600; letter-spacing: .07em; }
+.testimonial-card blockquote { margin: 28px 0 36px; color: var(--forest); font-family: var(--display); font-size: clamp(25px, 2.25vw, 32px); line-height: 1.35; font-weight: 500; }
+html[lang='ja'] .testimonial-card blockquote, html[lang='th'] .testimonial-card blockquote { font-size: clamp(21px, 1.8vw, 26px); line-height: 1.6; }
+.testimonial-card figcaption { display: flex; flex-direction: column; gap: 4px; margin-top: auto; padding-top: 16px; border-top: 1px solid var(--line); }
+.testimonial-card figcaption strong { font-size: 13px; font-weight: 600; }
+.testimonial-card figcaption span { color: var(--muted); font-size: 12px; }
 .section-lead { display: grid; grid-template-columns: .55fr 1fr .95fr; align-items: end; gap: 5%; margin-bottom: 42px; }
 .section-lead .section-number { align-self: start; margin-top: 10px; }
 .section-lead h2 { font-family: var(--display); font-size: clamp(52px, 5vw, 82px); font-weight: 500; line-height: 1; margin: 0; color: var(--forest); }
@@ -173,6 +185,13 @@ html[lang='ja'] .reasons-summary { font-size: clamp(18px, 1.65vw, 21px); }
 .film-section { padding-top: 40px; padding-bottom: 144px; }
 .film-heading { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 24px; }
 .film-heading h2 { font-family: var(--display); font-size: clamp(52px, 5vw, 82px); font-weight: 500; color: var(--forest); margin: 0; }
+.film-preview { position: relative; height: clamp(440px, 45vw, 630px); margin: 0 0 48px; overflow: hidden; background: #123f52; }
+.film-preview-video { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; object-position: center; transform: scale(1.25); }
+.film-preview-shade { position: absolute; inset: 0; background: linear-gradient(90deg, transparent 10%, rgb(22 50 52 / 40%) 35%, #163234 55%, #163234 100%); }
+.film-preview-copy { position: absolute; z-index: 1; top: 50%; right: 5%; width: 35%; transform: translateY(-50%); color: var(--focus-ink); }
+.film-preview-copy span { font-size: 12px; letter-spacing: .1em; }
+.film-preview-copy h3 { margin: 26px 0 0; font-family: var(--display); font-size: clamp(42px, 4.6vw, 72px); font-weight: 500; line-height: 1.15; }
+html[lang='ja'] .film-preview-copy h3, html[lang='th'] .film-preview-copy h3 { font-size: clamp(36px, 3.8vw, 56px); line-height: 1.35; }
 .film-frame { background: var(--ink); box-shadow: var(--shadow); }
 .film-frame video { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
 .film-caption { margin: 10px 0 0; font-size: 11px; color: var(--muted); }
@@ -327,6 +346,12 @@ html[lang='ja'] .product-hero-copy h1 { font-size: clamp(32px, 3.2vw, 50px); lin
   .hero-copy h1 { font-size: clamp(50px, 6vw, 82px); }
   .origin-panel { padding-inline: 7vw; }
 }
+@media (max-width: 900px) {
+  .testimonials-heading { grid-template-columns: 1fr; gap: 24px; }
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .testimonial-card { min-height: 0; }
+  .film-preview-copy { right: 5%; width: 42%; }
+}
 @media (max-width: 1180px) {
   .desktop-nav { display: none; }
   .header-inner { min-height: 70px; justify-content: space-between; }
@@ -361,6 +386,7 @@ html[lang='ja'] .product-hero-copy h1 { font-size: clamp(32px, 3.2vw, 50px); lin
   .who-image { min-height: 380px; height: 58vw; }
   .who-content { padding: 68px 9vw 80px; }
   .product-section { padding-top: 95px; padding-bottom: 95px; }
+  .testimonials-section { padding: 80px 0 90px; }
   .section-lead { grid-template-columns: 1fr; gap: 12px; }
   .section-lead h2 { margin-top: 9px; }
   .product-photo { min-height: 280px; }
@@ -403,6 +429,12 @@ html[lang='ja'] .product-hero-copy h1 { font-size: clamp(32px, 3.2vw, 50px); lin
   .product-photo { min-height: 0; width: 100%; }
   .product-caption h3 { font-size: 27px; }
   .film-section { padding-top: 5px; padding-bottom: 90px; }
+  .film-preview { height: 500px; margin-bottom: 38px; }
+  .film-preview-video { object-position: 12% center; }
+  .film-preview-shade { background: linear-gradient(180deg, transparent 20%, rgb(22 50 52 / 10%) 43%, rgb(22 50 52 / 92%) 75%, #163234 100%); }
+  .film-preview-copy { top: auto; right: 24px; bottom: 42px; left: 24px; width: auto; transform: none; }
+  .film-preview-copy h3 { font-size: clamp(35px, 10vw, 48px); }
+  html[lang='ja'] .film-preview-copy h3, html[lang='th'] .film-preview-copy h3 { font-size: clamp(31px, 8vw, 40px); }
   .film-gallery { grid-template-columns: 1fr; gap: 30px; }
   .film-heading { display: block; }
   .film-heading h2 { margin-top: 8px; }

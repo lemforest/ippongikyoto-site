@@ -13,7 +13,7 @@ export type Testimonial = {
 
 // Page numbers refer to the supplied PROTAI Japanese and English review PDFs.
 // Taiwan's selected pages contain before/after labels rather than a clean quotation;
-// those cards are labeled as editorial summaries, not attributed quotes.
+// keep these as editorial summaries instead of attributing invented direct quotes.
 export const reviewItems: Testimonial[] = [
   {
     id: 'gentle-mist', country: 'jp', kind: 'excerpt', page: { ja: 3, en: 3 },
@@ -99,30 +99,30 @@ export const reviewItems: Testimonial[] = [
 
 export const testimonialCopy: Record<Locale, {
   eyebrow: string; heading: string; note: string; country: Record<Country, string>;
-  excerpt: string; summary: string; source: string; hint: string; pause: string; play: string; rail: [string, string];
+  hint: string; pause: string; play: string; rail: [string, string];
 }> = {
   ja: {
     eyebrow: 'User’s Voices', heading: '世界から届いた声',
-    note: '日本・マレーシア・台湾のお客様の声。抜粋と資料の要約を区別して掲載しています。個人の感想であり、効果を保証するものではありません。',
-    country: { jp: '日本', my: 'マレーシア', tw: '台湾' }, excerpt: '抜粋', summary: '資料の要約', source: '提供資料',
+    note: '日本・マレーシア・台湾のお客様の声を読みやすく編集しました。個人の感想であり、効果を保証するものではありません。',
+    country: { jp: '日本', my: 'マレーシア', tw: '台湾' },
     hint: '左右にドラッグして、ほかの声もご覧いただけます。', pause: '動きを止める', play: '動きを再開', rail: ['お客様の声・上段', 'お客様の声・下段'],
   },
   en: {
     eyebrow: 'User’s Voices', heading: 'Voices across borders',
-    note: 'Experiences from Japan, Malaysia and Taiwan. Excerpts and source summaries are labeled separately. Individual impressions do not guarantee results.',
-    country: { jp: 'Japan', my: 'Malaysia', tw: 'Taiwan' }, excerpt: 'Excerpt', summary: 'Source summary', source: 'Supplied review PDF',
+    note: 'Customer experiences from Japan, Malaysia and Taiwan, edited for readability. Individual impressions do not guarantee results.',
+    country: { jp: 'Japan', my: 'Malaysia', tw: 'Taiwan' },
     hint: 'Drag sideways to explore more voices.', pause: 'Pause movement', play: 'Resume movement', rail: ['Customer voices, first row', 'Customer voices, second row'],
   },
   fr: {
     eyebrow: 'Témoignages', heading: 'Des voix de plusieurs pays',
-    note: 'Des témoignages du Japon, de Malaisie et de Taïwan, traduits depuis les avis anglais fournis. Extraits et résumés sont distingués. Ces impressions personnelles ne garantissent aucun résultat.',
-    country: { jp: 'Japon', my: 'Malaisie', tw: 'Taïwan' }, excerpt: 'Extrait', summary: 'Résumé du document', source: 'Avis fourni en anglais',
+    note: 'Des témoignages du Japon, de Malaisie et de Taïwan, traduits depuis les avis anglais fournis et adaptés pour la lecture. Ces impressions personnelles ne garantissent aucun résultat.',
+    country: { jp: 'Japon', my: 'Malaisie', tw: 'Taïwan' },
     hint: 'Faites glisser les cartes pour découvrir d’autres témoignages.', pause: 'Mettre en pause', play: 'Reprendre le défilement', rail: ['Témoignages, première rangée', 'Témoignages, deuxième rangée'],
   },
   th: {
     eyebrow: 'เสียงจากผู้ใช้', heading: 'เสียงจากหลายประเทศ',
-    note: 'ประสบการณ์จากญี่ปุ่น มาเลเซีย และไต้หวัน แปลจากรีวิวภาษาอังกฤษที่ได้รับ โดยแยกข้อความตัดตอนกับสรุปจากเอกสาร ความรู้สึกส่วนบุคคลไม่ใช่การรับประกันผลลัพธ์',
-    country: { jp: 'ญี่ปุ่น', my: 'มาเลเซีย', tw: 'ไต้หวัน' }, excerpt: 'ข้อความตัดตอน', summary: 'สรุปจากเอกสาร', source: 'รีวิวภาษาอังกฤษที่ได้รับ',
+    note: 'ประสบการณ์จากญี่ปุ่น มาเลเซีย และไต้หวัน แปลจากรีวิวภาษาอังกฤษที่ได้รับและเรียบเรียงให้อ่านง่าย ความรู้สึกส่วนบุคคลไม่ใช่การรับประกันผลลัพธ์',
+    country: { jp: 'ญี่ปุ่น', my: 'มาเลเซีย', tw: 'ไต้หวัน' },
     hint: 'ลากการ์ดไปด้านข้างเพื่อดูความคิดเห็นเพิ่มเติม', pause: 'หยุดการเคลื่อนไหว', play: 'เล่นต่อ', rail: ['เสียงจากผู้ใช้ แถวแรก', 'เสียงจากผู้ใช้ แถวที่สอง'],
   },
 }

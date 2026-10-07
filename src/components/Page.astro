@@ -114,7 +114,7 @@ const contactData = {
   {isHome ? <>
     <section class:list={['home-hero', lang !== 'ja' && 'home-hero-translated']} data-hero>
       <div class="hero-copy"><p class="chapter-label" data-reveal>IPPONGI · Kyoto</p><h1>{heroLines.map((line) => <span class="hero-title-line">{line}{' '}</span>)}</h1><p class="hero-intro" data-reveal>{homeIntroLead}</p><div class="hero-actions" data-reveal><a class="text-link" href="#discover">{ui.discover}<span aria-hidden="true">↗</span></a><a class="quiet-link" href="#film">{ui.film}<span aria-hidden="true">↗</span></a></div></div>
-      <div class="hero-visual"><div class="hero-image-mask"><img src={homeHeroImage} alt="IPPONGI eye care visual" fetchpriority="high" /></div><span class="image-index">01 / PROTAI</span></div>
+      <div class="hero-visual"><div class="hero-image-mask"><img src={homeHeroImage} alt="IPPONGI eye care visual" fetchpriority="high" /></div></div>
       <div class="hero-sideword" aria-hidden="true">IPPONGI KYOTO</div>
     </section>
     {homeOpeningImages.length > 1 && <div class="home-opening-gallery section-wrap" aria-label="IPPONGI visual series">{homeOpeningImages.filter((item) => item.url !== homeHeroImage).map((item) => <img src={item.url} alt={item.alt || ''} loading="lazy" />)}</div>}

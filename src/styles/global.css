@@ -112,6 +112,9 @@ html[lang='ja'] .intro-heading p { text-wrap: balance; }
 .origin-section { display: grid; grid-template-columns: 58% 42%; min-height: 680px; background: #e5e9e3; }
 .origin-section-text { display: block; min-height: 0; }
 .origin-section-text .origin-panel { padding: 100px clamp(48px, 7vw, 130px); }
+@media (min-width: 781px) {
+  .origin-section-text .origin-panel { padding-inline: max(8vw, calc((100vw - 1280px) / 2)); }
+}
 .origin-section-text .origin-panel p { max-width: 850px; }
 .origin-image { overflow: hidden; min-height: 620px; }
 .origin-image img { width: 100%; height: 100%; object-fit: cover; }

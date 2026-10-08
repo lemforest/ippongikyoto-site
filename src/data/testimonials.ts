@@ -102,7 +102,7 @@ export const testimonialCopy: Record<Locale, {
   hint: string; pause: string; play: string; rail: [string, string];
 }> = {
   ja: {
-    eyebrow: 'User’s Voices', heading: '世界から届いた声',
+    eyebrow: 'お客様の声', heading: '世界から届いた声',
     note: '日本・マレーシア・台湾のお客様の声を読みやすく編集しました。個人の感想であり、効果を保証するものではありません。',
     country: { jp: '日本', my: 'マレーシア', tw: '台湾' },
     hint: '左右にドラッグして、ほかの声もご覧いただけます。', pause: '動きを止める', play: '動きを再開', rail: ['お客様の声・上段', 'お客様の声・下段'],

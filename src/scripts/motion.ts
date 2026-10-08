@@ -24,15 +24,6 @@ media.add('(prefers-reduced-motion: no-preference)', () => {
     }
   }
 
-  const reveals = gsap.utils.toArray<HTMLElement>('[data-reveal]')
-    .filter((element) => !element.closest('[data-hero]'))
-  reveals.forEach((element) => {
-    const firstView = element.getBoundingClientRect().top < window.innerHeight * .92
-    const animation = { autoAlpha: 0, y: 22, duration: .82, ease: 'power2.out' }
-    if (firstView) gsap.from(element, { ...animation, delay: .08 })
-    else gsap.from(element, { ...animation, scrollTrigger: { trigger: element, start: 'top 90%', once: true } })
-  })
-
   if (window.matchMedia('(min-width: 781px)').matches) {
     gsap.utils.toArray<HTMLElement>('[data-float-photo]').forEach((element) => {
       gsap.fromTo(element.querySelector('img'), { scale: 1.08, yPercent: -3 }, {

@@ -25,6 +25,12 @@ if (section && !reducedMotion.matches) {
       },
     })
     slider.mount({ AutoScroll })
+    const hideClones = () => element.querySelectorAll<HTMLElement>('.splide__slide--clone').forEach((clone) => {
+      clone.setAttribute('aria-hidden', 'true')
+      clone.inert = true
+    })
+    hideClones()
+    new MutationObserver(hideClones).observe(element, { childList: true, subtree: true })
     return slider
   })
   if (toggle) toggle.hidden = false

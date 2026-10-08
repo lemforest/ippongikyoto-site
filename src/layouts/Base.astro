@@ -109,6 +109,7 @@ const footer = {
     <script>
       import '../scripts/motion'
       if (document.querySelector('#voices')) void import('../scripts/testimonials')
+      if (document.querySelector('[data-home-slideshow]')) void import('../scripts/home-slideshow')
       const toggle = document.querySelector<HTMLButtonElement>('.menu-toggle')
       const mobile = document.querySelector<HTMLElement>('.mobile-nav')
       toggle?.addEventListener('click', () => {

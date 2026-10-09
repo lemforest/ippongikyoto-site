@@ -16,12 +16,6 @@ media.add('(prefers-reduced-motion: no-preference)', () => {
       .fromTo(hero.querySelector('.hero-image-mask'),
         { clipPath: 'inset(0 12% 0 12%)', scale: 1.04 },
         { clipPath: 'inset(0 0% 0 0%)', scale: 1, duration: 1.35, ease: 'power2.inOut' }, .18)
-    if (window.matchMedia('(min-width: 781px)').matches) {
-      gsap.to(hero.querySelector('.hero-image-mask img'), {
-        yPercent: 6, ease: 'none',
-        scrollTrigger: { trigger: hero, start: 'top top', end: 'bottom top', scrub: .7 },
-      })
-    }
   }
 
   if (window.matchMedia('(min-width: 781px)').matches) {

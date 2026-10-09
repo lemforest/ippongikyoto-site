@@ -179,7 +179,7 @@ html[lang='ja'] .reasons-summary { font-size: clamp(18px, 1.65vw, 21px); }
 .who-content li::before { content: '—'; position: absolute; left: 0; color: var(--muted); }
 .who-content p { margin: 23px 0 0; color: var(--muted); }
 .product-section { padding-top: 146px; padding-bottom: 146px; }
-.testimonials-section { padding: 108px 0 92px; overflow: hidden; background: #e9ece6; scroll-margin-top: 82px; }
+.testimonials-section { padding: 108px 0 44px; overflow: hidden; background: #e9ece6; scroll-margin-top: 82px; }
 .testimonials-heading { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .75fr); align-items: end; gap: 10%; margin-bottom: 46px; }
 .testimonials-heading h2 { margin: 16px 0 0; font-family: var(--display); font-size: clamp(46px, 5vw, 76px); font-weight: 500; line-height: 1.08; color: var(--forest); }
 .testimonials-heading > p { max-width: 430px; margin: 0; color: var(--muted); font-size: 16px; line-height: 1.8; }
@@ -440,7 +440,7 @@ html[lang='ja'] .product-hero-copy h1 { font-size: clamp(32px, 3.2vw, 50px); lin
   .who-image { min-height: 380px; height: 58vw; }
   .who-content { padding: 68px 9vw 80px; }
   .product-section { padding-top: 95px; padding-bottom: 95px; }
-  .testimonials-section { padding: 80px 0 90px; }
+  .testimonials-section { padding: 80px 0 32px; }
   .testimonials-heading { margin-bottom: 30px; }
   .testimonials-heading h2 { font-size: clamp(42px, 10vw, 59px); }
   .testimonial-rails { gap: 12px; }

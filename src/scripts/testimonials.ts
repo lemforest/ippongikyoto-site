@@ -9,10 +9,14 @@ if (section && !reducedMotion.matches) {
   let inView = false
   let userPaused = false
   const sliders = Array.from(section.querySelectorAll<HTMLElement>('[data-testimonial-slider]')).map((element) => {
+    const slide = element.querySelector<HTMLElement>('.splide__slide')
+    const originalCount = element.querySelectorAll('.splide__slide').length
+    const cloneCount = () => Math.ceil(element.clientWidth / ((slide?.getBoundingClientRect().width || 410) + 16)) + originalCount
     const slider = new Splide(element, {
       type: 'loop',
       autoWidth: true,
       gap: 16,
+      clones: cloneCount(),
       drag: 'free',
       arrows: false,
       pagination: false,
@@ -31,6 +35,10 @@ if (section && !reducedMotion.matches) {
     })
     hideClones()
     new MutationObserver(hideClones).observe(element, { childList: true, subtree: true })
+    window.addEventListener('resize', () => {
+      const clones = cloneCount()
+      if (slider.options.clones !== clones) slider.options = { clones }
+    })
     return slider
   })
   if (toggle) toggle.hidden = false

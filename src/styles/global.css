@@ -136,6 +136,7 @@ html[lang='ja'] .intro-heading p { text-wrap: balance; }
 .origin-panel { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; padding: 90px min(9vw, 130px); }
 .origin-panel h2 { margin: 26px 0; font-family: var(--display); font-size: clamp(52px, 4.5vw, 82px); line-height: 1.02; font-weight: 500; color: var(--forest); }
 .origin-panel p { max-width: 510px; color: var(--ink); font-size: 15px; line-height: 1.85; }
+.origin-film { align-self: center; width: min(100%, 850px); margin: 28px 0 0; }
 .origin-notes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 55px; padding-top: 65px; padding-bottom: 95px; }
 .origin-notes p { margin: 0; padding: 17px 0; border-top: 1px solid var(--line); color: var(--muted); }
 .origin-notes p:last-child:nth-child(odd) { grid-column: 1 / -1; max-width: 850px; }
@@ -231,6 +232,7 @@ html[lang='ja'] .film-preview-copy h3, html[lang='th'] .film-preview-copy h3 { f
 .film-frame video { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
 .film-caption { margin: 10px 0 0; font-size: 11px; color: var(--muted); }
 .film-gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
+.film-gallery-single { grid-template-columns: minmax(0, 850px); justify-content: center; }
 .film-entry { min-width: 0; }
 .closing-section { padding: 80px 0 156px; border-top: 1px solid var(--line); text-align: center; }
 .closing-section blockquote { margin: 24px auto 26px; font-family: var(--display); color: var(--forest); font-size: clamp(44px, 5.6vw, 84px); font-weight: 500; line-height: 1.1; }
@@ -484,6 +486,7 @@ html[lang='ja'] .product-hero-copy h1 { font-size: clamp(32px, 3.2vw, 50px); lin
   .origin-image { height: 74vw; min-height: 310px; }
   .origin-panel { padding: 54px 22px 65px; }
   .origin-panel h2 { font-size: clamp(40px, 12vw, 55px); overflow-wrap: anywhere; }
+  .origin-film { width: calc(100vw - 40px); margin-top: 22px; }
   .origin-notes { grid-template-columns: 1fr; padding-top: 50px; padding-bottom: 75px; }
   .origin-notes p:last-child:nth-child(odd) { grid-column: auto; }
   .reasons-section { padding-top: 76px; padding-bottom: 84px; }

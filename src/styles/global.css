@@ -123,7 +123,7 @@ html[lang='ja'] .intro-heading p { text-wrap: balance; }
 .intro-molecule { width: min(100%, 430px); height: auto; margin-top: 36px; }
 .intro-content { align-self: end; color: var(--muted); }
 .intro-content p { margin: 0 0 27px; }
-.intro-content .text-link { color: var(--forest); }
+.intro-content p:last-child { margin-bottom: 0; }
 .origin-section { display: grid; grid-template-columns: 58% 42%; min-height: 680px; background: #e5e9e3; }
 .origin-section-text { display: block; min-height: 0; }
 .origin-section-text .origin-panel { padding: 100px clamp(48px, 7vw, 130px); }

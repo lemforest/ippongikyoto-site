@@ -186,6 +186,7 @@ html[lang='ja'] .reasons-summary { font-size: clamp(18px, 1.65vw, 21px); }
 .testimonials-countries span { padding-bottom: 5px; border-bottom: 1px solid #aebcaf; }
 .testimonial-rails { display: grid; gap: 16px; }
 .testimonial-rail { min-width: 0; }
+.testimonial-rail .splide__track { overflow-anchor: none; }
 .testimonial-rail .splide__slide { width: min(410px, calc(100vw - 40px)); }
 .testimonial-rail:not(.is-initialized) .splide__track { overflow-x: auto; scrollbar-width: none; scroll-snap-type: x proximity; }
 .testimonial-rail:not(.is-initialized) .splide__list { display: flex; width: max-content; gap: 16px; }

@@ -29,6 +29,8 @@ if (section && !reducedMotion.matches) {
       },
     })
     slider.mount({ AutoScroll })
+    const track = element.querySelector<HTMLElement>('.splide__track')
+    if (track) track.scrollLeft = 0
     const hideClones = () => element.querySelectorAll<HTMLElement>('.splide__slide--clone').forEach((clone) => {
       clone.setAttribute('aria-hidden', 'true')
       clone.inert = true

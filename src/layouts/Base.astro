@@ -118,6 +118,17 @@ const footer = {
         if (mobile) mobile.hidden = !open
         document.body.classList.toggle('menu-open', open)
       })
+      const teaser = document.querySelector<HTMLVideoElement>('[data-teaser-video]')
+      if (teaser && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        teaser.addEventListener('timeupdate', () => {
+          if (teaser.currentTime >= 7.5) teaser.currentTime = 0
+        })
+        const observer = new IntersectionObserver(([entry]) => {
+          if (entry?.isIntersecting) teaser.play().catch(() => {})
+          else teaser.pause()
+        }, { threshold: .2 })
+        observer.observe(teaser)
+      }
     </script>
   </body>
 </html>

@@ -15,13 +15,13 @@ if (section && element) {
   const slider = new Splide(element, {
     type: 'fade',
     rewind: true,
-    speed: reducedMotion ? 0 : 550,
+    speed: reducedMotion ? 0 : 500,
     arrows: false,
     pagination: false,
     drag: true,
     keyboard: 'focused',
     autoplay: 'pause',
-    interval: 5000,
+    interval: 3000,
     pauseOnHover: true,
     pauseOnFocus: true,
   })

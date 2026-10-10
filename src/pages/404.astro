@@ -1,0 +1,53 @@
+---
+import Base from '../layouts/Base.astro'
+import type { SitePage } from '../data/types'
+
+const page: SitePage = {
+  path: '/404/',
+  lang: 'en',
+  kind: 'not-found',
+  title: 'Page not found',
+  description: 'The page you requested could not be found. Return to IPPONGI Kyoto in your preferred language.',
+  sourceUrl: 'https://ippongikyoto.com/',
+  text: '',
+  blocks: [],
+  images: [],
+  videos: [],
+  links: [],
+  alternates: {},
+}
+
+const homes = [
+  { lang: 'en', label: 'English', href: '/' },
+  { lang: 'ja', label: '日本語', href: '/ja/' },
+  { lang: 'fr', label: 'Français', href: '/fr/' },
+  { lang: 'th', label: 'ภาษาไทย', href: '/th/' },
+]
+---
+
+<Base page={page}>
+  <section class="not-found section-wrap" aria-labelledby="not-found-title">
+    <div class="not-found-copy">
+      <span class="section-number">404</span>
+      <h1 id="not-found-title">Page not found.</h1>
+      <p>The page you requested could not be found. Choose a language to return to the homepage.</p>
+      <a class="primary-link" href="/">Back to homepage <span aria-hidden="true">↗</span></a>
+    </div>
+    <nav class="not-found-languages" aria-label="Homepage by language">
+      {homes.map(({ lang, label, href }) => <a href={href} lang={lang}><span>{label}</span><span aria-hidden="true">↗</span></a>)}
+    </nav>
+  </section>
+</Base>
+
+<style>
+  .not-found { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(260px, .6fr); align-items: center; gap: clamp(48px, 8vw, 120px); min-height: min(680px, 72vh); padding-block: clamp(80px, 10vw, 140px); }
+  .not-found h1 { max-width: 780px; margin: 22px 0 20px; color: var(--forest); font-family: var(--display); font-size: clamp(54px, 7.2vw, 110px); font-weight: 500; letter-spacing: -.045em; line-height: 1; }
+  .not-found p { max-width: 510px; margin: 0 0 34px; color: var(--muted); font-size: clamp(16px, 1.5vw, 19px); }
+  .not-found-languages { border-top: 1px solid var(--line); }
+  .not-found-languages a { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 66px; padding: 12px 3px; border-bottom: 1px solid var(--line); color: var(--forest); font-size: 18px; }
+  .not-found-languages a:hover { color: var(--muted); }
+  @media (max-width: 780px) {
+    .not-found { grid-template-columns: 1fr; gap: 58px; min-height: 0; }
+    .not-found-languages a { min-height: 58px; }
+  }
+</style>

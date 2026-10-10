@@ -18,6 +18,12 @@ npm run dev
 
 在這台電腦開啟 <http://127.0.0.1:4321/>。正式輸出使用 `npm run build`，檔案位於 `dist/`；可用 `npm run preview` 檢視。`npm run check` 進行型別檢查。
 
+## 靜態預覽部署
+
+預覽站應將 `dist/` 部署至 Cloudflare Pages 等靜態主機，不以 `astro preview` 當公開伺服器。Cloudflare Pages 的建置命令為 `npm run build`、輸出目錄為 `dist`；環境變數設 `PUBLIC_PREVIEW=1`，並視需要將 `PUBLIC_SITE_URL` 設為固定預覽網址。`public/_headers` 會在建置後複製為 `dist/_headers`：HTML 短快取，帶雜湊檔名的 `/_astro/` 資源長快取。
+
+每次部署後，檢查四語首頁與不存在的網址。不存在的網址須回傳 HTTP 404 並顯示站台版型；HTML 應短快取，`/_astro/` 資源應回傳 `public, max-age=31536000, immutable`。首頁首位元組時間須在部署後從外部實測，目標低於 300 ms；本機預覽不能代替這項驗收。
+
 ## 預覽與 SEO
 
 臨時預覽建置需設定 `PUBLIC_SITE_URL` 為當次預覽網址，並設定 `PUBLIC_PREVIEW=1`。這會輸出 canonical、四語 hreflang、社群分享圖與描述，同時加上 `noindex`，避免臨時網址被搜尋引擎收錄。未設定公開網址時，輸出也預設 `noindex`。若日後改由 WordPress 正式承載，請在 WordPress 中只保留一套 SEO 輸出設定，並以正式網域重新建立上述 metadata；不要直接沿用臨時預覽網址。

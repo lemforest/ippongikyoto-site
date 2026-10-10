@@ -37,6 +37,7 @@ const description = page.kind === 'home' ? homeDescriptions[lang] : page.descrip
 const ogImage = page.kind === 'home' ? '/media/2025/07/0-July.webp' : page.featureImage || '/media/2025/07/0-July.webp'
 const publicSite = import.meta.env.PUBLIC_SITE_URL?.replace(/\/$/, '')
 const isPreview = import.meta.env.PUBLIC_PREVIEW === '1' || !publicSite
+const isNotFound = page.kind === 'not-found'
 const absolute = (path: string) => `${publicSite}${path}`
 const canonicalPath = page.kind === 'home' ? home[lang] : page.path
 const alternatePages = page.kind === 'home'
@@ -56,10 +57,10 @@ const footer = {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#f7f7f2" />
     <meta name="description" content={description} />
-    {isPreview && <meta name="robots" content="noindex,nofollow" />}
-    {publicSite && <link rel="canonical" href={absolute(canonicalPath)} />}
-    {publicSite && alternatePages.map(([locale, path]) => <link rel="alternate" hreflang={locale} href={absolute(path)} />)}
-    {publicSite && page.kind === 'home' && <link rel="alternate" hreflang="x-default" href={absolute(home.en)} />}
+    {(isPreview || isNotFound) && <meta name="robots" content="noindex,nofollow" />}
+    {publicSite && !isNotFound && <link rel="canonical" href={absolute(canonicalPath)} />}
+    {publicSite && !isNotFound && alternatePages.map(([locale, path]) => <link rel="alternate" hreflang={locale} href={absolute(path)} />)}
+    {publicSite && !isNotFound && page.kind === 'home' && <link rel="alternate" hreflang="x-default" href={absolute(home.en)} />}
     <meta property="og:type" content="website" />
     <meta property="og:title" content={`${cleanTitle} | IPPONGI Kyoto`} />
     <meta property="og:description" content={description} />

@@ -19,11 +19,11 @@ const nav = {
   th: { home: 'หน้าแรก', message: 'ข้อความจากผู้แทน', about: 'ข้อมูลบริษัท', webinar: 'สัมมนาออนไลน์', product: 'PROTAI (EN)', faq: 'คำถามที่พบบ่อย', contact: 'ติดต่อเรา', original: 'เว็บไซต์เดิม', language: 'ภาษา' },
 }[lang]
 const names = { en: 'EN', ja: 'JP', fr: 'FR', th: 'TH' }
-const knownPaths = new Set(catalogPages.map((item) => item.path))
+const knownPages = new Map(catalogPages.map((item) => [item.path, item]))
 const productHref = productPath(lang)
 const localeLinks = (Object.entries(names) as [Locale, string][]).map(([locale, name]) => {
   const alternate = page.alternates?.[locale]
-  const hasPage = Boolean(alternate && knownPaths.has(alternate))
+  const hasPage = Boolean(alternate && knownPages.has(alternate))
   return { locale, name: `${name}${page.kind === 'product' && !hasPage ? ' · Home' : ''}`, href: hasPage ? alternate! : home[locale], hasPage }
 })
 const cleanTitle = page.title?.replace(/\s*- ippongikyoto\.com$/, '') || 'IPPONGI Kyoto'
@@ -35,14 +35,16 @@ const homeDescriptions: Record<Locale, string> = {
 }
 const description = page.kind === 'home' ? homeDescriptions[lang] : page.description?.replace(/\s+/g, ' ').trim() || cleanTitle
 const ogImage = page.kind === 'home' ? '/media/2025/07/0-July.webp' : page.featureImage || '/media/2025/07/0-July.webp'
-const publicSite = import.meta.env.PUBLIC_SITE_URL?.replace(/\/$/, '')
-const isPreview = import.meta.env.PUBLIC_PREVIEW === '1' || !publicSite
+const publicSite = (import.meta.env.PUBLIC_SITE_URL || Astro.site?.href)?.replace(/\/$/, '')
+const isPreview = import.meta.env.PUBLIC_PREVIEW === '1' || (import.meta.env.PUBLIC_PREVIEW !== '0' && !import.meta.env.PUBLIC_SITE_URL)
 const isNotFound = page.kind === 'not-found'
 const absolute = (path: string) => `${publicSite}${path}`
-const canonicalPath = page.kind === 'home' ? home[lang] : page.path
-const alternatePages = page.kind === 'home'
-  ? Object.entries(home) as [Locale, string][]
-  : Object.entries(page.alternates || {}).filter((entry): entry is [Locale, string] => knownPaths.has(entry[1]))
+const canonicalPath = page.path
+const alternatePaths = { ...page.alternates, [lang]: page.path }
+const alternatePages = (Object.keys(home) as Locale[])
+  .map((locale) => [locale, alternatePaths[locale]] as const)
+  .filter((entry): entry is readonly [Locale, string] => Boolean(entry[1] && knownPages.get(entry[1])?.lang === entry[0]))
+const englishAlternate = alternatePages.find(([locale]) => locale === 'en')?.[1]
 const footer = {
   en: { care: 'From Kyoto, with care.', line: 'Eyes are the windows to the soul.', contact: 'CONTACT', address: '#402 Daini-Kyoto-Bldg., 227 Daikokucho, Shimogyo-ku, Kyoto 600-8223, Japan', top: 'Back to top', home: 'Home', law: 'Legal information (JP)', preview: 'Independent design preview' },
   ja: { care: '京都から、心を込めて。', line: '目は心の窓。', contact: 'お問い合わせ', address: '〒600-8223 京都府京都市下京区大黒町227 第2京都ビル402', top: 'ページ上部へ', home: 'ホーム', law: '特定商取引法に基づく表記', preview: '独立デザインのプレビュー' },
@@ -60,11 +62,11 @@ const footer = {
     {(isPreview || isNotFound) && <meta name="robots" content="noindex,nofollow" />}
     {publicSite && !isNotFound && <link rel="canonical" href={absolute(canonicalPath)} />}
     {publicSite && !isNotFound && alternatePages.map(([locale, path]) => <link rel="alternate" hreflang={locale} href={absolute(path)} />)}
-    {publicSite && !isNotFound && page.kind === 'home' && <link rel="alternate" hreflang="x-default" href={absolute(home.en)} />}
+    {publicSite && !isNotFound && englishAlternate && <link rel="alternate" hreflang="x-default" href={absolute(englishAlternate)} />}
     <meta property="og:type" content="website" />
     <meta property="og:title" content={`${cleanTitle} | IPPONGI Kyoto`} />
     <meta property="og:description" content={description} />
-    {publicSite && <meta property="og:url" content={absolute(canonicalPath)} />}
+    {publicSite && !isNotFound && <meta property="og:url" content={absolute(canonicalPath)} />}
     {publicSite && <meta property="og:image" content={absolute(ogImage)} />}
     <meta name="twitter:card" content="summary_large_image" />
     <title>{cleanTitle} | IPPONGI Kyoto</title>

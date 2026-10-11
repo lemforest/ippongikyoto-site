@@ -34,7 +34,9 @@ npm run dev
 
 ## 預覽與 SEO
 
-臨時預覽建置需設定 `PUBLIC_SITE_URL` 為當次預覽網址，並設定 `PUBLIC_PREVIEW=1`。這會輸出 canonical、四語 hreflang、社群分享圖與描述，同時加上 `noindex`，避免臨時網址被搜尋引擎收錄。未設定公開網址時，輸出也預設 `noindex`。若日後改由 WordPress 正式承載，請在 WordPress 中只保留一套 SEO 輸出設定，並以正式網域重新建立上述 metadata；不要直接沿用臨時預覽網址。
+`astro.config.mjs` 將正式站基準網址設為 `https://ippongikyoto.com`，因此每個內容頁預設輸出指向自身的絕對 canonical；實際存在的對應語系輸出互相回指的 hreflang，有英文對應頁時才輸出指向英文的 `x-default`。404 頁沒有 canonical。執行 `npm run seo:check` 可逐頁驗證。
+
+臨時預覽部署應設定 `PUBLIC_SITE_URL` 為當次預覽網址，並設定 `PUBLIC_PREVIEW=1`；這會以預覽網址輸出 metadata，同時加上 `noindex`，避免被搜尋引擎收錄。未設定 `PUBLIC_SITE_URL` 時預設仍為 `noindex`。正式部署本靜態站時須明確設定 `PUBLIC_PREVIEW=0`，並確認 `PUBLIC_SITE_URL` 未設定或等於正式網域。若日後改由 WordPress 正式承載，請只保留一套 SEO 輸出設定，不要直接沿用臨時預覽網址。
 
 首頁大圖與視覺系列使用依螢幕尺寸選取的 WebP 圖片。要重新產生圖片尺寸，執行 `node scripts/optimize-home-images.mjs`。
 

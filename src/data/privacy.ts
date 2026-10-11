@@ -1,12 +1,14 @@
 import type { Locale } from './types'
 
 export const privacyCopy: Record<Locale, {
-  title: string; description: string; footer: string; sections: { title: string; body: string }[]
+  title: string; description: string; footer: string; sections: { title: string; body: string; linkLabel?: string; linkUrl?: string }[]
 }> = {
   en: {
     title: 'Privacy Policy', description: 'How IPPONGI Kyoto handles contact form details and privacy-friendly site statistics.', footer: 'Privacy Policy',
     sections: [
+      { title: 'Who operates this website', body: 'This website is operated by {{LEGAL_NAME}} (IPPONGI Kyoto), at {{CONTACT_ADDRESS}}. For privacy questions, contact {{EMAIL}}.' },
       { title: 'Contact enquiries', body: 'When you send an enquiry, we receive your name, email address and message. We use them only to respond to your enquiry and any necessary follow-up. Please do not include sensitive health or payment information.' },
+      { title: 'Webinar registration on another site', body: 'Our webinar links open a separate registration service at prosunfun.protai.com.tw, powered by BombMy. Its form asks for your name, phone number and email address to reserve a session and send confirmation, access details and reminders. Those fields are submitted on that external site, not through this website’s contact form. The platform and event organiser may process them; the external service may use cookies. BombMy publishes a privacy policy on its own website. Please read it before submitting. We have not verified the registration data’s retention period or whether it is passed to IPPONGI for other purposes.', linkLabel: 'BombMy website — Privacy Policy in the footer', linkUrl: 'https://www.bombmy.live/' },
       { title: 'Delivery and protection', body: 'The form uses Cloudflare to process and deliver your message. Basic spam checks help protect the service. We do not sell your enquiry details or use them for marketing without a separate choice.' },
       { title: 'Site statistics', body: 'We use cookie-free, aggregated page statistics and count clicks on links to the original shop and webinar registration. These events include the page language and link type, but not your name, email address or message.' },
       { title: 'Your choices', body: 'You can request access, correction or deletion of your enquiry details by emailing {{EMAIL}}. We keep enquiry records only for the time needed to respond and meet applicable obligations.' },
@@ -15,7 +17,9 @@ export const privacyCopy: Record<Locale, {
   ja: {
     title: 'プライバシーポリシー', description: 'IPPONGI Kyotoのお問い合わせ情報とサイト利用統計の取扱いについてご案内します。', footer: 'プライバシーポリシー',
     sections: [
+      { title: 'サイト運営者', body: '当サイトの運営者は{{LEGAL_NAME}}（IPPONGI Kyoto）です。所在地：{{CONTACT_ADDRESS}}。個人情報に関するお問い合わせ：{{EMAIL}}。' },
       { title: 'お問い合わせ情報', body: 'お問い合わせの際、お名前、メールアドレス、メッセージをお預かりします。回答および必要なご連絡のためにのみ利用します。健康状態や決済情報などの機微な情報は送信しないでください。' },
+      { title: '外部サイトでのウェビナー申込み', body: 'ウェビナーの申込リンクは、BombMy（幫賣）が提供する別サイト prosunfun.protai.com.tw に移動します。申込フォームでは、予約、確認、参加情報とリマインドの送信のため、氏名・電話番号・メールアドレスの入力が求められます。これらは当サイトのお問い合わせフォームではなく、外部サイトで送信されます。プラットフォームと主催者が情報を取り扱う場合があり、外部サイトではCookieを使用する場合があります。BombMyの公式サイトに掲載されたプライバシーポリシーを送信前にご確認ください。保存期間や、申込情報がIPPONGIに別の目的で提供されるかどうかは確認できていません。', linkLabel: 'BombMy公式サイト（ページ下部のプライバシーポリシー）', linkUrl: 'https://www.bombmy.live/' },
       { title: '送信と保護', body: 'フォームの処理とメール送信にはCloudflareを利用します。迷惑送信を防ぐための基本的な確認を行います。お問い合わせ情報を販売したり、別途同意なく広告に使用したりしません。' },
       { title: 'アクセス統計', body: 'Cookieを使用しない集計型の閲覧統計と、旧ショップ・ウェビナー申込リンクのクリック数を利用します。記録するのはページの言語とリンクの種類で、お名前、メールアドレス、メッセージは含みません。' },
       { title: 'ご本人の権利', body: 'お問い合わせ情報の開示・訂正・削除をご希望の場合は、{{EMAIL}} へご連絡ください。返信と適用される義務に必要な期間のみ保管します。' },
@@ -24,7 +28,9 @@ export const privacyCopy: Record<Locale, {
   fr: {
     title: 'Politique de confidentialité', description: 'Découvrez comment IPPONGI Kyoto traite les demandes de contact et les statistiques du site.', footer: 'Confidentialité',
     sections: [
+      { title: 'Responsable de ce site', body: 'Ce site est exploité par {{LEGAL_NAME}} (IPPONGI Kyoto), à l’adresse {{CONTACT_ADDRESS}}. Pour toute question relative à la confidentialité : {{EMAIL}}.' },
       { title: 'Demandes de contact', body: 'Lorsque vous nous écrivez, nous recevons votre nom, votre adresse e-mail et votre message. Nous les utilisons uniquement pour répondre et assurer le suivi nécessaire. Merci de ne pas envoyer de données de santé sensibles ni de données de paiement.' },
+      { title: 'Inscription au webinaire sur un autre site', body: 'Le lien d’inscription ouvre un service distinct sur prosunfun.protai.com.tw, exploité avec BombMy. Son formulaire demande votre nom, votre numéro de téléphone et votre adresse e-mail pour réserver une séance et envoyer la confirmation, les accès et les rappels. Ces données sont transmises sur ce site externe, et non par le formulaire de contact du présent site. La plateforme et l’organisateur peuvent les traiter ; le site externe peut utiliser des cookies. BombMy publie sa politique de confidentialité sur son propre site : consultez-la avant l’envoi. Nous n’avons pas pu confirmer la durée de conservation des inscriptions ni si les données sont transmises à IPPONGI à d’autres fins.', linkLabel: 'Site de BombMy — politique de confidentialité en bas de page', linkUrl: 'https://www.bombmy.live/' },
       { title: 'Envoi et protection', body: 'Le formulaire utilise Cloudflare pour traiter et transmettre votre message. Des contrôles simples limitent les envois indésirables. Nous ne vendons pas vos données et ne les utilisons pas à des fins commerciales sans choix distinct.' },
       { title: 'Statistiques du site', body: 'Nous utilisons des statistiques agrégées sans cookies et comptons les clics vers la boutique d’origine et l’inscription au webinaire. Ces événements indiquent la langue de la page et le type de lien, sans nom, e-mail ni message.' },
       { title: 'Vos droits', body: 'Pour demander l’accès, la rectification ou la suppression de vos données de contact, écrivez à {{EMAIL}}. Nous les conservons seulement le temps nécessaire pour répondre et respecter nos obligations applicables.' },
@@ -33,7 +39,9 @@ export const privacyCopy: Record<Locale, {
   th: {
     title: 'นโยบายความเป็นส่วนตัว', description: 'วิธีที่ IPPONGI Kyoto จัดการข้อมูลติดต่อและสถิติการใช้งานเว็บไซต์', footer: 'นโยบายความเป็นส่วนตัว',
     sections: [
+      { title: 'ผู้ดูแลเว็บไซต์', body: 'เว็บไซต์นี้ดำเนินการโดย {{LEGAL_NAME}} (IPPONGI Kyoto) ที่อยู่: {{CONTACT_ADDRESS}} หากมีคำถามเกี่ยวกับข้อมูลส่วนบุคคล โปรดติดต่อ {{EMAIL}}' },
       { title: 'การติดต่อสอบถาม', body: 'เมื่อส่งข้อความถึงเรา เราจะได้รับชื่อ อีเมล และข้อความของคุณ และใช้เพื่อตอบกลับและติดตามเรื่องที่จำเป็นเท่านั้น โปรดอย่าส่งข้อมูลสุขภาพที่ละเอียดอ่อนหรือข้อมูลการชำระเงิน' },
+      { title: 'การลงทะเบียนสัมมนาบนเว็บไซต์ภายนอก', body: 'ลิงก์ลงทะเบียนสัมมนาจะพาไปยังบริการอีกแห่งที่ prosunfun.protai.com.tw ซึ่งใช้แพลตฟอร์ม BombMy แบบฟอร์มดังกล่าวขอชื่อ เบอร์โทรศัพท์ และอีเมล เพื่อจองรอบ ส่งการยืนยัน ข้อมูลเข้าร่วม และการแจ้งเตือน ข้อมูลนี้ส่งผ่านเว็บไซต์ภายนอก ไม่ใช่แบบฟอร์มติดต่อของเว็บไซต์นี้ แพลตฟอร์มและผู้จัดงานอาจประมวลผลข้อมูล และเว็บไซต์ภายนอกอาจใช้คุกกี้ BombMy เผยแพร่นโยบายความเป็นส่วนตัวบนเว็บไซต์ของตน โปรดอ่านก่อนส่งข้อมูล เรายังไม่สามารถยืนยันระยะเวลาเก็บรักษาข้อมูลการลงทะเบียน หรือว่าข้อมูลจะถูกส่งให้ IPPONGI เพื่อวัตถุประสงค์อื่นหรือไม่', linkLabel: 'เว็บไซต์ BombMy — นโยบายความเป็นส่วนตัวอยู่ท้ายหน้า', linkUrl: 'https://www.bombmy.live/' },
       { title: 'การส่งและการป้องกัน', body: 'แบบฟอร์มใช้ Cloudflare ในการประมวลผลและส่งข้อความ พร้อมตรวจสอบเบื้องต้นเพื่อป้องกันสแปม เราไม่ขายข้อมูลของคุณหรือใช้เพื่อการตลาดโดยไม่ได้รับความยินยอมแยกต่างหาก' },
       { title: 'สถิติของเว็บไซต์', body: 'เราใช้สถิติแบบรวมที่ไม่ใช้คุกกี้ และนับการคลิกลิงก์ไปยังร้านค้าเดิมและการลงทะเบียนสัมมนา โดยบันทึกเฉพาะภาษาและประเภทลิงก์ ไม่รวมชื่อ อีเมล หรือข้อความ' },
       { title: 'สิทธิของคุณ', body: 'หากต้องการขอเข้าถึง แก้ไข หรือลบข้อมูลการติดต่อ โปรดอีเมล {{EMAIL}} เราเก็บข้อมูลเท่าที่จำเป็นต่อการตอบกลับและปฏิบัติตามหน้าที่ที่เกี่ยวข้อง' },
@@ -52,3 +60,10 @@ export const formCopy: Record<Locale, {
 }
 
 export const privacyPath = (locale: Locale) => `${locale === 'en' ? '' : `/${locale}`}/privacy-policy/`
+
+export const webinarPrivacyNotice: Record<Locale, { text: string; policy: string }> = {
+  en: { text: 'Registration opens a separate site that asks for your name, phone number and email.', policy: 'How your data is handled' },
+  ja: { text: '申込み先は外部サイトです。氏名・電話番号・メールアドレスの入力が必要です。', policy: '個人情報の取扱い' },
+  fr: { text: 'L’inscription ouvre un autre site qui demande votre nom, téléphone et e-mail.', policy: 'Traitement de vos données' },
+  th: { text: 'การลงทะเบียนเปิดเว็บไซต์ภายนอกซึ่งขอชื่อ เบอร์โทรศัพท์ และอีเมล', policy: 'การจัดการข้อมูลของคุณ' },
+}

@@ -9,6 +9,7 @@
 - 在 Pages 加入 Analytics Engine dataset binding，名稱固定為 `ANALYTICS_ENGINE`，資料集可命名 `ippongi_external_clicks`。Cloudflare Analytics Engine 的 dashboard 可用 `SELECT blob1 AS link_type, COUNT() AS clicks FROM ippongi_external_clicks GROUP BY link_type` 查看 `purchase`、`webinar` 兩種點擊；`blob2` 為語系，`blob3` 為頁面路徑。事件不寫姓名、電郵或訊息。綁定後須重新部署。
 - 在 Pages build environment 設 `PUBLIC_CF_WEB_ANALYTICS_TOKEN`、`PUBLIC_SITE_URL` 與 `PUBLIC_PREVIEW=0`，啟用 Cloudflare Web Analytics 的免 Cookie 頁面統計。此 beacon 不支援自訂事件，因此外連事件由前述 Analytics Engine 接收。金鑰範例見 `.env.example`。
 - 表單含必填／同意、蜜罐欄位、最短填寫時間與同源檢查；網站端點只在上游郵件服務回報成功後才顯示成功。本機預覽不會寄送真實郵件；正式驗收仍需用已驗證寄件地址送一封測試信並確認收件。
+- 研討會報名連到 `prosunfun.protai.com.tw` 的 BombMy 頁面；本站四語隱私頁與研討會入口已揭露外站收集姓名、電話、電郵，並連到 BombMy 官網頁尾的政策。尚待主辦方確認報名資料是否回傳 IPPONGI、保存期限及有無其他行銷用途；未確認前，不得把這些用途寫成已知事實。
 
 ## 內容範圍
 

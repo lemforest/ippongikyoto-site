@@ -8,6 +8,7 @@ export function resolveFactTokens<T>(value: T, locale?: Locale): T {
     BOTTLES_SOLD: facts.sales.bottlesSoldLabel,
     POSTAL_CODE: facts.organization.postalCode,
     EMAIL: facts.organization.email,
+    LEGAL_NAME: facts.organization.legalName,
     ...(locale ? {
       FOOTER_ADDRESS: facts.organization.addresses[locale].footer,
       CONTACT_ADDRESS: facts.organization.addresses[locale].contact,

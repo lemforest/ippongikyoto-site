@@ -407,6 +407,9 @@ html[lang='ja'] .product-hero-copy h1 { font-size: clamp(32px, 3.2vw, 50px); lin
 .privacy-section { display: grid; gap: 45px; width: min(100% - 96px, 850px); padding-top: 80px; padding-bottom: 130px; }
 .privacy-section h2 { margin: 0 0 12px; font-size: clamp(24px, 2.4vw, 34px); font-weight: 500; color: var(--forest); }
 .privacy-section p { margin: 0; color: var(--muted); line-height: 1.9; }
+.privacy-section a { display: inline-flex; align-items: center; min-height: 44px; margin-top: 12px; color: var(--forest); font-size: 13px; text-decoration: underline; text-underline-offset: 3px; }
+.webinar-privacy-note { max-width: 560px; margin: 18px 0 0; padding-left: 14px; border-left: 2px solid var(--line); color: var(--muted); font-size: 13px; line-height: 1.7; }
+.webinar-privacy-note a { display: inline-flex; align-items: center; min-height: 44px; color: var(--forest); text-decoration: underline; text-underline-offset: 3px; }
 
 /* Footer is deliberately light, unlike Cool Bowl's console surfaces. */
 .site-footer { background: #e9eee8; border-top: 1px solid var(--line); }

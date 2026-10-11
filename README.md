@@ -42,6 +42,12 @@ npm run dev
 
 首頁大圖與視覺系列使用依螢幕尺寸選取的 WebP 圖片。要重新產生圖片尺寸，執行 `node scripts/optimize-home-images.mjs`。
 
+## 結構化資料
+
+全站內容頁輸出 `Organization`，內頁輸出 `BreadcrumbList`；八個四語商品頁另輸出 `Product` 與 `Offer`。價格與名稱對應頁面可見內容，單瓶／兩瓶組價格分別為 JPY 15400／26400。庫存狀態於 2026-10-11 對照原商店，單瓶有貨、兩瓶組缺貨；靜態頁不會自動同步庫存，正式發布前須重新核對。建置時會執行 `scripts/check-structured-data.mjs` 驗證各頁輸出。
+
+四語 FAQ 的第一章回答尚未改寫，因此目前**不輸出 `FAQPage` 與 `Question`**；改寫、查證完成後才能從頁面可見的問答生成標記，不可直接標記現有回答。站上沒有可驗證評分，故不輸出 `AggregateRating` 或 `Review`。
+
 內容與媒體來自 `~/Downloads/ippongikyoto-archive-2026-10-05`。如需從封存重新匯入：
 
 ```bash

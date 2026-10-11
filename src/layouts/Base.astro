@@ -4,6 +4,7 @@ import { catalogPages, productPath } from '../data/catalog'
 import type { Locale, SitePage } from '../data/types'
 import seo from '../data/seo.json'
 import { strings } from '../i18n'
+import { structuredData } from '../data/structured-data'
 
 interface Props { page: SitePage }
 const { page } = Astro.props
@@ -40,6 +41,7 @@ const alternatePages = (Object.keys(home) as Locale[])
   .map((locale) => [locale, alternatePaths[locale]] as const)
   .filter((entry): entry is readonly [Locale, string] => Boolean(entry[1] && knownPages.get(entry[1])?.lang === entry[0]))
 const englishAlternate = alternatePages.find(([locale]) => locale === 'en')?.[1]
+const jsonLd = structuredData(page, publicSite || 'https://ippongikyoto.com')
 ---
 <!doctype html>
 <html lang={lang}>
@@ -59,6 +61,7 @@ const englishAlternate = alternatePages.find(([locale]) => locale === 'en')?.[1]
     {publicSite && <meta property="og:image" content={absolute(ogImage)} />}
     <meta name="twitter:card" content="summary_large_image" />
     <title>{title}</title>
+    {jsonLd && <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd).replace(/</g, '\\u003c')} />}
     <link rel="icon" href="/media/2025/05/ippongi-lgo.webp" type="image/webp" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

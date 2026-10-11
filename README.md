@@ -36,6 +36,8 @@ npm run dev
 
 `astro.config.mjs` 將正式站基準網址設為 `https://ippongikyoto.com`，因此每個內容頁預設輸出指向自身的絕對 canonical；實際存在的對應語系輸出互相回指的 hreflang，有英文對應頁時才輸出指向英文的 `x-default`。404 頁沒有 canonical。執行 `npm run seo:check` 可逐頁驗證。
 
+`@astrojs/sitemap` 會在建置時產生 `/sitemap-index.xml` 與分頁 sitemap，只列目前存在的內容頁與對應語系，不列舊網址。`public/robots.txt` 允許抓取並指向正式網域的 sitemap index；目前未封鎖 AI 爬蟲，是否限制應由品牌決定。執行 `npm run sitemap:check` 可核對 sitemap 與各頁的 canonical、hreflang 及 `robots.txt`。
+
 臨時預覽部署應設定 `PUBLIC_SITE_URL` 為當次預覽網址，並設定 `PUBLIC_PREVIEW=1`；這會以預覽網址輸出 metadata，同時加上 `noindex`，避免被搜尋引擎收錄。未設定 `PUBLIC_SITE_URL` 時預設仍為 `noindex`。正式部署本靜態站時須明確設定 `PUBLIC_PREVIEW=0`，並確認 `PUBLIC_SITE_URL` 未設定或等於正式網域。若日後改由 WordPress 正式承載，請只保留一套 SEO 輸出設定，不要直接沿用臨時預覽網址。
 
 首頁大圖與視覺系列使用依螢幕尺寸選取的 WebP 圖片。要重新產生圖片尺寸，執行 `node scripts/optimize-home-images.mjs`。

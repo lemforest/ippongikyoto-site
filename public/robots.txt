@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ippongikyoto.com/sitemap-index.xml

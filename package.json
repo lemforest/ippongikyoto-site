@@ -8,12 +8,14 @@
     "build": "node scripts/build-redirects.mjs && astro build",
     "routes:check": "node scripts/check-routes.mjs",
     "seo:check": "node scripts/check-seo.mjs",
+    "sitemap:check": "node scripts/check-sitemap.mjs",
     "preview": "astro preview --host 127.0.0.1 --port 4321",
     "check": "astro check"
   },
   "license": "UNLICENSED",
   "type": "module",
   "dependencies": {
+    "@astrojs/sitemap": "^3.7.4",
     "@splidejs/splide": "^4.1.4",
     "@splidejs/splide-extension-auto-scroll": "^0.5.3",
     "astro": "^7.3.5",

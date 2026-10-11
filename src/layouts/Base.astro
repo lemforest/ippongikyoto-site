@@ -45,6 +45,13 @@ const alternatePages = (Object.keys(home) as Locale[])
   .filter((entry): entry is readonly [Locale, string] => Boolean(entry[1] && knownPages.get(entry[1])?.lang === entry[0]))
 const englishAlternate = alternatePages.find(([locale]) => locale === 'en')?.[1]
 const jsonLd = structuredData(page, publicSite || 'https://ippongikyoto.com')
+const fontFamilies = [
+  'family=Cormorant+Garamond:wght@400;500',
+  'family=DM+Sans:wght@400;500;600',
+  ...(lang === 'ja' ? ['family=Noto+Sans+JP:wght@400;500', 'family=Noto+Serif+JP:wght@400;500'] : []),
+  ...(lang === 'th' ? ['family=Noto+Sans+Thai:wght@400;500', 'family=Noto+Serif+Thai:wght@400;500'] : []),
+]
+const fontStylesheet = `https://fonts.googleapis.com/css2?${fontFamilies.join('&')}&display=swap`
 ---
 <!doctype html>
 <html lang={lang}>
@@ -79,7 +86,7 @@ const jsonLd = structuredData(page, publicSite || 'https://ippongikyoto.com')
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600&family=Noto+Sans+JP:wght@400;500&family=Noto+Sans+Thai:wght@400;500&family=Noto+Serif+JP:wght@400;500&family=Noto+Serif+Thai:wght@400;500&display=swap" rel="stylesheet" />
+    <link href={fontStylesheet} rel="stylesheet" />
   </head>
   <body>
     <a class="skip-link" href="#main">{aria.skip}</a>

@@ -42,6 +42,8 @@ npm run dev
 
 首頁大圖與視覺系列使用依螢幕尺寸選取的 WebP 圖片。要重新產生圖片尺寸，執行 `node scripts/optimize-home-images.mjs`。
 
+社群分享圖位於 `public/share/`：首頁與一般內頁使用品牌圖，兩種商品頁分別使用對應商品照；每張為 1200×630。`Base.astro` 輸出絕對網址的 Open Graph／Twitter 圖片、尺寸、網址與實際存在的語系。瀏覽器圖示有 ICO、SVG 與 180×180 Apple Touch Icon。來源是站內原標誌與照片；執行 `npm run social:assets` 可重新產生，建置時 `scripts/check-social.mjs` 逐頁檢查。臨時預覽請依前述設定 `PUBLIC_SITE_URL`，否則分享工具會取得指向正式網域的圖址。
+
 ## 結構化資料
 
 全站內容頁輸出 `Organization`，內頁輸出 `BreadcrumbList`；八個四語商品頁另輸出 `Product` 與 `Offer`。價格與名稱對應頁面可見內容，單瓶／兩瓶組價格分別為 JPY 15400／26400。庫存狀態於 2026-10-11 對照原商店，單瓶有貨、兩瓶組缺貨；靜態頁不會自動同步庫存，正式發布前須重新核對。建置時會執行 `scripts/check-structured-data.mjs` 驗證各頁輸出。

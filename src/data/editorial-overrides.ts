@@ -101,6 +101,14 @@ function editorialBlocks(page: SitePage): ContentBlock[] {
 }
 
 export function applyEditorialOverrides(page: SitePage): SitePage {
+  if (page.path === '/ja/特定商取引法に基づく表記/') {
+    const text = page.text
+      .replace('商品発送後の返品・返却等はお受け致しかねます。 商品が不良の場合のみ良品と交換致します。', '未開封の商品は、商品到着後7日以内に返品をお申し出いただけます。不良品・破損品・誤配送の場合はお問い合わせください。')
+      .replace('商品出荷より７日以内にご連絡下さい。', '商品到着後7日以内にご連絡ください。')
+    // The archived table is a flat list rather than renderable table rows.
+    // This page already displays its text fallback; keep that presentation.
+    return { ...page, blocks: [], text }
+  }
   if (page.kind === 'webinar') {
     const blocks = page.blocks.map((block) => {
       if (!block.text) return block

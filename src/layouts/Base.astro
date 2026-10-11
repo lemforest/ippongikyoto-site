@@ -2,6 +2,7 @@
 import '../styles/global.css'
 import { catalogPages, productPath } from '../data/catalog'
 import type { Locale, SitePage } from '../data/types'
+import seo from '../data/seo.json'
 
 interface Props { page: SitePage }
 const { page } = Astro.props
@@ -26,14 +27,12 @@ const localeLinks = (Object.entries(names) as [Locale, string][]).map(([locale, 
   const hasPage = Boolean(alternate && knownPages.has(alternate))
   return { locale, name: `${name}${page.kind === 'product' && !hasPage ? ' · Home' : ''}`, href: hasPage ? alternate! : home[locale], hasPage }
 })
-const cleanTitle = page.title?.replace(/\s*- ippongikyoto\.com$/, '') || 'IPPONGI Kyoto'
-const homeDescriptions: Record<Locale, string> = {
-  en: 'Discover PROTAI, an eye-area skincare mist from IPPONGI Kyoto. Explore the product, brand story and available formats.',
-  ja: 'IPPONGI KYOTOの目もと用スキンケアミスト「PROTAI」。製品情報、ブランドの背景、ラインアップをご覧いただけます。',
-  fr: 'Découvrez PROTAI, une brume de soin pour le contour des yeux présentée par IPPONGI Kyoto, ainsi que son histoire et ses formats.',
-  th: 'รู้จัก PROTAI ผลิตภัณฑ์สกินแคร์แบบสเปรย์สำหรับบริเวณรอบดวงตาจาก IPPONGI Kyoto พร้อมข้อมูลผลิตภัณฑ์และตัวเลือกสินค้า',
+const metadata = (seo as Record<string, { lang: Locale; title: string; description: string }>)[page.path]
+if (!metadata || metadata.lang !== lang || !metadata.title?.trim() || !metadata.description?.trim()) {
+  throw new Error(`Missing or invalid SEO metadata for ${page.path} (${lang})`)
 }
-const description = page.kind === 'home' ? homeDescriptions[lang] : page.description?.replace(/\s+/g, ' ').trim() || cleanTitle
+const title = `${metadata.title} | IPPONGI KYOTO`
+const description = metadata.description
 const ogImage = page.kind === 'home' ? '/media/2025/07/0-July.webp' : page.featureImage || '/media/2025/07/0-July.webp'
 const publicSite = (import.meta.env.PUBLIC_SITE_URL || Astro.site?.href)?.replace(/\/$/, '')
 const isPreview = import.meta.env.PUBLIC_PREVIEW === '1' || (import.meta.env.PUBLIC_PREVIEW !== '0' && !import.meta.env.PUBLIC_SITE_URL)
@@ -64,12 +63,12 @@ const footer = {
     {publicSite && !isNotFound && alternatePages.map(([locale, path]) => <link rel="alternate" hreflang={locale} href={absolute(path)} />)}
     {publicSite && !isNotFound && englishAlternate && <link rel="alternate" hreflang="x-default" href={absolute(englishAlternate)} />}
     <meta property="og:type" content="website" />
-    <meta property="og:title" content={`${cleanTitle} | IPPONGI Kyoto`} />
+    <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     {publicSite && !isNotFound && <meta property="og:url" content={absolute(canonicalPath)} />}
     {publicSite && <meta property="og:image" content={absolute(ogImage)} />}
     <meta name="twitter:card" content="summary_large_image" />
-    <title>{cleanTitle} | IPPONGI Kyoto</title>
+    <title>{title}</title>
     <link rel="icon" href="/media/2025/05/ippongi-lgo.webp" type="image/webp" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

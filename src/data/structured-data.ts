@@ -1,10 +1,11 @@
 import type { SitePage } from './types'
+import facts from './facts.json'
 
 // These are the prices shown on the static product pages. Stock was checked
 // against the existing store on 2026-10-11; recheck it before publication.
 const products = {
-  single: { price: 15400, availability: 'https://schema.org/InStock' },
-  refill: { price: 26400, availability: 'https://schema.org/OutOfStock' },
+  single: { price: facts.products.single.priceJPY, availability: 'https://schema.org/InStock' },
+  refill: { price: facts.products.refill.priceJPY, availability: 'https://schema.org/OutOfStock' },
 } as const
 
 export function structuredData(page: SitePage, site: string) {
@@ -26,10 +27,10 @@ export function structuredData(page: SitePage, site: string) {
       streetAddress: '#402 Daini-Kyoto-Bldg., 227 Daikokucho, Shimogyo-ku',
       addressLocality: 'Kyoto',
       addressRegion: 'Kyoto',
-      postalCode: '600-8223',
+      postalCode: facts.organization.postalCode,
       addressCountry: 'JP',
     },
-    email: 'support@ippongikyoto.com',
+    email: facts.organization.email,
   }]
 
   if (page.path !== '/') {

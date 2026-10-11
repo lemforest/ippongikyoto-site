@@ -2,11 +2,19 @@
 
 依 2026-10-05 封存的公開網站內容製作。此專案與 `cool-bowl-site` 完全分離，採京都護眼品牌的編輯式版面與克制動效；目前是本機審稿版，未接管原站網域或交易資料。
 
+## 聯絡表單與流量統計（正式站設定）
+
+- 靜態頁面需以 **Cloudflare Pages + Functions** 部署；只上傳 `dist/` 到純靜態主機不會有 `/api/contact` 和 `/api/track`。正式部署目前仍暫停。
+- 在 Cloudflare Email Service 驗證寄件網域／寄件地址，建立具 Email Sending 權限的 API token；於 Pages runtime 設 `CF_ACCOUNT_ID`、`CF_EMAIL_FROM`、`CONTACT_TO`，並將 `CF_EMAIL_API_TOKEN` 設為 secret。寄送方案若產生費用，須先確認額度與計費。未設定時表單會明確顯示送出失敗，不會回報假成功。
+- 在 Pages 加入 Analytics Engine dataset binding，名稱固定為 `ANALYTICS_ENGINE`，資料集可命名 `ippongi_external_clicks`。Cloudflare Analytics Engine 的 dashboard 可用 `SELECT blob1 AS link_type, COUNT() AS clicks FROM ippongi_external_clicks GROUP BY link_type` 查看 `purchase`、`webinar` 兩種點擊；`blob2` 為語系，`blob3` 為頁面路徑。事件不寫姓名、電郵或訊息。綁定後須重新部署。
+- 在 Pages build environment 設 `PUBLIC_CF_WEB_ANALYTICS_TOKEN`、`PUBLIC_SITE_URL` 與 `PUBLIC_PREVIEW=0`，啟用 Cloudflare Web Analytics 的免 Cookie 頁面統計。此 beacon 不支援自訂事件，因此外連事件由前述 Analytics Engine 接收。金鑰範例見 `.env.example`。
+- 表單含必填／同意、蜜罐欄位、最短填寫時間與同源檢查；網站端點只在上游郵件服務回報成功後才顯示成功。本機預覽不會寄送真實郵件；正式驗收仍需用已驗證寄件地址送一封測試信並確認收件。
+
 ## 內容範圍
 
 - 保留原站地圖的 52 個網址及英、日、法、泰四種語言內容。
 - 圖片已轉為網頁用 WebP；影片維持原檔，不重新編碼。
-- 原站註冊連結通往既有報名表；商品購買通往既有商店；聯絡使用公開信箱。本站沒有假表單或假購物車。
+- 原站註冊連結通往既有報名表；商品購買通往既有商店；聯絡表單需設定 Cloudflare Email Service 才能寄送，未設定時會顯示錯誤而不假裝成功。本站沒有購物車。
 - 原站商品敘述包含英文與日文，產品頁分別呈現；首頁暫時不展示尚未查證的療效、專利數量與使用者數字。產品頁資訊仍須由熟悉日本藥機法的人審閱，預覽版不代表法規審核通過。
 
 ## 本機使用

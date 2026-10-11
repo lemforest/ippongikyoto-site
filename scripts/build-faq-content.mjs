@@ -114,5 +114,15 @@ for (const [lang, filename] of Object.entries(sources)) {
   output[lang] = { sourceUrl: page.sourceUrl, gallery, entries }
 }
 
-await writeFile(new URL('../src/data/faq.json', import.meta.url), JSON.stringify(output, null, 2) + '\n')
-console.log('Generated FAQ content for ' + Object.keys(output).join(', '))
+const contentPath = new URL('../src/content/faq.json', import.meta.url)
+const records = JSON.parse(await readFile(contentPath, 'utf8'))
+for (const record of records) {
+  record.translations = {}
+  for (const lang of Object.keys(output)) {
+    const number = record.sourceNumber[lang]
+    const entry = output[lang].entries.find((item) => item.number === number)
+    if (entry) record.translations[lang] = { question: entry.question, nodes: entry.nodes }
+  }
+}
+await writeFile(contentPath, JSON.stringify(records, null, 2) + '\n')
+console.log('Generated FAQ collection for ' + Object.keys(output).join(', '))

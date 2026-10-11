@@ -6,6 +6,8 @@ import seo from '../data/seo.json'
 import { strings } from '../i18n'
 import { structuredData } from '../data/structured-data'
 import SiteImage from '../components/SiteImage.astro'
+import facts from '../data/facts.json'
+import { privacyCopy, privacyPath } from '../data/privacy'
 
 interface Props { page: SitePage }
 const { page } = Astro.props
@@ -54,6 +56,7 @@ const fontFamilies = [
 ]
 const fontStylesheet = `https://fonts.googleapis.com/css2?${fontFamilies.join('&')}&display=swap`
 const heroPoster = page.kind === 'home' ? '/responsive/media/2025/07/0-July-960.webp' : undefined
+const analyticsToken = import.meta.env.PUBLIC_CF_WEB_ANALYTICS_TOKEN
 ---
 <!doctype html>
 <html lang={lang}>
@@ -90,6 +93,7 @@ const heroPoster = page.kind === 'home' ? '/responsive/media/2025/07/0-July-960.
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href={fontStylesheet} rel="stylesheet" />
     {heroPoster && <link rel="preload" as="image" href={heroPoster} fetchpriority="high" />}
+    {analyticsToken && !isPreview && <script is:inline defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon={JSON.stringify({ token: analyticsToken })}></script>}
   </head>
   <body>
     <a class="skip-link" href="#main">{aria.skip}</a>
@@ -121,14 +125,16 @@ const heroPoster = page.kind === 'home' ? '/responsive/media/2025/07/0-July-960.
     <footer class="site-footer">
       <div class="footer-inner">
         <div class="footer-brand"><span class="footer-kicker">{footer.care}</span><strong>IPPONGI</strong><p>{footer.line}</p></div>
-        <div class="footer-contact"><span>{footer.contact}</span><a href="mailto:support@ippongikyoto.com">support@ippongikyoto.com</a><p>{footer.address}</p></div>
-        <div class="footer-meta"><a href={page.sourceUrl} target="_blank" rel="noopener noreferrer">{nav.original} ↗</a><a href="/ja/commercial-disclosure/" hreflang="ja">{footer.law}</a><a href="#top">{footer.top} ↑</a><small>© IPPONGI Kyoto · {footer.preview}</small></div>
+        <div class="footer-contact"><span>{footer.contact}</span><a href={`mailto:${facts.organization.email}`}>{facts.organization.email}</a><p>{footer.address}</p></div>
+        <div class="footer-meta">{page.kind !== 'privacy' && <a href={page.sourceUrl} target="_blank" rel="noopener noreferrer">{nav.original} ↗</a>}<a href="/ja/commercial-disclosure/" hreflang="ja">{footer.law}</a><a href={privacyPath(lang)}>{privacyCopy[lang].footer}</a><a href="#top">{footer.top} ↑</a><small>© IPPONGI Kyoto · {footer.preview}</small></div>
       </div>
     </footer>
     <script>
       import '../scripts/motion'
       if (document.querySelector('#voices')) void import('../scripts/testimonials')
       if (document.querySelector('[data-home-slideshow]')) void import('../scripts/home-slideshow')
+      if (document.querySelector('[data-contact-form]')) void import('../scripts/contact-form')
+      void import('../scripts/external-clicks')
       const toggle = document.querySelector<HTMLButtonElement>('.menu-toggle')
       const mobile = document.querySelector<HTMLElement>('.mobile-nav')
       toggle?.addEventListener('click', () => {

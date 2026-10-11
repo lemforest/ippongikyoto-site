@@ -2,6 +2,7 @@ import { readFile, mkdir, copyFile, writeFile, access } from 'node:fs/promises'
 import { basename, dirname, extname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { load } from 'cheerio'
+import facts from '../src/data/facts.json' with { type: 'json' }
 import sharp from 'sharp'
 
 const project = fileURLToPath(new URL('../', import.meta.url))
@@ -207,6 +208,14 @@ for (const page of manifest.pages) {
 
 pages.sort((a, b) => a.path.localeCompare(b.path))
 await mkdir(join(project, 'src', 'data'), { recursive: true })
-await writeFile(join(project, 'src', 'data', 'pages.json'), JSON.stringify(pages, null, 2))
+let serializedPages = JSON.stringify(pages, null, 2)
+for (const [value, token] of [
+  [facts.products.single.priceLabel, 'PRICE_SINGLE'],
+  [facts.products.refill.priceLabel, 'PRICE_REFILL'],
+  [facts.sales.bottlesSoldLabel, 'BOTTLES_SOLD'],
+  [facts.organization.postalCode, 'POSTAL_CODE'],
+  [facts.organization.email, 'EMAIL'],
+]) serializedPages = serializedPages.replaceAll(value, `{{${token}}}`)
+await writeFile(join(project, 'src', 'data', 'pages.json'), serializedPages)
 await writeFile(join(project, 'src', 'data', 'media-map.json'), JSON.stringify(Object.fromEntries(mediaMap), null, 2))
 console.log(`Imported ${pages.length} public pages, ${selected.size} media groups, ${videoHashes.size} distinct videos.`)

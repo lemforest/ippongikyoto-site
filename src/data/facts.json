@@ -1,0 +1,63 @@
+{
+  "organization": {
+    "email": "support@ippongikyoto.com",
+    "postalCode": "600-8223",
+    "addresses": {
+      "en": {
+        "footer": "#402 Daini-Kyoto-Bldg., 227 Daikokucho, Shimogyo-ku, Kyoto {{POSTAL_CODE}}, Japan",
+        "contact": "#402 Daini-Kyoto-Bldg., 227 Daikokucho, Aburanokoji Higashi-iru, Shichijyo-Dori, Shimogyo-ku, Kyoto-shi, Kyoto {{POSTAL_CODE}}, Japan"
+      },
+      "ja": {
+        "footer": "〒{{POSTAL_CODE}} 京都府京都市下京区大黒町227 第2京都ビル402",
+        "contact": "〒{{POSTAL_CODE}}京都府京都市下京区大黒町227 第2京都ビル402"
+      },
+      "fr": {
+        "footer": "#402, Daini-Kyoto-Bldg., 227 Daikokucho, Shimogyo-ku, Kyoto {{POSTAL_CODE}}, Japon",
+        "contact": "#402 Daini-Kyoto-Bldg., 227 Daikokucho, Aburanokoji Higashi-iru, Shichijyo-Dori, Shimogyo-ku, Kyoto-shi, Kyoto {{POSTAL_CODE}}, Japon"
+      },
+      "th": {
+        "footer": "ห้อง 402 อาคาร Daini-Kyoto, 227 Daikokucho, เขต Shimogyo, เกียวโต {{POSTAL_CODE}} ประเทศญี่ปุ่น",
+        "contact": "เขตชิโมเกียว เมืองเกียวโต จังหวัดเกียวโต 227 อาคารไดโคคุโชะที่ 2 เกียวโต 402"
+      }
+    },
+    "businessHours": {
+      "en": "Weekdays: 10:00AM – 5:00PM JST (Closed on weekends, public holidays, and New Year holidays)",
+      "ja": "平日 10:00～17:00（日本時間） ※土日祝・年末年始は休業",
+      "fr": "Du lundi au vendredi : de 10h00 à 17h00 (heure japonaise) (Fermé le week-end, les jours fériés et pendant les congés du Nouvel An)",
+      "th": "วันธรรมดา 10:00-17:00 น. (เวลาประเทศญี่ปุ่น) ปิดบริการวัน เสาร์-อาทิตย์ วันหยุดนักขัตฤกษ์ และเทศกาลปีใหม่"
+    }
+  },
+  "products": {
+    "single": {
+      "priceJPY": 15400,
+      "priceLabel": "15,400",
+      "capacityMl": 10
+    },
+    "refill": {
+      "priceJPY": 26400,
+      "priceLabel": "26,400",
+      "capacityMl": 20,
+      "bottles": 2
+    },
+    "spraysPerBottle": 270,
+    "shelfLifeMonths": 24
+  },
+  "sales": {
+    "bottlesSold": 80000,
+    "bottlesSoldLabel": "80,000",
+    "asOf": "2025-09"
+  },
+  "fulfillment": {
+    "shippingDaysMin": 3,
+    "shippingDaysMax": 5,
+    "returnContactDays": 7,
+    "shippingJPY": 1000,
+    "freeShippingThresholdJPY": 10000
+  },
+  "patents": {
+    "us": "ASB0004US",
+    "taiwan": "I674124",
+    "japanIngredientNotice": "10073",
+    "thaiIngredientRegistration": "NC2133"
+  }
+}

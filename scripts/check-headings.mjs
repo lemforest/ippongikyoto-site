@@ -1,7 +1,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { load } from 'cheerio'
-import faq from '../src/data/faq.json' with { type: 'json' }
+import faq from '../src/content/faq.json' with { type: 'json' }
 
 const files = ['dist/404.html']
 function collect(directory) {
@@ -38,7 +38,7 @@ for (const filename of files) {
   if (filename.endsWith('/faq/index.html')) {
     faqPages++
     const actual = $('.faq-item summary h2').map((_, element) => $(element).text().replace(/\s+/g, ' ').trim()).get()
-    const expected = faq[locale].entries.map((entry) => entry.question.replace(/\s+/g, ' ').trim())
+    const expected = faq.filter((entry) => entry.translations[locale]).map((entry) => entry.translations[locale].question.replace(/\s+/g, ' ').trim())
     if (actual.length !== expected.length || actual.some((question, index) => question !== expected[index])) {
       errors.push(`${filename}: FAQ heading list does not match all ${expected.length} questions`)
     }

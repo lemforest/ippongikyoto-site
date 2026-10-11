@@ -2,6 +2,7 @@ import { readFileSync, readdirSync, statSync } from 'node:fs'
 import { join, relative } from 'node:path'
 import { load } from 'cheerio'
 import seo from '../src/data/seo.json' with { type: 'json' }
+import facts from '../src/data/facts.json' with { type: 'json' }
 
 const root = new URL('../dist/', import.meta.url).pathname
 const failures = []
@@ -36,8 +37,8 @@ function inspect(directory) {
     const organization = nodes('Organization')[0]
     if (nodes('Organization').length !== 1 || organization?.name !== 'IPPONGI KYOTO' ||
       organization?.url !== `${site}/` || !organization?.logo?.startsWith(`${site}/`) ||
-      organization?.email !== 'support@ippongikyoto.com' ||
-      organization?.address?.postalCode !== '600-8223') failures.push(`${route}: incomplete Organization`)
+      organization?.email !== facts.organization.email ||
+      organization?.address?.postalCode !== facts.organization.postalCode) failures.push(`${route}: incomplete Organization`)
 
     const breadcrumb = nodes('BreadcrumbList')[0]
     if (route === '/') {

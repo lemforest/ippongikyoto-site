@@ -1,3 +1,4 @@
+import facts from './facts.json'
 import type { ContentBlock } from './types'
 
 export const englishReturnsBlocks: ContentBlock[] = [
@@ -10,7 +11,7 @@ export const englishReturnsBlocks: ContentBlock[] = [
   { type: 'li', text: 'Products damaged or soiled after delivery to the customer.' },
   { type: 'li', text: 'Sale or special-offer products clearly marked as non-returnable before purchase.' },
   { type: 'h2', text: 'How to request a return' },
-  { type: 'p', text: '1. Contact us through the inquiry form or at support@ippongikyoto.com.' },
+  { type: 'p', text: `1. Contact us through the inquiry form or at ${facts.organization.email}.` },
   { type: 'p', text: '2. We will provide the return address and instructions.' },
   { type: 'p', text: '3. Send the item back. After inspection, we will arrange a refund or exchange.' },
   { type: 'h2', text: 'Refunds' },

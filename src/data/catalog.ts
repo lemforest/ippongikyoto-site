@@ -4,6 +4,8 @@ import type { Locale, SitePage } from './types'
 import { productTranslation } from './product-translations'
 import { frenchWebinarBlocks, frenchWebinarText } from './webinar-fr'
 import { englishReturnsBlocks, englishReturnsText } from './returns-en'
+import { resolveFactTokens } from './resolve-facts'
+import { privacyCopy, privacyPath } from './privacy'
 
 type ProductFormat = 'single' | 'refill'
 
@@ -20,7 +22,7 @@ export function productPath(locale: Locale, format: ProductFormat = 'single') {
 const routeMap = legacyRoutes as Record<string, string>
 export const currentPath = (path: string) => routeMap[path] || path
 
-const sourcePages = (pages as SitePage[])
+const sourcePages = resolveFactTokens(pages as SitePage[])
   .filter((page) => !['/fr/accueil/', '/ja/ホーム/', '/th/หน้าแรก/'].includes(page.path))
   .map((page) => {
     const archivedNavigationOnly = page.lang === 'th' && page.text.startsWith('Skip to content') && page.blocks.length === 0
@@ -74,7 +76,13 @@ const frenchWebinar: SitePage = {
   blocks: frenchWebinarBlocks, images: [],
 }
 
-export const catalogPages: SitePage[] = [...localizedPages, ...generatedProductPages, frenchWebinar].map((page) =>
+const privacyPages: SitePage[] = (['en', 'ja', 'fr', 'th'] as Locale[]).map((locale) => ({
+  path: privacyPath(locale), lang: locale, kind: 'privacy', title: privacyCopy[locale].title,
+  description: privacyCopy[locale].description, sourceUrl: '/', text: '', blocks: [], images: [],
+  videos: [], links: [], alternates: Object.fromEntries((['en', 'ja', 'fr', 'th'] as Locale[]).map((other) => [other, privacyPath(other)])),
+}))
+
+export const catalogPages: SitePage[] = [...localizedPages, ...generatedProductPages, frenchWebinar, ...privacyPages].map((page) =>
   page.path === '/fr/webinar/' ? page
     : page.path === '/ja/webinar/' || page.path === '/th/webinar/'
       ? { ...page, alternates: { ...page.alternates, fr: '/fr/webinar/' } }

@@ -19,6 +19,7 @@ for (const page of pages) {
   if (page.kind === 'product') for (const locale of ['ja', 'fr', 'th']) expected.set(`/${locale}${path}`, locale)
 }
 expected.set('/fr/webinar/', 'fr')
+for (const locale of ['en', 'ja', 'fr', 'th']) expected.set(`${locale === 'en' ? '' : `/${locale}`}/privacy-policy/`, locale)
 expected.set('/404/', 'en')
 
 const titles = new Set()

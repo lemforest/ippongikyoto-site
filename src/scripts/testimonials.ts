@@ -1,69 +1,61 @@
-import Splide from '@splidejs/splide'
-import { AutoScroll } from '@splidejs/splide-extension-auto-scroll'
-
 const section = document.querySelector<HTMLElement>('#voices')
-const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)')
+export {}
 
-if (section && !reducedMotion.matches) {
+if (section) {
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)')
   const toggle = section.querySelector<HTMLButtonElement>('[data-testimonial-toggle]')
+  const rails = Array.from(section.querySelectorAll<HTMLElement>('[data-testimonial-slider]'))
   let inView = false
   let userPaused = false
-  const sliders = Array.from(section.querySelectorAll<HTMLElement>('[data-testimonial-slider]')).map((element) => {
-    const slide = element.querySelector<HTMLElement>('.splide__slide')
-    const originalCount = element.querySelectorAll('.splide__slide').length
-    const cloneCount = () => Math.ceil(element.clientWidth / ((slide?.getBoundingClientRect().width || 410) + 16)) + originalCount
-    const slider = new Splide(element, {
-      type: 'loop',
-      autoWidth: true,
-      gap: 16,
-      clones: cloneCount(),
-      drag: 'free',
-      arrows: false,
-      pagination: false,
-      updateOnMove: true,
-      autoScroll: {
-        speed: element.dataset.direction === 'backward' ? -0.45 : 0.45,
-        autoStart: false,
-        pauseOnHover: true,
-        pauseOnFocus: true,
-      },
-    })
-    slider.mount({ AutoScroll })
-    const track = element.querySelector<HTMLElement>('.splide__track')
-    if (track) track.scrollLeft = 0
-    const hideClones = () => element.querySelectorAll<HTMLElement>('.splide__slide--clone').forEach((clone) => {
-      clone.setAttribute('aria-hidden', 'true')
-      clone.inert = true
-    })
-    hideClones()
-    new MutationObserver(hideClones).observe(element, { childList: true, subtree: true })
-    window.addEventListener('resize', () => {
-      const clones = cloneCount()
-      if (slider.options.clones !== clones) slider.options = { clones }
-    })
-    return slider
-  })
-  if (toggle) toggle.hidden = false
 
-  const setActive = (active: boolean) => {
-    sliders.forEach((slider) => {
-      const scroller = slider.Components.AutoScroll
-      if (active && !userPaused) scroller?.play()
-      else scroller?.pause()
-    })
+  const rebuild = (rail: HTMLElement) => {
+    const track = rail.querySelector<HTMLElement>('.splide__track')
+    const list = rail.querySelector<HTMLElement>('.splide__list')
+    if (!track || !list) return
+    list.querySelectorAll('.testimonial-clone').forEach((clone) => clone.remove())
+    const originals = Array.from(list.children) as HTMLElement[]
+    const gap = parseFloat(getComputedStyle(list).columnGap) || 0
+    const setWidth = originals.reduce((width, slide) => width + slide.getBoundingClientRect().width + gap, 0)
+    if (!setWidth) return
+    const copies = Math.max(1, Math.ceil((track.clientWidth + gap) / setWidth))
+    for (let copy = 0; copy < copies; copy += 1) {
+      for (const original of originals) {
+        const clone = original.cloneNode(true) as HTMLElement
+        clone.classList.add('testimonial-clone')
+        clone.setAttribute('aria-hidden', 'true')
+        clone.inert = true
+        list.append(clone)
+      }
+    }
+    list.style.setProperty('--marquee-distance', `${setWidth}px`)
+    list.style.animationDuration = `${setWidth / 27}s`
+    rail.classList.add('is-initialized')
+  }
+
+  rails.forEach((rail) => {
+    rebuild(rail)
+    new ResizeObserver(() => rebuild(rail)).observe(rail)
+  })
+
+  const sync = () => {
+    section.classList.toggle('is-playing', inView && !document.hidden && !userPaused && !reducedMotion.matches)
+    if (toggle) {
+      toggle.hidden = reducedMotion.matches
+      toggle.textContent = userPaused ? toggle.dataset.playLabel || '' : toggle.dataset.pauseLabel || ''
+      toggle.setAttribute('aria-pressed', String(userPaused))
+    }
   }
 
   toggle?.addEventListener('click', () => {
     userPaused = !userPaused
-    toggle.setAttribute('aria-pressed', String(userPaused))
-    toggle.textContent = userPaused ? toggle.dataset.playLabel || '' : toggle.dataset.pauseLabel || ''
-    setActive(inView && !document.hidden)
+    sync()
   })
-
-  const observer = new IntersectionObserver(([entry]) => {
+  new IntersectionObserver(([entry]) => {
     inView = Boolean(entry?.isIntersecting)
-    setActive(inView && !document.hidden)
-  }, { threshold: 0.1 })
-  observer.observe(section)
-  document.addEventListener('visibilitychange', () => setActive(inView && !document.hidden))
+    sync()
+  }, { threshold: 0.1 }).observe(section)
+  document.addEventListener('visibilitychange', sync)
+  reducedMotion.addEventListener('change', sync)
+  document.fonts.ready.then(() => rails.forEach(rebuild))
+  sync()
 }

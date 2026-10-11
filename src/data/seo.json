@@ -55,5 +55,9 @@
   "/th/product/protai-eye-skin-care-mist/": { "lang": "th", "title": "PROTAI สเปรย์ดูแลผิวรอบดวงตา 10 มล.", "description": "ดูข้อมูลสเปรย์ PROTAI ขนาด 10 มล. ที่ผลิตในญี่ปุ่นเพื่อเพิ่มความชุ่มชื้นให้ผิวรอบดวงตา." },
   "/th/story/": { "lang": "th", "title": "เรื่องราวของ IPPONGI Kyoto", "description": "อ่านเรื่องราวของ IPPONGI Kyoto และแนวคิดในการดูแลผิวรอบดวงตา." },
   "/th/webinar/": { "lang": "th", "title": "สัมมนาออนไลน์เกี่ยวกับ PROTAI", "description": "เรียนรู้เกี่ยวกับสัมมนาออนไลน์ของ IPPONGI Kyoto และข้อมูลเบื้องต้นของ PROTAI." },
-  "/404/": { "lang": "en", "title": "Page Not Found", "description": "This page is unavailable. Return to the IPPONGI Kyoto homepage in English, Japanese, French or Thai." }
+  "/404/": { "lang": "en", "title": "Page Not Found", "description": "This page is unavailable. Return to the IPPONGI Kyoto homepage in English, Japanese, French or Thai." },
+  "/privacy-policy/": { "lang": "en", "title": "Privacy Policy", "description": "Learn how IPPONGI Kyoto handles contact enquiries and privacy-friendly site statistics." },
+  "/ja/privacy-policy/": { "lang": "ja", "title": "プライバシーポリシー", "description": "IPPONGI Kyotoのお問い合わせ情報とサイト利用統計の取扱いについてご案内します。" },
+  "/fr/privacy-policy/": { "lang": "fr", "title": "Politique de confidentialité", "description": "Découvrez comment IPPONGI Kyoto traite les demandes de contact et les statistiques du site." },
+  "/th/privacy-policy/": { "lang": "th", "title": "นโยบายความเป็นส่วนตัว", "description": "ดูวิธีที่ IPPONGI Kyoto จัดการข้อมูลติดต่อและสถิติการใช้งานเว็บไซต์." }
 }

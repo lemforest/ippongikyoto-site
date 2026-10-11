@@ -4,18 +4,18 @@ const section = document.querySelector<HTMLElement>('[data-home-slideshow]')
 const element = section?.querySelector<HTMLElement>('.home-slideshow-slider')
 
 if (section && element) {
-  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)')
   const previous = section.querySelector<HTMLButtonElement>('[data-slide-previous]')
   const next = section.querySelector<HTMLButtonElement>('[data-slide-next]')
   const toggle = section.querySelector<HTMLButtonElement>('[data-slide-toggle]')
   const count = section.querySelector<HTMLElement>('[data-slide-current]')
   let inView = false
-  let userPaused = reducedMotion
+  let userPaused = false
 
   const slider = new Splide(element, {
     type: 'fade',
     rewind: true,
-    speed: reducedMotion ? 0 : 500,
+    speed: reducedMotion.matches ? 0 : 500,
     arrows: false,
     pagination: false,
     drag: true,
@@ -27,7 +27,7 @@ if (section && element) {
   })
 
   const setPlayback = () => {
-    if (inView && !document.hidden && !userPaused) slider.Components.Autoplay.play()
+    if (inView && !document.hidden && !userPaused && !reducedMotion.matches && !section.matches(':hover') && !section.contains(document.activeElement)) slider.Components.Autoplay.play()
     else slider.Components.Autoplay.pause()
   }
   const updateToggle = () => {
@@ -35,6 +35,7 @@ if (section && element) {
     toggle.textContent = userPaused ? '▶' : 'Ⅱ'
     toggle.setAttribute('aria-label', userPaused ? section.dataset.playLabel || '' : section.dataset.pauseLabel || '')
     toggle.setAttribute('aria-pressed', String(userPaused))
+    toggle.hidden = reducedMotion.matches
   }
   const preloadNext = () => {
     const slides = Array.from(element.querySelectorAll<HTMLImageElement>('.splide__slide:not(.splide__slide--clone) img'))
@@ -47,7 +48,7 @@ if (section && element) {
     preloadNext()
   })
   slider.mount()
-  for (const button of [previous, next, toggle]) if (button) button.hidden = false
+  for (const button of [previous, next]) if (button) button.hidden = false
   updateToggle()
 
   previous?.addEventListener('click', () => slider.go('<'))
@@ -64,4 +65,13 @@ if (section && element) {
   }, { threshold: 0.15 })
   observer.observe(section)
   document.addEventListener('visibilitychange', setPlayback)
+  section.addEventListener('mouseenter', setPlayback)
+  section.addEventListener('mouseleave', setPlayback)
+  section.addEventListener('focusin', setPlayback)
+  section.addEventListener('focusout', () => queueMicrotask(setPlayback))
+  reducedMotion.addEventListener('change', () => {
+    slider.options = { speed: reducedMotion.matches ? 0 : 500 }
+    updateToggle()
+    setPlayback()
+  })
 }

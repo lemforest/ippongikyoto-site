@@ -1,10 +1,11 @@
 import pages from './pages.json'
+import legacyRoutes from './legacy-routes.json'
 import type { Locale, SitePage } from './types'
 
 type ProductFormat = 'single' | 'refill'
 
 const productSlugs: Record<ProductFormat, string> = {
-  single: 'protai-eye-skin-care-mistg',
+  single: 'protai-eye-skin-care-mist',
   refill: 'protai-eye-skin-care-mist-10ml-x-2-20ml',
 }
 
@@ -13,7 +14,16 @@ export function productPath(locale: Locale, format: ProductFormat = 'single') {
   return `${prefix}/product/${productSlugs[format]}/`
 }
 
-const sourcePages = pages as SitePage[]
+const routeMap = legacyRoutes as Record<string, string>
+export const currentPath = (path: string) => routeMap[path] || path
+
+const sourcePages = (pages as SitePage[])
+  .filter((page) => !['/fr/accueil/', '/ja/ホーム/', '/th/หน้าแรก/'].includes(page.path))
+  .map((page) => ({
+    ...page,
+    path: currentPath(page.path),
+    alternates: Object.fromEntries(Object.entries(page.alternates).map(([locale, path]) => [locale, currentPath(path)])),
+  }))
 const formatOf = (path: string): ProductFormat => path.includes('20ml') ? 'refill' : 'single'
 
 const englishPages = sourcePages.map((page) => page.kind === 'product'

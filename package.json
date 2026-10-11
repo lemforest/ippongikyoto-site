@@ -5,7 +5,8 @@
   "scripts": {
     "content:import": "node scripts/import-content.mjs",
     "dev": "astro dev --host 127.0.0.1 --port 4321",
-    "build": "astro build",
+    "build": "node scripts/build-redirects.mjs && astro build",
+    "routes:check": "node scripts/check-routes.mjs",
     "preview": "astro preview --host 127.0.0.1 --port 4321",
     "check": "astro check"
   },

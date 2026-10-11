@@ -7,11 +7,11 @@ interface Props { page: SitePage }
 const { page } = Astro.props
 const lang: Locale = page.lang || 'en'
 const home = { en: '/', ja: '/ja/', fr: '/fr/', th: '/th/' }
-const about = { en: '/about/', ja: '/ja/会社案内/', fr: '/fr/qui-sommes-nous/', th: '/th/ข้อมูลบริษัท/' }
-const message = { en: '/a-message-from-the-representative-2/', ja: '/ja/a-message-from-the-representative/', fr: '/fr/message-du-representant/', th: '/th/ข้อความจากผู้แทน/' }
-const webinar = { en: '/webminar/', ja: '/ja/ウェビナー/', fr: '/webminar/', th: '/th/สัมมนาออนไลน์/' }
-const faq = { en: '/faq/', ja: '/ja/faq_jp/', fr: '/fr/faq-fr/', th: '/th/คำถามที่พบบ่อย-faq-th/' }
-const contact = { en: '/contact/', ja: '/ja/お問い合わせ/', fr: '/fr/contactez-nous/', th: '/th/ติดต่อเรา/' }
+const about = { en: '/about/', ja: '/ja/about/', fr: '/fr/about/', th: '/th/about/' }
+const message = { en: '/founder-message/', ja: '/ja/founder-message/', fr: '/fr/founder-message/', th: '/th/founder-message/' }
+const webinar = { en: '/webinar/', ja: '/ja/webinar/', fr: '/webinar/', th: '/th/webinar/' }
+const faq = { en: '/faq/', ja: '/ja/faq/', fr: '/fr/faq/', th: '/th/faq/' }
+const contact = { en: '/contact/', ja: '/ja/contact/', fr: '/fr/contact/', th: '/th/contact/' }
 const nav = {
   en: { home: 'Home', message: 'Founder’s note', about: 'Our story', webinar: 'Webinar', product: 'PROTAI', faq: 'FAQ', contact: 'Contact', original: 'Original website', language: 'Language' },
   ja: { home: 'ホーム', message: '代表挨拶', about: '会社案内', webinar: 'ウェビナー', product: 'PROTAI', faq: 'よくある質問', contact: 'お問い合わせ', original: '元のサイト', language: '言語' },
@@ -104,7 +104,7 @@ const footer = {
       <div class="footer-inner">
         <div class="footer-brand"><span class="footer-kicker">{footer.care}</span><strong>IPPONGI</strong><p>{footer.line}</p></div>
         <div class="footer-contact"><span>{footer.contact}</span><a href="mailto:support@ippongikyoto.com">support@ippongikyoto.com</a><p>{footer.address}</p></div>
-        <div class="footer-meta"><a href={page.sourceUrl} target="_blank" rel="noopener noreferrer">{nav.original} ↗</a><a href="/ja/特定商取引法に基づく表記/">{footer.law}</a><a href="#top">{footer.top} ↑</a><small>© IPPONGI Kyoto · {footer.preview}</small></div>
+        <div class="footer-meta"><a href={page.sourceUrl} target="_blank" rel="noopener noreferrer">{nav.original} ↗</a><a href="/ja/commercial-disclosure/">{footer.law}</a><a href="#top">{footer.top} ↑</a><small>© IPPONGI Kyoto · {footer.preview}</small></div>
       </div>
     </footer>
     <script>

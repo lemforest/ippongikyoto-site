@@ -40,7 +40,7 @@ const sectionLabels = {
   fr: { intro: 'INTRODUCTION', origin: 'ORIGINE', product: 'PRODUIT', film: 'FILM', closing: 'IPPONGI' },
   th: { intro: 'แนะนำ', origin: 'ที่มา', product: 'ผลิตภัณฑ์', film: 'วิดีโอ', closing: 'IPPONGI' },
 }[lang]
-const storyPath = { en: '/about/', ja: '/ja/会社案内/', fr: '/fr/qui-sommes-nous/', th: '/th/ข้อมูลบริษัท/' }[lang]
+const storyPath = { en: '/about/', ja: '/ja/about/', fr: '/fr/about/', th: '/th/about/' }[lang]
 const isHome = page.kind === 'home'
 const homeBlocks = isHome ? page.blocks.filter((block) => block.type !== 'image') : []
 const homeHeadings = homeBlocks.filter((block) => block.type === 'h2')
@@ -60,15 +60,10 @@ const isWebinar = page.kind === 'webinar'
 const isCommerce = page.kind === 'commerce'
 const productOne = productPath(lang, 'single')
 const productTwo = productPath(lang, 'refill')
-const preserveLines = /representative|representant|代表挨拶|ข้อความจากผู้แทน/i.test(page.path)
-const isEnglishFounder = page.path === '/a-message-from-the-representative-2/'
-const isJapaneseFounder = page.path === '/ja/a-message-from-the-representative/'
-const isFounderNote = [
-  '/a-message-from-the-representative-2/',
-  '/ja/a-message-from-the-representative/',
-  '/fr/message-du-representant/',
-  '/th/ข้อความจากผู้แทน/',
-].includes(page.path)
+const preserveLines = page.path.endsWith('/founder-message/')
+const isEnglishFounder = page.path === '/founder-message/'
+const isJapaneseFounder = page.path === '/ja/founder-message/'
+const isFounderNote = preserveLines
 const fallback = !preserveLines && page.blocks.map((block) => block.text || '').join('').length < page.text.length * .75
 const fallbackLines = page.text.split('\n').map((line) => line.trim()).filter(Boolean)
 const sourceBlocks = page.blocks.filter((block) => block.type !== 'image' || !!block.url)
@@ -125,8 +120,8 @@ for (const line of productPrimaryLines) {
 }
 const productCardName = lang === 'ja' ? 'アイスキンケアミスト' : 'Eye Skin Care Mist'
 const purchaseLinks = lang === 'ja'
-  ? [{ label: '送料・配送について', href: '/ja/特定商取引法に基づく表記/' }, { label: '返品・交換について', href: '/ja/返品・交換について-2/' }]
-  : [{ label: 'Shipping information', href: '/commercial-disclosure/' }, { label: 'Returns & exchanges (JP)', href: '/返品・交換について/' }]
+  ? [{ label: '送料・配送について', href: '/ja/commercial-disclosure/' }, { label: '返品・交換について', href: '/ja/returns-and-exchanges/' }]
+  : [{ label: 'Shipping information', href: '/commercial-disclosure/' }, { label: 'Returns & exchanges (JP)', href: '/returns-and-exchanges/' }]
 const homeTestimonials = testimonialCopy[lang]
 const filmTitles = {
   en: ['PROTAI Concept', 'The Origin of PROTAI'],
@@ -137,9 +132,9 @@ const filmTitles = {
 const testimonialRows = [reviewItems.slice(0, 4), reviewItems.slice(4)]
 const contactData = {
   en: { heading: 'Let’s get in touch', intro: 'You can find us at', note: '', faq: '/faq/', office: 'OFFICE', address: '#402 Daini-Kyoto-Bldg., 227 Daikokucho, Aburanokoji Higashi-iru, Shichijyo-Dori, Shimogyo-ku, Kyoto-shi, Kyoto 600-8223, Japan', hours: 'BUSINESS HOURS', schedule: 'Weekdays: 10:00AM – 5:00PM JST (Closed on weekends, public holidays, and New Year holidays)' },
-  ja: { heading: 'つながる', intro: 'この度は弊社のホームページをご覧いただき誠にありがとうございます。', note: '製品に対するご質問や使い方などについては、「よくある質問」にてまとめておりますので、よろしければお役立てください。', faq: '/ja/faq_jp/', office: 'OFFICE', address: '〒600-8223京都府京都市下京区大黒町227 第2京都ビル402', hours: '営業時間', schedule: '平日 10:00～17:00（日本時間） ※土日祝・年末年始は休業' },
-  fr: { heading: 'Pour Nous Contacter', intro: 'Merci de votre visite sur notre site.', note: 'Si vous avez des questions, demandes ou renseignements concernant nos produits ou services, n’hésitez pas à nous contacter. Pour les questions courantes, veuillez d’abord consulter notre page FAQ.', faq: '/fr/faq-fr/', office: 'Adresse du bureau', address: '#402 Daini-Kyoto-Bldg., 227 Daikokucho, Aburanokoji Higashi-iru, Shichijyo-Dori, Shimogyo-ku, Kyoto-shi, Kyoto 600-8223, Japon', hours: 'Heures d’ouverture', schedule: 'Du lundi au vendredi : de 10h00 à 17h00 (heure japonaise) (Fermé le week-end, les jours fériés et pendant les congés du Nouvel An)' },
-  th: { heading: 'ช่องทางการติดต่อ', intro: 'ขอขอบคุณมากที่มาเยี่ยมชมเว็บไซต์ของเรา', note: 'หากคุณมีคำถามเกี่ยวกับผลิตภัณฑ์ของเราหรือวิธีการใช้งาน โปรดดูส่วน “คำถามที่พบบ่อย”', faq: '/th/คำถามที่พบบ่อย-faq-th/', office: 'ที่ตั้ง', address: 'เขตชิโมเกียว เมืองเกียวโต จังหวัดเกียวโต 227 อาคารไดโคคุโชะที่ 2 เกียวโต 402', hours: 'เวลาทำการ', schedule: 'วันธรรมดา 10:00-17:00 น. (เวลาประเทศญี่ปุ่น) ปิดบริการวัน เสาร์-อาทิตย์ วันหยุดนักขัตฤกษ์ และเทศกาลปีใหม่' },
+  ja: { heading: 'つながる', intro: 'この度は弊社のホームページをご覧いただき誠にありがとうございます。', note: '製品に対するご質問や使い方などについては、「よくある質問」にてまとめておりますので、よろしければお役立てください。', faq: '/ja/faq/', office: 'OFFICE', address: '〒600-8223京都府京都市下京区大黒町227 第2京都ビル402', hours: '営業時間', schedule: '平日 10:00～17:00（日本時間） ※土日祝・年末年始は休業' },
+  fr: { heading: 'Pour Nous Contacter', intro: 'Merci de votre visite sur notre site.', note: 'Si vous avez des questions, demandes ou renseignements concernant nos produits ou services, n’hésitez pas à nous contacter. Pour les questions courantes, veuillez d’abord consulter notre page FAQ.', faq: '/fr/faq/', office: 'Adresse du bureau', address: '#402 Daini-Kyoto-Bldg., 227 Daikokucho, Aburanokoji Higashi-iru, Shichijyo-Dori, Shimogyo-ku, Kyoto-shi, Kyoto 600-8223, Japon', hours: 'Heures d’ouverture', schedule: 'Du lundi au vendredi : de 10h00 à 17h00 (heure japonaise) (Fermé le week-end, les jours fériés et pendant les congés du Nouvel An)' },
+  th: { heading: 'ช่องทางการติดต่อ', intro: 'ขอขอบคุณมากที่มาเยี่ยมชมเว็บไซต์ของเรา', note: 'หากคุณมีคำถามเกี่ยวกับผลิตภัณฑ์ของเราหรือวิธีการใช้งาน โปรดดูส่วน “คำถามที่พบบ่อย”', faq: '/th/faq/', office: 'ที่ตั้ง', address: 'เขตชิโมเกียว เมืองเกียวโต จังหวัดเกียวโต 227 อาคารไดโคคุโชะที่ 2 เกียวโต 402', hours: 'เวลาทำการ', schedule: 'วันธรรมดา 10:00-17:00 น. (เวลาประเทศญี่ปุ่น) ปิดบริการวัน เสาร์-อาทิตย์ วันหยุดนักขัตฤกษ์ และเทศกาลปีใหม่' },
 }[lang]
 ---
 <Base page={page}>

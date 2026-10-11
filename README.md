@@ -24,6 +24,14 @@ npm run dev
 
 每次部署後，檢查四語首頁與不存在的網址。不存在的網址須回傳 HTTP 404 並顯示站台版型；HTML 應短快取，`/_astro/` 資源應回傳 `public, max-age=31536000, immutable`。首頁首位元組時間須在部署後從外部實測，目標低於 300 ms；本機預覽不能代替這項驗收。
 
+## 網址與舊連結轉址
+
+英文頁面位於根目錄，日文、法文、泰文分別使用 `/ja/`、`/fr/`、`/th/` 前綴。對應內容共用 ASCII slug，例如 `/founder-message/`、`/ja/founder-message/`、`/fr/founder-message/`、`/th/founder-message/`。沒有對應翻譯的頁面維持原有語系覆蓋範圍，不以英文內容假冒翻譯。
+
+`src/data/legacy-routes.json` 是舊網址至新網址的唯一對照表；建置前的 `scripts/build-redirects.mjs` 會產生 Cloudflare Pages 使用的 `public/_redirects`。`npm run routes:check` 會檢查 52 個封存網址、需要轉址的規則、輸出頁面，以及站內連結。`astro preview` 不會執行 `_redirects`；驗收 HTTP 301 應使用 Cloudflare Pages 或 `wrangler pages dev dist`。
+
+頁尾的「原網站」與商品／結帳入口目前仍刻意外連正在營運的原站，因靜態預覽站沒有交易後端。這些是外部營運連結，不屬於站內頁面導覽；正式切換原網域前，須另行處理交易流程與這些外連。
+
 ## 預覽與 SEO
 
 臨時預覽建置需設定 `PUBLIC_SITE_URL` 為當次預覽網址，並設定 `PUBLIC_PREVIEW=1`。這會輸出 canonical、四語 hreflang、社群分享圖與描述，同時加上 `noindex`，避免臨時網址被搜尋引擎收錄。未設定公開網址時，輸出也預設 `noindex`。若日後改由 WordPress 正式承載，請在 WordPress 中只保留一套 SEO 輸出設定，並以正式網域重新建立上述 metadata；不要直接沿用臨時預覽網址。

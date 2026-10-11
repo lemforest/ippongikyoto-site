@@ -74,6 +74,31 @@ const specs: PageSpec[] = [
     source: '/contact/', path: '/zh/contact/', title: '聯絡 IPPONGI Kyoto',
     description: '透過電子郵件或聯絡表單詢問 IPPONGI Kyoto 與 PROTAI 的相關問題。', blocks: [],
   },
+  {
+    source: '/online-shop/', path: '/zh/online-shop/', title: 'PROTAI 線上商店',
+    description: '查看 PROTAI 眼周保養噴霧與補充組的產品資訊和原站購買入口。', blocks: [],
+  },
+  {
+    source: '/commercial-disclosure/', path: '/zh/commercial-disclosure/', title: '特定商業交易資訊',
+    description: '查看 IPPONGI Kyoto 的營業者、付款、運費與配送等交易資訊。',
+    blocks: [
+      h2('營業者與聯絡方式'), p('營業者：{{LEGAL_NAME}}（IPPONGI LLC）'), p('負責人：WEIFAN CHIA'),
+      p('地址：{{CONTACT_ADDRESS}}'), p('電話：+81 80-1524-3643'), p('電子郵件：{{EMAIL}}'),
+      p('受理時間：{{BUSINESS_HOURS}}'),
+      h2('售價與其他費用'), p('商品售價請以實際購買頁面所示為準。消費稅及運費依結帳頁面顯示；原站標示每筆訂單運費為 ¥1,000，商品金額超過 ¥10,000 免運。'),
+      h2('付款與配送'), p('原站列示可用信用卡或銀行轉帳付款。訂單確認後通常於 3 至 5 個工作天內出貨，出貨後通常於 7 至 14 天內送達；實際時間請以購買網站公告為準。'),
+      h2('退換貨條件'), p('原站的商業揭露頁與退換貨頁對非瑕疵品退貨條件及期限記載不一致；本頁暫不代為承諾可退貨的情形。購買前請先向 {{EMAIL}} 確認適用條件。'),
+    ],
+  },
+  {
+    source: '/returns-and-exchanges/', path: '/zh/returns-and-exchanges/', title: '退換貨資訊',
+    description: '了解如何聯繫 IPPONGI Kyoto 處理瑕疵、誤寄或退換貨問題，以及目前仍待核對的條件。',
+    blocks: [
+      h2('收到商品有問題時'), p('如果收到的商品有瑕疵、損壞或寄錯，請儘速透過聯絡表單或 {{EMAIL}} 與我們聯繫，並保留商品及訂單資訊，以便核對。'),
+      h2('退換貨條件尚待核對'), p('原站的商業揭露頁寫明出貨後原則上不接受退貨、瑕疵品可換貨，並要求出貨後七天內聯絡；另一份退換貨頁則寫明未開封、未使用的非瑕疵品也可在送達後七天內申請。兩頁規則不同，不能在核對前作為一致承諾。'),
+      p('請在購買前向 {{EMAIL}} 確認目前適用的退貨期限、運費負擔、退款方式及例外商品。確認後我們會更新此頁。'),
+    ],
+  },
 ]
 
 export function createChinesePages(pages: SitePage[]): SitePage[] {

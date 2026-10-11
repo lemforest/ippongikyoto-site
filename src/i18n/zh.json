@@ -20,5 +20,5 @@
   },
   "slideshow":{"title":"PROTAI 影像集","previous":"上一張照片","next":"下一張照片","pause":"暫停播放","play":"繼續播放","photo":"PROTAI 形象照片"},
   "contact":{"heading":"期待您的來信","intro":"您可以透過以下方式與我們聯絡","note":"","office":"辦公室","address":"{{CONTACT_ADDRESS}}","hours":"營業時間","schedule":"{{BUSINESS_HOURS}}"},
-  "purchase":[{"label":"配送與銷售資訊","href":"/commercial-disclosure/","lang":"en"},{"label":"退換貨資訊","href":"/returns-and-exchanges/","lang":"en"}]
+  "purchase":[{"label":"配送與銷售資訊","href":"/zh/commercial-disclosure/","lang":"zh-TW"},{"label":"退換貨資訊","href":"/zh/returns-and-exchanges/","lang":"zh-TW"}]
 }

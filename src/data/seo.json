@@ -263,5 +263,20 @@
     "lang": "zh",
     "title": "PROTAI 眼周保養噴霧補充組",
     "description": "了解 PROTAI 兩瓶各 10ml 補充組的成分、用法與注意事項。"
+  },
+  "/zh/online-shop/": {
+    "lang": "zh",
+    "title": "PROTAI 線上商店",
+    "description": "查看 PROTAI 眼周保養噴霧與補充組的產品資訊和原站購買入口。"
+  },
+  "/zh/commercial-disclosure/": {
+    "lang": "zh",
+    "title": "特定商業交易資訊",
+    "description": "查看 IPPONGI Kyoto 的營業者、付款、運費與配送等交易資訊。"
+  },
+  "/zh/returns-and-exchanges/": {
+    "lang": "zh",
+    "title": "退換貨資訊",
+    "description": "了解如何聯繫 IPPONGI Kyoto 處理瑕疵、誤寄或退換貨問題，以及目前仍待核對的條件。"
   }
 }

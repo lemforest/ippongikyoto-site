@@ -127,7 +127,7 @@ const analyticsToken = import.meta.env.PUBLIC_CF_WEB_ANALYTICS_TOKEN
       <div class="footer-inner">
         <div class="footer-brand"><span class="footer-kicker">{footer.care}</span><strong>IPPONGI</strong><p>{footer.line}</p></div>
         <div class="footer-contact"><span>{footer.contact}</span><a href={`mailto:${facts.organization.email}`}>{facts.organization.email}</a><p>{footer.address}</p></div>
-        <div class="footer-meta">{page.kind !== 'privacy' && <a href={page.sourceUrl} target="_blank" rel="noopener noreferrer">{nav.original} ↗</a>}<a href="/ja/commercial-disclosure/" hreflang="ja">{footer.law}</a><a href={privacyPath(lang)}>{privacyCopy[lang].footer}</a><a href="#top">{footer.top} ↑</a><small>© IPPONGI Kyoto · {footer.preview}</small></div>
+        <div class="footer-meta">{page.kind !== 'privacy' && <a href={page.sourceUrl} target="_blank" rel="noopener noreferrer">{nav.original} ↗</a>}<a href={lang === 'zh' ? '/zh/commercial-disclosure/' : '/ja/commercial-disclosure/'} hreflang={lang === 'zh' ? 'zh-TW' : 'ja'}>{footer.law}</a><a href={privacyPath(lang)}>{privacyCopy[lang].footer}</a><a href="#top">{footer.top} ↑</a><small>© IPPONGI Kyoto · {footer.preview}</small></div>
       </div>
     </footer>
     <script>

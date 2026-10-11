@@ -25,7 +25,7 @@ for (const page of pages) {
 }
 expected.set('/fr/webinar/', 'fr')
 for (const locale of ['en', 'ja', 'fr', 'th', 'zh']) expected.set(`${locale === 'en' ? '' : `/${locale}`}/privacy-policy/`, locale)
-for (const path of ['/zh/', '/zh/about/', '/zh/founder-message/', '/zh/webinar/', '/zh/faq/', '/zh/contact/']) expected.set(path, 'zh')
+for (const path of ['/zh/', '/zh/about/', '/zh/founder-message/', '/zh/webinar/', '/zh/faq/', '/zh/contact/', '/zh/online-shop/', '/zh/commercial-disclosure/', '/zh/returns-and-exchanges/']) expected.set(path, 'zh')
 expected.set('/404/', 'en')
 
 const titles = new Set()

@@ -214,7 +214,7 @@ html[lang='ja'] .testimonial-text, html[lang='th'] .testimonial-text { font-size
 .product-card:hover img { transform: scale(1.04); }
 .product-caption { position: relative; padding: 21px 0 6px; border-bottom: 1px solid var(--line); }
 .product-caption > span:first-child { font-size: 11px; color: var(--muted); }
-.product-caption h3 { font-family: var(--display); font-size: 30px; font-weight: 500; margin: 6px 40px 2px 0; line-height: 1.2; }
+.product-caption h2, .product-caption h3 { font-family: var(--display); font-size: 30px; font-weight: 500; margin: 6px 40px 2px 0; line-height: 1.2; }
 .product-caption p { margin: 0 0 16px; font-size: 13px; color: var(--muted); }
 .card-arrow { position: absolute; right: 4px; top: 47px; font-size: 22px; color: var(--forest); transition: transform .3s ease; }
 .product-card:hover .card-arrow { transform: translate(4px,-4px); }
@@ -272,6 +272,8 @@ html[lang='ja'] .page-hero h1, html[lang='th'] .page-hero h1 { font-size: clamp(
 .certification-topic { margin-top: 72px; padding: clamp(26px, 4vw, 48px); border: 1px solid var(--line); background: var(--paper); }
 .certification-topic > h2 { margin: 12px 0 36px; font-family: var(--display); font-size: clamp(31px, 3vw, 42px); font-weight: 500; line-height: 1.12; text-wrap: balance; color: var(--forest); }
 .certification-topic .prose-flow h3 { font-size: clamp(17px, 1.5vw, 21px); margin-top: 38px; }
+.prose-flow p.certification-description { margin: 44px 0 18px; font-size: clamp(18px, 1.6vw, 24px); font-weight: 600; line-height: 1.45; color: var(--forest); }
+.certification-topic .prose-flow p.certification-description { font-size: clamp(17px, 1.5vw, 21px); margin-top: 38px; }
 .certification-topic .inline-source-image { margin: 18px 0 42px; }
 .certification-topic .inline-source-image:last-child { margin-bottom: 0; }
 .prose-bullet-group { margin: 26px 0 34px; }
@@ -305,7 +307,7 @@ html[lang='ja'] .page-hero h1, html[lang='th'] .page-hero h1 { font-size: clamp(
 .faq-item summary { display: grid; grid-template-columns: 56px minmax(0, 1fr) 22px; gap: 20px; align-items: baseline; padding: 27px 0; list-style: none; cursor: pointer; }
 .faq-item summary::-webkit-details-marker { display: none; }
 .faq-item summary span { font-family: var(--display); font-size: 27px; color: var(--muted); }
-.faq-item summary strong { font-size: 19px; font-weight: 500; line-height: 1.5; }
+.faq-item summary h2 { margin: 0; font-size: 19px; font-weight: 500; line-height: 1.5; }
 .faq-item summary i { font-size: 27px; font-style: normal; font-weight: 300; line-height: 1; transition: transform .25s ease; }
 .faq-item[open] summary i { transform: rotate(45deg); }
 .faq-answer { margin: -3px 30px 36px 76px; color: var(--muted); }
@@ -494,7 +496,7 @@ html[lang='ja'] .product-hero-copy h1 { font-size: clamp(32px, 3.2vw, 50px); lin
   .who-content h2 { font-size: 48px; }
   .product-grid { grid-template-columns: 1fr; gap: 38px; }
   .product-photo { min-height: 0; width: 100%; }
-  .product-caption h3 { font-size: 27px; }
+  .product-caption h2, .product-caption h3 { font-size: 27px; }
   .film-section { padding-top: 5px; padding-bottom: 90px; }
   .film-preview { height: 500px; }
   .film-preview-video { object-position: 12% center; }
@@ -514,7 +516,7 @@ html[lang='ja'] .product-hero-copy h1 { font-size: clamp(32px, 3.2vw, 50px); lin
   .product-hero-media { min-height: 340px; }
   .product-hero-copy { padding-top: 36px; }
   .faq-item summary { grid-template-columns: 35px minmax(0, 1fr) 20px; gap: 10px; }
-  .faq-item summary strong { font-size: 16px; }
+  .faq-item summary h2 { font-size: 16px; }
   .faq-opening-gallery { gap: 10px; margin-bottom: 18px; }
   .faq-opening-gallery img { aspect-ratio: 1; }
   .faq-answer { margin-left: 45px; margin-right: 0; }

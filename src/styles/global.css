@@ -287,7 +287,7 @@ html[lang='ja'] .page-hero h1, html[lang='th'] .page-hero h1 { font-size: clamp(
 .prose-bullet-group li { position: relative; padding: 13px 0 13px 25px; border-bottom: 1px solid var(--line); color: #465a4e; line-height: 1.6; }
 .prose-bullet-group li::before { content: ''; position: absolute; top: 24px; left: 1px; width: 7px; height: 7px; border-radius: 50%; background: var(--forest); }
 .inline-source-image { margin: 32px 0 48px; }
-.inline-source-image img { display: block; max-width: 100%; max-height: 760px; width: auto; height: auto; margin: auto; object-fit: contain; }
+.inline-source-image img { display: block; width: min(100%, var(--intrinsic-width), var(--inline-limit-width)); height: auto; aspect-ratio: var(--intrinsic-ratio); margin: auto; object-fit: contain; }
 .faq-answer .inline-source-image { margin: 20px 0 32px; }
 .prose-flow .list-line { padding-left: 22px; position: relative; }
 .prose-flow .list-line::before { content: '—'; position: absolute; left: 0; color: var(--muted); }
@@ -322,7 +322,7 @@ html[lang='ja'] .page-hero h1, html[lang='th'] .page-hero h1 { font-size: clamp(
 .faq-answer .faq-bullet { padding-left: 22px; position: relative; margin-bottom: 5px; }
 .faq-answer .faq-bullet::before { content: '•'; position: absolute; left: 3px; color: var(--forest); }
 .faq-inline-image { margin: 24px 0; }
-.faq-inline-image img { display: block; max-width: min(100%, 650px); max-height: 520px; width: auto; height: auto; object-fit: contain; }
+.faq-inline-image img { display: block; width: min(100%, 650px, var(--intrinsic-width), var(--faq-limit-width)); height: auto; aspect-ratio: var(--intrinsic-ratio); object-fit: contain; }
 .faq-qr-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 30px; margin: 37px 0 12px; text-align: center; }
 .faq-qr-grid:has(figure:nth-child(2):last-child) { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 720px; }
 .faq-qr-grid figure { margin: 0; min-width: 0; }

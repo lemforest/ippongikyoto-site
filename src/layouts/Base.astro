@@ -5,6 +5,7 @@ import type { Locale, SitePage } from '../data/types'
 import seo from '../data/seo.json'
 import { strings } from '../i18n'
 import { structuredData } from '../data/structured-data'
+import SiteImage from '../components/SiteImage.astro'
 
 interface Props { page: SitePage }
 const { page } = Astro.props
@@ -52,6 +53,7 @@ const fontFamilies = [
   ...(lang === 'th' ? ['family=Noto+Sans+Thai:wght@400;500', 'family=Noto+Serif+Thai:wght@400;500'] : []),
 ]
 const fontStylesheet = `https://fonts.googleapis.com/css2?${fontFamilies.join('&')}&display=swap`
+const heroPoster = page.kind === 'home' ? '/responsive/media/2025/07/0-July-960.webp' : undefined
 ---
 <!doctype html>
 <html lang={lang}>
@@ -87,13 +89,14 @@ const fontStylesheet = `https://fonts.googleapis.com/css2?${fontFamilies.join('&
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href={fontStylesheet} rel="stylesheet" />
+    {heroPoster && <link rel="preload" as="image" href={heroPoster} fetchpriority="high" />}
   </head>
   <body>
     <a class="skip-link" href="#main">{aria.skip}</a>
     <div class="top-rule" aria-hidden="true"></div>
     <header class="site-header" id="top">
       <div class="header-inner">
-        <a class="wordmark" href={home[lang]} aria-label={`IPPONGI Kyoto — ${footer.home}`}><span class="wordmark-mark" aria-hidden="true"><img src="/brand/ippongi-logo-96.webp" alt="" width="46" height="54" /></span><span class="wordmark-type"><span>IPPONGI</span><small>KYOTO</small></span></a>
+        <a class="wordmark" href={home[lang]} aria-label={`IPPONGI Kyoto — ${footer.home}`}><span class="wordmark-mark" aria-hidden="true"><SiteImage src="/brand/ippongi-logo-96.webp" alt="" loading="eager" /></span><span class="wordmark-type"><span>IPPONGI</span><small>KYOTO</small></span></a>
         <nav class="desktop-nav" aria-label={aria.primaryNav}>
           <a class={page.path === home[lang] ? 'active' : ''} href={home[lang]}>{nav.home}</a>
           <a class={page.path === message[lang] ? 'active' : ''} href={message[lang]}>{nav.message}</a>

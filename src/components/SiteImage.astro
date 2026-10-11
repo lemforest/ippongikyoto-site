@@ -1,0 +1,18 @@
+---
+import assets from '../data/image-assets.json'
+
+interface Props {
+  src: string
+  alt: string
+  sizes?: string
+  loading?: 'eager' | 'lazy'
+  fetchpriority?: 'high' | 'low' | 'auto'
+  decoding?: 'async' | 'sync' | 'auto'
+}
+
+const { src, alt, sizes, loading = 'lazy', fetchpriority, decoding = 'async' } = Astro.props
+const image = (assets as Record<string, { width: number; height: number; srcset: string | null }>)[src]
+if (!image) throw new Error(`Image dimensions missing for ${src}`)
+const sizing = `--intrinsic-width:${image.width}px;--intrinsic-ratio:${image.width}/${image.height};--inline-limit-width:${Math.round(760 * image.width / image.height)}px;--faq-limit-width:${Math.round(520 * image.width / image.height)}px`
+---
+<img src={src} alt={alt} width={image.width} height={image.height} style={sizing} srcset={image.srcset || undefined} sizes={image.srcset ? sizes || '(max-width: 780px) calc(100vw - 40px), 820px' : undefined} loading={loading} fetchpriority={fetchpriority} decoding={decoding} />

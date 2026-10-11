@@ -1,0 +1,10 @@
+{
+  "nav": { "home": "ホーム", "message": "代表挨拶", "about": "会社案内", "webinar": "ウェビナー", "product": "PROTAI", "faq": "よくある質問", "contact": "お問い合わせ", "original": "元のサイト", "language": "言語" },
+  "footer": { "care": "京都から、心を込めて。", "line": "目は心の窓。", "contact": "お問い合わせ", "address": "〒600-8223 京都府京都市下京区大黒町227 第2京都ビル402", "top": "ページ上部へ", "home": "ホーム", "law": "特定商取引法に基づく表記", "preview": "独立デザインのプレビュー" },
+  "aria": { "skip": "本文へ移動", "primaryNav": "メインナビゲーション", "mobileNav": "モバイルナビゲーション", "openMenu": "メニューを開く", "closeMenu": "メニューを閉じる" },
+  "page": { "chapter": "目もとから、静かなケアを", "discover": "PROTAIを見る", "story": "私たちについて", "film": "動画を見る", "product": "日々のケア", "productText": "毎日の習慣に寄り添う、ふたつの形。", "view": "製品を見る", "original": "元のショップで購入する", "contact": "お問い合わせ", "questions": "よくある質問", "register": "お申し込み", "source": "元のページを見る", "archive": "お買い物は現在、元のサイトで承っています。", "details": "製品について", "gallery": "写真資料", "productOverview": "製品概要", "productName": "アイスキンケアミスト", "madeInJapan": "日本製", "founderNote": "代表挨拶", "certification": "安全性に関する認証・発明特許", "kind": { "about": "会社案内", "article": "記事", "story": "ストーリー", "webinar": "ウェビナー", "commerce": "お買い物", "contact": "お問い合わせ", "shop": "ショップ", "product": "製品" } },
+  "home": { "introCopy": ["PROTAIは、IPPONGI KYOTOがご紹介する目もと用スキンケアミストです。", "製品情報やブランドの背景、2つのセットをご覧いただけます。"], "heroProduct": "目もと用スキンケアミスト", "sectionLabels": { "intro": "はじめに", "origin": "開発の背景", "product": "製品", "film": "映像", "closing": "IPPONGI" }, "filmTitles": ["PROTAI コンセプト", "PROTAI 誕生の物語"], "closingQuote": "目は心の窓。" },
+  "slideshow": { "title": "写真で見るPROTAI", "previous": "前の写真", "next": "次の写真", "pause": "スライドショーを一時停止", "play": "スライドショーを再生", "photo": "PROTAIの写真" },
+  "contact": { "heading": "つながる", "intro": "この度は弊社のホームページをご覧いただき誠にありがとうございます。", "note": "製品に対するご質問や使い方などについては、「よくある質問」にてまとめておりますので、よろしければお役立てください。", "office": "所在地", "address": "〒600-8223京都府京都市下京区大黒町227 第2京都ビル402", "hours": "営業時間", "schedule": "平日 10:00～17:00（日本時間） ※土日祝・年末年始は休業" },
+  "purchase": [{ "label": "送料・配送について", "href": "/ja/commercial-disclosure/", "lang": "ja" }, { "label": "返品・交換について", "href": "/ja/returns-and-exchanges/", "lang": "ja" }]
+}

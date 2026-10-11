@@ -3,43 +3,27 @@ import Base from '../layouts/Base.astro'
 import Blocks from './Blocks.astro'
 import type { SitePage } from '../data/types'
 import { productPath } from '../data/catalog'
+import { productTranslation } from '../data/product-translations'
 import faqContent from '../data/faq.json'
 import { reviewItems, testimonialCopy } from '../data/testimonials'
 import type { Locale } from '../data/types'
+import { strings } from '../i18n'
 
 interface Props { page: SitePage }
 const { page } = Astro.props
 const lang = page.lang || 'en'
-const ui = {
-  en: { chapter: 'A quieter way to care', discover: 'Discover PROTAI', story: 'Our story', film: 'Watch the film', product: 'The daily ritual', productText: 'Two formats for a considered routine.', view: 'Explore the product', original: 'Continue to the original store', contact: 'Get in touch', questions: 'Questions, answered', register: 'Go to registration', source: 'View original page', archive: 'The original transaction remains on the existing site.', details: 'Product details', gallery: 'Visual archive' },
-  ja: { chapter: '目もとから、静かなケアを', discover: 'PROTAIを見る', story: '私たちについて', film: '動画を見る', product: '日々のケア', productText: '毎日の習慣に寄り添う、ふたつの形。', view: '製品を見る', original: '元のショップで購入する', contact: 'お問い合わせ', questions: 'よくある質問', register: 'お申し込み', source: '元のページを見る', archive: 'お買い物は現在、元のサイトで承っています。', details: '製品について', gallery: '写真資料' },
-  fr: { chapter: 'Un soin qui prend son temps', discover: 'Découvrir PROTAI', story: 'Notre histoire', film: 'Voir le film', product: 'Le rituel quotidien', productText: 'Deux formats pour une routine attentive. Détails du produit en anglais.', view: 'Découvrir le produit (EN)', original: 'Continuer sur la boutique d’origine', contact: 'Nous contacter', questions: 'Vos questions', register: 'S’inscrire', source: 'Voir la page d’origine', archive: 'Les achats restent disponibles sur le site d’origine.', details: 'Détails du produit', gallery: 'Images' },
-  th: { chapter: 'ช่วงเวลาแห่งการดูแลอย่างอ่อนโยน', discover: 'รู้จัก PROTAI', story: 'เรื่องราวของเรา', film: 'ชมวิดีโอ', product: 'การดูแลในทุกวัน', productText: 'สินค้ามีให้เลือก 2 รูปแบบ รายละเอียดสินค้าเป็นภาษาอังกฤษ', view: 'ดูผลิตภัณฑ์ (EN)', original: 'ซื้อผ่านร้านค้าเดิม', contact: 'ติดต่อเรา', questions: 'คำถามที่พบบ่อย', register: 'ลงทะเบียน', source: 'ดูหน้าเว็บไซต์เดิม', archive: 'การสั่งซื้อยังดำเนินการผ่านเว็บไซต์เดิม', details: 'รายละเอียดผลิตภัณฑ์', gallery: 'ภาพประกอบ' },
-}[lang]
+const dictionary = strings[lang]
+const ui = dictionary.page
+const detailLabel = page.kind === 'about' || page.kind === 'story' ? ui.story : ui.kind[page.kind as keyof typeof ui.kind] || ui.story
 const heroLines = page.text.split('\n').filter(Boolean).slice(0, lang === 'en' ? 3 : 2).map((line) => lang === 'fr' ? line.replace('en toi', 'en vous') : line)
-const homeIntroCopy = {
-  en: ['PROTAI is an eye-area skincare mist presented by IPPONGI Kyoto.', 'Explore the product, its story and the two available formats.'],
-  ja: ['PROTAIは、IPPONGI KYOTOがご紹介する目もと用スキンケアミストです。', '製品情報やブランドの背景、2つのセットをご覧いただけます。'],
-  fr: ['PROTAI est une brume de soin pour le contour des yeux présentée par IPPONGI Kyoto.', 'Découvrez le produit, son histoire et les deux formats proposés.'],
-  th: ['PROTAI เป็นผลิตภัณฑ์สกินแคร์แบบสเปรย์สำหรับบริเวณรอบดวงตาจาก IPPONGI Kyoto', 'ดูข้อมูลผลิตภัณฑ์ เรื่องราวของแบรนด์ และตัวเลือกสินค้า 2 รูปแบบ'],
-}[lang]
-const heroProduct = { en: 'Eye-area skincare mist', ja: '目もと用スキンケアミスト', fr: 'Brume de soin contour des yeux', th: 'สเปรย์สกินแคร์สำหรับรอบดวงตา' }[lang]
-const slideshowCopy = {
-  en: { title: 'PROTAI in photographs', previous: 'Previous photo', next: 'Next photo', pause: 'Pause slideshow', play: 'Play slideshow', photo: 'PROTAI photograph' },
-  ja: { title: '写真で見るPROTAI', previous: '前の写真', next: '次の写真', pause: 'スライドショーを一時停止', play: 'スライドショーを再生', photo: 'PROTAIの写真' },
-  fr: { title: 'PROTAI en images', previous: 'Photo précédente', next: 'Photo suivante', pause: 'Mettre le diaporama en pause', play: 'Lancer le diaporama', photo: 'Photo de PROTAI' },
-  th: { title: 'ภาพถ่าย PROTAI', previous: 'ภาพก่อนหน้า', next: 'ภาพถัดไป', pause: 'หยุดภาพสไลด์ชั่วคราว', play: 'เล่นภาพสไลด์', photo: 'ภาพถ่าย PROTAI' },
-}[lang]
+const homeIntroCopy = dictionary.home.introCopy
+const heroProduct = dictionary.home.heroProduct
+const slideshowCopy = dictionary.slideshow
 const visualSlides = Array.from({ length: 9 }, (_, index) => ({
   url: `/media/2026/10/visual-slide-${String(index + 1).padStart(2, '0')}.webp`,
   number: String(index + 1).padStart(2, '0'),
 }))
-const sectionLabels = {
-  en: { intro: 'INTRODUCTION', origin: 'ORIGIN', product: 'PRODUCT', film: 'FILM', closing: 'IPPONGI' },
-  ja: { intro: 'はじめに', origin: '開発の背景', product: '製品', film: '映像', closing: 'IPPONGI' },
-  fr: { intro: 'INTRODUCTION', origin: 'ORIGINE', product: 'PRODUIT', film: 'FILM', closing: 'IPPONGI' },
-  th: { intro: 'แนะนำ', origin: 'ที่มา', product: 'ผลิตภัณฑ์', film: 'วิดีโอ', closing: 'IPPONGI' },
-}[lang]
+const sectionLabels = dictionary.home.sectionLabels
 const storyPath = { en: '/about/', ja: '/ja/about/', fr: '/fr/about/', th: '/th/about/' }[lang]
 const isHome = page.kind === 'home'
 const homeBlocks = isHome ? page.blocks.filter((block) => block.type !== 'image') : []
@@ -58,6 +42,7 @@ const isShop = page.kind === 'shop'
 const isContact = page.kind === 'contact'
 const isWebinar = page.kind === 'webinar'
 const isCommerce = page.kind === 'commerce'
+const bodyLang = page.path === '/ja/front-page/' ? 'en' : lang
 const productOne = productPath(lang, 'single')
 const productTwo = productPath(lang, 'refill')
 const preserveLines = page.path.endsWith('/founder-message/')
@@ -95,13 +80,14 @@ const faqMarkup = (runs: FaqRun[]) => runs.map((run) => {
 const registrationMatch = page.text.match(/https:\/\/prosunfun\.protai\.com\.tw\/[^\s]+/)
 const registration = page.links.find((link) => /prosunfun|registration|seminar/i.test(link.href)) ||
   (registrationMatch ? { href: registrationMatch[0], text: ui.register } : null)
-const price = page.text.match(/¥[\d,]+/)?.[0]
+const price = page.path.includes('20ml') ? '¥26,400' : '¥15,400'
 const productImage = page.path.includes('20ml') ? '/media/2025/10/20ml-3.webp' : '/media/2025/10/10ml-4.webp'
 const productParts = isProduct ? page.text.split('(English Introduction)') : []
 const productEnglishLines = (productParts[1] || '').split('\n').map((line) => line.trim()).filter(Boolean)
 const productJapaneseAll = (productParts[0] || '').split('\n').map((line) => line.trim()).filter(Boolean)
 const productJapaneseLines = productJapaneseAll.slice(Math.max(0, productJapaneseAll.findIndex((line) => line.includes('🌿 PROTAI'))))
-const productLead = lang === 'ja' ? productJapaneseLines[2] : productEnglishLines.slice(1, 5).join(' ')
+const translatedProduct = isProduct ? productTranslation(lang, page.path.includes('20ml') ? 'refill' : 'single') : undefined
+const productLead = translatedProduct?.lead || (lang === 'ja' ? productJapaneseLines[2] : productEnglishLines.slice(1, 5).join(' '))
 const originalProductLines = lang === 'ja' ? productJapaneseLines.slice(1) : productEnglishLines
 const productEnd = originalProductLines.findIndex((line) => lang === 'ja'
   ? line.includes('本製品は医薬品ではなく')
@@ -112,30 +98,18 @@ const productPrimaryLines = (productEnd >= 0 ? originalProductLines.slice(0, pro
   .map((line) => line.includes('Avoid direct contact with the eyes is considerable')
     ? 'Avoid contact with the eyes. If contact occurs, rinse with water; consult an eye specialist if discomfort persists.'
     : line)
-const productSections: { title: string; lines: string[] }[] = [{ title: lang === 'ja' ? '製品概要' : 'Product overview', lines: [] }]
-for (const line of productPrimaryLines) {
+const productSections: { title: string; lines: string[] }[] = translatedProduct?.sections || [{ title: ui.productOverview, lines: [] }]
+for (const line of translatedProduct ? [] : productPrimaryLines) {
   const match = line.match(/^【([^】]+)】[:：]?\s*(.*)$/)
   if (match) productSections.push({ title: match[1], lines: match[2] ? [match[2]] : [] })
   else productSections[productSections.length - 1].lines.push(line)
 }
-const productCardName = lang === 'ja' ? 'アイスキンケアミスト' : 'Eye Skin Care Mist'
-const purchaseLinks = lang === 'ja'
-  ? [{ label: '送料・配送について', href: '/ja/commercial-disclosure/' }, { label: '返品・交換について', href: '/ja/returns-and-exchanges/' }]
-  : [{ label: 'Shipping information', href: '/commercial-disclosure/' }, { label: 'Returns & exchanges (JP)', href: '/returns-and-exchanges/' }]
+const productCardName = ui.productName
+const purchaseLinks = dictionary.purchase
 const homeTestimonials = testimonialCopy[lang]
-const filmTitles = {
-  en: ['PROTAI Concept', 'The Origin of PROTAI'],
-  ja: ['PROTAI コンセプト', 'PROTAI 誕生の物語'],
-  fr: ['Le concept PROTAI', 'Les origines de PROTAI'],
-  th: ['แนวคิด PROTAI', 'ที่มาของ PROTAI'],
-}[lang]
+const filmTitles = dictionary.home.filmTitles
 const testimonialRows = [reviewItems.slice(0, 4), reviewItems.slice(4)]
-const contactData = {
-  en: { heading: 'Let’s get in touch', intro: 'You can find us at', note: '', faq: '/faq/', office: 'OFFICE', address: '#402 Daini-Kyoto-Bldg., 227 Daikokucho, Aburanokoji Higashi-iru, Shichijyo-Dori, Shimogyo-ku, Kyoto-shi, Kyoto 600-8223, Japan', hours: 'BUSINESS HOURS', schedule: 'Weekdays: 10:00AM – 5:00PM JST (Closed on weekends, public holidays, and New Year holidays)' },
-  ja: { heading: 'つながる', intro: 'この度は弊社のホームページをご覧いただき誠にありがとうございます。', note: '製品に対するご質問や使い方などについては、「よくある質問」にてまとめておりますので、よろしければお役立てください。', faq: '/ja/faq/', office: 'OFFICE', address: '〒600-8223京都府京都市下京区大黒町227 第2京都ビル402', hours: '営業時間', schedule: '平日 10:00～17:00（日本時間） ※土日祝・年末年始は休業' },
-  fr: { heading: 'Pour Nous Contacter', intro: 'Merci de votre visite sur notre site.', note: 'Si vous avez des questions, demandes ou renseignements concernant nos produits ou services, n’hésitez pas à nous contacter. Pour les questions courantes, veuillez d’abord consulter notre page FAQ.', faq: '/fr/faq/', office: 'Adresse du bureau', address: '#402 Daini-Kyoto-Bldg., 227 Daikokucho, Aburanokoji Higashi-iru, Shichijyo-Dori, Shimogyo-ku, Kyoto-shi, Kyoto 600-8223, Japon', hours: 'Heures d’ouverture', schedule: 'Du lundi au vendredi : de 10h00 à 17h00 (heure japonaise) (Fermé le week-end, les jours fériés et pendant les congés du Nouvel An)' },
-  th: { heading: 'ช่องทางการติดต่อ', intro: 'ขอขอบคุณมากที่มาเยี่ยมชมเว็บไซต์ของเรา', note: 'หากคุณมีคำถามเกี่ยวกับผลิตภัณฑ์ของเราหรือวิธีการใช้งาน โปรดดูส่วน “คำถามที่พบบ่อย”', faq: '/th/faq/', office: 'ที่ตั้ง', address: 'เขตชิโมเกียว เมืองเกียวโต จังหวัดเกียวโต 227 อาคารไดโคคุโชะที่ 2 เกียวโต 402', hours: 'เวลาทำการ', schedule: 'วันธรรมดา 10:00-17:00 น. (เวลาประเทศญี่ปุ่น) ปิดบริการวัน เสาร์-อาทิตย์ วันหยุดนักขัตฤกษ์ และเทศกาลปีใหม่' },
-}[lang]
+const contactData = { ...dictionary.contact, faq: lang === 'en' ? '/faq/' : `/${lang}/faq/` }
 ---
 <Base page={page}>
   {isHome ? <>
@@ -163,15 +137,15 @@ const contactData = {
       </div>
     </section>
     <section class="film-section section-wrap"><div class="film-heading" data-reveal><span class="section-number">05 — {sectionLabels.film}</span></div><div class="film-preview" data-reveal><video class="film-preview-video" data-teaser-video muted playsinline preload="none" poster="/media/2026/10/protai-film-teaser.webp" aria-hidden="true"><source src={firstVideo} type="video/mp4" /></video><div class="film-preview-shade" aria-hidden="true"></div><div class="film-preview-copy"><span>PROTAI / IPPONGI KYOTO</span><h3>{ui.chapter}</h3></div></div></section>
-    <section class="closing-section section-wrap" data-reveal><span class="section-number">06 — {sectionLabels.closing}</span><blockquote>“Eyes are the windows to the soul.”</blockquote><a class="text-link" href={storyPath}>{ui.story}<span aria-hidden="true">↗</span></a></section>
+    <section class="closing-section section-wrap" data-reveal><span class="section-number">06 — {sectionLabels.closing}</span><blockquote>“{dictionary.home.closingQuote}”</blockquote><a class="text-link" href={storyPath}>{ui.story}<span aria-hidden="true">↗</span></a></section>
   </> : isFaq ? <>
-    <section class="page-hero page-hero-plain faq-hero"><span class="section-number" data-reveal>IPPONGI / {lang === 'fr' ? 'Questions fréquentes' : ui.questions}</span><h1 data-reveal>{page.title}</h1></section>
+    <section class="page-hero page-hero-plain faq-hero"><span class="section-number" data-reveal>IPPONGI / {ui.questions}</span><h1 data-reveal>{page.title}</h1></section>
     <section class="faq-section section-wrap">
-      <div class="faq-opening-gallery">{faqOpeningGallery.map((item) => <figure><img src={item.url} alt={item.alt || 'PROTAI product packaging'} loading="eager" /></figure>)}</div>
-      <div class="faq-list">{faq?.entries.map((entry, index) => <details class="faq-item" open={index === 0}><summary><span>{String(entry.number).padStart(2, '0')}</span><strong>{entry.question}</strong><i aria-hidden="true">+</i></summary><div class="faq-answer">{entry.nodes.map((node) => node.type === 'p' ? <p set:html={faqMarkup(node.runs as FaqRun[])} /> : node.type === 'li' ? <p class="faq-bullet" set:html={faqMarkup(node.runs as FaqRun[])} /> : node.type === 'image' ? <figure class="faq-inline-image"><img src={node.url} alt={node.alt || ''} loading="lazy" /></figure> : node.type === 'table' ? <div class="faq-table-scroll"><table><tbody>{node.rows.map((row, rowIndex) => <tr>{row.map((cell, cellIndex) => rowIndex === 0 || cellIndex === 0 ? <th scope={rowIndex === 0 ? 'col' : 'row'}>{cell}</th> : <td class:list={{ 'faq-cell-bold': node.boldCells[rowIndex][cellIndex] }}>{cell}</td>)}</tr>)}</tbody></table></div> : node.type === 'qrGrid' ? <div class="faq-qr-grid">{node.items.map((item) => <figure><figcaption set:html={faqMarkup(item.label as FaqRun[])} /><img src={item.url} alt={item.alt || 'Webinar registration QR code'} loading="eager" /></figure>)}</div> : null)}</div></details>)}</div>
+      <div class="faq-opening-gallery">{faqOpeningGallery.map((item) => <figure><img src={item.url} alt={item.alt || ui.productName} loading="eager" /></figure>)}</div>
+      <div class="faq-list">{faq?.entries.map((entry, index) => <details class="faq-item" open={index === 0}><summary><span>{String(entry.number).padStart(2, '0')}</span><strong>{entry.question}</strong><i aria-hidden="true">+</i></summary><div class="faq-answer">{entry.nodes.map((node) => node.type === 'p' ? <p set:html={faqMarkup(node.runs as FaqRun[])} /> : node.type === 'li' ? <p class="faq-bullet" set:html={faqMarkup(node.runs as FaqRun[])} /> : node.type === 'image' ? <figure class="faq-inline-image"><img src={node.url} alt={node.alt || ''} loading="lazy" /></figure> : node.type === 'table' ? <div class="faq-table-scroll"><table><tbody>{node.rows.map((row, rowIndex) => <tr>{row.map((cell, cellIndex) => rowIndex === 0 || cellIndex === 0 ? <th scope={rowIndex === 0 ? 'col' : 'row'}>{cell}</th> : <td class:list={{ 'faq-cell-bold': node.boldCells[rowIndex][cellIndex] }}>{cell}</td>)}</tr>)}</tbody></table></div> : node.type === 'qrGrid' ? <div class="faq-qr-grid">{node.items.map((item) => <figure><figcaption set:html={faqMarkup(item.label as FaqRun[])} /><img src={item.url} alt={item.alt || ui.register} loading="eager" /></figure>)}</div> : null)}</div></details>)}</div>
     </section>
   </> : isProduct ? <>
-    <section class="product-hero section-wrap"><div class="product-hero-media" data-reveal><img src={page.productGallery?.[0] || productImage} alt={page.title} fetchpriority="high" /></div><div class="product-hero-copy" data-reveal><span class="section-number">PROTAI / MADE IN JAPAN</span><h1>{lang === 'ja' ? <><span class="product-title-brand">PROTAI</span><span class="product-title-name">{page.title.replace(/^PROTAI\s*[—–-]\s*/, '')}</span></> : page.title}</h1><p class="product-price">{price}</p><p>{productLead}</p><a class="primary-link" href={page.sourceUrl} target="_blank" rel="noopener noreferrer">{ui.original} ↗</a><small>{ui.archive}</small><div class="purchase-links">{purchaseLinks.map((link) => <a href={link.href}>{link.label} ↗</a>)}</div></div></section>
+    <section class="product-hero section-wrap"><div class="product-hero-media" data-reveal><img src={page.productGallery?.[0] || productImage} alt={page.title} fetchpriority="high" /></div><div class="product-hero-copy" data-reveal><span class="section-number">PROTAI / {ui.madeInJapan}</span><h1>{lang === 'ja' ? <><span class="product-title-brand">PROTAI</span><span class="product-title-name">{page.title.replace(/^PROTAI\s*[—–-]\s*/, '')}</span></> : page.title}</h1><p class="product-price">{price}</p><p>{productLead}</p><a class="primary-link" href={page.sourceUrl} target="_blank" rel="noopener noreferrer">{ui.original} ↗</a><small>{ui.archive}</small><div class="purchase-links">{purchaseLinks.map((link) => <a href={link.href} hreflang={link.lang}>{link.label} ↗</a>)}</div></div></section>
     {(page.productGallery?.length || 0) > 1 && <div class="product-gallery section-wrap">{page.productGallery?.slice(1).map((url) => <img src={url} alt={page.title} loading="lazy" />)}</div>}
     <section class="detail-section section-wrap"><div class="detail-sidebar"><span class="section-number">01 — {ui.details}</span><h2>{ui.details}</h2></div><div class="detail-body product-detail-groups">{productSections.map((section, index) => <details class="product-detail-item" open={index === 0}><summary><strong>{section.title}</strong><span aria-hidden="true">＋</span></summary><div class="prose-flow">{section.lines.map((line) => <p>{line}</p>)}</div></details>)}</div></section>
   </> : isShop ? <>
@@ -179,8 +153,8 @@ const contactData = {
   </> : isContact ? <>
     <section class:list={['page-hero', 'page-hero-plain', lang === 'ja' && 'contact-hero-ja']}><span class="section-number">IPPONGI / KYOTO</span><h1>{page.title}</h1><p>{contactData.intro}</p>{contactData.note && <div class="contact-note"><p>{lang === 'ja' ? <><span class="contact-note-line">{contactData.note.split('ので、')[0]}ので、</span><span class="contact-note-line">{contactData.note.split('ので、')[1]}</span></> : contactData.note}</p><a href={contactData.faq}>FAQ ↗</a></div>}</section><section class:list={['contact-section', 'section-wrap', lang === 'fr' && 'contact-section-fr', lang === 'th' && 'contact-section-th']}><div class="contact-invite" data-reveal><h2>{contactData.heading}</h2><a href="mailto:support@ippongikyoto.com">support@ippongikyoto.com ↗</a></div><div class="contact-details" data-reveal><div><span>{contactData.office}</span><p>{contactData.address}</p></div><div><span>{contactData.hours}</span><p>{contactData.schedule}</p></div></div></section>
   </> : <>
-    <section class:list={['page-hero', leadImage ? 'page-hero-image' : 'page-hero-plain', isEnglishFounder && 'founder-hero', isJapaneseFounder && 'founder-hero-ja']}><div class="page-hero-copy"><span class="section-number" data-reveal>IPPONGI / {isFounderNote ? "Founder's Note" : page.kind.toUpperCase()}</span><h1 data-reveal>{isEnglishFounder ? <><span class="founder-heading-line">A Message from</span>{' '}<span class="founder-heading-line">the Representative</span></> : page.title}</h1>{!isFounderNote && <p data-reveal>{firstParagraph.slice(0, 300)}</p>}{isWebinar && registration && <a class="primary-link" href={registration.href} target="_blank" rel="noopener noreferrer">{ui.register} ↗</a>}{isCommerce && <a class="primary-link" href={page.sourceUrl} target="_blank" rel="noopener noreferrer">{ui.original} ↗</a>}</div>{leadImage && <div class="page-hero-media page-hero-portrait"><img src={leadImage} alt={page.title} loading="eager" /></div>}</section>
+    <section class:list={['page-hero', leadImage ? 'page-hero-image' : 'page-hero-plain', isEnglishFounder && 'founder-hero', isJapaneseFounder && 'founder-hero-ja']}><div class="page-hero-copy"><span class="section-number" data-reveal>IPPONGI / {isFounderNote ? ui.founderNote : ui.kind[page.kind as keyof typeof ui.kind] || page.kind}</span><h1 data-reveal>{isEnglishFounder ? <><span class="founder-heading-line">A Message from</span>{' '}<span class="founder-heading-line">the Representative</span></> : page.title}</h1>{!isFounderNote && <p data-reveal lang={bodyLang !== lang ? bodyLang : undefined}>{firstParagraph.slice(0, 300)}</p>}{isWebinar && registration && <a class="primary-link" href={registration.href} target="_blank" rel="noopener noreferrer">{ui.register} ↗</a>}{isCommerce && <a class="primary-link" href={page.sourceUrl} target="_blank" rel="noopener noreferrer">{ui.original} ↗</a>}</div>{leadImage && <div class="page-hero-media page-hero-portrait"><img src={leadImage} alt={page.title} loading="eager" /></div>}</section>
     {firstVideo && <section class="film-section section-wrap"><div class="film-frame"><video controls preload="none" playsinline aria-label={ui.film}><source src={firstVideo} type="video/mp4" /></video></div></section>}
-    <section class:list={['detail-section', 'section-wrap', isEnglishFounder && 'founder-detail']}><div class="detail-sidebar"><span class="section-number">01 — {ui.story}</span>{!isEnglishFounder && <h2>{page.title}</h2>}</div><div class="detail-body">{fallback ? <div class="prose-flow">{fallbackLines.map((line) => <p data-reveal>{line}</p>)}</div> : <><Blocks blocks={narrativeBlocks} skipFirstHeading />{certificationIndex >= 0 && <section class="certification-topic" aria-labelledby="certification-heading"><span class="section-number">PROTAI / CERTIFICATION</span><h2 id="certification-heading">PROTAI — Safety Certifications and Invention Patents</h2><Blocks blocks={certificationBlocks} /></section>}</>}</div></section>
+    <section class:list={['detail-section', 'section-wrap', isEnglishFounder && 'founder-detail']}><div class="detail-sidebar"><span class="section-number">01 — {detailLabel}</span>{!isEnglishFounder && <h2>{page.title}</h2>}</div><div class="detail-body" lang={bodyLang !== lang ? bodyLang : undefined}>{fallback ? <div class="prose-flow">{fallbackLines.map((line) => <p data-reveal>{line}</p>)}</div> : <><Blocks blocks={narrativeBlocks} skipFirstHeading />{certificationIndex >= 0 && <section class="certification-topic" aria-labelledby="certification-heading"><span class="section-number">PROTAI / {ui.certification}</span><h2 id="certification-heading">PROTAI — {ui.certification}</h2><Blocks blocks={certificationBlocks} /></section>}</>}</div></section>
   </>}
 </Base>

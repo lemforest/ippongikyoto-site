@@ -3,6 +3,7 @@ import '../styles/global.css'
 import { catalogPages, productPath } from '../data/catalog'
 import type { Locale, SitePage } from '../data/types'
 import seo from '../data/seo.json'
+import { strings } from '../i18n'
 
 interface Props { page: SitePage }
 const { page } = Astro.props
@@ -10,15 +11,10 @@ const lang: Locale = page.lang || 'en'
 const home = { en: '/', ja: '/ja/', fr: '/fr/', th: '/th/' }
 const about = { en: '/about/', ja: '/ja/about/', fr: '/fr/about/', th: '/th/about/' }
 const message = { en: '/founder-message/', ja: '/ja/founder-message/', fr: '/fr/founder-message/', th: '/th/founder-message/' }
-const webinar = { en: '/webinar/', ja: '/ja/webinar/', fr: '/webinar/', th: '/th/webinar/' }
+const webinar = { en: '/webinar/', ja: '/ja/webinar/', fr: '/fr/webinar/', th: '/th/webinar/' }
 const faq = { en: '/faq/', ja: '/ja/faq/', fr: '/fr/faq/', th: '/th/faq/' }
 const contact = { en: '/contact/', ja: '/ja/contact/', fr: '/fr/contact/', th: '/th/contact/' }
-const nav = {
-  en: { home: 'Home', message: 'Founder’s note', about: 'Our story', webinar: 'Webinar', product: 'PROTAI', faq: 'FAQ', contact: 'Contact', original: 'Original website', language: 'Language' },
-  ja: { home: 'ホーム', message: '代表挨拶', about: '会社案内', webinar: 'ウェビナー', product: 'PROTAI', faq: 'よくある質問', contact: 'お問い合わせ', original: '元のサイト', language: '言語' },
-  fr: { home: 'Accueil', message: 'Mot du fondateur', about: 'Notre histoire', webinar: 'Webinaire (EN)', product: 'PROTAI (EN)', faq: 'FAQ', contact: 'Contact', original: 'Site d’origine', language: 'Langue' },
-  th: { home: 'หน้าแรก', message: 'ข้อความจากผู้แทน', about: 'ข้อมูลบริษัท', webinar: 'สัมมนาออนไลน์', product: 'PROTAI (EN)', faq: 'คำถามที่พบบ่อย', contact: 'ติดต่อเรา', original: 'เว็บไซต์เดิม', language: 'ภาษา' },
-}[lang]
+const { nav, footer, aria } = strings[lang]
 const names = { en: 'EN', ja: 'JP', fr: 'FR', th: 'TH' }
 const knownPages = new Map(catalogPages.map((item) => [item.path, item]))
 const productHref = productPath(lang)
@@ -44,12 +40,6 @@ const alternatePages = (Object.keys(home) as Locale[])
   .map((locale) => [locale, alternatePaths[locale]] as const)
   .filter((entry): entry is readonly [Locale, string] => Boolean(entry[1] && knownPages.get(entry[1])?.lang === entry[0]))
 const englishAlternate = alternatePages.find(([locale]) => locale === 'en')?.[1]
-const footer = {
-  en: { care: 'From Kyoto, with care.', line: 'Eyes are the windows to the soul.', contact: 'CONTACT', address: '#402 Daini-Kyoto-Bldg., 227 Daikokucho, Shimogyo-ku, Kyoto 600-8223, Japan', top: 'Back to top', home: 'Home', law: 'Legal information (JP)', preview: 'Independent design preview' },
-  ja: { care: '京都から、心を込めて。', line: '目は心の窓。', contact: 'お問い合わせ', address: '〒600-8223 京都府京都市下京区大黒町227 第2京都ビル402', top: 'ページ上部へ', home: 'ホーム', law: '特定商取引法に基づく表記', preview: '独立デザインのプレビュー' },
-  fr: { care: 'Depuis Kyoto, avec soin.', line: 'Les yeux sont le miroir de l’âme.', contact: 'CONTACT', address: '#402, Daini-Kyoto-Bldg., 227 Daikokucho, Shimogyo-ku, Kyoto 600-8223, Japon', top: 'Retour en haut', home: 'Accueil', law: 'Informations légales (JP)', preview: 'Aperçu du nouveau design' },
-  th: { care: 'ด้วยความใส่ใจจากเกียวโต', line: 'ดวงตาเป็นหน้าต่างของหัวใจ', contact: 'ติดต่อ', address: 'ห้อง 402 อาคาร Daini-Kyoto, 227 Daikokucho, เขต Shimogyo, เกียวโต 600-8223 ประเทศญี่ปุ่น', top: 'กลับไปด้านบน', home: 'หน้าแรก', law: 'ข้อมูลทางกฎหมาย (ภาษาญี่ปุ่น)', preview: 'ตัวอย่างการออกแบบเว็บไซต์' },
-}[lang]
 ---
 <!doctype html>
 <html lang={lang}>
@@ -75,12 +65,12 @@ const footer = {
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600&family=Noto+Sans+JP:wght@400;500&family=Noto+Sans+Thai:wght@400;500&family=Noto+Serif+JP:wght@400;500&family=Noto+Serif+Thai:wght@400;500&display=swap" rel="stylesheet" />
   </head>
   <body>
-    <a class="skip-link" href="#main">Skip to content</a>
+    <a class="skip-link" href="#main">{aria.skip}</a>
     <div class="top-rule" aria-hidden="true"></div>
     <header class="site-header" id="top">
       <div class="header-inner">
         <a class="wordmark" href={home[lang]} aria-label={`IPPONGI Kyoto — ${footer.home}`}><span class="wordmark-mark" aria-hidden="true"><img src="/brand/ippongi-logo-96.webp" alt="" width="46" height="54" /></span><span class="wordmark-type"><span>IPPONGI</span><small>KYOTO</small></span></a>
-        <nav class="desktop-nav" aria-label="Primary navigation">
+        <nav class="desktop-nav" aria-label={aria.primaryNav}>
           <a class={page.path === home[lang] ? 'active' : ''} href={home[lang]}>{nav.home}</a>
           <a class={page.path === message[lang] ? 'active' : ''} href={message[lang]}>{nav.message}</a>
           <a class={page.path === about[lang] ? 'active' : ''} href={about[lang]}>{nav.about}</a>
@@ -93,10 +83,10 @@ const footer = {
           <details class="locale-switcher"><summary aria-label={nav.language}>{names[lang]} <span class="locale-chevron" aria-hidden="true"></span></summary><div class="locale-list">
             {localeLinks.map(({ locale, name, href }) => <a href={href} lang={locale} aria-current={locale === lang ? 'page' : undefined}>{name}</a>)}
           </div></details>
-          <button class="menu-toggle" type="button" aria-label="Open menu" aria-controls="mobile-navigation" aria-expanded="false"><span></span><span></span></button>
+          <button class="menu-toggle" type="button" aria-label={aria.openMenu} data-open-label={aria.openMenu} data-close-label={aria.closeMenu} aria-controls="mobile-navigation" aria-expanded="false"><span></span><span></span></button>
         </div>
       </div>
-      <nav class="mobile-nav" id="mobile-navigation" aria-label="Mobile navigation" hidden>
+      <nav class="mobile-nav" id="mobile-navigation" aria-label={aria.mobileNav} hidden>
         <a href={home[lang]}>{nav.home}</a><a href={message[lang]}>{nav.message}</a><a href={about[lang]}>{nav.about}</a><a href={webinar[lang]}>{nav.webinar}</a><a href={productHref}>{nav.product}</a><a href={faq[lang]}>{nav.faq}</a><a href={contact[lang]}>{nav.contact}</a>
       </nav>
     </header>
@@ -105,7 +95,7 @@ const footer = {
       <div class="footer-inner">
         <div class="footer-brand"><span class="footer-kicker">{footer.care}</span><strong>IPPONGI</strong><p>{footer.line}</p></div>
         <div class="footer-contact"><span>{footer.contact}</span><a href="mailto:support@ippongikyoto.com">support@ippongikyoto.com</a><p>{footer.address}</p></div>
-        <div class="footer-meta"><a href={page.sourceUrl} target="_blank" rel="noopener noreferrer">{nav.original} ↗</a><a href="/ja/commercial-disclosure/">{footer.law}</a><a href="#top">{footer.top} ↑</a><small>© IPPONGI Kyoto · {footer.preview}</small></div>
+        <div class="footer-meta"><a href={page.sourceUrl} target="_blank" rel="noopener noreferrer">{nav.original} ↗</a><a href="/ja/commercial-disclosure/" hreflang="ja">{footer.law}</a><a href="#top">{footer.top} ↑</a><small>© IPPONGI Kyoto · {footer.preview}</small></div>
       </div>
     </footer>
     <script>
@@ -117,6 +107,7 @@ const footer = {
       toggle?.addEventListener('click', () => {
         const open = toggle.getAttribute('aria-expanded') !== 'true'
         toggle.setAttribute('aria-expanded', String(open))
+        toggle.setAttribute('aria-label', toggle.dataset[open ? 'closeLabel' : 'openLabel'] || '')
         if (mobile) mobile.hidden = !open
         document.body.classList.toggle('menu-open', open)
       })

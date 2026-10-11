@@ -9,6 +9,7 @@
     "routes:check": "node scripts/check-routes.mjs",
     "seo:check": "node scripts/check-seo.mjs",
     "metadata:check": "node scripts/check-metadata.mjs --built",
+    "locales:check": "node scripts/check-locales.mjs",
     "sitemap:check": "node scripts/check-sitemap.mjs",
     "preview": "astro preview --host 127.0.0.1 --port 4321",
     "check": "astro check"

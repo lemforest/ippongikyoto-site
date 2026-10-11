@@ -16,8 +16,9 @@ for (const page of pages) {
   const path = legacyRoutes[page.path] || page.path
   if (expected.has(path)) failures.push(`Duplicate content path: ${path}`)
   expected.set(path, page.lang)
-  if (page.kind === 'product') expected.set(`/ja${path}`, 'ja')
+  if (page.kind === 'product') for (const locale of ['ja', 'fr', 'th']) expected.set(`/${locale}${path}`, locale)
 }
+expected.set('/fr/webinar/', 'fr')
 expected.set('/404/', 'en')
 
 const titles = new Set()

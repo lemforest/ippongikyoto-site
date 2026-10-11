@@ -1,4 +1,4 @@
-export type Locale = 'en' | 'ja' | 'fr' | 'th'
+export type Locale = 'en' | 'ja' | 'fr' | 'th' | 'zh'
 
 export interface ContentBlock {
   type: string

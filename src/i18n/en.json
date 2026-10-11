@@ -1,10 +1,120 @@
 {
-  "nav": { "home": "Home", "message": "Founder’s note", "about": "Our story", "webinar": "Webinar", "product": "PROTAI", "faq": "FAQ", "contact": "Contact", "original": "Original website", "language": "Language" },
-  "footer": { "care": "From Kyoto, with care.", "line": "Eyes are the windows to the soul.", "contact": "CONTACT", "address": "{{FOOTER_ADDRESS}}", "top": "Back to top", "home": "Home", "law": "Legal information (JP)", "preview": "Independent design preview" },
-  "aria": { "skip": "Skip to content", "primaryNav": "Primary navigation", "mobileNav": "Mobile navigation", "openMenu": "Open menu", "closeMenu": "Close menu" },
-  "page": { "chapter": "A quieter way to care", "discover": "Discover PROTAI", "story": "Our story", "film": "Watch the film", "product": "The daily ritual", "productText": "Two formats for a considered routine.", "view": "Explore the product", "original": "Continue to the original store", "contact": "Get in touch", "questions": "Questions, answered", "register": "Go to registration", "source": "View original page", "archive": "The original transaction remains on the existing site.", "details": "Product details", "gallery": "Visual archive", "productOverview": "Product overview", "productName": "Eye Skin Care Mist", "madeInJapan": "MADE IN JAPAN", "founderNote": "Founder’s note", "certification": "Safety certifications and invention patents", "kind": { "about": "ABOUT", "article": "ARTICLE", "story": "STORY", "webinar": "WEBINAR", "commerce": "SHOPPING", "contact": "CONTACT", "shop": "SHOP", "product": "PRODUCT" } },
-  "home": { "introCopy": ["PROTAI is an eye-area skincare mist presented by IPPONGI Kyoto.", "Explore the product, its story and the two available formats."], "heroProduct": "Eye-area skincare mist", "sectionLabels": { "intro": "INTRODUCTION", "origin": "ORIGIN", "product": "PRODUCT", "film": "FILM", "closing": "IPPONGI" }, "filmTitles": ["PROTAI Concept", "The Origin of PROTAI"], "closingQuote": "Eyes are the windows to the soul." },
-  "slideshow": { "title": "PROTAI in photographs", "previous": "Previous photo", "next": "Next photo", "pause": "Pause slideshow", "play": "Play slideshow", "photo": "PROTAI photograph" },
-  "contact": { "heading": "Let’s get in touch", "intro": "You can find us at", "note": "", "office": "OFFICE", "address": "{{CONTACT_ADDRESS}}", "hours": "BUSINESS HOURS", "schedule": "{{BUSINESS_HOURS}}" },
-  "purchase": [{ "label": "Shipping information", "href": "/commercial-disclosure/", "lang": "en" }, { "label": "Returns & exchanges", "href": "/returns-and-exchanges/", "lang": "en" }]
+  "nav": {
+    "home": "Home",
+    "message": "Founder’s note",
+    "about": "Our story",
+    "webinar": "Webinar",
+    "product": "PROTAI",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "original": "Original website",
+    "language": "Language"
+  },
+  "footer": {
+    "care": "From Kyoto, with care.",
+    "line": "Eyes are the windows to the soul.",
+    "contact": "CONTACT",
+    "address": "{{FOOTER_ADDRESS}}",
+    "top": "Back to top",
+    "home": "Home",
+    "law": "Legal information (JP)",
+    "preview": "Independent design preview"
+  },
+  "aria": {
+    "skip": "Skip to content",
+    "primaryNav": "Primary navigation",
+    "mobileNav": "Mobile navigation",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "page": {
+    "chapter": "A quieter way to care",
+    "discover": "Discover PROTAI",
+    "story": "Our story",
+    "film": "Watch the film",
+    "product": "The daily ritual",
+    "productText": "Two formats for a considered routine.",
+    "view": "Explore the product",
+    "original": "Continue to the original store",
+    "contact": "Get in touch",
+    "questions": "Questions, answered",
+    "register": "Go to registration",
+    "source": "View original page",
+    "archive": "The original transaction remains on the existing site.",
+    "details": "Product details",
+    "gallery": "Visual archive",
+    "productOverview": "Product overview",
+    "productName": "Eye Skin Care Mist",
+    "madeInJapan": "MADE IN JAPAN",
+    "founderNote": "Founder’s note",
+    "certification": "Safety certifications and invention patents",
+    "kind": {
+      "about": "ABOUT",
+      "article": "ARTICLE",
+      "story": "STORY",
+      "webinar": "WEBINAR",
+      "commerce": "SHOPPING",
+      "contact": "CONTACT",
+      "shop": "SHOP",
+      "product": "PRODUCT"
+    }
+  },
+  "home": {
+    "introCopy": [
+      "A Japanese-made skincare mist for the skin around the eyes.",
+      "Made with a peptide ingredient, without added fragrance or alcohol.",
+      "A cosmetic for moisturizing the skin, not an eye drop or a medical treatment."
+    ],
+    "heroProduct": "Eye-area skincare mist",
+    "sectionLabels": {
+      "intro": "INTRODUCTION",
+      "origin": "ORIGIN",
+      "product": "PRODUCT",
+      "film": "FILM",
+      "closing": "IPPONGI"
+    },
+    "filmTitles": [
+      "PROTAI Concept",
+      "The Origin of PROTAI"
+    ],
+    "closingQuote": "Eyes are the windows to the soul.",
+    "heroAudience": "For days spent looking at screens. A moment of moisture for the skin around your eyes.",
+    "heroPoem": "Connect the universe and the world to the light within you.",
+    "webinarAction": "Explore the free webinar",
+    "originCopy": [
+      "PROTAI draws on peptide research by PROSUNFUN Biotech in Taiwan and is made in Japan as an eye-area cosmetic.",
+      "Patents and ingredient names are not evidence of medical efficacy."
+    ],
+    "refillLabel": "Refill set · 10ml × 2",
+    "refillNote": "Refills only. The original spray bottle is needed for use."
+  },
+  "slideshow": {
+    "title": "PROTAI in photographs",
+    "previous": "Previous photo",
+    "next": "Next photo",
+    "pause": "Pause slideshow",
+    "play": "Play slideshow",
+    "photo": "PROTAI photograph"
+  },
+  "contact": {
+    "heading": "Let’s get in touch",
+    "intro": "You can find us at",
+    "note": "",
+    "office": "OFFICE",
+    "address": "{{CONTACT_ADDRESS}}",
+    "hours": "BUSINESS HOURS",
+    "schedule": "{{BUSINESS_HOURS}}"
+  },
+  "purchase": [
+    {
+      "label": "Shipping information",
+      "href": "/commercial-disclosure/",
+      "lang": "en"
+    },
+    {
+      "label": "Returns & exchanges",
+      "href": "/returns-and-exchanges/",
+      "lang": "en"
+    }
+  ]
 }

@@ -12,6 +12,8 @@ import { strings } from '../i18n'
 import facts from '../data/facts.json'
 import { formCopy, privacyCopy, privacyPath, webinarPrivacyNotice } from '../data/privacy'
 import { resolveFactTokens } from '../data/resolve-facts'
+import { webinarGuideCopy } from '../data/webinar-guide'
+import { zhFaq } from '../data/zh-faq'
 
 interface Props { page: SitePage }
 const { page } = Astro.props
@@ -19,27 +21,31 @@ const lang = page.lang || 'en'
 const dictionary = strings[lang]
 const ui = dictionary.page
 const detailLabel = page.kind === 'about' || page.kind === 'story' ? ui.story : ui.kind[page.kind as keyof typeof ui.kind] || ui.story
-const heroLines = page.text.split('\n').filter(Boolean).slice(0, lang === 'en' ? 3 : 2).map((line) => lang === 'fr' ? line.replace('en toi', 'en vous') : line)
 const homeIntroCopy = dictionary.home.introCopy
 const heroProduct = dictionary.home.heroProduct
+const webinarPath = lang === 'en' ? '/webinar/' : `/${lang}/webinar/`
 const slideshowCopy = dictionary.slideshow
 const visualSlides = Array.from({ length: 9 }, (_, index) => ({
   url: `/media/2026/10/visual-slide-${String(index + 1).padStart(2, '0')}.webp`,
   number: String(index + 1).padStart(2, '0'),
 }))
 const sectionLabels = dictionary.home.sectionLabels
-const storyPath = { en: '/about/', ja: '/ja/about/', fr: '/fr/about/', th: '/th/about/' }[lang]
+const storyPath = { en: '/about/', ja: '/ja/about/', fr: '/fr/about/', th: '/th/about/', zh: '/zh/about/' }[lang]
 const isHome = page.kind === 'home'
 const homeBlocks = isHome ? page.blocks.filter((block) => block.type !== 'image') : []
 const homeHeadings = homeBlocks.filter((block) => block.type === 'h2')
-const homeIntroLead = homeBlocks.find((block) => block.type === 'h3' || block.type === 'h5')?.text
-const breakJapaneseIntro = lang === 'ja' && homeIntroLead === '自然のちからで、目もとと心にやさしいケアを。'
 const breakJapaneseOrigin = lang === 'ja' && homeHeadings[1]?.text === 'PROTAIの由来と開発背景'
-const homeLines = page.text.split('\n').map((line) => line.trim()).filter(Boolean)
-const homeHeadingPositions = isHome ? homeHeadings.slice(0, 3).map((heading) => homeLines.findIndex((line) => line === heading.text)) : []
-const homeOriginBody = isHome ? homeLines.slice(homeHeadingPositions[1] + 1, homeHeadingPositions[2]) : []
 const homeMolecule = isHome ? page.blocks.find((block) => block.type === 'image' && /Protai-Molecule/.test(block.url || ''))?.url : undefined
 const firstParagraph = page.blocks.find((block) => block.type === 'p')?.text || ''
+const webinarGuide = webinarGuideCopy[lang]
+const webinarStepStart = page.kind === 'webinar' && lang !== 'fr' ? page.blocks.findIndex((block) => block.type === 'h2' && /ステップ1|Step 1|ขั้นตอนที่ 1|步驟 1/.test(block.text || '')) : -1
+const webinarSteps = webinarStepStart >= 0 ? page.blocks.slice(webinarStepStart)
+  .filter((block) => !/✨|ปกป้องการมองเห็น|protecting your vision|大切な目を守り/.test(block.text || ''))
+  .reduce((groups, block) => {
+    if (block.type === 'h2') groups.push({ title: block.text || '', blocks: [] })
+    else groups.at(-1)?.blocks.push(block)
+    return groups
+  }, [] as { title: string; blocks: typeof page.blocks }[]) : []
 const firstVideo = page.videos[0]
 const originVideo = isHome ? page.videos[1] : undefined
 const isFaq = page.kind === 'faq'
@@ -73,7 +79,10 @@ type FaqNode =
   | { type: 'image'; url: string; alt: string }
   | { type: 'table'; rows: string[][]; boldCells: boolean[][] }
   | { type: 'qrGrid'; items: { label: FaqRun[]; url: string; alt: string }[] }
-const faqEntries = isFaq ? (await getCollection('faq'))
+const faqEntries = isFaq && lang === 'zh' ? zhFaq.map(([question, answer], index) => ({
+  id: `zh-${index + 1}`, question,
+  nodes: [{ type: 'p' as const, runs: [{ text: answer, bold: false, italic: false }] }],
+})) : isFaq ? (await getCollection('faq'))
   .sort((a, b) => a.data.order - b.data.order)
   .flatMap((item) => {
     const translation = item.data.translations[lang]
@@ -93,7 +102,7 @@ const faqMarkup = (runs: FaqRun[]) => runs.map((run) => {
   return html
 }).join('')
 const registrationMatch = page.text.match(/https:\/\/prosunfun\.protai\.com\.tw\/[^\s]+/)
-const registration = page.links.find((link) => /prosunfun|registration|seminar/i.test(link.href)) ||
+const registration = lang === 'zh' && isWebinar ? { href: 'https://prosunfun.protai.com.tw/f/eyecareseminar', text: ui.register } : page.links.find((link) => /prosunfun|registration|seminar/i.test(link.href)) ||
   (registrationMatch ? { href: registrationMatch[0], text: ui.register } : null)
 const price = `¥${page.path.includes('20ml') ? facts.products.refill.priceLabel : facts.products.single.priceLabel}`
 const productImage = page.path.includes('20ml') ? '/media/2025/10/20ml-3.webp' : '/media/2025/10/10ml-4.webp'
@@ -123,7 +132,7 @@ const productCardName = ui.productName
 const purchaseLinks = dictionary.purchase
 const homeTestimonials = testimonialCopy[lang]
 const filmTitles = dictionary.home.filmTitles
-const testimonialRows = [reviewItems.slice(0, 4), reviewItems.slice(4)]
+const testimonialRows = [reviewItems.slice(0, 2), reviewItems.slice(2)]
 const contactData = { ...dictionary.contact, faq: lang === 'en' ? '/faq/' : `/${lang}/faq/` }
 const contactForm = formCopy[lang]
 const privacy = resolveFactTokens(privacyCopy[lang], lang)
@@ -131,14 +140,14 @@ const privacy = resolveFactTokens(privacyCopy[lang], lang)
 <Base page={page}>
   {isHome ? <>
     <section class:list={['home-hero', lang !== 'ja' && 'home-hero-translated']} data-hero>
-      <div class="hero-copy"><p class="chapter-label" data-reveal>PROTAI · {heroProduct}</p><h1>{heroLines.map((line) => <span class="hero-title-line">{line}{' '}</span>)}</h1><p class="hero-intro" data-reveal>{breakJapaneseIntro ? <><span class="ja-phrase">自然のちからで、</span><wbr /><span class="ja-phrase">目もとと心に</span><span class="ja-phrase">やさしいケアを。</span></> : homeIntroLead}</p><div class="hero-actions" data-reveal><a class="primary-link" href={productOne}>{ui.view} <span aria-hidden="true">↗</span></a><a class="quiet-link" href="#discover">{ui.discover}<span aria-hidden="true">↓</span></a></div></div>
+      <div class="hero-copy"><p class="chapter-label" data-reveal>IPPONGI KYOTO</p><h1><span class="hero-title-line hero-title-brand">PROTAI</span><span class="hero-title-line hero-title-product">{heroProduct}</span></h1><p class="hero-intro" data-reveal>{dictionary.home.heroAudience}</p><p class="hero-poem" data-reveal>{dictionary.home.heroPoem}</p><div class="hero-actions" data-reveal><a class="primary-link" href={productOne}>{ui.view} <span aria-hidden="true">↗</span></a><a class="quiet-link" href={webinarPath}>{dictionary.home.webinarAction}<span aria-hidden="true">↗</span></a></div></div>
       <div class="hero-visual" id="film"><div class="hero-image-mask"><video class="hero-film" controls preload="none" poster="/responsive/media/2025/07/0-July-960.webp" playsinline aria-label={filmTitles[0] || ui.film}><source src={firstVideo} type="video/mp4" /></video></div></div>
       <div class="hero-sideword" aria-hidden="true">IPPONGI KYOTO</div>
     </section>
-    <section class="intro-section section-wrap" id="discover"><div class="section-number" data-reveal>01 — {sectionLabels.intro}</div><div class="intro-heading" data-reveal><span class="fine-line"></span><h2>{homeHeadings[0]?.text}</h2><p>{breakJapaneseIntro ? <><span class="ja-phrase">自然のちからで、</span><wbr /><span class="ja-phrase">目もとと心に</span><span class="ja-phrase">やさしいケアを。</span></> : homeIntroLead}</p>{homeMolecule && <SiteImage src={homeMolecule} alt="" sizes="(max-width: 560px) 230px, 430px" />}</div><div class="intro-content" data-reveal>{homeIntroCopy.map((line) => <p>{line}</p>)}</div></section>
-    <section class="origin-section origin-section-text"><div class="origin-panel" data-reveal><span class="section-number">02 — {sectionLabels.origin}</span><h2>{breakJapaneseOrigin ? <><span class="ja-phrase">PROTAIの</span><span class="ja-phrase">由来と</span><span class="ja-phrase">開発背景</span></> : homeHeadings[1]?.text}</h2>{homeOriginBody.slice(0, 2).map((line) => <p>{line}</p>)}{originVideo && <figure class="origin-film"><div class="film-frame"><video controls preload="none" poster="/responsive/media/2025/07/1-July-960.webp" playsinline aria-label={filmTitles[1] || ui.film}><source src={originVideo} type="video/mp4" /></video></div><figcaption class="film-caption">{filmTitles[1] || ui.film}</figcaption></figure>}</div></section>
-    <section class="product-section section-wrap"><div class="section-lead" data-reveal><span class="section-number">03 — {sectionLabels.product}</span><h2>{ui.product}</h2><p>{ui.productText}</p></div><div class="product-grid" data-reveal><a class="product-card" href={productOne}><div class="product-photo"><SiteImage src="/media/2025/10/10ml-4.webp" alt={productPhotoAlt(lang)} sizes="(max-width: 560px) calc(100vw - 40px), 590px" /></div><div class="product-caption"><span>01 / PROTAI</span><h3>{productCardName} · 10ml</h3><p>¥{facts.products.single.priceLabel}</p><span class="card-arrow">↗</span></div></a><a class="product-card" href={productTwo}><div class="product-photo"><SiteImage src="/media/2025/10/20ml-3.webp" alt={productPhotoAlt(lang, true)} sizes="(max-width: 560px) calc(100vw - 40px), 590px" /></div><div class="product-caption"><span>02 / PROTAI</span><h3>{productCardName} · 10ml × 2</h3><p>¥{facts.products.refill.priceLabel}</p><span class="card-arrow">↗</span></div></a></div></section>
-    <section class="testimonials-section" id="voices"><div class="testimonials-inner"><div class="testimonials-heading section-wrap" data-reveal><div><span class="section-number">04 — {homeTestimonials.eyebrow.toLocaleUpperCase(lang)}</span><h2>{lang === 'ja' && homeTestimonials.heading === '世界から届いた声' ? <><span class="ja-phrase">世界から</span><span class="ja-phrase">届いた声</span></> : homeTestimonials.heading}</h2><div class="testimonials-countries"><span>JP / {homeTestimonials.country.jp}</span><span>MY / {homeTestimonials.country.my}</span><span>TW / {homeTestimonials.country.tw}</span></div></div><p>{homeTestimonials.note}</p></div><div class="testimonial-rails">{testimonialRows.map((row, rowIndex) => <div class="testimonial-rail" data-testimonial-slider data-direction={rowIndex === 0 ? 'forward' : 'backward'} role="region" aria-label={homeTestimonials.rail[rowIndex]} tabindex="0"><div class="splide__track"><ul class="splide__list">{row.map((item) => <li class="splide__slide"><figure class="testimonial-card"><div class="testimonial-card-head"><span class="testimonial-country">{homeTestimonials.country[item.country]}</span></div><div class="testimonial-card-body"><strong>{item.topic[lang]}</strong>{item.kind === 'excerpt' ? <blockquote class="testimonial-text">{item.text[lang]}</blockquote> : <p class="testimonial-text">{item.text[lang]}</p>}</div></figure></li>)}</ul></div></div>)}</div><div class="testimonials-footer section-wrap"><p class="testimonials-hint">{homeTestimonials.hint}</p><button class="testimonials-toggle" type="button" data-testimonial-toggle data-pause-label={homeTestimonials.pause} data-play-label={homeTestimonials.play} aria-pressed="false" hidden>{homeTestimonials.pause}</button></div></div></section>
+    <section class="intro-section section-wrap" id="discover"><div class="section-number" data-reveal>01 — {sectionLabels.intro}</div><div class="intro-heading" data-reveal><span class="fine-line"></span><h2>{homeHeadings[0]?.text}</h2><p>{dictionary.home.heroAudience}</p>{homeMolecule && <SiteImage src={homeMolecule} alt="" sizes="(max-width: 560px) 230px, 430px" />}</div><div class="intro-content" data-reveal>{homeIntroCopy.map((line) => <p>{line}</p>)}</div></section>
+    <section class="origin-section origin-section-text"><div class="origin-panel" data-reveal><span class="section-number">02 — {sectionLabels.origin}</span><h2>{breakJapaneseOrigin ? <><span class="ja-phrase">PROTAIの</span><span class="ja-phrase">由来と</span><span class="ja-phrase">開発背景</span></> : homeHeadings[1]?.text}</h2>{dictionary.home.originCopy.map((line) => <p>{line}</p>)}{originVideo && <figure class="origin-film"><div class="film-frame"><video controls preload="none" poster="/responsive/media/2025/07/1-July-960.webp" playsinline aria-label={filmTitles[1] || ui.film}><source src={originVideo} type="video/mp4" /></video></div><figcaption class="film-caption">{filmTitles[1] || ui.film}</figcaption></figure>}</div></section>
+    <section class="product-section section-wrap"><div class="section-lead" data-reveal><span class="section-number">03 — {sectionLabels.product}</span><h2>{ui.product}</h2><p>{ui.productText}</p></div><div class="product-grid" data-reveal><a class="product-card" href={productOne}><div class="product-photo"><SiteImage src="/media/2025/10/10ml-4.webp" alt={productPhotoAlt(lang)} sizes="(max-width: 560px) calc(100vw - 40px), 590px" /></div><div class="product-caption"><span>01 / PROTAI</span><h3>{productCardName} · 10ml</h3><p>¥{facts.products.single.priceLabel}</p><span class="card-arrow">↗</span></div></a><a class="product-card" href={productTwo}><div class="product-photo"><SiteImage src="/media/2025/10/20ml-3.webp" alt={productPhotoAlt(lang, true)} sizes="(max-width: 560px) calc(100vw - 40px), 590px" /></div><div class="product-caption"><span>02 / PROTAI</span><h3>{dictionary.home.refillLabel}</h3><p>¥{facts.products.refill.priceLabel}</p><small>{dictionary.home.refillNote}</small><span class="card-arrow">↗</span></div></a></div></section>
+    <section class="testimonials-section" id="voices"><div class="testimonials-inner"><div class="testimonials-heading section-wrap" data-reveal><div><span class="section-number">04 — {homeTestimonials.eyebrow.toLocaleUpperCase(lang)}</span><h2>{lang === 'ja' && homeTestimonials.heading === '世界から届いた声' ? <><span class="ja-phrase">世界から</span><span class="ja-phrase">届いた声</span></> : homeTestimonials.heading}</h2><div class="testimonials-countries"><span>JP / {homeTestimonials.country.jp}</span><span>MY / {homeTestimonials.country.my}</span></div></div><p>{homeTestimonials.note}</p></div><div class="testimonial-rails">{testimonialRows.map((row, rowIndex) => <div class="testimonial-rail" data-testimonial-slider data-direction={rowIndex === 0 ? 'forward' : 'backward'} role="region" aria-label={homeTestimonials.rail[rowIndex]} tabindex="0"><div class="splide__track"><ul class="splide__list">{row.map((item) => <li class="splide__slide"><figure class="testimonial-card"><div class="testimonial-card-head"><span class="testimonial-country">{homeTestimonials.country[item.country]}</span></div><div class="testimonial-card-body"><strong>{item.topic[lang]}</strong>{item.kind === 'excerpt' ? <blockquote class="testimonial-text">{item.text[lang]}</blockquote> : <p class="testimonial-text">{item.text[lang]}</p>}</div></figure></li>)}</ul></div></div>)}</div><div class="testimonials-footer section-wrap"><p class="testimonials-hint">{homeTestimonials.hint}</p><button class="testimonials-toggle" type="button" data-testimonial-toggle data-pause-label={homeTestimonials.pause} data-play-label={homeTestimonials.play} aria-pressed="false" hidden>{homeTestimonials.pause}</button></div></div></section>
     <section class="home-slideshow section-wrap" data-home-slideshow data-pause-label={slideshowCopy.pause} data-play-label={slideshowCopy.play}>
       <div class="home-slideshow-heading"><h2>{slideshowCopy.title}</h2><span>PROTAI / IPPONGI KYOTO</span></div>
       <div class="splide home-slideshow-slider" role="region" aria-roledescription="carousel" aria-label={slideshowCopy.title}>
@@ -182,8 +191,8 @@ const privacy = resolveFactTokens(privacyCopy[lang], lang)
     <section class="page-hero page-hero-plain"><span class="section-number">IPPONGI / KYOTO</span><h1>{privacy.title}</h1><p>{privacy.description}</p></section>
     <section class="privacy-section section-wrap">{privacy.sections.map((section) => <div><h2>{section.title}</h2><p>{section.body}</p>{section.linkUrl && <a href={section.linkUrl} target="_blank" rel="noopener noreferrer">{section.linkLabel} ↗</a>}</div>)}</section>
   </> : <>
-    <section class:list={['page-hero', leadImage ? 'page-hero-image' : 'page-hero-plain', isEnglishFounder && 'founder-hero', isJapaneseFounder && 'founder-hero-ja']}><div class="page-hero-copy"><span class="section-number" data-reveal>IPPONGI / {isFounderNote ? ui.founderNote : ui.kind[page.kind as keyof typeof ui.kind] || page.kind}</span><h1 data-reveal>{isEnglishFounder ? <><span class="founder-heading-line">A Message from</span>{' '}<span class="founder-heading-line">the Representative</span></> : page.title}</h1>{!isFounderNote && <p data-reveal lang={bodyLang !== lang ? bodyLang : undefined}>{firstParagraph.slice(0, 300)}</p>}{isWebinar && registration && <><a class="primary-link" href={registration.href} target="_blank" rel="noopener noreferrer" data-track-external="webinar">{ui.register} ↗</a><p class="webinar-privacy-note">{webinarPrivacyNotice[lang].text} <a href={privacyPath(lang)}>{webinarPrivacyNotice[lang].policy} ↗</a></p></>}{isCommerce && <a class="primary-link" href={page.sourceUrl} target="_blank" rel="noopener noreferrer" data-track-external="purchase">{ui.original} ↗</a>}</div>{leadImage && <div class="page-hero-media page-hero-portrait"><SiteImage src={leadImage} alt={contentImageAlt(page, { type: "image", url: leadImage }, 0, page.blocks)} sizes="(max-width: 780px) 100vw, 53vw" loading="eager" fetchpriority="high" /></div>}</section>
+    <section class:list={['page-hero', leadImage ? 'page-hero-image' : 'page-hero-plain', isEnglishFounder && 'founder-hero', isJapaneseFounder && 'founder-hero-ja']}><div class="page-hero-copy"><span class="section-number" data-reveal>IPPONGI / {isFounderNote ? ui.founderNote : ui.kind[page.kind as keyof typeof ui.kind] || page.kind}</span><h1 data-reveal>{isEnglishFounder ? <><span class="founder-heading-line">A Message from</span>{' '}<span class="founder-heading-line">the Representative</span></> : page.title}</h1>{!isFounderNote && <p data-reveal lang={bodyLang !== lang ? bodyLang : undefined}>{isWebinar ? webinarGuide.lead : firstParagraph.slice(0, 300)}</p>}{isWebinar && registration && <><a class="primary-link" href={registration.href} target="_blank" rel="noopener noreferrer" data-track-external="webinar">{ui.register} ↗</a><p class="webinar-privacy-note">{webinarPrivacyNotice[lang].text} <a href={privacyPath(lang)}>{webinarPrivacyNotice[lang].policy} ↗</a></p></>}{isCommerce && <a class="primary-link" href={page.sourceUrl} target="_blank" rel="noopener noreferrer" data-track-external="purchase">{ui.original} ↗</a>}</div>{leadImage && <div class="page-hero-media page-hero-portrait"><SiteImage src={leadImage} alt={contentImageAlt(page, { type: "image", url: leadImage }, 0, page.blocks)} sizes="(max-width: 780px) 100vw, 53vw" loading="eager" fetchpriority="high" /></div>}</section>
     {firstVideo && <section class="film-section section-wrap"><div class="film-frame"><video controls preload="none" playsinline aria-label={ui.film}><source src={firstVideo} type="video/mp4" /></video></div></section>}
-    <section class:list={['detail-section', 'section-wrap', isEnglishFounder && 'founder-detail']}><div class="detail-sidebar"><span class="section-number">01 — {detailLabel}</span></div><div class="detail-body" lang={bodyLang !== lang ? bodyLang : undefined}>{fallback ? <div class="prose-flow">{fallbackLines.map((line) => <p data-reveal>{line}</p>)}</div> : <><Blocks page={page} blocks={narrativeBlocks} skipFirstHeading certificationDescriptions={isFounderNote} />{certificationIndex >= 0 && <section class="certification-topic" aria-labelledby="certification-heading"><span class="section-number">PROTAI / {ui.certification}</span><h2 id="certification-heading">PROTAI — {ui.certification}</h2><Blocks page={page} blocks={certificationBlocks} certificationDescriptions /></section>}</>}</div></section>
+    <section class:list={['detail-section', 'section-wrap', isEnglishFounder && 'founder-detail']}><div class="detail-sidebar"><span class="section-number">01 — {detailLabel}</span></div><div class="detail-body" lang={bodyLang !== lang ? bodyLang : undefined}>{isWebinar && webinarSteps.length ? <><p class="webinar-guide-lead">{webinarGuide.detail}</p><h2 class="webinar-guide-heading">{webinarGuide.guide}</h2><div class="webinar-guide-steps">{webinarSteps.map((step, index) => <details open={index === 0}><summary><span>{String(index + 1).padStart(2, '0')}</span><h3>{step.title}</h3><span aria-hidden="true">＋</span></summary><Blocks page={page} blocks={step.blocks} /></details>)}</div></> : fallback ? <div class="prose-flow">{fallbackLines.map((line) => <p data-reveal>{line}</p>)}</div> : <><Blocks page={page} blocks={narrativeBlocks} skipFirstHeading certificationDescriptions={isFounderNote} />{certificationIndex >= 0 && <section class="certification-topic" aria-labelledby="certification-heading"><span class="section-number">PROTAI / {ui.certification}</span><h2 id="certification-heading">PROTAI — {ui.certification}</h2><Blocks page={page} blocks={certificationBlocks} certificationDescriptions /></section>}</>}</div></section>
   </>}
 </Base>

@@ -17,6 +17,7 @@ const faq = defineCollection({
       ja: faqTranslation.optional(),
       fr: faqTranslation.optional(),
       th: faqTranslation.optional(),
+      zh: faqTranslation.optional(),
     }),
   }),
 })

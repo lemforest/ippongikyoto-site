@@ -19,13 +19,18 @@
       "th": {
         "footer": "ห้อง 402 อาคาร Daini-Kyoto, 227 Daikokucho, เขต Shimogyo, เกียวโต {{POSTAL_CODE}} ประเทศญี่ปุ่น",
         "contact": "เขตชิโมเกียว เมืองเกียวโต จังหวัดเกียวโต 227 อาคารไดโคคุโชะที่ 2 เกียวโต 402"
+      },
+      "zh": {
+        "footer": "日本京都府京都市下京區大黑町 227 號 第 2 京都大樓 402 室，郵遞區號 {{POSTAL_CODE}}",
+        "contact": "日本京都府京都市下京區大黑町 227 號 第 2 京都大樓 402 室，郵遞區號 {{POSTAL_CODE}}"
       }
     },
     "businessHours": {
       "en": "Weekdays: 10:00AM – 5:00PM JST (Closed on weekends, public holidays, and New Year holidays)",
       "ja": "平日 10:00～17:00（日本時間） ※土日祝・年末年始は休業",
       "fr": "Du lundi au vendredi : de 10h00 à 17h00 (heure japonaise) (Fermé le week-end, les jours fériés et pendant les congés du Nouvel An)",
-      "th": "วันธรรมดา 10:00-17:00 น. (เวลาประเทศญี่ปุ่น) ปิดบริการวัน เสาร์-อาทิตย์ วันหยุดนักขัตฤกษ์ และเทศกาลปีใหม่"
+      "th": "วันธรรมดา 10:00-17:00 น. (เวลาประเทศญี่ปุ่น) ปิดบริการวัน เสาร์-อาทิตย์ วันหยุดนักขัตฤกษ์ และเทศกาลปีใหม่",
+      "zh": "週一至週五 10:00–17:00（日本時間）；週末、國定假日及年末年初休息"
     }
   },
   "products": {

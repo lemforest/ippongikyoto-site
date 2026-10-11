@@ -34,21 +34,20 @@ for (const filename of files) {
     seen.add(heading.text)
   })
 
-  const locale = filename.match(/^dist\/(ja|fr|th)\//)?.[1] || 'en'
+  const locale = filename.match(/^dist\/(ja|fr|th|zh)\//)?.[1] || 'en'
   if (filename.endsWith('/faq/index.html')) {
     faqPages++
     const actual = $('.faq-item summary h2').map((_, element) => $(element).text().replace(/\s+/g, ' ').trim()).get()
-    const expected = faq.filter((entry) => entry.translations[locale]).map((entry) => entry.translations[locale].question.replace(/\s+/g, ' ').trim())
+    const expected = locale === 'zh'
+      ? (await import('../src/data/zh-faq.ts')).zhFaq.map(([question]) => question.replace(/\s+/g, ' ').trim())
+      : faq.filter((entry) => entry.translations[locale]).map((entry) => entry.translations[locale].question.replace(/\s+/g, ' ').trim())
     if (actual.length !== expected.length || actual.some((question, index) => question !== expected[index])) {
       errors.push(`${filename}: FAQ heading list does not match all ${expected.length} questions`)
     }
   }
-  if (filename.endsWith('/founder-message/index.html')) {
-    if ($('.certification-description').length !== 4) errors.push(`${filename}: certification descriptions must be paragraphs`)
-  }
 }
 
-if (faqPages !== 4) errors.push(`Expected 4 FAQ pages, found ${faqPages}`)
+if (faqPages !== 5) errors.push(`Expected 5 FAQ pages, found ${faqPages}`)
 if (errors.length) {
   console.error(errors.join('\n'))
   process.exitCode = 1

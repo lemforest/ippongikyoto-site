@@ -6,20 +6,26 @@ import legacyRoutes from '../src/data/legacy-routes.json' with { type: 'json' }
 import seo from '../src/data/seo.json' with { type: 'json' }
 
 const brand = 'IPPONGI KYOTO'
-const limits = { en: 150, fr: 150, ja: 80, th: 120 }
+const limits = { en: 150, fr: 150, ja: 80, th: 120, zh: 80 }
 const failures = []
 const expected = new Map()
-const duplicateHomes = new Set(['/fr/accueil/', '/ja/ホーム/', '/th/หน้าแรก/'])
+const duplicateHomes = new Set([
+  '/front-page/', '/fr/accueil/', '/fr/home-francais/', '/ja/ホーム/', '/ja/home-日本語/', '/th/หน้าแรก/', '/th/home-ไทย/',
+  '/ja/category/uncategorized/', '/product-category/uncategorized/', '/shop/', '/testimonials/',
+  '/story/', '/our-story/', '/fr/notre-histoire/', '/ja/ストーリー/', '/th/เรื่องราว/',
+  '/ja/カート/', '/ja/チェックアウト/', '/th/รถเข็น/', '/th/เช็คเอาท์/',
+])
 
 for (const page of pages) {
   if (duplicateHomes.has(page.path)) continue
   const path = legacyRoutes[page.path] || page.path
   if (expected.has(path)) failures.push(`Duplicate content path: ${path}`)
   expected.set(path, page.lang)
-  if (page.kind === 'product') for (const locale of ['ja', 'fr', 'th']) expected.set(`/${locale}${path}`, locale)
+  if (page.kind === 'product') for (const locale of ['ja', 'fr', 'th', 'zh']) expected.set(`/${locale}${path}`, locale)
 }
 expected.set('/fr/webinar/', 'fr')
-for (const locale of ['en', 'ja', 'fr', 'th']) expected.set(`${locale === 'en' ? '' : `/${locale}`}/privacy-policy/`, locale)
+for (const locale of ['en', 'ja', 'fr', 'th', 'zh']) expected.set(`${locale === 'en' ? '' : `/${locale}`}/privacy-policy/`, locale)
+for (const path of ['/zh/', '/zh/about/', '/zh/founder-message/', '/zh/webinar/', '/zh/faq/', '/zh/contact/']) expected.set(path, 'zh')
 expected.set('/404/', 'en')
 
 const titles = new Set()
@@ -35,11 +41,12 @@ for (const [path, lang] of expected) {
   titles.add(fullTitle)
   const length = Array.from(entry.description).length
   if (length > limits[lang]) failures.push(`${path}: description has ${length} characters; limit is ${limits[lang]}`)
-  if (lang === 'ja' ? !entry.description.endsWith('。') : !/[.!?]$/.test(entry.description)) {
+  if (lang === 'ja' || lang === 'zh' ? !entry.description.endsWith('。') : !/[.!?]$/.test(entry.description)) {
     failures.push(`${path}: description must end as a complete sentence`)
   }
   if ((lang === 'en' || lang === 'fr') && /[\u3040-\u30ff\u3400-\u9fff\u0e00-\u0e7f]/u.test(`${entry.title} ${entry.description}`)) failures.push(`${path}: unexpected Japanese or Thai characters`)
   if (lang === 'ja' && !/[\u3040-\u30ff]/u.test(`${entry.title} ${entry.description}`)) failures.push(`${path}: no Japanese script`)
+  if (lang === 'zh' && !/[\u3400-\u9fff]/u.test(`${entry.title} ${entry.description}`)) failures.push(`${path}: no Chinese script`)
   if (lang === 'th' && !/[\u0e00-\u0e7f]/u.test(`${entry.title} ${entry.description}`)) failures.push(`${path}: no Thai script`)
 }
 for (const path of Object.keys(seo)) if (!expected.has(path)) failures.push(`SEO metadata has no page: ${path}`)
@@ -51,7 +58,7 @@ if (process.argv.includes('--built')) {
     if (!existsSync(file)) { failures.push(`Missing built HTML: ${path}`); continue }
     const $ = load(readFileSync(file, 'utf8'))
     const fullTitle = `${seo[path]?.title} | ${brand}`
-    if ($('html').attr('lang') !== lang) failures.push(`${path}: built HTML language mismatch`)
+    if ($('html').attr('lang') !== (lang === 'zh' ? 'zh-TW' : lang)) failures.push(`${path}: built HTML language mismatch`)
     if ($('title').length !== 1 || $('title').text() !== fullTitle) failures.push(`${path}: built title mismatch`)
     if ($('meta[name="description"]').length !== 1 || $('meta[name="description"]').attr('content') !== seo[path]?.description) failures.push(`${path}: built description mismatch`)
     if ($('meta[property="og:title"]').attr('content') !== fullTitle) failures.push(`${path}: Open Graph title mismatch`)

@@ -23,6 +23,8 @@ const track = (data) => new Request('https://preview.example/api/track', { metho
 const dataset = { writeDataPoint: (value) => events.push(value) }
 assert.equal((await handleTrack(track({ kind: 'purchase', locale: 'ja', path: '/ja/product/protai-eye-skin-care-mist/' }), { ANALYTICS_ENGINE: dataset })).status, 204)
 assert.deepEqual(events[0].blobs, ['purchase', 'ja', '/ja/product/protai-eye-skin-care-mist/'])
+assert.equal((await handleTrack(track({ kind: 'webinar', locale: 'zh-TW', path: '/zh/webinar/' }), { ANALYTICS_ENGINE: dataset })).status, 204)
+assert.deepEqual(events[1].blobs, ['webinar', 'zh-TW', '/zh/webinar/'])
 assert.equal((await handleTrack(track({ kind: 'bogus', locale: 'ja', path: '/' }), { ANALYTICS_ENGINE: dataset })).status, 400)
 assert.equal((await handleTrack(track({ kind: 'webinar', locale: 'fr', path: '/fr/webinar/' }), {})).status, 503)
 console.log('Contact delivery, anti-spam, failure states and external-click events checked with mock services.')

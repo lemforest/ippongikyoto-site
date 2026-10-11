@@ -9,6 +9,7 @@ const extra = {
   en: [], fr: [],
   ja: ['Noto Sans JP:wght@400;500', 'Noto Serif JP:wght@400;500'],
   th: ['Noto Sans Thai:wght@400;500', 'Noto Serif Thai:wght@400;500'],
+  zh: ['Noto Sans TC:wght@400;500;600', 'Noto Serif TC:wght@400;500;600'],
 }
 const failures = []
 

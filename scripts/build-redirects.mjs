@@ -4,6 +4,7 @@ const pages = JSON.parse(readFileSync(new URL('../src/data/pages.json', import.m
 const routes = JSON.parse(readFileSync(new URL('../src/data/legacy-routes.json', import.meta.url)))
 const sourcePaths = new Set(pages.map((page) => page.path))
 sourcePaths.add('/ja/product/protai-eye-skin-care-mistg/')
+for (const alias of ['/fr/front-page/', '/ja/front-page/', '/th/front-page/', '/fr/story/', '/ja/story/', '/th/story/', '/ja/cart/', '/ja/checkout/', '/th/cart/', '/th/checkout/']) sourcePaths.add(alias)
 const targetPaths = new Set([...sourcePaths].map((path) => routes[path] || path))
 
 for (const [from, to] of Object.entries(routes)) {

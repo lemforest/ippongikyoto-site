@@ -35,7 +35,7 @@ export function structuredData(page: SitePage, site: string) {
 
   if (page.path !== '/') {
     const home = page.lang === 'en' ? '/' : `/${page.lang}/`
-    const homeName = { en: 'Home', ja: 'ホーム', fr: 'Accueil', th: 'หน้าแรก' }[page.lang]
+    const homeName = { en: 'Home', ja: 'ホーム', fr: 'Accueil', th: 'หน้าแรก', zh: '首頁' }[page.lang]
     graph.push({
       '@type': 'BreadcrumbList',
       '@id': `${absolute(page.path)}#breadcrumb`,

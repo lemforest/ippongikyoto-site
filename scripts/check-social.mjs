@@ -6,7 +6,7 @@ import seo from '../src/data/seo.json' with { type: 'json' }
 
 const root = new URL('../dist/', import.meta.url).pathname
 const site = (process.env.PUBLIC_SITE_URL || 'https://ippongikyoto.com').replace(/\/$/, '')
-const locale = { en: 'en_US', ja: 'ja_JP', fr: 'fr_FR', th: 'th_TH' }
+const locale = { en: 'en_US', ja: 'ja_JP', fr: 'fr_FR', th: 'th_TH', 'zh-TW': 'zh_TW', zh: 'zh_TW' }
 const failures = []
 
 for (const [route, page] of Object.entries(seo)) {
@@ -32,7 +32,7 @@ for (const [route, page] of Object.entries(seo)) {
     failures.push(`${route}: og:url differs from canonical`)
   }
   const alternates = $('link[rel="alternate"][hreflang]').map((_, element) => $(element).attr('hreflang')).get()
-    .filter((code) => code !== 'x-default' && code !== page.lang).map((code) => locale[code]).sort()
+    .filter((code) => code !== 'x-default' && code !== (page.lang === 'zh' ? 'zh-TW' : page.lang)).map((code) => locale[code]).sort()
   const ogAlternates = $('meta[property="og:locale:alternate"]').map((_, element) => $(element).attr('content')).get().sort()
   if (JSON.stringify(alternates) !== JSON.stringify(ogAlternates)) failures.push(`${route}: wrong alternate locales`)
   if ($('link[rel="icon"][href="/favicon.ico"]').length !== 1 ||

@@ -27,6 +27,11 @@ body { margin: 0; background: var(--ground); color: var(--ink); font-family: var
 html[lang='ja'] { --display: 'Noto Serif JP', 'YuMincho', 'Hiragino Mincho ProN', serif; --body: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif; }
 html[lang='th'] { --display: 'Noto Serif Thai', 'Thonburi', serif; --body: 'Noto Sans Thai', 'Thonburi', sans-serif; }
 html[lang='fr'] { --display: 'Cormorant Garamond', 'Iowan Old Style', Georgia, serif; }
+html[lang='ja'] :is(h1, h2, h3, .hero-intro, .intro-heading p) { word-break: normal; line-break: strict; text-wrap: balance; }
+@supports (word-break: auto-phrase) {
+  html[lang='ja'] :is(h1, h2, h3, .hero-intro, .intro-heading p) { word-break: auto-phrase; }
+}
+html[lang='ja'] .ja-phrase { display: inline-block; }
 img, video { max-width: 100%; }
 img { display: block; }
 button, input { font: inherit; }
@@ -224,7 +229,7 @@ html[lang='ja'] .testimonial-text, html[lang='th'] .testimonial-text { font-size
 .film-preview-video { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; object-position: center; transform: scale(1.25); }
 .film-preview-shade { position: absolute; inset: 0; background: linear-gradient(90deg, transparent 10%, rgb(22 50 52 / 40%) 35%, #163234 55%, #163234 100%); }
 .film-preview-copy { position: absolute; z-index: 1; top: 50%; right: 5%; width: 35%; transform: translateY(-50%); color: var(--focus-ink); }
-.film-preview-copy span { font-size: 12px; letter-spacing: .1em; }
+.film-preview-copy > span { font-size: 12px; letter-spacing: .1em; }
 .film-preview-copy h3 { margin: 26px 0 0; font-family: var(--display); font-size: clamp(42px, 4.6vw, 72px); font-weight: 500; line-height: 1.15; }
 html[lang='ja'] .film-preview-copy h3, html[lang='th'] .film-preview-copy h3 { font-size: clamp(36px, 3.8vw, 56px); line-height: 1.35; }
 .film-frame { background: var(--ink); box-shadow: var(--shadow); }

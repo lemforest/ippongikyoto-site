@@ -14,12 +14,22 @@ export async function handleContact(request, env, send = fetch) {
   const name = String(input.name || '').trim()
   const email = String(input.email || '').trim()
   const message = String(input.message || '').trim()
+  const turnstileToken = String(input['cf-turnstile-response'] || '')
   const age = Date.now() - Number(input.startedAt)
-  if (!name || name.length > 120 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || email.length > 254 || !message || message.length > 5000 || input.consent !== 'on' || !Number.isFinite(age) || age < 3000 || age > 86400000) {
+  if (!name || name.length > 120 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || email.length > 254 || !message || message.length > 5000 || input.consent !== 'on' || !Number.isFinite(age) || age < 3000 || age > 86400000 || !turnstileToken || turnstileToken.length > 2048) {
     return json({ error: 'invalid' }, 400)
   }
-  const { CF_ACCOUNT_ID, CF_EMAIL_API_TOKEN, CF_EMAIL_FROM, CONTACT_TO } = env
-  if (!CF_ACCOUNT_ID || !CF_EMAIL_API_TOKEN || !CF_EMAIL_FROM || !CONTACT_TO) return json({ error: 'unavailable' }, 503)
+  const { CF_ACCOUNT_ID, CF_EMAIL_API_TOKEN, CF_EMAIL_FROM, CONTACT_TO, TURNSTILE_SECRET_KEY } = env
+  if (!CF_ACCOUNT_ID || !CF_EMAIL_API_TOKEN || !CF_EMAIL_FROM || !CONTACT_TO || !TURNSTILE_SECRET_KEY) return json({ error: 'unavailable' }, 503)
+  let challenge
+  try {
+    const body = new FormData()
+    body.set('secret', TURNSTILE_SECRET_KEY)
+    body.set('response', turnstileToken)
+    challenge = await send('https://challenges.cloudflare.com/turnstile/v0/siteverify', { method: 'POST', body })
+  } catch { return json({ error: 'verification' }, 502) }
+  const challengeResult = await challenge.json().catch(() => null)
+  if (!challenge.ok || !challengeResult?.success) return json({ error: 'verification' }, 403)
   let upstream
   try {
     upstream = await send(`https://api.cloudflare.com/client/v4/accounts/${encodeURIComponent(CF_ACCOUNT_ID)}/email/sending/send`, {

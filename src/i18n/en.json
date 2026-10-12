@@ -1,7 +1,7 @@
 {
   "nav": {
     "home": "Home",
-    "message": "Founder’s note",
+    "message": "Representative’s note",
     "about": "Our story",
     "webinar": "Webinar",
     "product": "PROTAI",
@@ -17,7 +17,7 @@
     "address": "{{FOOTER_ADDRESS}}",
     "top": "Back to top",
     "home": "Home",
-    "law": "Legal information (JP)",
+    "law": "Legal information",
     "preview": "Independent design preview"
   },
   "aria": {
@@ -35,18 +35,18 @@
     "product": "The daily ritual",
     "productText": "Two formats for a considered routine.",
     "view": "Explore the product",
-    "original": "Continue to the original store",
+    "original": "View at the store",
     "contact": "Get in touch",
     "questions": "Questions, answered",
     "register": "Go to registration",
     "source": "View original page",
-    "archive": "The original transaction remains on the existing site.",
+    "archive": "Orders and payment are completed on the store website.",
     "details": "Product details",
     "gallery": "Visual archive",
     "productOverview": "Product overview",
     "productName": "Eye Skin Care Mist",
     "madeInJapan": "MADE IN JAPAN",
-    "founderNote": "Founder’s note",
+    "founderNote": "Representative’s note",
     "certification": "Safety certifications and invention patents",
     "kind": {
       "about": "ABOUT",
@@ -65,6 +65,11 @@
       "Made with a peptide ingredient, without added fragrance or alcohol.",
       "A cosmetic for moisturizing the skin, not an eye drop or a medical treatment."
     ],
+    "highlights": [
+      { "title": "Made in Japan", "body": "A Japanese-made cosmetic mist for everyday moisture around the eyes." },
+      { "title": "Peptide ingredient", "body": "Contains a peptide ingredient; the ingredient name does not imply a medical effect." },
+      { "title": "No added fragrance or alcohol", "body": "Made without added fragrance or alcohol. Check the full ingredient list before use." }
+    ],
     "heroProduct": "Eye-area skincare mist",
     "sectionLabels": {
       "intro": "INTRODUCTION",
@@ -78,6 +83,7 @@
       "The Origin of PROTAI"
     ],
     "closingQuote": "Eyes are the windows to the soul.",
+    "quoteOpen": "“", "quoteClose": "”",
     "heroAudience": "For days spent looking at screens. A moment of moisture for the skin around your eyes.",
     "heroPoem": "Connect the universe and the world to the light within you.",
     "webinarAction": "Explore the free webinar",

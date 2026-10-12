@@ -24,6 +24,7 @@ for (const page of pages) {
   if (page.kind === 'product') for (const locale of ['ja', 'fr', 'th', 'zh']) expected.set(`/${locale}${path}`, locale)
 }
 expected.set('/fr/webinar/', 'fr')
+expected.set('/fr/online-shop/', 'fr')
 for (const locale of ['en', 'ja', 'fr', 'th', 'zh']) expected.set(`${locale === 'en' ? '' : `/${locale}`}/privacy-policy/`, locale)
 for (const path of ['/zh/', '/zh/about/', '/zh/founder-message/', '/zh/webinar/', '/zh/faq/', '/zh/contact/', '/zh/online-shop/', '/zh/commercial-disclosure/', '/zh/returns-and-exchanges/']) expected.set(path, 'zh')
 expected.set('/404/', 'en')

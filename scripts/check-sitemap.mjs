@@ -2,19 +2,23 @@ import { readFileSync, readdirSync, statSync } from 'node:fs'
 import { join } from 'node:path'
 import { load } from 'cheerio'
 import legacyRoutes from '../src/data/legacy-routes.json' with { type: 'json' }
+import lastmod from '../src/data/sitemap-lastmod.json' with { type: 'json' }
+import { contentFingerprint } from './sitemap-content.mjs'
 
 const root = new URL('../dist/', import.meta.url).pathname
 const site = 'https://ippongikyoto.com'
 const indexUrl = `${site}/sitemap-index.xml`
 const failures = []
 const pages = new Map()
+const fingerprints = new Map()
 
 function inspect(directory) {
   for (const name of readdirSync(directory)) {
     const file = join(directory, name)
     if (statSync(file).isDirectory()) inspect(file)
     else if (name === 'index.html') {
-      const $ = load(readFileSync(file, 'utf8'))
+      const html = readFileSync(file, 'utf8')
+      const $ = load(html)
       const canonical = $('link[rel="canonical"]').attr('href')
       const alternates = new Map()
       $('link[rel="alternate"][hreflang]').each((_, element) => {
@@ -22,6 +26,7 @@ function inspect(directory) {
         if (locale !== 'x-default') alternates.set(locale, $(element).attr('href'))
       })
       pages.set(canonical, alternates)
+      fingerprints.set(canonical, contentFingerprint(html))
     }
   }
 }
@@ -44,6 +49,9 @@ for (const sitemapUrl of sitemapUrls) {
     if (listed.has(loc)) failures.push(`Duplicate sitemap URL: ${loc}`)
     listed.add(loc)
     const path = new URL(loc).pathname
+    const stamp = lastmod[path]
+    if (!stamp || $(entry).find('lastmod').first().text().slice(0, 10) !== stamp.date ||
+      fingerprints.get(loc) !== stamp.hash) failures.push(`Stale or missing content lastmod: ${loc}`)
     if (legacyRoutes[path]) failures.push(`Old URL in sitemap: ${loc}`)
     const expected = pages.get(loc)
     if (!expected) {
@@ -67,6 +75,7 @@ for (const sitemapUrl of sitemapUrls) {
 for (const canonical of pages.keys()) {
   if (!listed.has(canonical)) failures.push(`Canonical page missing from sitemap: ${canonical}`)
 }
+for (const path of Object.keys(lastmod)) if (!listed.has(`${site}${path}`)) failures.push(`Stale lastmod entry: ${path}`)
 const robots = readFileSync(join(root, 'robots.txt'), 'utf8')
 if (!robots.includes(`Sitemap: ${indexUrl}`)) failures.push('robots.txt does not point to sitemap index')
 if (!/^User-agent: \*$/m.test(robots) || !/^Allow: \/$/m.test(robots)) failures.push('robots.txt does not allow crawling')

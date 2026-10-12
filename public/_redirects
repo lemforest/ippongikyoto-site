@@ -1,6 +1,8 @@
 # Generated from src/data/legacy-routes.json by scripts/build-redirects.mjs.
 # Cloudflare Pages reads this file as HTTP 301 redirects.
 /a-message-from-the-representative-2/ /founder-message/ 301
+/cart/ https://shop.ippongikyoto.com/cart/ 301
+/checkout/ https://shop.ippongikyoto.com/checkout/ 301
 /fr/accueil/ /fr/ 301
 /fr/contactez-nous/ /fr/contact/ 301
 /fr/faq-fr/ /fr/faq/ 301
@@ -12,9 +14,9 @@
 /fr/story/ /fr/founder-message/ 301
 /front-page/ / 301
 /ja/a-message-from-the-representative/ /ja/founder-message/ 301
-/ja/cart/ /ja/online-shop/ 301
-/ja/category/uncategorized/ /ja/online-shop/ 301
-/ja/checkout/ /ja/online-shop/ 301
+/ja/cart/ https://shop.ippongikyoto.com/cart/ 301
+/ja/category/uncategorized/ https://shop.ippongikyoto.com/product-category/uncategorized/ 301
+/ja/checkout/ https://shop.ippongikyoto.com/checkout/ 301
 /ja/faq_jp/ /ja/faq/ 301
 /ja/front-page/ /ja/ 301
 /ja/home-%E6%97%A5%E6%9C%AC%E8%AA%9E/ /ja/ 301
@@ -27,12 +29,12 @@
 /ja/%e3%82%aa%e3%83%b3%e3%83%a9%e3%82%a4%e3%83%b3%e3%82%b7%e3%83%a7%e3%83%83%e3%83%97/ /ja/online-shop/ 301
 /ja/%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B/ /ja/contact/ 301
 /ja/%e3%81%8a%e5%95%8f%e3%81%84%e5%90%88%e3%82%8f%e3%81%9b/ /ja/contact/ 301
-/ja/%E3%82%AB%E3%83%BC%E3%83%88/ /ja/online-shop/ 301
-/ja/%e3%82%ab%e3%83%bc%e3%83%88/ /ja/online-shop/ 301
+/ja/%E3%82%AB%E3%83%BC%E3%83%88/ https://shop.ippongikyoto.com/cart/ 301
+/ja/%e3%82%ab%e3%83%bc%e3%83%88/ https://shop.ippongikyoto.com/cart/ 301
 /ja/%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AA%E3%83%BC/ /ja/founder-message/ 301
 /ja/%e3%82%b9%e3%83%88%e3%83%bc%e3%83%aa%e3%83%bc/ /ja/founder-message/ 301
-/ja/%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF%E3%82%A2%E3%82%A6%E3%83%88/ /ja/online-shop/ 301
-/ja/%e3%83%81%e3%82%a7%e3%83%83%e3%82%af%e3%82%a2%e3%82%a6%e3%83%88/ /ja/online-shop/ 301
+/ja/%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF%E3%82%A2%E3%82%A6%E3%83%88/ https://shop.ippongikyoto.com/checkout/ 301
+/ja/%e3%83%81%e3%82%a7%e3%83%83%e3%82%af%e3%82%a2%e3%82%a6%e3%83%88/ https://shop.ippongikyoto.com/checkout/ 301
 /ja/%E3%83%9B%E3%83%BC%E3%83%A0/ /ja/ 301
 /ja/%e3%83%9b%e3%83%bc%e3%83%a0/ /ja/ 301
 /ja/%E4%BC%9A%E7%A4%BE%E6%A1%88%E5%86%85/ /ja/about/ 301
@@ -41,14 +43,15 @@
 /ja/%e7%89%b9%e5%ae%9a%e5%95%86%e5%8f%96%e5%bc%95%e6%b3%95%e3%81%ab%e5%9f%ba%e3%81%a5%e3%81%8f%e8%a1%a8%e8%a8%98/ /ja/commercial-disclosure/ 301
 /ja/%E8%BF%94%E5%93%81%E3%83%BB%E4%BA%A4%E6%8F%9B%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6-2/ /ja/returns-and-exchanges/ 301
 /ja/%e8%bf%94%e5%93%81%e3%83%bb%e4%ba%a4%e6%8f%9b%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6-2/ /ja/returns-and-exchanges/ 301
+/my-account/ https://shop.ippongikyoto.com/my-account/ 301
 /our-story/ /about/ 301
-/product-category/uncategorized/ /online-shop/ 301
+/product-category/uncategorized/ https://shop.ippongikyoto.com/product-category/uncategorized/ 301
 /product/protai-eye-skin-care-mistg/ /product/protai-eye-skin-care-mist/ 301
-/shop/ /online-shop/ 301
+/shop/ https://shop.ippongikyoto.com/ 301
 /story/ /founder-message/ 301
 /testimonials/ / 301
-/th/cart/ /th/online-shop/ 301
-/th/checkout/ /th/online-shop/ 301
+/th/cart/ https://shop.ippongikyoto.com/cart/ 301
+/th/checkout/ https://shop.ippongikyoto.com/checkout/ 301
 /th/front-page/ /th/ 301
 /th/home-%E0%B9%84%E0%B8%97%E0%B8%A2/ /th/ 301
 /th/home-%e0%b9%84%e0%b8%97%e0%b8%a2/ /th/ 301
@@ -59,12 +62,12 @@
 /th/%e0%b8%82%e0%b9%89%e0%b8%ad%e0%b8%a1%e0%b8%b9%e0%b8%a5%e0%b8%9a%e0%b8%a3%e0%b8%b4%e0%b8%a9%e0%b8%b1%e0%b8%97/ /th/about/ 301
 /th/%E0%B8%84%E0%B8%B3%E0%B8%96%E0%B8%B2%E0%B8%A1%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%9E%E0%B8%9A%E0%B8%9A%E0%B9%88%E0%B8%AD%E0%B8%A2-faq-th/ /th/faq/ 301
 /th/%e0%b8%84%e0%b8%b3%e0%b8%96%e0%b8%b2%e0%b8%a1%e0%b8%97%e0%b8%b5%e0%b9%88%e0%b8%9e%e0%b8%9a%e0%b8%9a%e0%b9%88%e0%b8%ad%e0%b8%a2-faq-th/ /th/faq/ 301
-/th/%E0%B9%80%E0%B8%8A%E0%B9%87%E0%B8%84%E0%B9%80%E0%B8%AD%E0%B8%B2%E0%B8%97%E0%B9%8C/ /th/online-shop/ 301
-/th/%e0%b9%80%e0%b8%8a%e0%b9%87%e0%b8%84%e0%b9%80%e0%b8%ad%e0%b8%b2%e0%b8%97%e0%b9%8c/ /th/online-shop/ 301
+/th/%E0%B9%80%E0%B8%8A%E0%B9%87%E0%B8%84%E0%B9%80%E0%B8%AD%E0%B8%B2%E0%B8%97%E0%B9%8C/ https://shop.ippongikyoto.com/checkout/ 301
+/th/%e0%b9%80%e0%b8%8a%e0%b9%87%e0%b8%84%e0%b9%80%e0%b8%ad%e0%b8%b2%e0%b8%97%e0%b9%8c/ https://shop.ippongikyoto.com/checkout/ 301
 /th/%E0%B8%95%E0%B8%B4%E0%B8%94%E0%B8%95%E0%B9%88%E0%B8%AD%E0%B9%80%E0%B8%A3%E0%B8%B2/ /th/contact/ 301
 /th/%e0%b8%95%e0%b8%b4%e0%b8%94%e0%b8%95%e0%b9%88%e0%b8%ad%e0%b9%80%e0%b8%a3%e0%b8%b2/ /th/contact/ 301
-/th/%E0%B8%A3%E0%B8%96%E0%B9%80%E0%B8%82%E0%B9%87%E0%B8%99/ /th/online-shop/ 301
-/th/%e0%b8%a3%e0%b8%96%e0%b9%80%e0%b8%82%e0%b9%87%e0%b8%99/ /th/online-shop/ 301
+/th/%E0%B8%A3%E0%B8%96%E0%B9%80%E0%B8%82%E0%B9%87%E0%B8%99/ https://shop.ippongikyoto.com/cart/ 301
+/th/%e0%b8%a3%e0%b8%96%e0%b9%80%e0%b8%82%e0%b9%87%e0%b8%99/ https://shop.ippongikyoto.com/cart/ 301
 /th/%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2%E0%B8%AD%E0%B8%AD%E0%B8%99%E0%B9%84%E0%B8%A5%E0%B8%99%E0%B9%8C/ /th/online-shop/ 301
 /th/%e0%b8%a3%e0%b9%89%e0%b8%b2%e0%b8%99%e0%b8%84%e0%b9%89%e0%b8%b2%e0%b8%ad%e0%b8%ad%e0%b8%99%e0%b9%84%e0%b8%a5%e0%b8%99%e0%b9%8c/ /th/online-shop/ 301
 /th/%E0%B9%80%E0%B8%A3%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%87%E0%B8%A3%E0%B8%B2%E0%B8%A7/ /th/founder-message/ 301
@@ -76,3 +79,4 @@
 /webminar/ /webinar/ 301
 /%E8%BF%94%E5%93%81%E3%83%BB%E4%BA%A4%E6%8F%9B%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/ /returns-and-exchanges/ 301
 /%e8%bf%94%e5%93%81%e3%83%bb%e4%ba%a4%e6%8f%9b%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6/ /returns-and-exchanges/ 301
+/product-category/* https://shop.ippongikyoto.com/product-category/:splat 301

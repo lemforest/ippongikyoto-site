@@ -9,7 +9,7 @@ export const frenchWebinarBlocks: ContentBlock[] = [
   { type: 'h2', text: 'S’inscrire au webinaire' },
   { type: 'p', text: 'Le webinaire de bien-être des yeux s’intitule « Beautiful New Vision — Redefining Eye Care ». L’inscription se déroule actuellement sur une plateforme externe dont l’interface est en anglais. Les étapes ci-dessous vous guident en français.' },
   { type: 'h3', text: '1. Ouvrir la page d’inscription' },
-  { type: 'p', text: 'Utilisez le lien d’inscription indiqué en haut de cette page. Vous pouvez également scanner le code QR figurant sur le site d’origine. La page d’inscription s’ouvre en anglais ; un réglage de langue se trouve en haut à droite de cette plateforme.' },
+  { type: 'p', text: 'Utilisez le bouton d’inscription indiqué en haut de cette page. La langue de l’interface dépend de la plateforme externe ; vérifiez le contenu et les horaires affichés avant de transmettre vos informations.' },
   { type: 'h3', text: '2. Consulter les horaires' },
   { type: 'p', text: 'Faites défiler la page d’inscription pour voir les créneaux disponibles. Les séances ont généralement lieu le mercredi et le dimanche. Les horaires affichés sur la plateforme font foi : ils peuvent changer lors des jours fériés au Japon ou selon la disponibilité de l’équipe. Chaque séance accueille au maximum 30 personnes.' },
   { type: 'p', text: 'Les créneaux habituellement annoncés sont 10 h et 20 h 30 à Bangkok ; 11 h et 21 h 30 à Perth, Manille et Kuala Lumpur ; 13 h et 23 h 30 à Melbourne. Vérifiez toujours l’horaire et le fuseau horaire indiqués au moment de votre inscription.' },

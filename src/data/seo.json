@@ -26,7 +26,7 @@
   },
   "/founder-message/": {
     "lang": "en",
-    "title": "A Message from Our Representative",
+    "title": "Representative’s note",
     "description": "Read a message from IPPONGI Kyoto representative WEIFAN CHIA about the people and ideas behind the brand."
   },
   "/online-shop/": {
@@ -79,6 +79,11 @@
     "title": "Le mot du fondateur",
     "description": "Lisez le message de WEIFAN CHIA sur les personnes et les idées à l’origine d’IPPONGI Kyoto."
   },
+  "/fr/online-shop/": {
+    "lang": "fr",
+    "title": "Boutique en ligne PROTAI",
+    "description": "Comparez les deux formats de la brume PROTAI avant de consulter la boutique en ligne."
+  },
   "/fr/product/protai-eye-skin-care-mist-10ml-x-2-20ml/": {
     "lang": "fr",
     "title": "PROTAI Brume contour des yeux, 2 recharges de 10 ml",
@@ -101,7 +106,7 @@
   },
   "/ja/about/": {
     "lang": "ja",
-    "title": "一凡木合同会社について",
+    "title": "会社案内",
     "description": "京都を拠点とする一凡木合同会社の理念と、PROTAIに込めた想いをご紹介します。"
   },
   "/ja/commercial-disclosure/": {
@@ -267,7 +272,7 @@
   "/zh/online-shop/": {
     "lang": "zh",
     "title": "PROTAI 線上商店",
-    "description": "查看 PROTAI 眼周保養噴霧與補充組的產品資訊和原站購買入口。"
+    "description": "比較 PROTAI 眼周保養噴霧與補充組的容量、價格與使用方式，並前往商店查看供貨。"
   },
   "/zh/commercial-disclosure/": {
     "lang": "zh",

@@ -18,6 +18,8 @@ const message = { en: '/founder-message/', ja: '/ja/founder-message/', fr: '/fr/
 const webinar = { en: '/webinar/', ja: '/ja/webinar/', fr: '/fr/webinar/', th: '/th/webinar/', zh: '/zh/webinar/' }
 const faq = { en: '/faq/', ja: '/ja/faq/', fr: '/fr/faq/', th: '/th/faq/', zh: '/zh/faq/' }
 const contact = { en: '/contact/', ja: '/ja/contact/', fr: '/fr/contact/', th: '/th/contact/', zh: '/zh/contact/' }
+const shop = { en: '/online-shop/', ja: '/ja/online-shop/', fr: '/fr/online-shop/', th: '/th/online-shop/', zh: '/zh/online-shop/' }
+const law = { en: '/commercial-disclosure/', ja: '/ja/commercial-disclosure/', fr: '/commercial-disclosure/', th: '/commercial-disclosure/', zh: '/zh/commercial-disclosure/' }
 const { nav, footer, aria } = strings[lang]
 const names = { en: 'EN', ja: 'JP', fr: 'FR', th: 'TH', zh: '繁中' }
 const knownPages = new Map(catalogPages.map((item) => [item.path, item]))
@@ -27,7 +29,8 @@ const localeLinks = (Object.entries(names) as [Locale, string][]).map(([locale, 
   const hasPage = Boolean(alternate && knownPages.has(alternate))
   return { locale, name: `${name}${page.kind === 'product' && !hasPage ? ' · Home' : ''}`, href: hasPage ? alternate! : home[locale], hasPage }
 })
-const metadata = (seo as Record<string, { lang: Locale; title: string; description: string }>)[page.path]
+const metadata = (seo as Record<string, { lang: Locale; title: string; description: string }>)[page.path] ||
+  (page.kind === 'not-found' ? { lang, title: page.title, description: page.description } : undefined)
 if (!metadata || metadata.lang !== lang || !metadata.title?.trim() || !metadata.description?.trim()) {
   throw new Error(`Missing or invalid SEO metadata for ${page.path} (${lang})`)
 }
@@ -127,15 +130,14 @@ const analyticsToken = import.meta.env.PUBLIC_CF_WEB_ANALYTICS_TOKEN
       <div class="footer-inner">
         <div class="footer-brand"><span class="footer-kicker">{footer.care}</span><strong>IPPONGI</strong><p>{footer.line}</p></div>
         <div class="footer-contact"><span>{footer.contact}</span><a href={`mailto:${facts.organization.email}`}>{facts.organization.email}</a><p>{footer.address}</p></div>
-        <div class="footer-meta">{page.kind !== 'privacy' && <a href={page.sourceUrl} target="_blank" rel="noopener noreferrer">{nav.original} ↗</a>}<a href={lang === 'zh' ? '/zh/commercial-disclosure/' : '/ja/commercial-disclosure/'} hreflang={lang === 'zh' ? 'zh-TW' : 'ja'}>{footer.law}</a><a href={privacyPath(lang)}>{privacyCopy[lang].footer}</a><a href="#top">{footer.top} ↑</a><small>© IPPONGI Kyoto · {footer.preview}</small></div>
+        <div class="footer-meta"><a href={shop[lang]}>{strings[lang].page.kind.shop}</a><a href={law[lang]} hreflang={lang === 'fr' || lang === 'th' ? 'en' : lang === 'zh' ? 'zh-TW' : lang}>{footer.law}</a><a href={privacyPath(lang)}>{privacyCopy[lang].footer}</a><a href="#top">{footer.top} ↑</a><small>© IPPONGI Kyoto{isPreview && ` · ${footer.preview}`}</small></div>
       </div>
     </footer>
     <script>
-      import '../scripts/motion'
-      if (document.querySelector('#voices')) void import('../scripts/testimonials')
+      if (document.querySelector('[data-hero]')) void import('../scripts/motion')
+      if (document.querySelector('[data-testimonial-slider]')) void import('../scripts/testimonials')
       if (document.querySelector('[data-home-slideshow]')) void import('../scripts/home-slideshow')
       if (document.querySelector('[data-contact-form]')) void import('../scripts/contact-form')
-      void import('../scripts/external-clicks')
       const toggle = document.querySelector<HTMLButtonElement>('.menu-toggle')
       const mobile = document.querySelector<HTMLElement>('.mobile-nav')
       toggle?.addEventListener('click', () => {

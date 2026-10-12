@@ -8,7 +8,7 @@ function collect(directory) {
   for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
     const filename = path.join(directory, entry.name)
     if (entry.isDirectory()) collect(filename)
-    else if (entry.name === 'index.html') files.push(filename)
+    else if (entry.name === 'index.html' || entry.name === '404.html') files.push(filename)
   }
 }
 collect('dist')

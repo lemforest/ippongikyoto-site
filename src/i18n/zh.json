@@ -3,19 +3,20 @@
   "footer": {"care":"從京都出發，用心照顧。","line":"眼睛是心靈之窗。","contact":"聯絡方式","address":"{{FOOTER_ADDRESS}}","top":"回到頂端","home":"首頁","law":"日本法律資訊","preview":"獨立設計預覽"},
   "aria": {"skip":"跳至主要內容","primaryNav":"主要導覽","mobileNav":"行動版導覽","openMenu":"開啟選單","closeMenu":"關閉選單"},
   "page": {
-    "chapter":"從眼周開始的溫柔照護","discover":"認識 PROTAI","story":"我們的故事","film":"觀看影片","product":"每日保養儀式","productText":"兩種容量，延續每天的眼周保養。","view":"了解產品","original":"前往原網站購買","contact":"與我們聯絡","questions":"您想知道的事","register":"前往報名","source":"查看原頁面","archive":"交易仍於原本的銷售網站完成。","details":"產品詳情","gallery":"影像紀錄","productOverview":"產品介紹","productName":"眼周保養噴霧","madeInJapan":"日本製造","founderNote":"創辦人的話","certification":"安全檢驗與發明專利",
+    "chapter":"從眼周開始的溫柔照護","discover":"認識 PROTAI","story":"我們的故事","film":"觀看影片","product":"每日保養儀式","productText":"兩種容量，延續每天的眼周保養。","view":"了解產品","original":"前往商店查看商品","contact":"與我們聯絡","questions":"您想知道的事","register":"前往報名","source":"查看原頁面","archive":"訂單與付款將在商店網站完成。","details":"產品詳情","gallery":"影像紀錄","productOverview":"產品介紹","productName":"眼周保養噴霧","madeInJapan":"日本製造","founderNote":"創辦人的話","certification":"安全檢驗與發明專利",
     "kind": {"about":"關於我們","article":"專題","story":"故事","webinar":"線上講座","commerce":"購物資訊","contact":"聯絡方式","shop":"產品一覽","product":"產品"}
   },
   "home": {
     "introCopy":["日本製眼周肌膚保養噴霧。","含胜肽成分，不添加香料與酒精。","本品為滋潤肌膚的化妝品，並非眼藥水或醫療用品。"],
+    "highlights":[{"title":"日本製造","body":"在日本製成的眼周肌膚保養噴霧，用於日常滋潤。"},{"title":"胜肽成分","body":"配方含胜肽成分；成分名稱不代表醫療功效。"},{"title":"無添加香料與酒精","body":"不添加香料與酒精；使用前仍請核對完整成分表。"}],
     "heroProduct":"眼周肌膚保養噴霧",
     "sectionLabels":{"intro":"品牌介紹","origin":"研發緣起","product":"產品","film":"品牌影片","closing":"IPPONGI"},
     "filmTitles":["PROTAI 品牌概念","PROTAI 的起源"],
-    "closingQuote":"眼睛是心靈之窗。",
+    "closingQuote":"眼睛是心靈之窗。","quoteOpen":"「","quoteClose":"」",
     "heroAudience":"長時間面對螢幕的日子，為眼周肌膚補上一點水分。",
     "heroPoem":"讓世界的光，與心中的光相遇。",
     "webinarAction":"了解免費線上講座",
-    "originCopy":["PROTAI 源自臺灣普晟福生技的胜肽研究，並於日本製成眼周肌膚保養品。","專利與成分名稱不代表具有醫療功效。"],
+    "originCopy":["PROTAI 源自臺灣三凡生技研發股份有限公司的胜肽研究，並於日本製成眼周肌膚保養品。","專利與成分名稱不代表具有醫療功效。"],
     "refillLabel":"補充組 · 10ml × 2","refillNote":"僅含補充瓶，使用時需搭配原噴霧瓶。"
   },
   "slideshow":{"title":"PROTAI 影像集","previous":"上一張照片","next":"下一張照片","pause":"暫停播放","play":"繼續播放","photo":"PROTAI 形象照片"},

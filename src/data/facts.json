@@ -1,28 +1,30 @@
 {
   "organization": {
     "legalName": "一凡木合同会社",
+    "alternateName": "IPPONGI LLC",
     "email": "support@ippongikyoto.com",
+    "telephone": "+81-80-1524-3643",
     "postalCode": "600-8223",
     "addresses": {
       "en": {
-        "footer": "#402 Daini-Kyoto-Bldg., 227 Daikokucho, Shimogyo-ku, Kyoto {{POSTAL_CODE}}, Japan",
+        "footer": "#402 Daini-Kyoto-Bldg., 227 Daikokucho, Aburanokoji Higashi-iru, Shichijyo-Dori, Shimogyo-ku, Kyoto-shi, Kyoto {{POSTAL_CODE}}, Japan",
         "contact": "#402 Daini-Kyoto-Bldg., 227 Daikokucho, Aburanokoji Higashi-iru, Shichijyo-Dori, Shimogyo-ku, Kyoto-shi, Kyoto {{POSTAL_CODE}}, Japan"
       },
       "ja": {
-        "footer": "〒{{POSTAL_CODE}} 京都府京都市下京区大黒町227 第2京都ビル402",
-        "contact": "〒{{POSTAL_CODE}}京都府京都市下京区大黒町227 第2京都ビル402"
+        "footer": "〒{{POSTAL_CODE}} 京都府京都市下京区七条通油小路東入大黒町227番地 第２キョートビル402",
+        "contact": "〒{{POSTAL_CODE}} 京都府京都市下京区七条通油小路東入大黒町227番地 第２キョートビル402"
       },
       "fr": {
-        "footer": "#402, Daini-Kyoto-Bldg., 227 Daikokucho, Shimogyo-ku, Kyoto {{POSTAL_CODE}}, Japon",
+        "footer": "#402 Daini-Kyoto-Bldg., 227 Daikokucho, Aburanokoji Higashi-iru, Shichijyo-Dori, Shimogyo-ku, Kyoto-shi, Kyoto {{POSTAL_CODE}}, Japon",
         "contact": "#402 Daini-Kyoto-Bldg., 227 Daikokucho, Aburanokoji Higashi-iru, Shichijyo-Dori, Shimogyo-ku, Kyoto-shi, Kyoto {{POSTAL_CODE}}, Japon"
       },
       "th": {
-        "footer": "ห้อง 402 อาคาร Daini-Kyoto, 227 Daikokucho, เขต Shimogyo, เกียวโต {{POSTAL_CODE}} ประเทศญี่ปุ่น",
-        "contact": "เขตชิโมเกียว เมืองเกียวโต จังหวัดเกียวโต 227 อาคารไดโคคุโชะที่ 2 เกียวโต 402"
+        "footer": "#402 Daini-Kyoto-Bldg., 227 Daikokucho, Aburanokoji Higashi-iru, Shichijyo-Dori, Shimogyo-ku, Kyoto-shi, Kyoto {{POSTAL_CODE}}, Japan",
+        "contact": "#402 Daini-Kyoto-Bldg., 227 Daikokucho, Aburanokoji Higashi-iru, Shichijyo-Dori, Shimogyo-ku, Kyoto-shi, Kyoto {{POSTAL_CODE}}, Japan"
       },
       "zh": {
-        "footer": "日本京都府京都市下京區大黑町 227 號 第 2 京都大樓 402 室，郵遞區號 {{POSTAL_CODE}}",
-        "contact": "日本京都府京都市下京區大黑町 227 號 第 2 京都大樓 402 室，郵遞區號 {{POSTAL_CODE}}"
+        "footer": "日本〒{{POSTAL_CODE}} 京都府京都市下京區七條通油小路東入大黑町227番地 第２キョートビル402",
+        "contact": "日本〒{{POSTAL_CODE}} 京都府京都市下京區七條通油小路東入大黑町227番地 第２キョートビル402"
       }
     },
     "businessHours": {
@@ -37,14 +39,17 @@
     "single": {
       "priceJPY": 15400,
       "priceLabel": "15,400",
-      "capacityMl": 10
+      "capacityMl": 10,
+      "available": true
     },
     "refill": {
       "priceJPY": 26400,
       "priceLabel": "26,400",
       "capacityMl": 20,
-      "bottles": 2
+      "bottles": 2,
+      "available": false
     },
+    "availabilityChecked": "2026-10-12",
     "spraysPerBottle": 270,
     "shelfLifeMonths": 24
   },

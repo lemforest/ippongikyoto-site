@@ -29,7 +29,7 @@ const specs: PageSpec[] = [
     description: '閱讀 IPPONGI Kyoto 代表 WEIFAN CHIA 對品牌起點、家人與 PROTAI 的分享。',
     blocks: [
       img('/media/2025/11/image.webp'),
-      p('大家好，我是 IPPONGI LLC Japan 的代表 WEIFAN CHIA，也是臺灣普晟福生技研發公司的特別助理。'),
+      p('大家好，我是 IPPONGI LLC Japan 的代表 WEIFAN CHIA，也是臺灣三凡生技研發股份有限公司的特別助理。'),
       p('我想和您分享 PROTAI 背後的信念，以及這段旅程為什麼對我如此重要。'),
       p('PROTAI 的起點在臺灣的胜肽研究。2022 年父親生病時，我回到臺灣，開始更深入認識他的公司與團隊長年投入的工作，也重新思考自己想為人們帶來什麼。'),
       p('後來，我從零開始尋找合作夥伴，並在日本建立 PROTAI Beauty & Wellness。對我而言，產品不只是技術，也承載了人與人之間的關心。'),
@@ -76,7 +76,7 @@ const specs: PageSpec[] = [
   },
   {
     source: '/online-shop/', path: '/zh/online-shop/', title: 'PROTAI 線上商店',
-    description: '查看 PROTAI 眼周保養噴霧與補充組的產品資訊和原站購買入口。', blocks: [],
+    description: '比較 PROTAI 眼周保養噴霧與補充組的容量、價格與使用方式，並前往商店查看供貨。', blocks: [],
   },
   {
     source: '/commercial-disclosure/', path: '/zh/commercial-disclosure/', title: '特定商業交易資訊',
@@ -85,8 +85,8 @@ const specs: PageSpec[] = [
       h2('營業者與聯絡方式'), p('營業者：{{LEGAL_NAME}}（IPPONGI LLC）'), p('負責人：WEIFAN CHIA'),
       p('地址：{{CONTACT_ADDRESS}}'), p('電話：+81 80-1524-3643'), p('電子郵件：{{EMAIL}}'),
       p('受理時間：{{BUSINESS_HOURS}}'),
-      h2('售價與其他費用'), p('商品售價請以實際購買頁面所示為準。消費稅及運費依結帳頁面顯示；原站標示每筆訂單運費為 ¥1,000，商品金額超過 ¥10,000 免運。'),
-      h2('付款與配送'), p('原站列示可用信用卡或銀行轉帳付款。訂單確認後通常於 3 至 5 個工作天內出貨，出貨後通常於 7 至 14 天內送達；實際時間請以購買網站公告為準。'),
+      h2('售價與其他費用'), p('商品售價請以商店購買頁面所示為準。目前販售商品金額均達日本國內免運門檻，國內配送免運；海外配送與可能費用請於下單前向商店確認。'),
+      h2('付款與配送'), p('可用信用卡或銀行轉帳付款；實際可用方式以商店結帳頁為準。訂單確認後通常於 3 至 5 個工作天內出貨，出貨後通常於 7 至 14 天內送達；實際時間請以購買網站公告為準。'),
       h2('退換貨條件'), p('未拆封商品可於送達後七日內申請退貨。商品若有瑕疵、損壞或寄錯，請透過聯絡表單或 {{EMAIL}} 與我們聯繫。退貨申請方式與相關細節請參閱退換貨資訊頁。'),
     ],
   },

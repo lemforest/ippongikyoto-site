@@ -88,7 +88,7 @@
             "type": "p",
             "runs": [
               {
-                "text": "A: Selected customer comments are shown on our home page. They describe individual experiences and do not guarantee results or safety. To learn about the webinar, visit the Webinar page.",
+                "text": "A: Selected customer comments are shown on our home page. They describe individual experiences and do not guarantee that others will have the same results. To learn about the webinar, visit the Webinar page.",
                 "bold": false,
                 "italic": false
               }
@@ -103,7 +103,7 @@
             "type": "p",
             "runs": [
               {
-                "text": "A. お客様の声は、ホームページの体験談をご覧ください。個人の感想であり、効果や安全性を保証するものではありません。セミナーへの参加はウェビナーページからお申し込みいただけます。",
+                "text": "A. お客様の声は、ホームページの体験談をご覧ください。個人の感想であり、ほかの方にも同じ結果が得られることを保証するものではありません。セミナーへの参加はウェビナーページからお申し込みいただけます。",
                 "bold": false,
                 "italic": false
               }
@@ -118,7 +118,7 @@
             "type": "p",
             "runs": [
               {
-                "text": "R : Des témoignages sélectionnés figurent sur notre page d’accueil. Ils reflètent des expériences personnelles et ne garantissent ni résultat ni innocuité. Pour le webinaire, consultez la page dédiée.",
+                "text": "R : Des témoignages sélectionnés figurent sur notre page d’accueil. Ils reflètent des expériences personnelles et ne garantissent pas que d’autres personnes obtiendront les mêmes résultats. Pour le webinaire, consultez la page dédiée.",
                 "bold": false,
                 "italic": false
               }
@@ -133,7 +133,7 @@
             "type": "p",
             "runs": [
               {
-                "text": "คำตอบ: สามารถอ่านความคิดเห็นจากผู้ใช้บางส่วนได้ที่หน้าแรก ความคิดเห็นเป็นประสบการณ์ส่วนบุคคล ไม่รับประกันผลลัพธ์หรือความปลอดภัย หากสนใจสัมมนาออนไลน์ โปรดดูหน้า Webinar",
+                "text": "คำตอบ: สามารถอ่านความคิดเห็นจากผู้ใช้บางส่วนได้ที่หน้าแรก ความคิดเห็นเหล่านี้เป็นประสบการณ์ส่วนบุคคล ไม่รับประกันว่าผู้อื่นจะได้รับผลลัพธ์เช่นเดียวกัน หากสนใจสัมมนาออนไลน์ โปรดดูหน้า Webinar",
                 "bold": false,
                 "italic": false
               }

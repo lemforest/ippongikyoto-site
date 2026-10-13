@@ -664,6 +664,16 @@
     "height": 1208,
     "srcset": "/responsive/media/2026/10/webinar-zh-step-5-640.webp 640w, /responsive/media/2026/10/webinar-zh-step-5-960.webp 960w, /media/2026/10/webinar-zh-step-5.png 1330w"
   },
+  "/media/2026/10/webinar-zh-step-6-email-bottom.png": {
+    "width": 1062,
+    "height": 1006,
+    "srcset": "/responsive/media/2026/10/webinar-zh-step-6-email-bottom-640.webp 640w, /media/2026/10/webinar-zh-step-6-email-bottom.png 1062w"
+  },
+  "/media/2026/10/webinar-zh-step-6-email-top.png": {
+    "width": 2036,
+    "height": 1168,
+    "srcset": "/responsive/media/2026/10/webinar-zh-step-6-email-top-640.webp 640w, /responsive/media/2026/10/webinar-zh-step-6-email-top-960.webp 960w, /media/2026/10/webinar-zh-step-6-email-top.png 2036w"
+  },
   "/media/2026/10/webinar-zh-step-6.png": {
     "width": 1074,
     "height": 1268,

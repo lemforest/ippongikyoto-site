@@ -1,5 +1,6 @@
 import type { ContentBlock, SitePage } from './types'
 import { restoreFounderBlocks } from './founder-restoration'
+import facts from './facts.json'
 
 // Keep the archive untouched in pages.json. Founder letters retain their source
 // narrative and documents, with a few scoped copy edits in founder-restoration.
@@ -63,6 +64,19 @@ function editorialBlocks(page: SitePage): ContentBlock[] {
 }
 
 export function applyEditorialOverrides(page: SitePage): SitePage {
+  if (page.kind === 'product' && page.lang === 'en') {
+    const oldShelfLife = '2 years'
+    const newShelfLife = `${facts.products.shelfLifeMonths / 12} years`
+    const oldSection = `【Shelf Life】\n${oldShelfLife}`
+    if (page.blocks.filter((block) => block.text === oldShelfLife).length !== 1 || !page.text.includes(oldSection)) {
+      throw new Error(`Unexpected product shelf-life source: ${page.path}`)
+    }
+    return {
+      ...page,
+      blocks: page.blocks.map((block) => block.text === oldShelfLife ? { ...block, text: newShelfLife } : block),
+      text: page.text.replace(oldSection, `【Shelf Life】\n${newShelfLife}`),
+    }
+  }
   if (page.path === '/ja/特定商取引法に基づく表記/') {
     const text = page.text
       .replace('〒{{POSTAL_CODE}} 京都府京都市下京区七条通油小路東入大黒町227番地\n第2キョートビル402', '{{CONTACT_ADDRESS}}')

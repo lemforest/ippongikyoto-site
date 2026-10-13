@@ -1,0 +1,28 @@
+---
+import type { Locale } from '../data/types'
+import { webinarRegistrationChoices } from '../data/webinar-guide'
+import SiteImage from './SiteImage.astro'
+
+interface Props { locale: Locale }
+const { locale } = Astro.props
+const copy = webinarRegistrationChoices[locale]
+if (!copy) throw new Error(`No registration options for ${locale}`)
+---
+<div class="webinar-registration">
+  <p class="webinar-registration-intro">{copy.intro}</p>
+  <ul class="webinar-registration-options">
+    <li>
+      <span class="webinar-registration-letter" aria-hidden="true">A</span>
+      <p>{copy.scan}</p>
+      <SiteImage src={copy.qr} alt={copy.qrAlt} sizes="220px" />
+    </li>
+    <li>
+      <span class="webinar-registration-letter" aria-hidden="true">B</span>
+      <div>
+        <p>{copy.link}</p>
+        <a href={copy.href} target="_blank" rel="noopener noreferrer">{copy.href}<span aria-hidden="true"> ↗</span></a>
+      </div>
+    </li>
+  </ul>
+  {copy.note && <p class="webinar-registration-note">{copy.note}</p>}
+</div>

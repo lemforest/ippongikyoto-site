@@ -13,7 +13,7 @@ import { strings } from '../i18n'
 import facts from '../data/facts.json'
 import { formCopy, privacyCopy, privacyPath, webinarPrivacyNotice } from '../data/privacy'
 import { resolveFactTokens } from '../data/resolve-facts'
-import { webinarGuideCopy } from '../data/webinar-guide'
+import { webinarGuideCopy, webinarRegistrationChoices } from '../data/webinar-guide'
 import { zhFaq } from '../data/zh-faq'
 import { purchaseUrl, shopCopy, storeOrigin } from '../data/commerce'
 
@@ -49,8 +49,8 @@ const webinarSteps = webinarStepStart >= 0 ? page.blocks.slice(webinarStepStart)
     else groups.at(-1)?.blocks.push(block)
     return groups
   }, [] as { title: string; blocks: typeof page.blocks }[]) : []
-if (page.path === '/ja/webinar/' && webinarSteps[0]) {
-  webinarSteps[0].blocks.splice(1, 0, { type: 'image', url: '/media/2025/06/QR_JP.webp' })
+if (webinarRegistrationChoices[lang] && webinarSteps[0]) {
+  webinarSteps[0].blocks = [{ type: 'registration-options' }]
 }
 const firstVideo = page.videos[0]
 const originVideo = isHome ? page.videos[1] : undefined

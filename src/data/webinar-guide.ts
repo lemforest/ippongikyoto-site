@@ -27,3 +27,39 @@ export const webinarGuideCopy: Record<Locale, { lead: string; detail: string; gu
     guide: 'ขั้นตอนการลงทะเบียนและเข้าร่วม',
   },
 }
+
+export const webinarRegistrationChoices: Partial<Record<Locale, {
+  intro: string
+  scan: string
+  link: string
+  href: string
+  qr: string
+  qrAlt: string
+  note?: string
+}>> = {
+  en: {
+    intro: 'You can register in either of the following ways:',
+    scan: 'Scan the QR code using your smartphone or tablet',
+    link: 'Click the link below to go directly to the English Registration Page:',
+    href: 'https://prosunfun.protai.com.tw/f/eyecareonlineseminar',
+    qr: '/media/2025/10/image-4.webp',
+    qrAlt: 'QR code for the English webinar registration page',
+    note: 'Once opened, you will be taken to our registration page in English.',
+  },
+  ja: {
+    intro: '以下のいずれかの方法で登録ページへお進みください。',
+    scan: 'スマートフォンまたはタブレットで２次元バーコードをスキャン',
+    link: '以下のリンクをクリック',
+    href: 'https://prosunfun.protai.com.tw/f/ippongikyoto',
+    qr: '/media/2025/06/QR_JP.webp',
+    qrAlt: '日本語ウェビナー申込用QRコード',
+  },
+  th: {
+    intro: 'คุณสามารถลงทะเบียนได้โดยวิธีใดวิธีหนึ่งดังนี้:',
+    scan: 'สแกน QR code ด้วยสมาร์ทโฟนหรือแท็บเล็ตของคุณ',
+    link: 'คลิกลิงก์ด้านล่างเพื่อไปยังหน้าลงทะเบียนภาษาอังกฤษโดยตรง',
+    href: 'https://prosunfun.protai.com.tw/f/eyecarewebinar',
+    qr: '/media/2025/09/1.webp',
+    qrAlt: 'คิวอาร์โค้ดสำหรับลงทะเบียนสัมมนาออนไลน์',
+  },
+}

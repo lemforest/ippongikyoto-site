@@ -1,8 +1,8 @@
 import type { ContentBlock, SitePage } from './types'
+import { restoreFounderBlocks } from './founder-restoration'
 
-// The archived source copy contained medical claims that are not appropriate for
-// an eye-area cosmetic. Keep the archive untouched in pages.json and publish
-// these reviewable, locale-specific replacements instead.
+// Keep the archive untouched in pages.json. Founder letters retain their source
+// narrative and documents, with a few scoped copy edits in founder-restoration.
 const founderPaths = new Set([
   '/a-message-from-the-representative-2/',
   '/ja/a-message-from-the-representative/',
@@ -10,37 +10,6 @@ const founderPaths = new Set([
   '/th/ข้อความจากผู้แทน/',
 ])
 const companyPaths = new Set(['/about/', '/ja/会社案内/', '/fr/qui-sommes-nous/', '/th/ข้อมูลบริษัท/'])
-
-const founder: Record<string, string[]> = {
-  ja: [
-    '皆さま、こんにちは。一凡木合同会社の代表社員、CHIA WEIFANです。',
-    'PROTAIの原点は、台湾のPROSUNFUNバイオテック研究開発社が続けてきたペプチド研究にあります。2022年、父の病気をきっかけに台湾へ戻り、その研究に初めて深く触れました。',
-    '私はこの素材を、日本で製造する目元の肌用化粧品として届けることにしました。PROTAIアイスキンケアミストは、目元の肌にうるおいを与えるための製品です。目薬ではなく、眼疾患の治療を目的としていません。',
-    '「幸せのペプチド」は、私たちが日々の小さなケアに込めた気持ちを表す言葉です。これからも製品の情報を正確に伝え、安心して選んでいただけるブランドを京都から育てていきます。',
-    '最後までお読みいただいた皆さまに、心より感謝申し上げます。',
-  ],
-  en: [
-    'Hello, I am WEIFAN CHIA, Managing Partner of IPPONGI LLC in Japan.',
-    'PROTAI began with peptide research at PROSUNFUN Biotech in Taiwan. When I returned to Taiwan in 2022 during my father’s illness, I took a closer look at that research and began exploring how to bring the ingredient to Japan.',
-    'We now present PROTAI as a Japanese-made cosmetic mist for moisturizing the skin around the eyes. It is not an eye drop and is not intended to treat eye conditions.',
-    '“The peptide of happiness” expresses the care we put into an everyday ritual; it is not a claim of medical effect. From Kyoto, I want to build a brand that speaks clearly about what its product is and what it is not.',
-    'Thank you for taking the time to read my message.',
-  ],
-  fr: [
-    'Bonjour, je suis WEIFAN CHIA, associé gérant de IPPONGI LLC au Japon.',
-    'PROTAI trouve son origine dans les recherches sur les peptides menées par PROSUNFUN Biotech à Taïwan. De retour à Taïwan en 2022, lors de la maladie de mon père, j’ai découvert ces travaux de plus près et commencé à envisager leur développement au Japon.',
-    'Nous présentons aujourd’hui PROTAI comme une brume cosmétique fabriquée au Japon pour hydrater la peau du contour des yeux. Ce n’est pas un collyre et elle n’est pas destinée à traiter les maladies oculaires.',
-    '« Le peptide du bonheur » exprime l’attention que nous portons aux petits gestes du quotidien ; ce n’est pas une promesse d’effet médical. Depuis Kyoto, je souhaite développer une marque qui décrit son produit avec clarté.',
-    'Merci d’avoir pris le temps de lire ce message.',
-  ],
-  th: [
-    'สวัสดีครับ ผม WEIFAN CHIA หุ้นส่วนผู้จัดการของ IPPONGI LLC ในประเทศญี่ปุ่น',
-    'จุดเริ่มต้นของ PROTAI มาจากงานวิจัยเปปไทด์ของ PROSUNFUN Biotech ในไต้หวัน เมื่อผมกลับไต้หวันในปี 2022 ระหว่างที่คุณพ่อป่วย ผมได้ศึกษางานวิจัยนี้อย่างใกล้ชิดและเริ่มคิดว่าจะนำส่วนผสมนี้มาพัฒนาในญี่ปุ่นอย่างไร',
-    'ปัจจุบัน PROTAI เป็นเครื่องสำอางชนิดสเปรย์ที่ผลิตในญี่ปุ่น เพื่อเพิ่มความชุ่มชื้นให้ผิวรอบดวงตา ไม่ใช่ยาหยอดตาและไม่ได้มีไว้รักษาโรคตา',
-    '“เปปไทด์แห่งความสุข” เป็นถ้อยคำที่สื่อถึงความใส่ใจในกิจวัตรเล็ก ๆ ของทุกวัน ไม่ใช่คำกล่าวอ้างผลทางการแพทย์ ผมต้องการสร้างแบรนด์จากเกียวโตที่สื่อสารข้อมูลสินค้าอย่างชัดเจน',
-    'ขอบคุณที่สละเวลาอ่านข้อความนี้ครับ',
-  ],
-}
 
 const company: Record<string, { headings: string[]; paragraphs: string[] }> = {
   ja: {
@@ -82,14 +51,7 @@ const company: Record<string, { headings: string[]; paragraphs: string[] }> = {
 }
 
 function editorialBlocks(page: SitePage): ContentBlock[] {
-  if (founderPaths.has(page.path)) {
-    const portrait = page.blocks.find((block) => block.type === 'image')
-    return [
-      { type: 'h2', text: page.title },
-      ...(portrait ? [portrait] : []),
-      ...founder[page.lang].map((text) => ({ type: 'p', text })),
-    ]
-  }
+  if (founderPaths.has(page.path)) return restoreFounderBlocks(page)
   const copy = company[page.lang]
   return [
     { type: 'h2', text: page.title },

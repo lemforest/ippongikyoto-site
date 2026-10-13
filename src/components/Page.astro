@@ -72,10 +72,9 @@ const fallbackLines = page.text.split('\n').map((line) => line.trim()).filter(Bo
 const sourceBlocks = page.blocks.filter((block) => block.type !== 'image' || !!block.url)
 const leadImage = preserveLines ? sourceBlocks.find((block) => block.type === 'image')?.url : undefined
 const bodyBlocks = sourceBlocks.filter((block) =>
-  (!leadImage || block.type !== 'image' || block.url !== leadImage) &&
-  (!isEnglishFounder || block.text?.trim() !== 'Hello everyone,'),
+  !leadImage || block.type !== 'image' || block.url !== leadImage,
 )
-const certificationIndex = isEnglishFounder ? bodyBlocks.findIndex((block) => /Safety Certifications and Invention Patents/.test(block.text || '')) : -1
+const certificationIndex = isFounderNote ? bodyBlocks.findIndex((block) => block.type === 'h3' && (block.text || '').includes('PROTAI')) : -1
 const narrativeBlocks = certificationIndex >= 0 ? bodyBlocks.slice(0, certificationIndex) : bodyBlocks
 const certificationBlocks = certificationIndex >= 0 ? bodyBlocks.slice(certificationIndex + 1) : []
 type FaqRun = { text: string; bold: boolean; italic: boolean; href?: string }

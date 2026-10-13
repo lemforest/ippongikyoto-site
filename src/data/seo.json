@@ -26,7 +26,7 @@
   },
   "/founder-message/": {
     "lang": "en",
-    "title": "Representative’s note",
+    "title": "Founder’s note",
     "description": "Read a message from IPPONGI Kyoto representative WEIFAN CHIA about the people and ideas behind the brand."
   },
   "/online-shop/": {
@@ -126,7 +126,7 @@
   },
   "/ja/founder-message/": {
     "lang": "ja",
-    "title": "代表からのご挨拶",
+    "title": "創業者の言葉",
     "description": "一凡木合同会社の代表社員から、ブランドの背景と製品に込めた想いをお伝えします。"
   },
   "/ja/online-shop/": {
@@ -176,7 +176,7 @@
   },
   "/th/founder-message/": {
     "lang": "th",
-    "title": "ข้อความจากผู้แทนบริษัท",
+    "title": "ข้อความจากผู้ก่อตั้ง",
     "description": "อ่านสารจาก WEIFAN CHIA เกี่ยวกับผู้คนและแนวคิดเบื้องหลังแบรนด์ IPPONGI Kyoto."
   },
   "/th/online-shop/": {

@@ -44,7 +44,10 @@ const formatOf = (path: string): ProductFormat => path.includes('20ml') ? 'refil
 
 const localizedPages = sourcePages.map((page) => {
   if (page.path === '/fr/faq/') return { ...page, title: 'Questions fréquentes' }
-  if (page.path === '/founder-message/') return { ...page, title: 'Representative’s note' }
+  if (page.path === '/founder-message/') return { ...page, title: 'Founder’s note' }
+  if (page.path === '/ja/founder-message/') return { ...page, title: '創業者の言葉' }
+  if (page.path === '/fr/founder-message/') return { ...page, title: 'Le mot du fondateur' }
+  if (page.path === '/th/founder-message/') return { ...page, title: 'ข้อความจากผู้ก่อตั้ง' }
   if (page.kind === 'product') {
     const format = formatOf(page.path)
     return { ...page, alternates: Object.fromEntries((['en', 'ja', 'fr', 'th', 'zh'] as Locale[]).map((locale) => [locale, productPath(locale, format)])) }

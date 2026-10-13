@@ -324,6 +324,9 @@ html[lang='ja'] .page-hero h1, html[lang='th'] .page-hero h1 { font-size: clamp(
 .certification-topic .prose-flow p.certification-description { font-size: clamp(17px, 1.5vw, 21px); margin-top: 38px; }
 .certification-topic .inline-source-image { margin: 18px 0 42px; }
 .certification-topic .inline-source-image:last-child { margin-bottom: 0; }
+.certification-topic .certification-image a { display: block; width: fit-content; max-width: 100%; margin: auto; }
+.certification-topic .certification-image a:focus-visible { outline: 2px solid var(--forest); outline-offset: 4px; }
+.certification-topic .certification-image figcaption { max-width: 44ch; margin: 12px auto 0; color: var(--muted); font-size: 13px; line-height: 1.5; text-align: center; }
 .prose-bullet-group { margin: 26px 0 34px; }
 .prose-bullet-group .prose-bullet-intro { margin-bottom: 14px; font-weight: 600; color: var(--forest); }
 .prose-bullet-group ul { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--line); }

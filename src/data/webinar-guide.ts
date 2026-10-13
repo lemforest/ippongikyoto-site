@@ -48,7 +48,7 @@ export const webinarRegistrationChoices: Partial<Record<Locale, {
   },
   ja: {
     intro: '以下のいずれかの方法で登録ページへお進みください。',
-    scan: 'スマートフォンまたはタブレットで２次元バーコードをスキャン',
+    scan: 'スマホ・タブレットでQRをスキャン',
     link: '以下のリンクをクリック',
     href: 'https://prosunfun.protai.com.tw/f/ippongikyoto',
     qr: '/media/2025/06/QR_JP.webp',

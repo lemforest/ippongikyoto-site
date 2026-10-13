@@ -26,6 +26,7 @@ const japaneseWebinarRegistration = page.path === '/ja/webinar/'
       return <figure class:list={['inline-source-image', certificationDescriptions && 'certification-image']} data-reveal>{certificationDescriptions ? <a href={block.url} target="_blank" rel="noopener noreferrer"><SiteImage src={block.url} alt={alt} sizes="(max-width: 780px) calc(100vw - 40px), 400px" /></a> : <SiteImage src={block.url} alt={alt} sizes="(max-width: 780px) calc(100vw - 40px), 820px" />}{certificationDescriptions && <figcaption aria-hidden="true">{alt}</figcaption>}</figure>
     }
     if (block.type === 'table') return <div class="table-scroll"><table><tbody>{block.rows?.map((row) => <tr>{row.map((cell) => <td>{cell}</td>)}</tr>)}</tbody></table></div>
+    if (block.type === 'webinar-substep') return <h4 class="webinar-substep" data-reveal>{block.text}</h4>
     if (certificationDescriptions && /^h[5-6]$/.test(block.type)) return <p class="certification-description" data-reveal>{block.text}</p>
     if (/^h[5-6]$/.test(block.type)) return <h3 data-reveal>{headingText(block.text)}</h3>
     if (/^h[1-4]$/.test(block.type)) return <h2 data-reveal>{headingText(block.text)}</h2>

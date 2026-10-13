@@ -3,6 +3,7 @@ import type { ContentBlock, SitePage } from './types'
 type PageSpec = { source: string; path: string; title: string; description: string; blocks: ContentBlock[]; text?: string; videos?: string[] }
 const h2 = (text: string): ContentBlock => ({ type: 'h2', text })
 const p = (text: string): ContentBlock => ({ type: 'p', text })
+const webinarSubstep = (text: string): ContentBlock => ({ type: 'webinar-substep', text })
 const img = (url: string, alt?: string): ContentBlock => ({ type: 'image', url, alt })
 
 const specs: PageSpec[] = [
@@ -80,6 +81,25 @@ const specs: PageSpec[] = [
       img('/media/2026/10/webinar-zh-step-6-email-bottom.png', '繁體中文線上講座確認郵件的參加連結與內文下半部'),
       h2('步驟 7：準時加入講座'),
       p('講座開始前，使用通知中的專屬連結進入線上會場。若平台要求設定顯示名稱，請依畫面指示完成。'),
+      h2('步驟 8：當日線上研討會登入'),
+      p('線上講座開始前，請使用透過電子郵件或 SMS 簡訊收到的登入連結進入線上講座'),
+      webinarSubstep('步驟 1：若要將個人資料設定畫面切換為中文，請在語言設定中選擇「中文（繁體或簡體）」'),
+      img('/media/2026/10/webinar-zh-step-8-1.png', '個人資料設定畫面中的繁體中文、英文、日文及簡體中文語言選項'),
+      webinarSubstep('步驟 2：選擇個人頭像'),
+      p('請選擇您喜歡的個人頭像'),
+      img('/media/2026/10/webinar-zh-step-8-2.png', '個人資料設定畫面中選擇個人頭像的位置'),
+      webinarSubstep('步驟 3：輸入顯示名稱（本名或自訂名稱）'),
+      p('請輸入您希望在線上研討會期間顯示的名稱（您可以依照個人喜好，使用本名或暱稱）'),
+      img('/media/2026/10/webinar-zh-step-8-3.png', '個人資料設定畫面中輸入顯示名稱的欄位'),
+      webinarSubstep('步驟 4：點擊藍色按鈕'),
+      p('請點擊藍色按鈕以繼續'),
+      img('/media/2026/10/webinar-zh-step-8-4.png', '設定個人資料後按下藍色下一步按鈕'),
+      webinarSubstep('步驟 5：系統自動確認後，再次點擊藍色按鈕，即可完成連線'),
+      p('系統會自動確認您的個人資料'),
+      p('只需再次點擊藍色按鈕，即可完成登入'),
+      img('/media/2026/10/webinar-zh-step-8-5.png', '確認個人資料後按下藍色進入直播按鈕'),
+      p('完成上述步驟後，即可成功進入線上講座'),
+      img('/media/2026/10/webinar-zh-step-8-6.png', '線上講座連線成功後的直播畫面'),
     ],
   },
   {

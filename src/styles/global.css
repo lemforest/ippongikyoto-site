@@ -324,6 +324,9 @@ html[lang='th'] .founder-hero-th h1 { width: 100%; max-width: 100%; }
 .webinar-guide-steps .prose-flow { padding: 0 0 30px 58px; }
 .webinar-guide-steps .prose-flow a { text-decoration: underline; text-underline-offset: 4px; }
 .webinar-guide-steps .inline-source-image { max-width: 680px; }
+.webinar-guide-steps .webinar-substep { margin: 42px 0 10px; padding-left: 16px; border-left: 2px solid var(--forest); color: var(--forest); font-size: 18px; font-weight: 600; line-height: 1.55; }
+.webinar-guide-steps .webinar-substep + .inline-source-image { margin-top: 22px; }
+.webinar-guide-steps .webinar-substep + p { margin-bottom: 16px; }
 .webinar-registration .webinar-registration-intro { margin: 0 0 22px; color: var(--muted); }
 .webinar-registration-options { display: grid; gap: 14px; margin: 0; padding: 0; list-style: none; }
 .webinar-registration-options li { display: grid; grid-template-columns: 24px minmax(0, 1fr) 200px; align-items: start; gap: 18px; min-width: 0; padding: 22px 24px; border: 1px solid var(--line); background: var(--paper); }

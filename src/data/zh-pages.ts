@@ -3,6 +3,19 @@ import type { ContentBlock, SitePage } from './types'
 type PageSpec = { source: string; path: string; title: string; description: string; blocks: ContentBlock[]; text?: string; videos?: string[] }
 const h2 = (text: string): ContentBlock => ({ type: 'h2', text })
 const p = (text: string): ContentBlock => ({ type: 'p', text })
+const pWithBold = (text: string, phrases: string[]): ContentBlock => {
+  const runs: NonNullable<ContentBlock['runs']> = []
+  let cursor = 0
+  for (const phrase of phrases) {
+    const start = text.indexOf(phrase, cursor)
+    if (start < 0) throw new Error(`Missing founder emphasis: ${phrase}`)
+    if (start > cursor) runs.push({ text: text.slice(cursor, start), bold: false, italic: false })
+    runs.push({ text: phrase, bold: true, italic: false })
+    cursor = start + phrase.length
+  }
+  if (cursor < text.length) runs.push({ text: text.slice(cursor), bold: false, italic: false })
+  return { type: 'p', text, runs }
+}
 const webinarSubstep = (text: string): ContentBlock => ({ type: 'webinar-substep', text })
 const img = (url: string, alt?: string): ContentBlock => ({ type: 'image', url, alt })
 
@@ -42,24 +55,24 @@ const specs: PageSpec[] = [
       h2('創辦人的話'),
       img('/media/2025/11/image.webp'),
       p('大家好，'),
-      p('我是 WEIFAN CHIA，IPPONGI LLC Japan 的執行合夥人，也是臺灣三凡生技研發股份有限公司的特別助理。'),
-      p('我想和您分享品牌 PROTAI 背後的願景，以及推動我們前行的信念——讓美好的身心狀態成為生活的一部分。'),
-      p('用一句簡單的話說，PROTAI 是「幸福的胜肽」。'),
+      pWithBold('我是 WEIFAN CHIA，IPPONGI LLC Japan 的執行合夥人，\n也是臺灣三凡生技研發股份有限公司的特別助理。', ['WEIFAN CHIA', 'IPPONGI LLC Japan', '臺灣三凡生技研發股份有限公司']),
+      pWithBold('我想和您分享品牌 PROTAI 背後的願景，以及推動我們前行的信念——\n讓美好的身心狀態成為生活的一部分。', ['PROTAI']),
+      pWithBold('用一句簡單的話說，PROTAI 是「幸福的胜肽」。', ['PROTAI 是「幸福的胜肽」']),
       p('請讓我說說，為什麼這份使命對我有如此深刻的個人意義，以及一切是如何開始的。'),
-      p('我在日本創立了 PROTAI Beauty & Wellness 品牌，但它的起點在臺灣三凡生技。這家公司花了十多年研究數千種胜肽序列。認識這項工作後，我希望把它的故事帶到日本。'),
-      p('2022 年，父親生病時，我在離開臺灣多年後回到家鄉。在那之前，我並未充分了解他的公司正在進行什麼研究。第一次閱讀 PROTAI 的研究資料時，我立刻感覺到：這是值得讓世界認識的特別事物。'),
-      p('從那時起，我在臺灣從零開始尋找銷售管道，以及懷抱同樣熱情的合作夥伴。在大家的大力支持下，截至 2025 年 9 月，我們累計售出 {{BOTTLES_SOLD}} 瓶。我由衷感謝一路同行的每一位。'),
-      p('經歷這一切，我深刻體會到：重要的不只是胜肽本身，也包括希望善用它、認真投入其中的人們的心意。'),
-      p('與其把 PROTAI 當作另一項生物科技產品，我更願意把它看成一份溫柔的關心——在疲倦與忙碌的日子裡，為日常肌膚保養留一點空間。'),
+      pWithBold('我在日本創立了 PROTAI Beauty & Wellness 品牌，但它的起點在臺灣三凡生技。\n這家公司花了十多年研究數千種胜肽序列。認識這項工作後，我希望把它的故事帶到日本。', ['PROTAI Beauty & Wellness', '臺灣三凡生技']),
+      p('2022 年，父親生病時，我在離開臺灣多年後回到家鄉。\n在那之前，我並未充分了解他的公司正在進行什麼研究。第一次閱讀 PROTAI 的研究資料時，我立刻感覺到：這是值得讓世界認識的特別事物。'),
+      pWithBold('從那時起，我在臺灣從零開始尋找銷售管道，以及懷抱同樣熱情的合作夥伴。\n在大家的大力支持下，截至 2025 年 9 月，我們累計售出 {{BOTTLES_SOLD}} 瓶。我由衷感謝一路同行的每一位。', ['截至 2025 年 9 月，我們累計售出 {{BOTTLES_SOLD}} 瓶']),
+      pWithBold('經歷這一切，我深刻體會到：重要的不只是胜肽本身，也包括希望善用它、認真投入其中的人們的心意。', ['胜肽本身', '人們的心意']),
+      pWithBold('與其把 PROTAI 當作另一項生物科技產品，我更願意把它看成一份溫柔的關心——在疲倦與忙碌的日子裡，為日常肌膚保養留一點空間。', ['一份溫柔的關心']),
       p('我們常說：「眼睛是靈魂之窗。」當這扇窗感到疲倦時，許多人曾告訴我們：'),
       p('「PROTAI 真的讓我感到安慰。」'),
-      p('分享這些心聲的，不只有年長者，也有正在準備考試的學生、長時間面對螢幕工作的專業人士，以及數位生活中的許多人。我們希望為他們提供一段用心照顧眼周肌膚的時光。'),
-      p('這就是我稱 PROTAI 為「幸福的胜肽」的原因。它的使命簡單而有力量：讓我們的世界與日常生活更加明亮、更加充實。對我而言，這才是 PROTAI 真正的價值。'),
+      pWithBold('分享這些心聲的，不只有年長者，也有正在準備考試的學生、長時間面對螢幕工作的專業人士，以及數位生活中的許多人。我們希望為他們提供一段用心照顧眼周肌膚的時光。', ['用心照顧眼周肌膚的時光']),
+      pWithBold('這就是我稱 PROTAI 為「幸福的胜肽」的原因。它的使命簡單而有力量：讓我們的世界與日常生活更加明亮、更加充實。對我而言，這才是 PROTAI 真正的價值。', ['「幸福的胜肽」']),
       p('結合臺灣母公司的先進生物科技，以及日本的精準製造與職人工藝，我希望以最真誠、最有人情味的方式，把這份心意帶給需要的人。這不只是我的夢想，也成為我一生投入的目標。'),
       p('自從遇見 PROTAI，這份工作也讓我找到個人的使命感。每當有人理解它為何對我重要，我都感到深深的喜悅與意義。'),
       p('2025 年，我將全部的時間與心力投入 PROTAI 在日本的發展。比任何成果更重要的，是我們的工作能持續為他人帶來幸福。'),
       p('在臺灣，我遇見許多人，他們分享自己的故事，讓這段旅程對我更有意義。每一次相遇，都留在我的心中。'),
-      p('現在，我想邀請您透過誕生於日本京都的生活保養品牌 IPPONGI，走進這段故事，與我們一起懷抱夢想。'),
+      pWithBold('現在，我想邀請您透過誕生於日本京都的生活保養品牌 IPPONGI，走進這段故事，與我們一起懷抱夢想。', ['日本京都', 'IPPONGI']),
       p('衷心感謝您撥空閱讀這封信。我由心底向您致上最深的謝意。'),
       { type: 'h3', text: '【PROTAI－安全檢驗與發明專利】' },
       { type: 'h5', text: '已於美國個人護理產品協會（PCPC）登錄，國際化妝品成分名稱（INCI）為「Pentapeptide-80」。' },

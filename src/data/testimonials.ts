@@ -49,14 +49,14 @@ export const reviewItems: Testimonial[] = [
     },
   },
   {
-    id: 'easy-open', country: 'jp', kind: 'excerpt', page: { ja: 3, en: 3 },
-    topic: { ja: '使いやすさ', en: 'Easy to use', fr: 'Facile à utiliser', th: 'ใช้งานสะดวก', zh: '使用方便' },
+    id: 'tw-dentist-night-riding', country: 'tw', kind: 'summary', page: { ja: 9, en: 8 },
+    topic: { ja: '夜の帰り道で感じた変化', en: 'More at ease on the ride home', fr: 'Plus serein sur le trajet du retour', th: 'รู้สึกมั่นใจขึ้นระหว่างขับรถกลับบ้าน', zh: '夜間騎車時更安心' },
     text: {
-      ja: 'お洒落にクルッと回すだけなので、スタイリッシュで便利。',
-      en: 'This one simply twists open in a smooth, stylish way. I appreciate its convenience and sleek design.',
-      fr: 'Il suffit de tourner le flacon pour l’ouvrir. J’apprécie son côté pratique et son design élégant.',
-      th: 'เพียงหมุนก็เปิดได้อย่างง่ายดาย ชอบทั้งความสะดวกและดีไซน์ที่ดูเรียบหรู',
-      zh: '輕輕旋轉就能打開，方便又有設計感。',
+      ja: '台湾の50代男性歯科医師は、以前は夜のバイク移動で信号が二重に見え、不安を感じていたといいます。今は赤や青の光がよりはっきり見え、安心して走れると語っています。',
+      en: 'A Taiwanese dentist in his 50s said traffic lights used to appear doubled when he rode home at night. He now feels the lights look clearer and riding is less worrying.',
+      fr: 'Un dentiste taïwanais d’une cinquantaine d’années raconte qu’en rentrant à moto le soir, les feux lui semblaient autrefois dédoublés. Il dit les voir plus nettement aujourd’hui et rouler plus sereinement.',
+      th: 'ทันตแพทย์ชาวไต้หวันวัย 50 ปีเล่าว่า เมื่อก่อนขี่รถกลับบ้านตอนกลางคืนจะเห็นไฟจราจรซ้อนกัน ปัจจุบันเขารู้สึกว่ามองเห็นไฟชัดขึ้นและขี่รถได้อย่างสบายใจขึ้น',
+      zh: '臺灣一位 50 多歲牙醫分享，以前夜間騎車回家時，紅綠燈常像重疊在一起；現在他覺得燈光看起來更清楚，騎車也比較安心。',
     },
   },
   {
@@ -115,14 +115,14 @@ export const reviewItems: Testimonial[] = [
     },
   },
   {
-    id: 'jp-occasional-use', country: 'jp', kind: 'excerpt', page: { ja: 2, en: 2 },
-    topic: { ja: '時々使っても心地よい', en: 'Refreshing even with occasional use', fr: 'Une sensation agréable, même occasionnellement', th: 'รู้สึกสดชื่นแม้ใช้เป็นครั้งคราว', zh: '偶爾使用也覺得清爽' },
+    id: 'tw-dentist-visual-spots', country: 'tw', kind: 'summary', page: { ja: 10, en: 9 },
+    topic: { ja: '視界の点が気になりにくく', en: 'Less distracted by spots in her vision', fr: 'Moins gênée par des taches dans sa vision', th: 'จุดในสายตารบกวนน้อยลง', zh: '眼前的黑點不再那麼困擾' },
     text: {
-      ja: '毎日ではありませんが、ときどき使っています。使うたびに目がスッキリして、その使い心地が気に入っています。',
-      en: 'I don’t use it every day, but whenever I do, my eyes feel refreshed. I really like how it feels.',
-      fr: 'Je ne l’utilise pas tous les jours, mais chaque fois que je le fais, je me sens rafraîchie. J’aime beaucoup cette sensation.',
-      th: 'ฉันไม่ได้ใช้ทุกวัน แต่ทุกครั้งที่ใช้ ดวงตารู้สึกสดชื่น และฉันชอบความรู้สึกนี้มาก',
-      zh: '我不是每天使用，但每次用完都覺得清爽，很喜歡這種感覺。',
+      ja: '台湾の50代女性歯科医師は、長年、本を読むときや空を見るときに視界の点が気になっていたといいます。最近はその点がかなり薄く感じられると語っています。',
+      en: 'A Taiwanese dentist in her 50s said spots in her vision had bothered her for years when reading or looking at the sky. She now feels they have faded considerably.',
+      fr: 'Une dentiste taïwanaise d’une cinquantaine d’années dit que des taches dans sa vision la gênaient depuis des années lorsqu’elle lisait ou regardait le ciel. Elle les trouve désormais beaucoup moins présentes.',
+      th: 'ทันตแพทย์หญิงชาวไต้หวันวัย 50 ปีเล่าว่า จุดในสายตารบกวนเธอมาหลายปีเวลาอ่านหนังสือหรือมองท้องฟ้า ช่วงนี้เธอรู้สึกว่าจุดเหล่านั้นจางลงมาก',
+      zh: '臺灣一位 50 多歲牙醫分享，長年閱讀或看天空時，眼前的黑點總令她困擾；近來她主觀感覺那些黑點淡了許多。',
     },
   },
 ]

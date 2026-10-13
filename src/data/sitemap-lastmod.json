@@ -1,7 +1,7 @@
 {
   "/": {
     "date": "2026-10-13",
-    "hash": "25407fe907dcc0f057700eed18a73312de9d37b7d91c4d957c5a1191ca8e28f4"
+    "hash": "15a9e473356fe0ec94b933bca0c66465cfd72f5c82afae2a37ba73fd5d54485a"
   },
   "/about/": {
     "date": "2026-10-13",
@@ -25,7 +25,7 @@
   },
   "/fr/": {
     "date": "2026-10-13",
-    "hash": "4b8582789ce908e6e898883171dfeb6e30530ee2de1db77a8109a8c960730365"
+    "hash": "cbc3eb71f44e53afab18fc195aaed439e8720330583459ab888df443c979f420"
   },
   "/fr/about/": {
     "date": "2026-10-13",
@@ -65,7 +65,7 @@
   },
   "/ja/": {
     "date": "2026-10-13",
-    "hash": "d8bae11cc139ef196721ce23ad73b699ddffaa397be9307767185b61e514cdd8"
+    "hash": "fe3c58b31ab44878e1fba1bc980d24164fc0709fc2b1d3d7c287594b4e3a7759"
   },
   "/ja/about/": {
     "date": "2026-10-13",
@@ -133,7 +133,7 @@
   },
   "/th/": {
     "date": "2026-10-13",
-    "hash": "f4cf052fa2420ae3a8be8e8ca7b2e30d754f6069dd2933ae571fe62d6fa4214f"
+    "hash": "2d34222b99ae65616a20f1a56b8675df28238fe507b3539f430e5bfc30e8e4ac"
   },
   "/th/about/": {
     "date": "2026-10-13",
@@ -177,7 +177,7 @@
   },
   "/zh/": {
     "date": "2026-10-13",
-    "hash": "ecd3ce05bf0c0ed8735675f7f0cb8c93455f5579f2758fb9a58058fd79638591"
+    "hash": "f964fa2f8217ca53cfd51bf5f40a90c286be1cb8bd4d347cc8deaa3c3d6fb1ce"
   },
   "/zh/about/": {
     "date": "2026-10-13",
@@ -197,7 +197,7 @@
   },
   "/zh/founder-message/": {
     "date": "2026-10-13",
-    "hash": "c6496c8b49479c61f22ae653fdb574bc8be5dfc9f503517dddb41fe421fdb7cc"
+    "hash": "8e8bd778eb223bbd8319d02307115a33e4f298ab211139e5247ebbab708e308e"
   },
   "/zh/online-shop/": {
     "date": "2026-10-13",

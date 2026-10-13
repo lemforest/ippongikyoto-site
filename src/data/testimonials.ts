@@ -69,7 +69,7 @@ export const testimonialCopy: Record<Locale, {
     eyebrow: '使用者心得', heading: '來自各地的聲音',
     note: '整理日本與馬來西亞使用者的個人經驗，內容經翻譯與編輯，不能保證使用效果。',
     country: { jp: '日本', my: '馬來西亞', tw: '臺灣' },
-    hint: '四則使用者心得，依序閱讀。', pause: '暫停移動', play: '繼續移動', rail: ['使用者心得，上排', '使用者心得，下排'],
+    hint: '左右拖曳閱讀四則不同的使用者心得；卡片循環顯示。', pause: '暫停移動', play: '繼續移動', rail: ['使用者心得，上排', '使用者心得，下排'],
   },
   ja: {
     eyebrow: 'お客様の声', heading: '世界から届いた声',

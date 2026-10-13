@@ -47,6 +47,7 @@
       "priceLabel": "26,400",
       "capacityMl": 20,
       "bottles": 2,
+      "stockQuantity": 0,
       "available": false
     },
     "availabilityChecked": "2026-10-12",

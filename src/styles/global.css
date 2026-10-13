@@ -399,6 +399,12 @@ html[lang='ja'] .product-hero-copy h1 { font-size: clamp(32px, 3.2vw, 50px); lin
 .product-title-brand, .product-title-name { display: block; }
 .product-hero-copy > p:not(.product-price) { color: var(--muted); max-width: 540px; }
 .product-hero-copy .product-price { font-family: var(--display); font-size: 35px; color: var(--forest); margin: 0 0 24px; }
+.product-refill-entry { display: grid; grid-template-columns: 72px minmax(0, 1fr) auto; gap: 16px; align-items: center; max-width: 540px; margin-top: 25px; padding: 12px; border: 1px solid var(--line); color: var(--forest); transition: border-color .2s ease, background .2s ease; }
+.product-refill-entry:hover, .product-refill-entry:focus-visible { border-color: var(--forest); background: #edf0eb; }
+.product-refill-entry img { display: block; width: 72px; height: 72px; object-fit: cover; }
+.product-refill-entry strong { display: block; font-family: var(--display); font-size: clamp(18px, 1.8vw, 25px); font-weight: 500; line-height: 1.25; }
+.product-hero-copy .product-refill-entry small { display: block; margin-top: 5px; font-size: 12px; line-height: 1.45; color: var(--muted); }
+.product-refill-entry-arrow { align-self: start; font-size: 22px; line-height: 1; }
 .product-hero-copy .primary-link { margin-top: 28px; }
 .product-hero-copy small { display: block; margin-top: 10px; color: var(--muted); }
 .purchase-links { display: flex; flex-wrap: wrap; gap: 12px 25px; margin-top: 26px; font-size: 13px; color: var(--forest); }

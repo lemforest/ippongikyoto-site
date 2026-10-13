@@ -87,6 +87,7 @@ html[lang='ja'] .hero-copy h1 { font-size: clamp(43px, 3.6vw, 58px); letter-spac
 html[lang='fr'] .hero-copy h1 { font-size: clamp(54px, 5.8vw, 96px); }
 .hero-intro { margin: 34px 0 0; max-width: 500px; color: var(--muted); font-size: clamp(16px, 1.5vw, 20px); line-height: 1.6; }
 html[lang='ja'] .hero-intro, html[lang='en'] .hero-intro { text-wrap: balance; }
+html[lang='ja'] .hero-intro { white-space: pre-line; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 18px 30px; margin-top: 38px; }
 .hero-actions .primary-link { white-space: nowrap; }
 .hero-visual { position: relative; align-self: center; aspect-ratio: 16 / 9; min-width: 0; min-height: 0; margin: 30px 40px 46px 0; scroll-margin-top: 90px; }

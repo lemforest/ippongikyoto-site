@@ -37,6 +37,6 @@ const japaneseWebinarRegistration = page.path === '/ja/webinar/'
       const [intro, ...items] = bulletParts(block.text || '')
       return <div class="prose-bullet-group" data-reveal><p class="prose-bullet-intro">{intro}</p><ul>{items.map((item) => <li>{item}</li>)}</ul></div>
     }
-    return <p data-reveal>{block.runs ? block.runs.map((run) => run.bold && run.italic ? <strong><em>{run.text}</em></strong> : run.bold ? <strong>{run.text}</strong> : run.italic ? <em>{run.text}</em> : run.text) : block.text}</p>
+    return <p class:list={{ 'intentional-line-breaks': page.path === '/zh/about/' && block.text?.includes('\n') }} data-reveal>{block.runs ? block.runs.map((run) => run.bold && run.italic ? <strong><em>{run.text}</em></strong> : run.bold ? <strong>{run.text}</strong> : run.italic ? <em>{run.text}</em> : run.text) : block.text}</p>
   })}
 </div>

@@ -307,6 +307,7 @@ html[lang='th'] .founder-hero-th h1 { width: 100%; max-width: 100%; }
 .prose-flow h2 { font-family: var(--display); font-size: clamp(32px, 3.3vw, 49px); font-weight: 500; line-height: 1.15; color: var(--forest); margin: 64px 0 22px; }
 .prose-flow h3 { margin: 44px 0 18px; font-size: clamp(18px, 1.6vw, 24px); font-weight: 600; line-height: 1.45; color: var(--forest); }
 .prose-flow p { margin: 0 0 18px; color: #465a4e; line-height: 1.85; overflow-wrap: anywhere; }
+.prose-flow p.intentional-line-breaks { white-space: pre-line; }
 .founder-detail .prose-flow p { max-width: 72ch; margin-bottom: 22px; overflow-wrap: normal; text-wrap: pretty; }
 .founder-detail .prose-flow strong { color: var(--forest); font-weight: 600; }
 .founder-detail .prose-flow em { font-style: italic; }

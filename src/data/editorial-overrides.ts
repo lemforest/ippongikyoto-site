@@ -11,55 +11,55 @@ const founderPaths = new Set([
 ])
 const companyPaths = new Set(['/about/', '/ja/会社案内/', '/fr/qui-sommes-nous/', '/th/ข้อมูลบริษัท/'])
 
-const company: Record<string, { headings: string[]; paragraphs: string[] }> = {
-  ja: {
-    headings: ['京都の一凡木', '事業内容', '会社概要'],
-    paragraphs: [
-      '一凡木合同会社は京都を拠点に、目元の肌の保湿を目的とした化粧品PROTAIをご紹介しています。PROTAIは日本製のアイスキンケアミストであり、目薬や眼疾患の治療薬ではありません。',
-      '製品の情報を明確に伝え、日々のスキンケアに取り入れやすい形でお届けすることを大切にしています。',
-      '化粧品事業に加え、オンラインセミナーや多言語翻訳・通訳、国際取引に関する業務にも取り組んでいます。',
-      '会社名：一凡木合同会社。設立：2025年3月10日。所在地：{{CONTACT_ADDRESS}}。お問い合わせ：{{EMAIL}}。',
-    ],
-  },
+// Restore the archived About pages' full structure and image. Only product
+// efficacy wording is updated; the Kyoto story, values, services, vision and
+// company facts remain in their original order.
+const companyEdits: Record<string, Record<number, string>> = {
   en: {
-    headings: ['IPPONGI in Kyoto', 'Our work', 'Company details'],
-    paragraphs: [
-      'Based in Kyoto, IPPONGI LLC presents PROTAI, a Japanese-made cosmetic mist for moisturizing the skin around the eyes. It is not an eye drop or a treatment for eye conditions.',
-      'We aim to describe the product clearly so customers can decide whether it belongs in their skincare routine.',
-      'Alongside cosmetics, the company works on online seminars, multilingual translation and interpretation, and international business support.',
-      'Company: IPPONGI LLC. Established: 10 March 2025. Office: {{CONTACT_ADDRESS}}. Contact: {{EMAIL}}.',
-    ],
+    4: 'Based in the historic city of Kyoto, IPPONGI LLC was founded with a belief that caring for ourselves begins with attention to everyday life. We created PROTAI, a Japanese-made cosmetic mist for moisturizing the skin around the eyes. It is not an eye drop or a treatment for eye conditions. Through our work, we hope to accompany each person’s colorful journey in life with care, clarity and balance.',
+    7: 'This principle guides the care we put into PROTAI. For us, eye-area skincare is one small part of a considered daily routine, alongside moments of rest and attention to well-being.',
+    8: 'Our approach is rooted in: ● Less is more – Simplicity leaves room for mindful care ● Nature knows best – Respect the body and its everyday rhythms ● No shortcuts – Thoughtful care takes time and consistency',
+    9: 'We are not here to “sell cures.” We offer a gentle choice for people who want to make eye-area skincare part of their daily routine.',
+    11: 'Eye-Area Skincare – PROTAI We develop and offer a Japanese-made cosmetic mist to moisturize the skin around the eyes as part of daily skincare. PROTAI is non-medicated; it is not an eye drop or a treatment for eye conditions.',
+    12: 'Education & Awareness We host webinars and collaborate with professionals to share information about eye-area skincare, digital lifestyles and everyday self-care.',
+    16: 'We hope for a world where: ● Children have time to rest and play beyond their screens ● Families can make informed choices about everyday self-care ● People rediscover the value of slowing down and keeping things simple',
+  },
+  ja: {
+    5: '私たちは、現代のデジタル社会に寄り添い、毎日のスキンケアとして取り入れやすい製品をご紹介しています。',
+    6: 'PROTAI（プロタイ）は、目元の肌にうるおいを与える日本製の化粧品ミストです。目薬や眼疾患の治療薬ではありません。',
+    10: 'この信念のもと、PROTAIは生まれました。目元の肌をいたわることも、自分と向き合う日々のセルフケアのひとつだと考えています。',
+    12: '私たちのものづくりを支える価値観： ● Less is more（少ないことは豊かさ） – シンプルな習慣を大切にすること ● Nature knows best（自然を尊重する） – 身体と日々のリズムに目を向けること ● No shortcuts（近道ではなく、丁寧な歩みを） – 時間をかけて、継続して取り組むこと',
+    13: '私たちは「治すもの」を売るために存在しているのではありません。目元のスキンケアを見つめなおす日々に、そっと寄り添う選択肢のひとつでありたいと願っています。',
+    15: '1. 目元のスキンケア製品 – PROTAI（プロタイ） 目元の肌にうるおいを与える日本製の化粧品ミストをご紹介しています。目薬や眼疾患の治療薬ではなく、毎日のスキンケアに取り入れるための製品です。',
+    20: '私たちが目指す世界： ● 子どもたちが画面から離れて休む時間も大切にできること ● 家族みんなが、日々のセルフケアについて納得して選べること ● 人々が、ゆっくりとしたシンプルな暮らしのよさを見つめなおせること',
+    24: '所在地：{{CONTACT_ADDRESS}}',
   },
   fr: {
-    headings: ['IPPONGI à Kyoto', 'Nos activités', 'L’entreprise'],
-    paragraphs: [
-      'Basée à Kyoto, IPPONGI LLC présente PROTAI, une brume cosmétique fabriquée au Japon pour hydrater la peau du contour des yeux. Ce n’est ni un collyre ni un traitement des maladies oculaires.',
-      'Nous souhaitons décrire le produit avec clarté afin que chacun puisse décider de sa place dans sa routine de soin.',
-      'En complément des cosmétiques, l’entreprise organise des webinaires et propose des services de traduction, d’interprétation et d’accompagnement du commerce international.',
-      'Entreprise : IPPONGI LLC. Création : 10 mars 2025. Adresse : {{CONTACT_ADDRESS}}. Contact : {{EMAIL}}.',
-    ],
+    5: 'Notre mission : proposer un soin cosmétique simple pour la peau du contour des yeux, adapté au rythme de la vie numérique, sans renoncer à l’harmonie ni à la simplicité.',
+    6: 'Nous avons créé PROTAI, une brume cosmétique fabriquée au Japon pour hydrater la peau du contour des yeux. Ce n’est ni un collyre ni un traitement des maladies oculaires.',
+    10: 'Ce principe guide le soin apporté à PROTAI. Pour nous, prendre soin de la peau du contour des yeux fait partie d’une routine quotidienne attentive, aux côtés du repos et du bien-être.',
+    11: 'Notre approche repose sur : ● Moins, c’est mieux — La simplicité laisse place à une attention quotidienne ● Respecter la nature — Écouter son corps et son rythme ● Pas de raccourcis — Une routine réfléchie demande du temps et de la régularité',
+    12: 'Nous ne sommes pas là pour « vendre des remèdes ». Nous proposons un choix doux pour celles et ceux qui souhaitent intégrer le soin du contour des yeux à leur quotidien.',
+    14: '1. Soin du contour des yeux – PROTAI Nous proposons une brume cosmétique fabriquée au Japon pour hydrater la peau du contour des yeux au quotidien. PROTAI n’est ni un médicament, ni un collyre, ni un traitement des maladies oculaires.',
+    19: 'Nous imaginons un monde où : ● Les enfants ont aussi le temps de se reposer loin des écrans ● Les familles font des choix éclairés pour leurs soins quotidiens ● Chacun redécouvre la valeur d’une vie plus lente et plus simple',
   },
   th: {
-    headings: ['IPPONGI ในเกียวโต', 'การดำเนินงาน', 'ข้อมูลนิติบุคคล'],
-    paragraphs: [
-      'IPPONGI LLC ตั้งอยู่ในเกียวโตและนำเสนอ PROTAI สเปรย์เครื่องสำอางที่ผลิตในญี่ปุ่นเพื่อเพิ่มความชุ่มชื้นให้ผิวรอบดวงตา ไม่ใช่ยาหยอดตาหรือผลิตภัณฑ์รักษาโรคตา',
-      'เรามุ่งสื่อสารข้อมูลสินค้าอย่างชัดเจน เพื่อให้ลูกค้าตัดสินใจได้ว่าสินค้าเหมาะกับกิจวัตรดูแลผิวของตนหรือไม่',
-      'นอกจากธุรกิจเครื่องสำอาง บริษัทยังจัดสัมมนาออนไลน์และให้บริการแปล ล่าม และสนับสนุนธุรกิจระหว่างประเทศ',
-      'บริษัท: IPPONGI LLC ก่อตั้ง: 10 มีนาคม 2025 ที่ตั้ง: {{CONTACT_ADDRESS}} ติดต่อ: {{EMAIL}}',
-    ],
+    1: 'เกี่ยวกับ IPPONGI',
+    4: 'IPPONGI LLC ตั้งอยู่ในเมืองเกียวโตที่มีประวัติศาสตร์ยาวนาน เราเชื่อว่าการดูแลตนเองเริ่มจากการใส่ใจชีวิตประจำวัน PROTAI คือสเปรย์เครื่องสำอางที่ผลิตในญี่ปุ่นเพื่อเพิ่มความชุ่มชื้นให้ผิวรอบดวงตา ไม่ใช่ยาหยอดตาหรือผลิตภัณฑ์รักษาโรคตา เราหวังว่าจะร่วมเดินทางกับทุกคนด้วยความใส่ใจ ความชัดเจน และความสมดุล',
+    7: 'ความเชื่อนี้เป็นแนวทางในการพัฒนา PROTAI สำหรับเรา การดูแลผิวรอบดวงตาเป็นส่วนหนึ่งของกิจวัตรประจำวันที่ใส่ใจตนเอง ควบคู่ไปกับการพักผ่อน',
+    8: 'แนวทางของเรายึดถือคุณค่าต่อไปนี้: ● Less is more (น้อยแต่มาก) – ให้ความสำคัญกับความเรียบง่ายในชีวิตประจำวัน ● Nature knows best (เคารพธรรมชาติ) – ใส่ใจร่างกายและจังหวะชีวิตของตนเอง ● No shortcuts (ไม่มีทางลัด) – การดูแลอย่างตั้งใจต้องใช้เวลาและความสม่ำเสมอ',
+    9: 'เราไม่ได้ขายผลิตภัณฑ์เพื่อรักษาโรค แต่ต้องการเสนอทางเลือกที่อ่อนโยนสำหรับผู้ที่อยากดูแลผิวรอบดวงตาในชีวิตประจำวัน',
+    11: '1. ผลิตภัณฑ์ดูแลผิวรอบดวงตา – PROTAI เรานำเสนอสเปรย์เครื่องสำอางที่ผลิตในญี่ปุ่นเพื่อเพิ่มความชุ่มชื้นให้ผิวรอบดวงตา เป็นผลิตภัณฑ์สำหรับกิจวัตรดูแลผิวประจำวัน ไม่ใช่ยาหยอดตาหรือผลิตภัณฑ์รักษาโรคตา',
+    16: 'โลกที่เราอยากเห็น: ● เด็ก ๆ มีเวลาพักผ่อนและเล่นโดยห่างจากหน้าจอ ● ครอบครัวเลือกวิธีดูแลตนเองในชีวิตประจำวันจากข้อมูลที่ชัดเจน ● ผู้คนเห็นคุณค่าของชีวิตที่เรียบง่ายและไม่เร่งรีบ',
+    18: 'ชื่อบริษัท: IPPONGI LLC',
+    20: 'ที่ตั้ง: {{CONTACT_ADDRESS}}',
   },
 }
 
 function editorialBlocks(page: SitePage): ContentBlock[] {
   if (founderPaths.has(page.path)) return restoreFounderBlocks(page)
-  const copy = company[page.lang]
-  return [
-    { type: 'h2', text: page.title },
-    ...copy.headings.flatMap((heading, index) => [
-      { type: 'h2', text: heading },
-      ...copy.paragraphs.slice(index === 0 ? 0 : index === 1 ? 2 : 3, index === 0 ? 2 : index === 1 ? 3 : 4).map((text) => ({ type: 'p', text })),
-    ]),
-  ]
+  const edits = companyEdits[page.lang]
+  return page.blocks.map((block, index) => edits[index] ? { ...block, text: edits[index] } : block)
 }
 
 export function applyEditorialOverrides(page: SitePage): SitePage {

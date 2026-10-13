@@ -94,6 +94,10 @@ html[lang='ja'] .hero-intro, html[lang='en'] .hero-intro { text-wrap: balance; }
 .hero-film { display: block; width: 100%; height: 100%; object-fit: cover; }
 .hero-sideword { position: absolute; top: 20px; right: 8px; writing-mode: vertical-rl; font-family: var(--display); font-size: 16px; letter-spacing: .08em; color: var(--muted); }
 @media (min-width: 781px) {
+  html[lang='ja'] .home-hero .hero-poem,
+  html[lang='fr'] .home-hero .hero-poem { max-width: none; white-space: nowrap; }
+  html[lang='ja'] .home-hero .hero-poem { font-size: clamp(16px, 1.4vw, 20px); }
+  html[lang='fr'] .home-hero .hero-poem { font-size: clamp(15px, 1.5vw, 19px); }
   html[lang='ja'] .home-hero .hero-title-line,
   html[lang='en'] .home-hero .hero-title-line { white-space: nowrap; }
   html[lang='ja'] .home-hero .hero-copy h1 { font-size: clamp(30px, 3.6vw, 58px); }
@@ -102,6 +106,14 @@ html[lang='ja'] .hero-intro, html[lang='en'] .hero-intro { text-wrap: balance; }
   html[lang='en'] .home-hero-translated .hero-copy h1 { font-size: clamp(32px, 4vw, 56px); }
   html[lang='fr'] .home-hero-translated .hero-copy h1 { font-size: clamp(44px, 4.17vw, 56px); }
   html[lang='th'] .home-hero-translated .hero-copy h1 { font-size: clamp(42px, 4vw, 54px); line-height: 1.4; }
+}
+@media (min-width: 781px) and (max-width: 1000px) {
+  html[lang='ja'] .home-hero,
+  html[lang='fr'] .home-hero { grid-template-columns: minmax(0, 50%) minmax(0, 50%); }
+  html[lang='ja'] .home-hero .hero-copy,
+  html[lang='fr'] .home-hero .hero-copy { padding-left: 30px; padding-right: 16px; }
+  html[lang='ja'] .home-hero .hero-visual,
+  html[lang='fr'] .home-hero .hero-visual { margin-right: 24px; }
 }
 .home-slideshow { padding-top: 34px; }
 .home-slideshow-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; margin-bottom: 18px; color: var(--forest); }

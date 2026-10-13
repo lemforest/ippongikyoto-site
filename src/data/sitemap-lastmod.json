@@ -1,7 +1,7 @@
 {
   "/": {
     "date": "2026-10-13",
-    "hash": "871769efbd0f448bd71b8715568074f138e5b98fa356215c9f510414ae9841b9"
+    "hash": "4ec3405d054812f4ea7529fccc398cb750ca9fc89755217c1e52faab65325003"
   },
   "/about/": {
     "date": "2026-10-13",
@@ -25,7 +25,7 @@
   },
   "/fr/": {
     "date": "2026-10-13",
-    "hash": "5b454f84afec01aa4366d21fe05adfce6f085889239bde5957c96603d79db5bc"
+    "hash": "898f37423be4f52904007305d9a261f03b1ab1a0e1d95994f15f0d4823405017"
   },
   "/fr/about/": {
     "date": "2026-10-13",
@@ -65,7 +65,7 @@
   },
   "/ja/": {
     "date": "2026-10-13",
-    "hash": "f35e9c3bfdb6a3c452fa6f45e86fcb45473baadee4814b44868143883c285d37"
+    "hash": "5cce3b8d096aba1ab2211c1c4689f7eb0336285e326390592c19a6d7fc65ee8a"
   },
   "/ja/about/": {
     "date": "2026-10-13",
@@ -133,7 +133,7 @@
   },
   "/th/": {
     "date": "2026-10-13",
-    "hash": "b77833640a54d32723e24d7de263abf2978e45461f52c1ce8cced88df1ec87f8"
+    "hash": "590ce4efaa53e1825fd2cec2c8c7ca62d9e07fbfd7bce7039f56c6f877632527"
   },
   "/th/about/": {
     "date": "2026-10-13",
@@ -177,7 +177,7 @@
   },
   "/zh/": {
     "date": "2026-10-13",
-    "hash": "fb57330ae66c2edb20d8e71c23ba87cbf7d3ddcd3b224d178b685da2e8310bba"
+    "hash": "46d935ad5a5c8d68074fbeb1ee6256eba05a416821febd00e3622269ca895f2e"
   },
   "/zh/about/": {
     "date": "2026-10-13",

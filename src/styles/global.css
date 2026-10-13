@@ -227,8 +227,9 @@ html[lang='ja'] .reasons-summary { font-size: clamp(18px, 1.65vw, 21px); }
 @keyframes testimonial-backward { from { transform: translate3d(calc(-1 * var(--marquee-distance)), 0, 0); } }
 .testimonial-clone { pointer-events: none; }
 .testimonial-card { display: flex; flex-direction: column; min-width: 0; min-height: 228px; height: 100%; margin: 0; padding: 23px 28px 21px; background: var(--paper); border: 1px solid var(--line); border-radius: 8px; }
-.testimonial-card-head { padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+.testimonial-card-head { display: flex; justify-content: space-between; gap: 12px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
 .testimonial-country { color: var(--forest); font-size: 12px; font-weight: 700; }
+.testimonial-kind { color: var(--muted); font-size: 11px; }
 .testimonial-card-body { display: flex; flex: 1; flex-direction: column; justify-content: center; padding: 17px 0; }
 .testimonial-card-body strong { color: var(--muted); font-size: 12px; font-weight: 600; }
 .testimonial-text { margin: 9px 0 0; color: var(--forest); font-family: var(--display); font-size: clamp(21px, 1.8vw, 26px); line-height: 1.38; font-weight: 500; }

@@ -13,6 +13,9 @@ const filtered = blocks.filter((block) => {
 })
 const bulletParts = (text: string) => text.split(/\s*●\s*/).map((part) => part.trim()).filter(Boolean)
 const headingText = (text = '') => text.replace(/^🌿\s*/, '')
+const japaneseWebinarRegistration = page.path === '/ja/webinar/'
+  ? page.links.find((link) => link.href.startsWith('https://prosunfun.protai.com.tw/f/'))?.href
+  : undefined
 ---
 <div class="prose-flow">
   {filtered.map((block, index) => {
@@ -26,6 +29,10 @@ const headingText = (text = '') => text.replace(/^🌿\s*/, '')
     if (/^h[1-4]$/.test(block.type)) return <h2 data-reveal>{headingText(block.text)}</h2>
     if (block.type === 'blockquote') return <blockquote data-reveal>{block.text}</blockquote>
     if (block.type === 'li') return <p class="list-line" data-reveal>{block.text}</p>
+    if (block.type === 'p' && japaneseWebinarRegistration && block.text?.includes(japaneseWebinarRegistration)) {
+      const [before, after] = block.text.split(japaneseWebinarRegistration)
+      return <p data-reveal>{before}<a href={japaneseWebinarRegistration} target="_blank" rel="noopener noreferrer">{japaneseWebinarRegistration}</a>{after}</p>
+    }
     if (block.type === 'p' && (block.text?.match(/●/g)?.length || 0) >= 2) {
       const [intro, ...items] = bulletParts(block.text || '')
       return <div class="prose-bullet-group" data-reveal><p class="prose-bullet-intro">{intro}</p><ul>{items.map((item) => <li>{item}</li>)}</ul></div>

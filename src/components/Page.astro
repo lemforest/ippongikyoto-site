@@ -49,6 +49,9 @@ const webinarSteps = webinarStepStart >= 0 ? page.blocks.slice(webinarStepStart)
     else groups.at(-1)?.blocks.push(block)
     return groups
   }, [] as { title: string; blocks: typeof page.blocks }[]) : []
+if (page.path === '/ja/webinar/' && webinarSteps[0]) {
+  webinarSteps[0].blocks.splice(1, 0, { type: 'image', url: '/media/2025/06/QR_JP.webp' })
+}
 const firstVideo = page.videos[0]
 const originVideo = isHome ? page.videos[1] : undefined
 const captionLabel = { en: 'English', ja: '日本語', fr: 'Français', th: 'ภาษาไทย', zh: '繁體中文' }[lang]

@@ -644,6 +644,11 @@
     "height": 960,
     "srcset": "/responsive/media/2026/10/visual-slide-09-640.webp 640w, /responsive/media/2026/10/visual-slide-09-960.webp 960w, /media/2026/10/visual-slide-09.webp 1440w"
   },
+  "/media/2026/10/webinar-zh-qr.png": {
+    "width": 216,
+    "height": 216,
+    "srcset": null
+  },
   "/media/2026/10/webinar-zh-step-2.png": {
     "width": 1320,
     "height": 866,

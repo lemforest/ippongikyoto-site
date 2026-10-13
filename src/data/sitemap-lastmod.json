@@ -1,7 +1,7 @@
 {
   "/": {
     "date": "2026-10-13",
-    "hash": "4ec3405d054812f4ea7529fccc398cb750ca9fc89755217c1e52faab65325003"
+    "hash": "25407fe907dcc0f057700eed18a73312de9d37b7d91c4d957c5a1191ca8e28f4"
   },
   "/about/": {
     "date": "2026-10-13",
@@ -13,11 +13,11 @@
   },
   "/contact/": {
     "date": "2026-10-13",
-    "hash": "6f321fd7625da6495eb8337f29a2f90b61f3011f001091fcdfad137679f94fbd"
+    "hash": "53c071b197168f501f7aa26a19c256843573a103748720823d4d778c80bb7fc4"
   },
   "/faq/": {
     "date": "2026-10-13",
-    "hash": "eaf45f54fe548a8c9074fcc43bfb1d153bc4b79d56ca3ca0f45b51a45700e0da"
+    "hash": "647900e87cb401dc07442a8701fefab66779c2b4c160bebf5a88317490c2b559"
   },
   "/founder-message/": {
     "date": "2026-10-13",
@@ -25,7 +25,7 @@
   },
   "/fr/": {
     "date": "2026-10-13",
-    "hash": "898f37423be4f52904007305d9a261f03b1ab1a0e1d95994f15f0d4823405017"
+    "hash": "4b8582789ce908e6e898883171dfeb6e30530ee2de1db77a8109a8c960730365"
   },
   "/fr/about/": {
     "date": "2026-10-13",
@@ -33,11 +33,11 @@
   },
   "/fr/contact/": {
     "date": "2026-10-13",
-    "hash": "839d2e78a5a1d47833fc75995cf47b007a9418cf5d1bf69ca61d9342e3516d9c"
+    "hash": "d4849a223e5e70ac63de40b46b62f2e1fc38983bebdc582d76c5715927b1c23a"
   },
   "/fr/faq/": {
     "date": "2026-10-13",
-    "hash": "7a1f7034fd7af13cbfd9b3e042c1a0fa247823958ec01d447f8e55e7909ea349"
+    "hash": "6f2c4d1d00730fc176b74a18b1260adcbe2c4e4edd454c4770ebc4e267b8840c"
   },
   "/fr/founder-message/": {
     "date": "2026-10-13",
@@ -65,7 +65,7 @@
   },
   "/ja/": {
     "date": "2026-10-13",
-    "hash": "5cce3b8d096aba1ab2211c1c4689f7eb0336285e326390592c19a6d7fc65ee8a"
+    "hash": "d8bae11cc139ef196721ce23ad73b699ddffaa397be9307767185b61e514cdd8"
   },
   "/ja/about/": {
     "date": "2026-10-13",
@@ -77,11 +77,11 @@
   },
   "/ja/contact/": {
     "date": "2026-10-13",
-    "hash": "347ed2cdfd7f1be46570a1b0a8e78ac3af74fa86ea190d0d4ad519c36f60dc11"
+    "hash": "f8398150a88110c85416a7750ec2731c86ae3b25c88fac6f5b24ab95a454981b"
   },
   "/ja/faq/": {
     "date": "2026-10-13",
-    "hash": "4d886352e3b4d09f4a2fce5cf36c2910f46baedb652627d1104c274127783ee2"
+    "hash": "c51819853214ea13b4e890bae6dbc9dd06b3dc4377455c7d6a538e6f61533a46"
   },
   "/ja/founder-message/": {
     "date": "2026-10-13",
@@ -133,7 +133,7 @@
   },
   "/th/": {
     "date": "2026-10-13",
-    "hash": "590ce4efaa53e1825fd2cec2c8c7ca62d9e07fbfd7bce7039f56c6f877632527"
+    "hash": "f4cf052fa2420ae3a8be8e8ca7b2e30d754f6069dd2933ae571fe62d6fa4214f"
   },
   "/th/about/": {
     "date": "2026-10-13",
@@ -141,11 +141,11 @@
   },
   "/th/contact/": {
     "date": "2026-10-13",
-    "hash": "5d31baf950c4288f7eaf477a144e576abc13b8d0a46497c410dc5f731f3647f3"
+    "hash": "278239eeaca4f0f4d046697e27f0f2b3310c686fafee572ff4c00219bab263c6"
   },
   "/th/faq/": {
     "date": "2026-10-13",
-    "hash": "9e49fc26ea71835af835487906729424d01c5cc1c53482dbc697dd83e5a4edb5"
+    "hash": "18935ff864b99c4520db3b07bf031fe975c934797e8d390fdc019dd45fb24631"
   },
   "/th/founder-message/": {
     "date": "2026-10-13",
@@ -177,11 +177,11 @@
   },
   "/zh/": {
     "date": "2026-10-13",
-    "hash": "46d935ad5a5c8d68074fbeb1ee6256eba05a416821febd00e3622269ca895f2e"
+    "hash": "ecd3ce05bf0c0ed8735675f7f0cb8c93455f5579f2758fb9a58058fd79638591"
   },
   "/zh/about/": {
     "date": "2026-10-13",
-    "hash": "a4a67e50840203376355ef477afee52022b7d3447de0228cc54d6d5775f47207"
+    "hash": "f9dc58e441b926f1a5419c2ae7c385460240fd63e159799f8a627b5688a59f3d"
   },
   "/zh/commercial-disclosure/": {
     "date": "2026-10-13",
@@ -189,15 +189,15 @@
   },
   "/zh/contact/": {
     "date": "2026-10-13",
-    "hash": "551236802d25e6e90c45985d8e097a7f4a008581646336290c3e2f029601c4f1"
+    "hash": "a9726c2ce33cc029d635755a4ff1fefe759748c996bb6d3b551dbf3d55cb7a93"
   },
   "/zh/faq/": {
     "date": "2026-10-13",
-    "hash": "cc6bdada502d472860f5a87eccbd06cf2ec5b1b6cb020b3f74813db599465da6"
+    "hash": "f9eec2dae3b3b1d35585181cbd32aef88730cd946ff817e8ba7545b5edbaf53d"
   },
   "/zh/founder-message/": {
     "date": "2026-10-13",
-    "hash": "1e57d69dc919ce9b5b2dccf723db207055960d7f42683a09b39da73ca65d898e"
+    "hash": "c6496c8b49479c61f22ae653fdb574bc8be5dfc9f503517dddb41fe421fdb7cc"
   },
   "/zh/online-shop/": {
     "date": "2026-10-13",
@@ -221,6 +221,6 @@
   },
   "/zh/webinar/": {
     "date": "2026-10-13",
-    "hash": "8119b9ce89685be63bc95f8ec40cfb67c4b782cb2bdf41db24af15b9a6ce7972"
+    "hash": "b7f8fb9c408f340883b2c627b0554c9843810fee129ebadb4454561ad51c185b"
   }
 }

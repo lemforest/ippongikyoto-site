@@ -37,6 +37,14 @@ export const webinarRegistrationChoices: Partial<Record<Locale, {
   qrAlt: string
   note?: string
 }>> = {
+  zh: {
+    intro: '您可以透過以下任一方式前往報名頁面：',
+    scan: '使用手機或平板掃描 QR code',
+    link: '點選下方連結，直接前往繁體中文報名頁面：',
+    href: 'https://prosunfun.protai.com.tw/f/eyecareseminar',
+    qr: '/media/2026/10/webinar-zh-qr.png',
+    qrAlt: '繁體中文線上講座報名頁面的 QR code',
+  },
   en: {
     intro: 'You can register in either of the following ways:',
     scan: 'Scan the QR code using your smartphone or tablet',

@@ -211,6 +211,7 @@ html[lang='ja'] .reasons-summary { font-size: clamp(18px, 1.65vw, 21px); }
 .testimonials-heading > p { max-width: 430px; margin: 0; color: var(--muted); font-size: 16px; line-height: 1.8; }
 .testimonials-countries { display: flex; flex-wrap: wrap; gap: 10px 24px; margin-top: 24px; color: var(--forest); font-size: 12px; font-weight: 600; }
 .testimonials-countries span { padding-bottom: 5px; border-bottom: 1px solid #aebcaf; }
+.testimonials-inner { max-width: 1600px; margin: auto; }
 .testimonial-rails { display: grid; gap: 16px; }
 .testimonial-rail { min-width: 0; }
 .testimonial-rail .splide__track { overflow-anchor: none; }
@@ -227,9 +228,8 @@ html[lang='ja'] .reasons-summary { font-size: clamp(18px, 1.65vw, 21px); }
 @keyframes testimonial-backward { from { transform: translate3d(calc(-1 * var(--marquee-distance)), 0, 0); } }
 .testimonial-clone { pointer-events: none; }
 .testimonial-card { display: flex; flex-direction: column; min-width: 0; min-height: 228px; height: 100%; margin: 0; padding: 23px 28px 21px; background: var(--paper); border: 1px solid var(--line); border-radius: 8px; }
-.testimonial-card-head { display: flex; justify-content: space-between; gap: 12px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+.testimonial-card-head { padding-bottom: 12px; border-bottom: 1px solid var(--line); }
 .testimonial-country { color: var(--forest); font-size: 12px; font-weight: 700; }
-.testimonial-kind { color: var(--muted); font-size: 11px; }
 .testimonial-card-body { display: flex; flex: 1; flex-direction: column; justify-content: center; padding: 17px 0; }
 .testimonial-card-body strong { color: var(--muted); font-size: 12px; font-weight: 600; }
 .testimonial-text { margin: 9px 0 0; color: var(--forest); font-family: var(--display); font-size: clamp(21px, 1.8vw, 26px); line-height: 1.38; font-weight: 500; }
@@ -297,6 +297,7 @@ html[lang='th'] .founder-hero-th h1 { width: 100%; max-width: 100%; }
 .page-hero-plain { display: block; min-height: 360px; padding: 95px clamp(48px, calc((100vw - 1280px) / 2), 130px) 82px; border-bottom: 1px solid var(--line); }
 .page-hero-plain .page-hero-copy { padding: 0; }
 .page-hero-plain h1 { margin-top: 18px; }
+html[lang^='zh'] .contact-hero h1 { max-width: none; font-size: clamp(20px, 5.5vw, 70px); white-space: nowrap; }
 .detail-section { display: grid; grid-template-columns: minmax(210px, .7fr) minmax(0, 1.7fr); gap: 8%; padding-top: 120px; padding-bottom: 140px; }
 .founder-detail { grid-template-columns: minmax(170px, .45fr) minmax(0, 1.8fr); gap: 6%; }
 .detail-sidebar { position: sticky; top: 115px; align-self: start; }
@@ -509,6 +510,7 @@ html[lang='ja'] .product-hero-copy h1 { font-size: clamp(32px, 3.2vw, 50px); lin
 }
 @media (max-width: 900px) {
   .testimonials-heading { grid-template-columns: 1fr; gap: 24px; }
+
   .film-preview-copy { right: 5%; width: 42%; }
 }
 @media (max-width: 1180px) {
@@ -552,8 +554,8 @@ html[lang='ja'] .product-hero-copy h1 { font-size: clamp(32px, 3.2vw, 50px); lin
   .testimonials-heading h2 { font-size: clamp(42px, 10vw, 59px); }
   .testimonial-rails { gap: 12px; }
   .testimonial-rail .splide__slide { width: min(335px, calc(100vw - 40px)); }
-  .testimonial-card { min-height: 238px; padding: 20px 22px 18px; }
   .testimonials-footer { align-items: flex-start; }
+  .testimonial-card { min-height: 238px; padding: 20px 22px 18px; }
   .section-lead { grid-template-columns: 1fr; gap: 12px; }
   .section-lead h2 { margin-top: 9px; }
   .product-photo { min-height: 280px; }
@@ -583,9 +585,9 @@ html[lang='ja'] .product-hero-copy h1 { font-size: clamp(32px, 3.2vw, 50px); lin
   .skip-link, .wordmark, .text-link, .quiet-link { min-height: 44px; }
   .locale-list a { display: flex; align-items: center; min-height: 44px; }
   .menu-toggle { width: 44px; height: 44px; padding: 9px; }
-  .testimonials-toggle { min-height: 44px; }
   .home-slideshow-buttons button { width: 44px; height: 44px; }
   .contact-note a, .contact-invite a, .footer-contact a, .footer-meta a { display: inline-flex; align-items: center; min-height: 44px; }
+  .testimonials-toggle { min-height: 44px; }
   .faq-answer a, .purchase-links a { display: inline-flex; align-items: center; min-width: 44px; min-height: 44px; max-width: 100%; overflow-wrap: anywhere; }
   .contact-note a { min-width: 44px; }
   .footer-meta a { width: fit-content; }

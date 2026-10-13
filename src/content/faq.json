@@ -88,9 +88,15 @@
             "type": "p",
             "runs": [
               {
-                "text": "A: Selected customer comments are shown on our home page. They describe individual experiences and do not guarantee that others will have the same results. To learn about the webinar, visit the Webinar page.",
+                "text": "A: Selected customer comments are shown on our home page. They describe individual experiences and do not guarantee that others will have the same results. ",
                 "bold": false,
                 "italic": false
+              },
+              {
+                "text": "For more detailed customer experiences, visit the Webinar page and register for a session.",
+                "bold": false,
+                "italic": false,
+                "href": "/webinar/"
               }
             ]
           }
@@ -103,9 +109,15 @@
             "type": "p",
             "runs": [
               {
-                "text": "A. お客様の声は、ホームページの体験談をご覧ください。個人の感想であり、ほかの方にも同じ結果が得られることを保証するものではありません。セミナーへの参加はウェビナーページからお申し込みいただけます。",
+                "text": "A. お客様の声の一部はホームページでご覧いただけます。個人の感想であり、ほかの方にも同じ結果が得られることを保証するものではありません。",
                 "bold": false,
                 "italic": false
+              },
+              {
+                "text": "より詳しい体験談を知りたい方は、ウェビナーページからご参加をお申し込みください。",
+                "bold": false,
+                "italic": false,
+                "href": "/ja/webinar/"
               }
             ]
           }
@@ -118,9 +130,15 @@
             "type": "p",
             "runs": [
               {
-                "text": "R : Des témoignages sélectionnés figurent sur notre page d’accueil. Ils reflètent des expériences personnelles et ne garantissent pas que d’autres personnes obtiendront les mêmes résultats. Pour le webinaire, consultez la page dédiée.",
+                "text": "R : Des témoignages sélectionnés figurent sur notre page d’accueil. Ils reflètent des expériences personnelles et ne garantissent pas que d’autres personnes obtiendront les mêmes résultats. ",
                 "bold": false,
                 "italic": false
+              },
+              {
+                "text": "Pour découvrir des témoignages plus détaillés, rendez-vous sur la page du webinaire et inscrivez-vous.",
+                "bold": false,
+                "italic": false,
+                "href": "/fr/webinar/"
               }
             ]
           }
@@ -133,9 +151,15 @@
             "type": "p",
             "runs": [
               {
-                "text": "คำตอบ: สามารถอ่านความคิดเห็นจากผู้ใช้บางส่วนได้ที่หน้าแรก ความคิดเห็นเหล่านี้เป็นประสบการณ์ส่วนบุคคล ไม่รับประกันว่าผู้อื่นจะได้รับผลลัพธ์เช่นเดียวกัน หากสนใจสัมมนาออนไลน์ โปรดดูหน้า Webinar",
+                "text": "คำตอบ: สามารถอ่านความคิดเห็นจากผู้ใช้บางส่วนได้ที่หน้าแรก ความคิดเห็นเหล่านี้เป็นประสบการณ์ส่วนบุคคล ไม่รับประกันว่าผู้อื่นจะได้รับผลลัพธ์เช่นเดียวกัน ",
                 "bold": false,
                 "italic": false
+              },
+              {
+                "text": "หากต้องการทราบประสบการณ์ของผู้ใช้เพิ่มเติม โปรดไปที่หน้าเว็บสัมมนาและลงทะเบียนเข้าร่วม",
+                "bold": false,
+                "italic": false,
+                "href": "/th/webinar/"
               }
             ]
           }

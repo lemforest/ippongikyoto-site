@@ -5,8 +5,8 @@ import SiteImage from './SiteImage.astro'
 import WebinarRegistrationOptions from './WebinarRegistrationOptions.astro'
 import { contentImageAlt } from '../data/image-alt'
 
-interface Props { page: SitePage; blocks?: ContentBlock[]; skipFirstHeading?: boolean; certificationDescriptions?: boolean }
-const { page, blocks = [], skipFirstHeading = false, certificationDescriptions = false } = Astro.props
+interface Props { page: SitePage; blocks?: ContentBlock[]; skipFirstHeading?: boolean; certificationDescriptions?: boolean; founderNarrative?: boolean }
+const { page, blocks = [], skipFirstHeading = false, certificationDescriptions = false, founderNarrative = false } = Astro.props
 let headingSkipped = false
 const filtered = blocks.filter((block) => {
   if (skipFirstHeading && !headingSkipped && /^h[1-4]$/.test(block.type)) { headingSkipped = true; return false }
@@ -17,9 +17,16 @@ const headingText = (text = '') => text.replace(/^🌿\s*/, '')
 const japaneseWebinarRegistration = page.path === '/ja/webinar/'
   ? page.links.find((link) => link.href.startsWith('https://prosunfun.protai.com.tw/f/'))?.href
   : undefined
+const founderEmphasis = founderNarrative && page.lang !== 'zh'
+const statementParagraph = { en: 3, ja: 5, fr: 3, th: 3, zh: -1 }[page.lang]
+const reflectionParagraph = { en: 8, ja: 11, fr: 8, th: 9, zh: -1 }[page.lang]
+const quotationParagraph = { en: 11, ja: -1, fr: 11, th: -1, zh: -1 }[page.lang]
 ---
 <div class:list={['prose-flow', filtered.some((block) => block.type === 'registration-options') && 'webinar-registration-flow']}>
   {filtered.map((block, index) => {
+    const founderParagraphOrdinal = founderEmphasis && block.type === 'p'
+      ? filtered.slice(0, index + 1).filter((item) => item.type === 'p').length - 1
+      : -1
     if (block.type === 'registration-options') return <WebinarRegistrationOptions locale={page.lang} />
     if (block.type === 'image' && block.url) {
       const alt = contentImageAlt(page, block, index, filtered)
@@ -43,6 +50,9 @@ const japaneseWebinarRegistration = page.path === '/ja/webinar/'
     return <p class:list={{
       'intentional-line-breaks': (page.path === '/zh/about/' || page.path === '/zh/founder-message/') && block.text?.includes('\n'),
       'founder-quote': page.path === '/zh/founder-message/' && block.text === '「PROTAI 真的讓我感到安慰。」',
+      'founder-statement': founderParagraphOrdinal >= 0 && founderParagraphOrdinal === statementParagraph,
+      'founder-reflection': founderParagraphOrdinal >= 0 && founderParagraphOrdinal === reflectionParagraph,
+      'founder-quotation': founderParagraphOrdinal >= 0 && founderParagraphOrdinal === quotationParagraph,
     }} data-reveal>{block.runs ? block.runs.map((run) => run.bold && run.italic ? <strong><em>{run.text}</em></strong> : run.bold ? <strong>{run.text}</strong> : run.italic ? <em>{run.text}</em> : run.text) : block.text}</p>
   })}
 </div>

@@ -311,6 +311,60 @@ html[lang^='zh'] .contact-hero h1 { max-width: none; font-size: clamp(20px, 5.5v
 .founder-detail .prose-flow p { max-width: 72ch; margin-bottom: 22px; overflow-wrap: normal; text-wrap: pretty; }
 .founder-detail .prose-flow strong { color: var(--forest); font-weight: 600; }
 .founder-detail .prose-flow em { font-style: italic; }
+html:is([lang='en'], [lang='fr'], [lang='ja'], [lang='th']) .founder-detail .prose-flow { max-width: 740px; }
+html:is([lang='en'], [lang='fr'], [lang='ja'], [lang='th']) .founder-detail .prose-flow p {
+  margin-bottom: 27px;
+  color: #35483e;
+  font-size: 18px;
+  line-height: 1.85;
+  overflow-wrap: break-word;
+}
+html:is([lang='en'], [lang='fr']) .founder-detail .prose-flow p { max-width: 65ch; }
+html[lang='ja'] .founder-detail .prose-flow p {
+  max-width: 39em;
+  margin-bottom: 20px;
+  font-size: 17px;
+  line-height: 2.02;
+  letter-spacing: .018em;
+  word-break: normal;
+  line-break: strict;
+}
+html[lang='th'] .founder-detail .prose-flow p {
+  max-width: 710px;
+  font-size: 18px;
+  line-height: 1.95;
+  word-break: normal;
+}
+html:is([lang='en'], [lang='fr'], [lang='ja'], [lang='th']) .founder-detail .prose-flow p:first-of-type { margin-bottom: 20px; }
+html:is([lang='en'], [lang='fr'], [lang='ja'], [lang='th']) .founder-detail .prose-flow p.founder-statement {
+  max-width: 34em;
+  margin: 32px 0 36px;
+  padding: 5px 0 5px 22px;
+  border-left: 2px solid var(--forest);
+  color: var(--forest);
+  font-size: 21px;
+  font-weight: 500;
+  line-height: 1.7;
+}
+html[lang='ja'] .founder-detail .prose-flow p.founder-statement,
+html[lang='th'] .founder-detail .prose-flow p.founder-statement { max-width: 32em; line-height: 1.85; }
+html:is([lang='en'], [lang='fr'], [lang='ja'], [lang='th']) .founder-detail .prose-flow p.founder-reflection {
+  margin: 35px 0;
+  color: var(--forest);
+  font-weight: 500;
+}
+html:is([lang='en'], [lang='fr']) .founder-detail .prose-flow p.founder-quotation {
+  margin: 28px 0 36px;
+  color: var(--forest);
+  font-size: 21px;
+  font-style: italic;
+}
+@media (max-width: 780px) {
+  html:is([lang='en'], [lang='fr'], [lang='ja'], [lang='th']) .founder-detail .prose-flow p { font-size: 17px; line-height: 1.9; }
+  html[lang='ja'] .founder-detail .prose-flow p { line-height: 2; }
+  html[lang='th'] .founder-detail .prose-flow p { line-height: 1.95; }
+  html:is([lang='en'], [lang='fr'], [lang='ja'], [lang='th']) .founder-detail .prose-flow p.founder-statement { font-size: 19px; padding-left: 16px; }
+}
 html[lang^='zh'] .founder-detail .prose-flow { max-width: 760px; }
 html[lang^='zh'] .founder-detail .prose-flow p { max-width: 100%; margin-bottom: 26px; color: var(--forest); font-size: clamp(17px, 1.45vw, 19px); line-height: 1.95; letter-spacing: .015em; overflow-wrap: break-word; }
 html[lang^='zh'] .founder-detail .prose-flow p:first-of-type { margin-bottom: 18px; font-size: 21px; }

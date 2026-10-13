@@ -54,8 +54,8 @@ const jsonLd = structuredData(page, publicSite || 'https://ippongikyoto.com')
 const fontFamilies = [
   'family=Cormorant+Garamond:wght@400;500',
   'family=DM+Sans:wght@400;500;600',
-  ...(lang === 'ja' ? ['family=Noto+Sans+JP:wght@400;500', 'family=Noto+Serif+JP:wght@400;500'] : []),
-  ...(lang === 'th' ? ['family=Noto+Sans+Thai:wght@400;500', 'family=Noto+Serif+Thai:wght@400;500'] : []),
+  ...(lang === 'ja' ? ['family=Noto+Sans+JP:wght@400;500;600', 'family=Noto+Serif+JP:wght@400;500'] : []),
+  ...(lang === 'th' ? ['family=Noto+Sans+Thai:wght@400;500;600', 'family=Noto+Serif+Thai:wght@400;500'] : []),
   ...(lang === 'zh' ? ['family=Noto+Sans+TC:wght@400;500;600', 'family=Noto+Serif+TC:wght@400;500;600'] : []),
 ]
 const fontStylesheet = `https://fonts.googleapis.com/css2?${fontFamilies.join('&')}&display=swap`

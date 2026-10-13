@@ -3,7 +3,7 @@ import type { ContentBlock, SitePage } from './types'
 type PageSpec = { source: string; path: string; title: string; description: string; blocks: ContentBlock[]; text?: string; videos?: string[] }
 const h2 = (text: string): ContentBlock => ({ type: 'h2', text })
 const p = (text: string): ContentBlock => ({ type: 'p', text })
-const img = (url: string): ContentBlock => ({ type: 'image', url })
+const img = (url: string, alt?: string): ContentBlock => ({ type: 'image', url, alt })
 
 const specs: PageSpec[] = [
   {
@@ -59,19 +59,19 @@ const specs: PageSpec[] = [
       p('點選本頁的「前往報名」按鈕，前往外部報名頁面。'),
       h2('步驟 2：查看講座資訊'),
       p('先閱讀講座內容，再往下查看可報名的日期、時間與剩餘名額。'),
-      img('/media/2026/06/1.webp'),
+      img('/media/2026/10/webinar-zh-step-2.png', '繁體中文報名頁顯示兩個線上講座場次及時間'),
       h2('步驟 3：選擇場次'),
       p('選擇適合自己的時段。外部平台可能以「Select」或「Added to cart」顯示已選擇的場次；這場講座不收取報名費。'),
-      img('/media/2026/06/2.webp'),
+      img('/media/2026/10/webinar-zh-step-3.png', '繁體中文報名頁選擇晚間線上講座場次的按鈕'),
       h2('步驟 4：填寫資料'),
       p('依外部表單填寫姓名、電話號碼與電子郵件，並再次確認聯絡資訊正確，以便接收講座連結及提醒。'),
-      img('/media/2026/06/5.webp'),
+      img('/media/2026/10/webinar-zh-step-4.png', '繁體中文報名表單的姓名、電話與其他資料欄位'),
       h2('步驟 5：確認報名'),
       p('送出前請檢查場次與個人資料，並閱讀外部網站的相關說明。'),
-      img('/media/2026/06/7.webp'),
+      img('/media/2026/10/webinar-zh-step-5.png', '繁體中文確認個人資料視窗及確認報名按鈕'),
       h2('步驟 6：收取參加連結'),
       p('報名完成後，請留意確認郵件或簡訊中的參加連結。若沒有收到，請檢查垃圾郵件與填寫的聯絡資訊。'),
-      img('/media/2026/06/8.webp'),
+      img('/media/2026/10/webinar-zh-step-6.png', '繁體中文報名成功通知及參加場次資訊'),
       h2('步驟 7：準時加入講座'),
       p('講座開始前，使用通知中的專屬連結進入線上會場。若平台要求設定顯示名稱，請依畫面指示完成。'),
     ],

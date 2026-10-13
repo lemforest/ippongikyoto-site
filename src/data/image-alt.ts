@@ -136,6 +136,7 @@ export function certificateAlt(lang: Locale, url: string) {
 export function contentImageAlt(page: SitePage, block: ContentBlock, index: number, blocks: ContentBlock[]) {
   const url = block.url || ''
   const lang = page.lang
+  if (page.path === '/zh/webinar/' && block.alt) return block.alt
   if (sharedImageAlt[url]) return localized(lang, sharedImageAlt[url])
   const certificate = certificateAlt(lang, url)
   if (certificate) return certificate

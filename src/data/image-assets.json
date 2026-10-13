@@ -644,6 +644,31 @@
     "height": 960,
     "srcset": "/responsive/media/2026/10/visual-slide-09-640.webp 640w, /responsive/media/2026/10/visual-slide-09-960.webp 960w, /media/2026/10/visual-slide-09.webp 1440w"
   },
+  "/media/2026/10/webinar-zh-step-2.png": {
+    "width": 1320,
+    "height": 866,
+    "srcset": "/responsive/media/2026/10/webinar-zh-step-2-640.webp 640w, /responsive/media/2026/10/webinar-zh-step-2-960.webp 960w, /media/2026/10/webinar-zh-step-2.png 1320w"
+  },
+  "/media/2026/10/webinar-zh-step-3.png": {
+    "width": 1330,
+    "height": 868,
+    "srcset": "/responsive/media/2026/10/webinar-zh-step-3-640.webp 640w, /responsive/media/2026/10/webinar-zh-step-3-960.webp 960w, /media/2026/10/webinar-zh-step-3.png 1330w"
+  },
+  "/media/2026/10/webinar-zh-step-4.png": {
+    "width": 1334,
+    "height": 1130,
+    "srcset": "/responsive/media/2026/10/webinar-zh-step-4-640.webp 640w, /responsive/media/2026/10/webinar-zh-step-4-960.webp 960w, /media/2026/10/webinar-zh-step-4.png 1334w"
+  },
+  "/media/2026/10/webinar-zh-step-5.png": {
+    "width": 1330,
+    "height": 1208,
+    "srcset": "/responsive/media/2026/10/webinar-zh-step-5-640.webp 640w, /responsive/media/2026/10/webinar-zh-step-5-960.webp 960w, /media/2026/10/webinar-zh-step-5.png 1330w"
+  },
+  "/media/2026/10/webinar-zh-step-6.png": {
+    "width": 1074,
+    "height": 1268,
+    "srcset": "/responsive/media/2026/10/webinar-zh-step-6-640.webp 640w, /media/2026/10/webinar-zh-step-6.png 1074w"
+  },
   "/share/ippongi-default.jpg": {
     "width": 1200,
     "height": 630,

@@ -65,8 +65,8 @@ for (let index = 1; index <= archivedVisuals.length; index += 1) {
 }
 
 const registrationAlt: Record<string, Translations> = {
-  '/media/2025/06/QR_JP.webp': { en: 'QR code for Japanese-language webinar registration', ja: '日本語ウェビナー申込用QRコード', fr: 'Code QR pour l’inscription au webinaire en japonais', th: 'คิวอาร์โค้ดลงทะเบียนเว็บสัมมนาภาษาญี่ปุ่น', zh: '日文線上講座報名 QR 碼' },
-  '/media/2025/06/QR_EN.webp': { en: 'QR code for English-language webinar registration', ja: '英語ウェビナー申込用QRコード', fr: 'Code QR pour l’inscription au webinaire en anglais', th: 'คิวอาร์โค้ดลงทะเบียนเว็บสัมมนาภาษาอังกฤษ', zh: '英語線上講座報名 QR 碼' },
+  '/media/2025/06/QR_JP.webp': { en: 'QR code for Japanese-language webinar registration', ja: '日本語ウェビナー申込用QRコード', fr: 'Code QR pour l’inscription au webinaire en japonais', th: 'คิวอาร์โค้ดลงทะเบียนเว็บสัมมนาภาษาญี่ปุ่น' },
+  '/media/2025/06/QR_EN.webp': { en: 'QR code for English-language webinar registration', ja: '英語ウェビナー申込用QRコード', fr: 'Code QR pour l’inscription au webinaire en anglais', th: 'คิวอาร์โค้ดลงทะเบียนเว็บสัมมนาภาษาอังกฤษ' },
 }
 for (const [url, language] of Object.entries({
   '/media/2025/10/image.webp': 'ja', '/media/2025/10/image-1.webp': 'en-th', '/media/2025/10/image-2.webp': 'en',
@@ -80,7 +80,6 @@ for (const [url, language] of Object.entries({
       ja: 'タイ語通訳付き英語ウェビナー申込用QRコード',
       fr: 'Code QR pour l’inscription au webinaire en anglais avec traduction thaïe',
       th: 'คิวอาร์โค้ดลงทะเบียนเว็บสัมมนาภาษาอังกฤษพร้อมคำแปลภาษาไทย',
-      zh: '附泰語翻譯的英語線上講座報名 QR 碼',
     }
 }
 

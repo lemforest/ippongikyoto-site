@@ -16,32 +16,7 @@
             "type": "p",
             "runs": [
               {
-                "text": "A:",
-                "bold": true,
-                "italic": false
-              },
-              {
-                "text": " ",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "PROTAI Eye Skin Care Mist",
-                "bold": true,
-                "italic": false
-              },
-              {
-                "text": " is a non-pharmaceutical, peptide-based eye skin care product developed ",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "in response to the demands of a modern lifestyle with heavy digital device use",
-                "bold": true,
-                "italic": false
-              },
-              {
-                "text": ". It features an internationally patented amino acid sequence designed to gently care for the delicate eye area. Incorporating it into your daily routine helps support a more comfortable eye environment.",
+                "text": "A: PROTAI Eye Skin Care Mist is a Japanese-made cosmetic mist with a peptide ingredient, designed to moisturize the skin around the eyes. It is not classified as an eye drop and does not claim to treat eye diseases.",
                 "bold": false,
                 "italic": false
               }
@@ -56,7 +31,7 @@
             "type": "p",
             "runs": [
               {
-                "text": "A. PROTAIアイスキンケアミストは、デジタル機器を多用する現代のライフスタイルに着目して開発された、非薬物・国際特許取得のアミノ酸配列を採用したペプチド由来成分配合のアイスキンケア製品です。目元をやさしくケアし、毎日のケア習慣として快適な目元環境をサポートします。",
+                "text": "A. PROTAIアイスキンケアミストは、目元の肌にうるおいを与える日本製の化粧品です。ペプチド成分を配合しています。目薬には分類されず、眼疾患を治療できるとはうたっていません。",
                 "bold": false,
                 "italic": false
               }
@@ -71,22 +46,7 @@
             "type": "p",
             "runs": [
               {
-                "text": "R:",
-                "bold": true,
-                "italic": false
-              },
-              {
-                "text": " Le  ",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "PROTAI",
-                "bold": true,
-                "italic": false
-              },
-              {
-                "text": " Brume Soin Contour des Yeux est un soin pour le contour des yeux à base de peptides, non pharmaceutique, développé pour répondre aux besoins d’un mode de vie moderne marqué par l’usage intensif des écrans. Il contient une séquence d’acides aminés brevetés à l’international, conçue pour prendre soin en douceur de la zone délicate du contour des yeux. L’intégrer à votre routine quotidienne contribue à offrir un environnement oculaire plus confortable.",
+                "text": "R : PROTAI est une brume cosmétique fabriquée au Japon, contenant un peptide et destinée à hydrater la peau du contour des yeux. Il n’est pas classé parmi les collyres et ne prétend pas traiter les maladies oculaires.",
                 "bold": false,
                 "italic": false
               }
@@ -101,7 +61,7 @@
             "type": "p",
             "runs": [
               {
-                "text": "A: PROTAI Eye Skin Care Mist เป็นผลิตภัณฑ์ดูแลผิวรอบดวงตาที่ไม่มีตัวยา พัฒนาขึ้นเพื่อตอบโจทย์ไลฟ์สไตล์ยุคใหม่ที่ใช้ดิจิทัลดีไวซ์เป็นประจำ ผลิตภัณฑ์นี้มีส่วนผสมจากเปปไทด์ที่ได้จากลำดับกรดอะมิโนที่ได้รับสิทธิบัตรระดับนานาชาติ ช่วยดูแลผิวรอบดวงตาอย่างอ่อนโยน และสนับสนุนให้รอบดวงตาสบายขึ้นเมื่อนำมาใช้เป็นกิจวัตรประจำวัน",
+                "text": "คำตอบ: PROTAI Eye Skin Care Mist เป็นเครื่องสำอางชนิดสเปรย์ที่ผลิตในญี่ปุ่น มีส่วนผสมของเปปไทด์ ใช้เพิ่มความชุ่มชื้นให้ผิวรอบดวงตา ผลิตภัณฑ์นี้ไม่จัดเป็นยาหยอดตา และไม่ได้กล่าวอ้างว่าสามารถรักษาโรคตาได้",
                 "bold": false,
                 "italic": false
               }
@@ -128,172 +88,15 @@
             "type": "p",
             "runs": [
               {
-                "text": "A:",
-                "bold": true,
-                "italic": false
-              },
-              {
-                "text": " Yes, PROTAI is a biotechnology originating from Taiwan and has been trusted by",
+                "text": "A: Selected customer comments are shown on our home page. They describe individual experiences and do not guarantee that others will have the same results. ",
                 "bold": false,
                 "italic": false
               },
               {
-                "text": "\n",
+                "text": "For more detailed customer experiences, visit the Webinar page and register for a session.",
                 "bold": false,
-                "italic": false
-              },
-              {
-                "text": "users worldwide for over 3 years. In Taiwan in particular, tens of thousands of people have incorporated it into their daily lives. Throughout this time, no safety issues have ever been reported, and it has contributed to improving the quality of eye care for many.",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "\n",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "For further details, please visit the ",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "Webinar",
-                "bold": false,
-                "italic": true
-              },
-              {
-                "text": " page on our website,",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "\n",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "or register for our online seminar using the QR codes below:",
-                "bold": false,
-                "italic": false
-              }
-            ]
-          },
-          {
-            "type": "li",
-            "runs": [
-              {
-                "text": "Purple: Japanese",
-                "bold": true,
-                "italic": false
-              }
-            ]
-          },
-          {
-            "type": "li",
-            "runs": [
-              {
-                "text": "Blue: English Speaking (with Thai translation)",
-                "bold": true,
-                "italic": false
-              }
-            ]
-          },
-          {
-            "type": "li",
-            "runs": [
-              {
-                "text": "Yellow: English Speaking (with French translation)",
-                "bold": true,
-                "italic": false
-              }
-            ]
-          },
-          {
-            "type": "qrGrid",
-            "items": [
-              {
-                "label": [
-                  {
-                    "text": "ウェビナー ご予約",
-                    "bold": false,
-                    "italic": false
-                  },
-                  {
-                    "text": "\n",
-                    "bold": false,
-                    "italic": false
-                  },
-                  {
-                    "text": "日本語",
-                    "bold": false,
-                    "italic": false
-                  },
-                  {
-                    "text": "\n",
-                    "bold": false,
-                    "italic": false
-                  }
-                ],
-                "url": "/media/2025/10/image.webp",
-                "alt": ""
-              },
-              {
-                "label": [
-                  {
-                    "text": "WEBINAR REGISTRATION",
-                    "bold": false,
-                    "italic": false
-                  },
-                  {
-                    "text": "\n",
-                    "bold": false,
-                    "italic": false
-                  },
-                  {
-                    "text": "ENGLISH SPEAKING",
-                    "bold": false,
-                    "italic": false
-                  },
-                  {
-                    "text": "\n",
-                    "bold": false,
-                    "italic": false
-                  },
-                  {
-                    "text": "(WITH THAI TRANSLATION)",
-                    "bold": false,
-                    "italic": false
-                  }
-                ],
-                "url": "/media/2025/10/image-1.webp",
-                "alt": ""
-              },
-              {
-                "label": [
-                  {
-                    "text": "WEBINAR REGISTRATION",
-                    "bold": false,
-                    "italic": false
-                  },
-                  {
-                    "text": "\n",
-                    "bold": false,
-                    "italic": false
-                  },
-                  {
-                    "text": "ENGLISH SPEAKING",
-                    "bold": false,
-                    "italic": false
-                  },
-                  {
-                    "text": "\n",
-                    "bold": false,
-                    "italic": false
-                  }
-                ],
-                "url": "/media/2025/10/image-2.webp",
-                "alt": ""
+                "italic": false,
+                "href": "/webinar/"
               }
             ]
           }
@@ -306,56 +109,15 @@
             "type": "p",
             "runs": [
               {
-                "text": "A. はい、PROTAIは台湾発祥のバイオテクノロジーで、すでに3年以上にわたり、国内外で多くの方々にご使用いただいております。",
+                "text": "A. お客様の声の一部はホームページでご覧いただけます。個人の感想であり、ほかの方にも同じ結果が得られることを保証するものではありません。",
                 "bold": false,
                 "italic": false
               },
               {
-                "text": "\n",
+                "text": "より詳しい体験談を知りたい方は、ウェビナーページからご参加をお申し込みください。",
                 "bold": false,
-                "italic": false
-              },
-              {
-                "text": "特に台湾では数万人の方々に愛用されており、その間、安全面において問題は一度も発生しておらず、多くの方々のアイケア生活を向上させてきました。",
-                "bold": false,
-                "italic": false
-              }
-            ]
-          },
-          {
-            "type": "p",
-            "runs": [
-              {
-                "text": "詳細については、以下の二次元バーコードからオンラインセミナー（日本語または英語）に申し込んでいただけます。",
-                "bold": false,
-                "italic": false
-              }
-            ]
-          },
-          {
-            "type": "qrGrid",
-            "items": [
-              {
-                "label": [
-                  {
-                    "text": "オンラインセミナー ご予約 (JP)",
-                    "bold": false,
-                    "italic": false
-                  }
-                ],
-                "url": "/media/2025/06/QR_JP.webp",
-                "alt": ""
-              },
-              {
-                "label": [
-                  {
-                    "text": "WEBINAR REGISTRATION（EN)",
-                    "bold": false,
-                    "italic": false
-                  }
-                ],
-                "url": "/media/2025/06/QR_EN.webp",
-                "alt": ""
+                "italic": false,
+                "href": "/ja/webinar/"
               }
             ]
           }
@@ -368,152 +130,15 @@
             "type": "p",
             "runs": [
               {
-                "text": "R:",
-                "bold": true,
-                "italic": false
-              },
-              {
-                "text": " Oui. ",
+                "text": "R : Des témoignages sélectionnés figurent sur notre page d’accueil. Ils reflètent des expériences personnelles et ne garantissent pas que d’autres personnes obtiendront les mêmes résultats. ",
                 "bold": false,
                 "italic": false
               },
               {
-                "text": "PROTAI",
-                "bold": true,
-                "italic": false
-              },
-              {
-                "text": " est une biotechnologie originaire de Taïwan et utilisée en toute confiance par des utilisateurs dans le monde entier depuis plus de 3 ans. En particulier à Taïwan, des dizaines de milliers de personnes l’ont intégré à leur quotidien. Durant toute cette période, aucun problème de sécurité n’a été signalé, et le produit a contribué à améliorer la qualité des soins oculaires pour de nombreux utilisateurs.",
+                "text": "Pour découvrir des témoignages plus détaillés, rendez-vous sur la page du webinaire et inscrivez-vous.",
                 "bold": false,
-                "italic": false
-              },
-              {
-                "text": "\n",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "Pour plus de détails, veuillez consulter la page Webinar sur notre site web ou vous inscrire à notre séminaire en ligne à l’aide des QR codes ci-dessous :",
-                "bold": false,
-                "italic": false
-              }
-            ]
-          },
-          {
-            "type": "li",
-            "runs": [
-              {
-                "text": "Violet : Japonais",
-                "bold": false,
-                "italic": false
-              }
-            ]
-          },
-          {
-            "type": "li",
-            "runs": [
-              {
-                "text": "Bleu : Anglais (avec traduction en thaï)",
-                "bold": false,
-                "italic": false
-              }
-            ]
-          },
-          {
-            "type": "li",
-            "runs": [
-              {
-                "text": "Jaune : Anglais (avec traduction en français)",
-                "bold": false,
-                "italic": false
-              }
-            ]
-          },
-          {
-            "type": "qrGrid",
-            "items": [
-              {
-                "label": [
-                  {
-                    "text": "ウェビナーご予約",
-                    "bold": false,
-                    "italic": false
-                  },
-                  {
-                    "text": "\n",
-                    "bold": false,
-                    "italic": false
-                  },
-                  {
-                    "text": "日本語",
-                    "bold": false,
-                    "italic": false
-                  },
-                  {
-                    "text": "\n",
-                    "bold": false,
-                    "italic": false
-                  }
-                ],
-                "url": "/media/2025/10/image-5.webp",
-                "alt": ""
-              },
-              {
-                "label": [
-                  {
-                    "text": "INSCRIPTION AU WEBINAIRE",
-                    "bold": false,
-                    "italic": false
-                  },
-                  {
-                    "text": "\n",
-                    "bold": false,
-                    "italic": false
-                  },
-                  {
-                    "text": "ANGLAIS PARLANT",
-                    "bold": false,
-                    "italic": false
-                  },
-                  {
-                    "text": "\n",
-                    "bold": false,
-                    "italic": false
-                  },
-                  {
-                    "text": "(AVEC TRADUCTION THAÏ)",
-                    "bold": false,
-                    "italic": false
-                  }
-                ],
-                "url": "/media/2025/10/image-6.webp",
-                "alt": ""
-              },
-              {
-                "label": [
-                  {
-                    "text": "INSCRIPTION AU WEBINAIRE",
-                    "bold": false,
-                    "italic": false
-                  },
-                  {
-                    "text": "\n",
-                    "bold": false,
-                    "italic": false
-                  },
-                  {
-                    "text": "ANGLAIS PARLANT",
-                    "bold": false,
-                    "italic": false
-                  },
-                  {
-                    "text": "\n",
-                    "bold": false,
-                    "italic": false
-                  }
-                ],
-                "url": "/media/2025/10/image-7.webp",
-                "alt": ""
+                "italic": false,
+                "href": "/fr/webinar/"
               }
             ]
           }
@@ -526,152 +151,15 @@
             "type": "p",
             "runs": [
               {
-                "text": "A:",
-                "bold": true,
-                "italic": false
-              },
-              {
-                "text": " ใช่ PROTAI เป็นเทคโนโลยีชีวภาพที่เริ่มต้นจากไต้หวัน และมีผู้ใช้ทั้งในและต่างประเทศมาแล้วกว่า 3 ปี โดยเฉพาะในไต้หวัน มีผู้ใช้อย่างต่อเนื่องหลายหมื่นคน",
+                "text": "คำตอบ: สามารถอ่านความคิดเห็นจากผู้ใช้บางส่วนได้ที่หน้าแรก ความคิดเห็นเหล่านี้เป็นประสบการณ์ส่วนบุคคล ไม่รับประกันว่าผู้อื่นจะได้รับผลลัพธ์เช่นเดียวกัน ",
                 "bold": false,
                 "italic": false
               },
               {
-                "text": "\n",
+                "text": "หากต้องการทราบประสบการณ์ของผู้ใช้เพิ่มเติม โปรดไปที่หน้าเว็บสัมมนาและลงทะเบียนเข้าร่วม",
                 "bold": false,
-                "italic": false
-              },
-              {
-                "text": "และจนถึงตอนนี้ ก็ไม่เคยเกิดปัญหาในด้านความปลอดภัยเลยแม้แต่ครั้งเดียว อีกทั้งยังช่วยให้หลาย ๆ ท่านพัฒนานิสัยการดูแลดวงตาให้ดีขึ้น",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "\n",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": " รายละเอียดเพิ่มเติม สามารถดูได้ที่หน้า “Webinar” บนเว็บไซต์ของบริษัท หรือสมัครเข้าร่วม สัมมนาออนไลน์ ผ่าน QR Code ด้านล่าง",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "\n",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "● สีม่วง: ภาษาญี่ปุ่น",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "\n",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "● สีน้ำเงิน: ภาษาอังกฤษ (มีคำแปลภาษาไทย)",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "\n",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "● สีเหลือง: ภาษาอังกฤษ (มีคำแปลภาษาฝรั่งเศส)",
-                "bold": false,
-                "italic": false
-              }
-            ]
-          },
-          {
-            "type": "qrGrid",
-            "items": [
-              {
-                "label": [
-                  {
-                    "text": "การลงทะเบียนเข้าร่วมสัมนา",
-                    "bold": false,
-                    "italic": false
-                  },
-                  {
-                    "text": "\n",
-                    "bold": false,
-                    "italic": false
-                  },
-                  {
-                    "text": "ภาษาญี่ปุ่น",
-                    "bold": false,
-                    "italic": false
-                  },
-                  {
-                    "text": "\n",
-                    "bold": false,
-                    "italic": false
-                  }
-                ],
-                "url": "/media/2025/09/image.webp",
-                "alt": ""
-              },
-              {
-                "label": [
-                  {
-                    "text": "การลงทะเบียนเข้าร่วมสัมนา",
-                    "bold": false,
-                    "italic": false
-                  },
-                  {
-                    "text": "\n",
-                    "bold": false,
-                    "italic": false
-                  },
-                  {
-                    "text": "ภาษาอังกฤษ",
-                    "bold": false,
-                    "italic": false
-                  },
-                  {
-                    "text": "\n",
-                    "bold": false,
-                    "italic": false
-                  },
-                  {
-                    "text": "(มีคำแปลภาษาไทย)",
-                    "bold": false,
-                    "italic": false
-                  }
-                ],
-                "url": "/media/2025/09/image-1.webp",
-                "alt": ""
-              },
-              {
-                "label": [
-                  {
-                    "text": "การลงทะเบียนเข้าร่วมสัมนา",
-                    "bold": false,
-                    "italic": false
-                  },
-                  {
-                    "text": "\n",
-                    "bold": false,
-                    "italic": false
-                  },
-                  {
-                    "text": "ภาษาอังกฤษ",
-                    "bold": false,
-                    "italic": false
-                  },
-                  {
-                    "text": "\n",
-                    "bold": false,
-                    "italic": false
-                  }
-                ],
-                "url": "/media/2025/09/image-2.webp",
-                "alt": ""
+                "italic": false,
+                "href": "/th/webinar/"
               }
             ]
           }
@@ -701,7 +189,7 @@
                 "italic": false
               },
               {
-                "text": " PROTAI Eye Skincare Mist is proudly made in Japan. Each bottle is carefully crafted in specialized domestic factories, following strict quality control standards to ensure safety and peace of mind.",
+                "text": " All PROTAI Eye Skincare Mist products are manufactured in Japan. Each is carefully made, one by one, at specialized factories in Japan under quality controls focused on safety and reliability.",
                 "bold": false,
                 "italic": false
               }
@@ -736,7 +224,7 @@
                 "italic": false
               },
               {
-                "text": " Le ",
+                "text": " Tous les produits ",
                 "bold": false,
                 "italic": false
               },
@@ -746,7 +234,7 @@
                 "italic": false
               },
               {
-                "text": " Brume Soin Contour des Yeux est fabriqué au Japon. Chaque flacon est soigneusement produit dans des usines spécialisées, suivant des normes strictes de contrôle de qualité afin de garantir sécurité et tranquillité d’esprit.",
+                "text": " Brume Soin Contour des Yeux sont fabriqués au Japon. Chacun est réalisé avec soin, un par un, dans des usines spécialisées au Japon, sous un contrôle qualité attentif à la sécurité et à la fiabilité.",
                 "bold": false,
                 "italic": false
               }
@@ -766,7 +254,7 @@
                 "italic": false
               },
               {
-                "text": " PROTAI Eye Skincare Mist ผลิตด้วยความภาคภูมิใจจากประเทศญี่ปุ่น ขวดแต่ละขวดได้ถูกทำขึ้นอย่างพิถีพิถันในโรงงานเฉพาะทางในประเทศโดยปฏิบัติตามมาตรฐานการควบคุมคุณภาพที่เข้มงวด เพื่อความปลอดภัยและความสบายใจของผู้บริโภค",
+                "text": " PROTAI Eye Skincare Mist ทั้งหมดผลิตในประเทศญี่ปุ่น ภายใต้การควบคุมคุณภาพที่ให้ความสำคัญกับความปลอดภัยและความมั่นใจ โดยผลิตอย่างพิถีพิถันทีละชิ้นในโรงงานเฉพาะทางของญี่ปุ่น",
                 "bold": false,
                 "italic": false
               }

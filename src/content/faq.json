@@ -590,6 +590,112 @@
             ]
           }
         ]
+      },
+      "ja": {
+        "question": "PROTAIアイスキンケアミストと目薬・人工涙液には、具体的にどのような違いがありますか？",
+        "nodes": [
+          {
+            "type": "p",
+            "runs": [
+              {
+                "text": "A:",
+                "bold": false,
+                "italic": false
+              }
+            ]
+          },
+          {
+            "type": "table",
+            "rows": [
+              [
+                "製品の種類",
+                "目薬",
+                "人工涙液",
+                "PROTAIアイスキンケアミスト"
+              ],
+              [
+                "使用方法",
+                "点眼",
+                "点眼",
+                "目元へのスプレー"
+              ],
+              [
+                "医薬品成分を含む",
+                "O",
+                "X",
+                "X"
+              ],
+              [
+                "硫酸塩を含む",
+                "▲（一部）",
+                "X",
+                "X"
+              ],
+              [
+                "ステロイドを含む",
+                "▲（一部）",
+                "X",
+                "X"
+              ],
+              [
+                "ペプチドを含む",
+                "X",
+                "X",
+                "O"
+              ],
+              [
+                "保湿効果",
+                "▲（一部）",
+                "O（約10～20分）",
+                "O（約8時間）"
+              ]
+            ],
+            "boldCells": [
+              [
+                true,
+                true,
+                true,
+                true
+              ],
+              [
+                true,
+                true,
+                true,
+                true
+              ],
+              [
+                true,
+                true,
+                true,
+                true
+              ],
+              [
+                true,
+                true,
+                true,
+                true
+              ],
+              [
+                true,
+                true,
+                true,
+                true
+              ],
+              [
+                true,
+                true,
+                true,
+                true
+              ],
+              [
+                true,
+                true,
+                true,
+                true
+              ]
+            ]
+          }
+        ]
       }
     }
   },
@@ -782,6 +888,21 @@
               },
               {
                 "text": " หากใช้ต่อเนื่องทุกวันเป็นส่วนหนึ่งของการดูแลตัวเอง จะยิ่งเห็นผลได้ชัดเจนมากขึ้น",
+                "bold": false,
+                "italic": false
+              }
+            ]
+          }
+        ]
+      },
+      "ja": {
+        "question": "効果はどのくらいで感じられますか？",
+        "nodes": [
+          {
+            "type": "p",
+            "runs": [
+              {
+                "text": "A: 感じ方には個人差がありますが、数日から2週間ほどで目元がうるおい、心地よく感じられたという使用者の声があります。毎日のセルフケアに継続して取り入れることで、変化をより感じやすくなります。",
                 "bold": false,
                 "italic": false
               }
@@ -1049,82 +1170,8 @@
     }
   },
   {
-    "id": "after-opening",
-    "order": 8,
-    "sourceNumber": {
-      "ja": 7
-    },
-    "translations": {
-      "ja": {
-        "question": "製品開封後、どのくらいの期間内に使い切るのが理想ですか？",
-        "nodes": [
-          {
-            "type": "p",
-            "runs": [
-              {
-                "text": "A.",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": " ",
-                "bold": true,
-                "italic": false
-              },
-              {
-                "text": "開封後は、常温で直射日光や高温多湿を避けた涼しい場所に保管し、",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "\n",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "2ヶ月以内を目安にご使用いただくのがおすすめです。",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "\n",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "成分の品質とやさしい使い心地を保つため、できるだけ早めにお使いください。",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "\n",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "また、未開封の状態であれば、製造日（  外箱の底面に記載（YYYY/MM/DD））から3年間は品質を保つことができます。",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "\n",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "保管の際は、直射日光の当たる場所や極端な高温・低温になる場所は避けて保管してください。",
-                "bold": false,
-                "italic": false
-              }
-            ]
-          }
-        ]
-      }
-    }
-  },
-  {
     "id": "storage",
-    "order": 9,
+    "order": 8,
     "sourceNumber": {
       "en": 8,
       "fr": 8,
@@ -1210,12 +1257,27 @@
             ]
           }
         ]
+      },
+      "ja": {
+        "question": "製品はどのように保管すればよいですか？",
+        "nodes": [
+          {
+            "type": "p",
+            "runs": [
+              {
+                "text": "A: 直射日光を避け、涼しく乾燥した場所に保管してください。特に夏場など気温が高いときは、使用しない間、冷蔵庫で保管することをおすすめします。良好な状態でお使いいただくため、使い始めてから2か月以内を目安に使い切ることをおすすめします。",
+                "bold": false,
+                "italic": false
+              }
+            ]
+          }
+        ]
       }
     }
   },
   {
     "id": "preservatives",
-    "order": 10,
+    "order": 9,
     "sourceNumber": {
       "en": 9,
       "fr": 9,
@@ -1608,12 +1670,38 @@
             ]
           }
         ]
+      },
+      "ja": {
+        "question": "PROTAIアイスキンケアミストに防腐剤は含まれていますか？",
+        "nodes": [
+          {
+            "type": "p",
+            "runs": [
+              {
+                "text": "A: はい。PROTAIアイスキンケアミストには、安全に関する規制で認められた範囲内の、ごく少量の防腐剤が含まれています。具体的には、塩化ベンザルコニウムを微量配合しています。\n目元のデリケートな肌に使う製品のため、防腐剤を完全に除くと、特に高温多湿の環境では細菌が繁殖し、使用者にとってより大きなリスクになる可能性があります。防腐剤を使用しない製品については、以下の記事もご参照ください。\n\n",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "https://edition.cnn.com/2023/01/31/health/ezricare-eye-drops-infections-cdc",
+                "bold": false,
+                "italic": false,
+                "href": "https://edition.cnn.com/2023/01/31/health/ezricare-eye-drops-infections-cdc"
+              },
+              {
+                "text": "\n\nPROTAIアイスキンケアミストは、使用者の安全性と製品の長期的な安定性の両立を考えて設計されています。製品を良好な状態に保ち、法的基準に適合させるため、ごく低用量の防腐剤を配合しています。防腐剤が刺激の原因になることもありますが、本製品の配合量は極めて少なく、その影響よりもペプチドによる修復・保湿の利点が大きいと考えています。そのため、微量の防腐剤が安全性を損なうことはないと考えています。",
+                "bold": false,
+                "italic": false
+              }
+            ]
+          }
+        ]
       }
     }
   },
   {
     "id": "ingredient-registration",
-    "order": 11,
+    "order": 10,
     "sourceNumber": {
       "en": 10,
       "fr": 10,
@@ -1729,12 +1817,32 @@
             "alt": ""
           }
         ]
+      },
+      "ja": {
+        "question": "PROTAIアイスキンケアミストの主成分は、国際機関の承認を受けていますか？",
+        "nodes": [
+          {
+            "type": "p",
+            "runs": [
+              {
+                "text": "A: はい。主成分のPentapeptide-80は、国際化粧品成分名（INCI）の体系に正式に登録されています。また、台湾・米国・中国を含む複数の国・地域で特許により保護されています。",
+                "bold": false,
+                "italic": false
+              }
+            ]
+          },
+          {
+            "type": "image",
+            "url": "/media/2025/10/image-3.webp",
+            "alt": ""
+          }
+        ]
       }
     }
   },
   {
     "id": "ingredients",
-    "order": 12,
+    "order": 11,
     "sourceNumber": {
       "en": 11,
       "fr": 11,
@@ -1860,12 +1968,27 @@
             ]
           }
         ]
+      },
+      "ja": {
+        "question": "PROTAIアイスキンケアミストに医薬品成分や天然植物エキスは含まれていますか？",
+        "nodes": [
+          {
+            "type": "p",
+            "runs": [
+              {
+                "text": "A: いいえ。PROTAIアイスキンケアミストには、医薬品成分、動物由来成分、植物エキスは含まれていません。主要成分は純粋なアミノ酸からなる高純度のペプチド配列です。このペプチドは高度な科学的合成によって開発された純粋な物質で、動物や植物から抽出したものではありません。",
+                "bold": false,
+                "italic": false
+              }
+            ]
+          }
+        ]
       }
     }
   },
   {
     "id": "packaging",
-    "order": 13,
+    "order": 12,
     "sourceNumber": {
       "en": 12,
       "ja": 3,
@@ -2057,7 +2180,7 @@
   },
   {
     "id": "bottle-color",
-    "order": 14,
+    "order": 13,
     "sourceNumber": {
       "en": 13,
       "ja": 4,
@@ -2204,7 +2327,7 @@
   },
   {
     "id": "spray-format",
-    "order": 15,
+    "order": 14,
     "sourceNumber": {
       "en": 14,
       "ja": 5,
@@ -2421,7 +2544,7 @@
   },
   {
     "id": "accidental-eye-contact",
-    "order": 16,
+    "order": 15,
     "sourceNumber": {
       "en": 15,
       "ja": 9,
@@ -2548,7 +2671,7 @@
   },
   {
     "id": "medical-conditions",
-    "order": 17,
+    "order": 16,
     "sourceNumber": {
       "en": 16,
       "fr": 16,
@@ -2619,234 +2742,15 @@
             ]
           }
         ]
-      }
-    }
-  },
-  {
-    "id": "conjunctivitis",
-    "order": 18,
-    "sourceNumber": {
-      "ja": 10
-    },
-    "translations": {
+      },
       "ja": {
-        "question": "結膜炎（けつまくえん）の方は使用できますか？",
+        "question": "結膜炎・角膜炎・涙管閉塞の方や、眼科手術の直後でも使用できますか？",
         "nodes": [
           {
             "type": "p",
             "runs": [
               {
-                "text": "A. はい、結膜炎の方でもご使用いただけます。",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "\n",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "本製品は薬品やステロイドを含まず、やさしい成分で作られているため、目元が敏感な方にも安心してお使いいただけます。",
-                "bold": false,
-                "italic": false
-              }
-            ]
-          }
-        ]
-      }
-    }
-  },
-  {
-    "id": "keratitis",
-    "order": 19,
-    "sourceNumber": {
-      "ja": 11
-    },
-    "translations": {
-      "ja": {
-        "question": "角膜炎（かくまくえん）の方は使用できますか？",
-        "nodes": [
-          {
-            "type": "p",
-            "runs": [
-              {
-                "text": "A. はい、角膜炎の方でもご使用いただけます。",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "\n",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "本製品は薬品やステロイドを一切使用していないため、やさしい成分で作られており、敏感な目元にも安心してお使いいただけます。",
-                "bold": false,
-                "italic": false
-              }
-            ]
-          }
-        ]
-      }
-    }
-  },
-  {
-    "id": "after-eye-surgery",
-    "order": 20,
-    "sourceNumber": {
-      "ja": 12
-    },
-    "translations": {
-      "ja": {
-        "question": "目の手術を受けた直後でも使用できますか？",
-        "nodes": [
-          {
-            "type": "p",
-            "runs": [
-              {
-                "text": "A. はい、目の手術を受けた直後でもご使用いただけます。",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "\n",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "本製品は薬品やステロイドを含まないため、デリケートな目元にも優しく、安心してお使いいただけます。",
-                "bold": false,
-                "italic": false
-              }
-            ]
-          }
-        ]
-      }
-    }
-  },
-  {
-    "id": "antibiotics",
-    "order": 21,
-    "sourceNumber": {
-      "ja": 13
-    },
-    "translations": {
-      "ja": {
-        "question": "抗生物質を服用しながらPROTAIアイスキンケアミストを使用できますか？",
-        "nodes": [
-          {
-            "type": "p",
-            "runs": [
-              {
-                "text": "A. はい、抗生物質を服用中でもご使用いただけます。",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "\n",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "本製品は薬品成分を一切含まないやさしい処方のため、抗生物質との相互作用や影響はありません。",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "\n",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "安心して、いつものケアとしてお使いください。",
-                "bold": false,
-                "italic": false
-              }
-            ]
-          }
-        ]
-      }
-    }
-  },
-  {
-    "id": "eye-drops",
-    "order": 22,
-    "sourceNumber": {
-      "ja": 14
-    },
-    "translations": {
-      "ja": {
-        "question": "他の点眼薬と併用できますか？",
-        "nodes": [
-          {
-            "type": "p",
-            "runs": [
-              {
-                "text": "A. はい、併用は可能です。",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "\n",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "ただし、他の点眼薬をご使用の際は、1〜2時間ほど時間を空けてから本製品をご使用いただくことをおすすめします。",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "\n",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "より安心してケアを行っていただくための目安としてご参考ください。",
-                "bold": false,
-                "italic": false
-              }
-            ]
-          }
-        ]
-      }
-    }
-  },
-  {
-    "id": "liver-medicine",
-    "order": 23,
-    "sourceNumber": {
-      "ja": 15
-    },
-    "translations": {
-      "ja": {
-        "question": "肝臓病の薬や肝機能サポートの健康食品を摂取している場合、本製品を使用できますか？",
-        "nodes": [
-          {
-            "type": "p",
-            "runs": [
-              {
-                "text": "A. はい、問題なくご使用いただけます。",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "\n",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "本製品は皮膚から吸収されるアイケア用ローションセラムのため、体内で肝臓による代謝を必要としません。",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "\n",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "そのため、肝臓病のお薬や健康食品との影響もありませんので、安心してご使用ください。",
+                "text": "A: はい。結膜炎、角膜炎、涙管閉塞の方や、眼科手術の直後でも使用できます。医薬品成分やステロイドを含まない穏やかな成分で作られているため、敏感な目元にも安全かつ快適にお使いいただけます。",
                 "bold": false,
                 "italic": false
               }
@@ -2858,7 +2762,7 @@
   },
   {
     "id": "co-use",
-    "order": 24,
+    "order": 17,
     "sourceNumber": {
       "en": 17,
       "fr": 17,
@@ -2954,12 +2858,27 @@
             ]
           }
         ]
+      },
+      "ja": {
+        "question": "ほかの目薬やサプリメントと併用できますか？",
+        "nodes": [
+          {
+            "type": "p",
+            "runs": [
+              {
+                "text": "A: はい。ほかの目薬やサプリメントと併用できます。ただし、目元をより慎重にケアするため、ほかの目薬と本製品を使用する際は、1～2時間ほど間隔を空けることをおすすめします。",
+                "bold": false,
+                "italic": false
+              }
+            ]
+          }
+        ]
       }
     }
   },
   {
     "id": "milia",
-    "order": 25,
+    "order": 18,
     "sourceNumber": {
       "en": 18,
       "ja": 16,
@@ -3065,76 +2984,8 @@
     }
   },
   {
-    "id": "blocked-tear-duct",
-    "order": 26,
-    "sourceNumber": {
-      "ja": 17
-    },
-    "translations": {
-      "ja": {
-        "question": "涙腺の詰まりがある場合、使用できますか？",
-        "nodes": [
-          {
-            "type": "p",
-            "runs": [
-              {
-                "text": "A. はい、涙腺の詰まりがある方も安心してご使用いただけます。",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "\n",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "本製品は目元の血行促進や代謝をやさしくサポートするため、目元ケアとしてぜひご活用ください。",
-                "bold": false,
-                "italic": false
-              }
-            ]
-          }
-        ]
-      }
-    }
-  },
-  {
-    "id": "permanent-makeup",
-    "order": 27,
-    "sourceNumber": {
-      "ja": 18
-    },
-    "translations": {
-      "ja": {
-        "question": "アートメイク（眉）の施術をしている場合、使用できますか？",
-        "nodes": [
-          {
-            "type": "p",
-            "runs": [
-              {
-                "text": "A. はい、安心してご使用いただけます。",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "\n",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "本製品は目元のやさしいケアをサポートするため、アートメイクをされている方にも適しています。",
-                "bold": false,
-                "italic": false
-              }
-            ]
-          }
-        ]
-      }
-    }
-  },
-  {
     "id": "irritation",
-    "order": 28,
+    "order": 19,
     "sourceNumber": {
       "en": 19,
       "ja": 19,
@@ -3240,96 +3091,8 @@
     }
   },
   {
-    "id": "eye-contact-irritation",
-    "order": 29,
-    "sourceNumber": {
-      "ja": 20
-    },
-    "translations": {
-      "ja": {
-        "question": "本製品が目にかかった場合、腫れや刺激を感じることがあるのはなぜですか？",
-        "nodes": [
-          {
-            "type": "p",
-            "runs": [
-              {
-                "text": "A. 目の疲労が極度に蓄積されている場合や、元々目元に少しダメージがある場合、一時的に腫れや刺激を感じることがあります。",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "\n",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "これは、目元が健やかな状態を保つために必要な過程の一環として現れることがあります。",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "\n",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "少なくとも2週間以上の継続使用をおすすめします。",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "\n",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "使用を続けることで、徐々に不快感が軽減され、目元がより快適に感じられるようになりますので、安心してご使用ください。",
-                "bold": false,
-                "italic": false
-              }
-            ]
-          }
-        ]
-      }
-    }
-  },
-  {
-    "id": "blurry-vision",
-    "order": 30,
-    "sourceNumber": {
-      "ja": 21
-    },
-    "translations": {
-      "ja": {
-        "question": "本製品を使用した後、一時的に目がぼやけることがあるのはなぜですか？",
-        "nodes": [
-          {
-            "type": "p",
-            "runs": [
-              {
-                "text": "A. 使用後に目がぼやけることがある場合、これは一時的な反応の一環であり、通常は3〜5日以内に解消されることがほとんどです。",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "\n",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "この反応は、目元がリフレッシュされる過程で現れることがありますので、ご安心ください。",
-                "bold": false,
-                "italic": false
-              }
-            ]
-          }
-        ]
-      }
-    }
-  },
-  {
     "id": "fragrance",
-    "order": 31,
+    "order": 20,
     "sourceNumber": {
       "en": 20,
       "fr": 20,
@@ -3425,12 +3188,27 @@
             ]
           }
         ]
+      },
+      "ja": {
+        "question": "PROTAIアイスキンケアミストに香りはありますか？",
+        "nodes": [
+          {
+            "type": "p",
+            "runs": [
+              {
+                "text": "A: いいえ。PROTAIアイスキンケアミストには香料を一切加えていません。香りに敏感な方や、無香料の製品を好む方にも適しています。",
+                "bold": false,
+                "italic": false
+              }
+            ]
+          }
+        ]
       }
     }
   },
   {
     "id": "international-shipping",
-    "order": 32,
+    "order": 21,
     "sourceNumber": {
       "en": 21,
       "fr": 21,
@@ -3766,12 +3544,99 @@
             ]
           }
         ]
+      },
+      "ja": {
+        "question": "海外への配送はできますか？",
+        "nodes": [
+          {
+            "type": "p",
+            "runs": [
+              {
+                "text": "A: はい。一部の国・地域へ海外配送を行っています。お届け先によって、日本から直接発送する場合と、信頼できる現地の提携先からお届けする場合があります。",
+                "bold": false,
+                "italic": false
+              }
+            ]
+          },
+          {
+            "type": "li",
+            "runs": [
+              {
+                "text": "タイ：",
+                "bold": true,
+                "italic": false
+              },
+              {
+                "text": "日本から直接発送",
+                "bold": false,
+                "italic": false
+              }
+            ]
+          },
+          {
+            "type": "li",
+            "runs": [
+              {
+                "text": "マレーシア：",
+                "bold": true,
+                "italic": false
+              },
+              {
+                "text": "現地の提携先からお届け",
+                "bold": false,
+                "italic": false
+              }
+            ]
+          },
+          {
+            "type": "p",
+            "runs": [
+              {
+                "text": "最新の配送情報や詳細は、お住まいの国に応じて以下をご確認ください。",
+                "bold": false,
+                "italic": false
+              }
+            ]
+          },
+          {
+            "type": "li",
+            "runs": [
+              {
+                "text": "タイ：",
+                "bold": true,
+                "italic": false
+              },
+              {
+                "text": "https://shopee.co.th/shop/1547555143/",
+                "bold": false,
+                "italic": false,
+                "href": "https://shopee.co.th/shop/1547555143/"
+              }
+            ]
+          },
+          {
+            "type": "p",
+            "runs": [
+              {
+                "text": "上記以外の国からご注文を希望される場合は、以下までお気軽にお問い合わせください。\n",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "support@ippongikyoto.com",
+                "bold": false,
+                "italic": false,
+                "href": "mailto:support@ippongikyoto.com"
+              }
+            ]
+          }
+        ]
       }
     }
   },
   {
     "id": "other-countries",
-    "order": 33,
+    "order": 22,
     "sourceNumber": {
       "en": 22,
       "fr": 22,
@@ -3861,6 +3726,21 @@
               },
               {
                 "text": " มีค่ะ ปัจจุบันมีผู้ใช้จำนวนหลายหมื่นคนใน ไต้หวัน และมียอดขายสะสมมากกว่า 50,000 ชิ้นภายในเดือนธันวาคม 2024 พร้อมกับได้รับความพึงพอใจในระดับสูงจากลูกค้า",
+                "bold": false,
+                "italic": false
+              }
+            ]
+          }
+        ]
+      },
+      "ja": {
+        "question": "PROTAIアイスキンケアミストは、ほかの国でも販売されていますか？",
+        "nodes": [
+          {
+            "type": "p",
+            "runs": [
+              {
+                "text": "A: はい。台湾では、PROTAIアイスキンケアミストをすでに数万人の方にご使用いただいています。2024年12月時点で累計販売数は5万点を超え、高い顧客満足度を得ています。",
                 "bold": false,
                 "italic": false
               }

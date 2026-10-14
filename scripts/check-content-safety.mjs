@@ -27,13 +27,9 @@ for (const locale of ['', 'ja/', 'fr/', 'th/', 'zh/']) {
   if (!existsSync(file)) { failures.push(`${file}: missing FAQ`); continue }
   const $ = load(readFileSync(file, 'utf8'))
   const comparisonTables = $('.faq-answer table')
-  if (locale === 'ja/') {
-    if (comparisonTables.length) failures.push(`${file}: unexpected comparison table on Japanese FAQ`)
-  } else {
-    const fourthAnswerTable = $('.faq-item').eq(3).find('.faq-answer table')
-    if (comparisonTables.length !== 1 || fourthAnswerTable.length !== 1 || fourthAnswerTable.find('tr').length !== 7) {
-      failures.push(`${file}: expected the archived seven-row comparison table in FAQ 4`)
-    }
+  const fourthAnswerTable = $('.faq-item').eq(3).find('.faq-answer table')
+  if (comparisonTables.length !== 1 || fourthAnswerTable.length !== 1 || fourthAnswerTable.find('tr').length !== 7) {
+    failures.push(`${file}: expected the archived seven-row comparison table in FAQ 4`)
   }
   if ($('.faq-item').length !== 22) failures.push(`${file}: expected 22 reviewed answers`)
 }

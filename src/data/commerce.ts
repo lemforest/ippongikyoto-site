@@ -1,7 +1,11 @@
 import type { Locale } from './types'
 import facts from './facts.json'
 
-export const storeOrigin = 'https://shop.ippongikyoto.com'
+// Until the WooCommerce migration is complete, preview links must reach the
+// currently live store. The production build keeps the dedicated shop host.
+export const storeOrigin = import.meta.env.PUBLIC_PREVIEW === '1'
+  ? 'https://ippongikyoto.com'
+  : 'https://shop.ippongikyoto.com'
 
 const products = {
   single: '/product/protai-eye-skin-care-mistg/',

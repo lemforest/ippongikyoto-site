@@ -16,7 +16,7 @@
             "type": "p",
             "runs": [
               {
-                "text": "A: PROTAI Eye Skin Care Mist is a Japanese-made cosmetic mist with a peptide ingredient, designed to moisturize the skin around the eyes. It is not an eye drop or a treatment for eye conditions.",
+                "text": "A: PROTAI Eye Skin Care Mist is a Japanese-made cosmetic mist with a peptide ingredient, designed to moisturize the skin around the eyes. It is not classified as an eye drop and does not claim to treat eye diseases.",
                 "bold": false,
                 "italic": false
               }
@@ -31,7 +31,7 @@
             "type": "p",
             "runs": [
               {
-                "text": "A. PROTAIアイスキンケアミストは、目元の肌にうるおいを与える日本製の化粧品です。ペプチド成分を配合しています。目薬ではなく、目の病気の治療を目的とした製品ではありません。",
+                "text": "A. PROTAIアイスキンケアミストは、目元の肌にうるおいを与える日本製の化粧品です。ペプチド成分を配合しています。目薬には分類されず、眼疾患を治療できるとはうたっていません。",
                 "bold": false,
                 "italic": false
               }
@@ -46,7 +46,7 @@
             "type": "p",
             "runs": [
               {
-                "text": "R : PROTAI est une brume cosmétique fabriquée au Japon, contenant un peptide et destinée à hydrater la peau du contour des yeux. Ce n’est ni un collyre ni un traitement des maladies oculaires.",
+                "text": "R : PROTAI est une brume cosmétique fabriquée au Japon, contenant un peptide et destinée à hydrater la peau du contour des yeux. Il n’est pas classé parmi les collyres et ne prétend pas traiter les maladies oculaires.",
                 "bold": false,
                 "italic": false
               }
@@ -61,7 +61,7 @@
             "type": "p",
             "runs": [
               {
-                "text": "คำตอบ: PROTAI Eye Skin Care Mist เป็นเครื่องสำอางชนิดสเปรย์ที่ผลิตในญี่ปุ่น มีส่วนผสมของเปปไทด์ ใช้เพิ่มความชุ่มชื้นให้ผิวรอบดวงตา ไม่ใช่ยาหยอดตาหรือผลิตภัณฑ์สำหรับรักษาโรคตา",
+                "text": "คำตอบ: PROTAI Eye Skin Care Mist เป็นเครื่องสำอางชนิดสเปรย์ที่ผลิตในญี่ปุ่น มีส่วนผสมของเปปไทด์ ใช้เพิ่มความชุ่มชื้นให้ผิวรอบดวงตา ผลิตภัณฑ์นี้ไม่จัดเป็นยาหยอดตา และไม่ได้กล่าวอ้างว่าสามารถรักษาโรคตาได้",
                 "bold": false,
                 "italic": false
               }

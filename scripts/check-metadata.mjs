@@ -6,6 +6,8 @@ import legacyRoutes from '../src/data/legacy-routes.json' with { type: 'json' }
 import seo from '../src/data/seo.json' with { type: 'json' }
 
 const brand = 'IPPONGI KYOTO'
+const homePaths = new Set(['/', '/ja/', '/fr/', '/th/', '/zh/'])
+const pageTitle = (path, title) => homePaths.has(path) ? title : `${title} | ${brand}`
 const limits = { en: 150, fr: 150, ja: 80, th: 120, zh: 80 }
 const failures = []
 const expected = new Map()
@@ -37,7 +39,7 @@ for (const [path, lang] of expected) {
   if (!entry.title?.trim() || entry.title !== entry.title.trim()) failures.push(`${path}: empty or untrimmed title`)
   if (!entry.description?.trim() || entry.description !== entry.description.trim()) failures.push(`${path}: empty or untrimmed description`)
   if (!entry.title || !entry.description) continue
-  const fullTitle = `${entry.title} | ${brand}`
+  const fullTitle = pageTitle(path, entry.title)
   if (titles.has(fullTitle)) failures.push(`${path}: duplicate title ${fullTitle}`)
   titles.add(fullTitle)
   const length = Array.from(entry.description).length
@@ -58,7 +60,7 @@ if (process.argv.includes('--built')) {
     const file = path === '/404/' ? join(root, '404.html') : join(root, path, 'index.html')
     if (!existsSync(file)) { failures.push(`Missing built HTML: ${path}`); continue }
     const $ = load(readFileSync(file, 'utf8'))
-    const fullTitle = `${seo[path]?.title} | ${brand}`
+    const fullTitle = pageTitle(path, seo[path]?.title)
     if ($('html').attr('lang') !== (lang === 'zh' ? 'zh-TW' : lang)) failures.push(`${path}: built HTML language mismatch`)
     if ($('title').length !== 1 || $('title').text() !== fullTitle) failures.push(`${path}: built title mismatch`)
     if ($('meta[name="description"]').length !== 1 || $('meta[name="description"]').attr('content') !== seo[path]?.description) failures.push(`${path}: built description mismatch`)

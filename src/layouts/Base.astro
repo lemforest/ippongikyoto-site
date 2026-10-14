@@ -34,7 +34,7 @@ const metadata = (seo as Record<string, { lang: Locale; title: string; descripti
 if (!metadata || metadata.lang !== lang || !metadata.title?.trim() || !metadata.description?.trim()) {
   throw new Error(`Missing or invalid SEO metadata for ${page.path} (${lang})`)
 }
-const title = `${metadata.title} | IPPONGI KYOTO`
+const title = page.kind === 'home' ? metadata.title : `${metadata.title} | IPPONGI KYOTO`
 const description = metadata.description
 const ogImage = page.kind === 'product'
   ? page.path.includes('20ml') ? '/share/protai-20ml.jpg' : '/share/protai-10ml.jpg'

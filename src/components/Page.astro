@@ -97,11 +97,13 @@ type FaqNode =
   | { type: 'table'; rows: string[][]; boldCells: boolean[][] }
   | { type: 'qrGrid'; items: { label: FaqRun[]; url: string; alt: string }[] }
 const zhFaqWebinarLink = '請前往線上講座頁報名。'
+const zhFaqPreservativeLink = 'https://edition.cnn.com/2023/01/31/health/ezricare-eye-drops-infections-cdc'
 const zhComparisonTable: FaqNode = {
   type: 'table',
   rows: zhComparisonRows.map((row) => [...row]),
   boldCells: zhComparisonRows.map((row, rowIndex) => row.map((_, cellIndex) => rowIndex === 0 || cellIndex === 0)),
 }
+const zhRegistrationImage: FaqNode = { type: 'image', url: '/media/2025/10/image-3.webp', alt: 'Pentapeptide-80 INCI 登錄畫面' }
 const faqTableHint = {
   en: 'Swipe sideways to compare all products →',
   ja: '左右にスクロールして比較 →',
@@ -114,7 +116,11 @@ const faqEntries = isFaq && lang === 'zh' ? zhFaq.map(([question, answer], index
   nodes: [{ type: 'p' as const, runs: index === 1 ? [
     { text: answer.replace(zhFaqWebinarLink, ''), bold: false, italic: false },
     { text: zhFaqWebinarLink, bold: false, italic: false, href: webinarPath },
-  ] : [{ text: answer, bold: false, italic: false }] }, ...(index === 3 ? [zhComparisonTable] : [])],
+  ] : index === 8 ? [
+    { text: answer.split(zhFaqPreservativeLink)[0], bold: false, italic: false },
+    { text: zhFaqPreservativeLink, bold: false, italic: false, href: zhFaqPreservativeLink },
+    { text: answer.split(zhFaqPreservativeLink)[1], bold: false, italic: false },
+  ] : [{ text: answer, bold: false, italic: false }] }, ...(index === 3 ? [zhComparisonTable] : []), ...(index === 9 ? [zhRegistrationImage] : [])],
 })) : isFaq ? (await getCollection('faq'))
   .sort((a, b) => a.data.order - b.data.order)
   .flatMap((item) => {

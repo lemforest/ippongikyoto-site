@@ -15,7 +15,7 @@ npm run ci:check
 
 - 建置命令 `npm run build`，輸出目錄 `dist`，預覽分支設定 `PUBLIC_PREVIEW=1`；`PUBLIC_SITE_URL` 設為固定的 `https://<project>.pages.dev`，使預覽 canonical 與分享圖網址一致。
 - 預覽須保留 `noindex`。在 `pages.dev` 實測五語首頁、商品連結、舊路徑 301、無效路徑 404、安全標頭、長快取、影片字幕、聯絡表單與手機畫面。**本機通過不等於線上驗收完成。**
-- `PUBLIC_PREVIEW=1` 時購買鈕暫時連到仍營業的主網域商店；正式建置仍連到 `shop.ippongikyoto.com`。舊路徑的交易轉址屬正式切換驗收項目，預覽網址不作為舊站導流入口。
+- `PUBLIC_PREVIEW=1` 時購買鈕與舊交易路徑暫時連到仍營業的主網域商店；正式建置仍連到 `shop.ippongikyoto.com`。預覽網址不作為舊站導流入口，正式切換後仍須驗收舊路徑轉址。
 - `PUBLIC_CF_WEB_ANALYTICS_TOKEN` 啟用 Cloudflare Web Analytics；預覽版不載入統計。依品牌決策，不另建逐筆購買／講座點擊紀錄。
 
 ## 交易與寄信：上線前必做

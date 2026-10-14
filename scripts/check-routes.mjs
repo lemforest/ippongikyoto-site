@@ -7,8 +7,9 @@ const routes = JSON.parse(readFileSync(new URL('../src/data/legacy-routes.json',
 const redirects = readFileSync(new URL('../dist/_redirects', import.meta.url), 'utf8')
 const root = new URL('../dist/', import.meta.url).pathname
 const failures = []
-const current = (path) => routes[path] || path
-const isStoreUrl = (url) => url.startsWith('https://shop.ippongikyoto.com/')
+const previewStoreOrigin = process.env.PUBLIC_PREVIEW === '1' ? 'https://ippongikyoto.com' : 'https://shop.ippongikyoto.com'
+const current = (path) => (routes[path] || path).replace(/^https:\/\/shop\.ippongikyoto\.com\//, `${previewStoreOrigin}/`)
+const isStoreUrl = (url) => url.startsWith(`${previewStoreOrigin}/`)
 const built = (path) => existsSync(join(root, path, 'index.html')) || existsSync(join(root, path.slice(1)))
 
 for (const page of pages) {

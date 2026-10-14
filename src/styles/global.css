@@ -456,11 +456,20 @@ html[lang='ja'] .faq-item:first-child .faq-answer p:first-child { max-width: 880
 .faq-qr-grid figcaption { min-height: 70px; line-height: 1.5; font-size: 13px; color: var(--forest); }
 .faq-qr-grid img { display: block; width: min(100%, 185px); height: auto; aspect-ratio: 1; object-fit: contain; margin: 8px auto 0; }
 .faq-table-scroll { overflow-x: auto; margin: 30px 0; }
+.faq-table-scroll:focus-visible { outline: 2px solid var(--forest); outline-offset: 3px; }
 .faq-table-scroll table { width: 100%; min-width: 680px; border-collapse: collapse; color: #52644f; font-size: 14px; line-height: 1.5; }
 .faq-table-scroll th, .faq-table-scroll td { width: 25%; padding: 14px 12px; border: 1px solid #aebaa9; text-align: center; vertical-align: middle; }
 .faq-table-scroll th { font-weight: 700; }
 .faq-table-scroll .faq-cell-bold { font-weight: 700; }
 .faq-table-scroll th[scope='row'] { text-align: left; }
+@media (max-width: 780px) {
+  .faq-table-scroll::before { content: attr(data-hint); display: block; width: max-content; margin: 0 0 12px; color: var(--forest); font-size: 12px; font-weight: 600; }
+  .faq-table-scroll table { width: 720px; min-width: 720px; table-layout: fixed; border-collapse: separate; border-spacing: 0; border-top: 1px solid #aebaa9; border-left: 1px solid #aebaa9; }
+  .faq-table-scroll :is(th, td) { border-top: 0; border-left: 0; }
+  .faq-table-scroll :is(th, td):first-child { width: 120px; min-width: 120px; }
+  .faq-table-scroll :is(th, td):not(:first-child) { width: 200px; }
+  .faq-table-scroll th[scope='row'], .faq-table-scroll tr:first-child th:first-child { position: sticky; left: 0; z-index: 1; background: var(--ground); }
+}
 .faq-gallery { margin-top: 80px; }
 .faq-gallery h2 { font-family: var(--display); font-weight: 500; font-size: 42px; }
 .small-gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }

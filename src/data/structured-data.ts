@@ -2,7 +2,7 @@ import type { SitePage } from './types'
 import facts from './facts.json'
 import { purchaseUrl } from './commerce'
 import faqEntries from '../content/faq.json'
-import { zhFaq } from './zh-faq'
+import { zhComparisonRows, zhFaq } from './zh-faq'
 
 type FaqRun = { text: string }
 type FaqNode =
@@ -104,7 +104,10 @@ export function structuredData(page: SitePage, site: string) {
 
   if (page.kind === 'faq') {
     const entries = page.lang === 'zh'
-      ? zhFaq.map(([question, answer]) => ({ question, answer }))
+      ? zhFaq.map(([question, answer], index) => ({
+        question,
+        answer: index === 3 ? `${answer} ${zhComparisonRows.map((row) => row.join(' ')).join(' ')}` : answer,
+      }))
       : translatedFaq.flatMap((entry) => {
         const translation = entry.translations[page.lang as 'en' | 'ja' | 'fr' | 'th']
         if (!translation) return []

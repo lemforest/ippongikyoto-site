@@ -280,10 +280,77 @@
             "type": "p",
             "runs": [
               {
-                "text": "A: PROTAI is a cosmetic mist for the skin around the eyes. Eye drops and artificial tears are intended for use in the eye; PROTAI is not. Avoid spraying it directly into the eyes, and follow the directions for any prescribed eye treatment.",
+                "text": "A: PROTAI is a cosmetic mist for the skin around the eyes; eye drops and artificial tears are used in the eye. The table compares intended use and application. Ingredients and directions for other products vary by brand.",
                 "bold": false,
                 "italic": false
               }
+            ]
+          },
+          {
+            "type": "table",
+            "rows": [
+              [
+                "Comparison",
+                "Eye drops",
+                "Artificial tears",
+                "PROTAI Eye Skin Care Mist"
+              ],
+              [
+                "Product type",
+                "Eye-use product; purpose varies by formulation",
+                "Eye lubricant",
+                "Cosmetic for skin around the eyes"
+              ],
+              [
+                "Where applied",
+                "In the eye",
+                "In the eye",
+                "On skin around the eyes; do not spray into the eye"
+              ],
+              [
+                "How applied",
+                "Instilled as directed on the label",
+                "Instilled as directed on the label",
+                "Fine mist sprayed on the skin around the eyes"
+              ],
+              [
+                "Primary purpose",
+                "Follow the product label or medical advice",
+                "Lubricates the eye surface",
+                "Moisturizes skin around the eyes; does not treat eye disease"
+              ]
+            ],
+            "boldCells": [
+              [
+                true,
+                true,
+                true,
+                true
+              ],
+              [
+                true,
+                false,
+                false,
+                false
+              ],
+              [
+                true,
+                false,
+                false,
+                false
+              ],
+              [
+                true,
+                false,
+                false,
+                false
+              ],
+              [
+                true,
+                false,
+                false,
+                false
+              ]
             ]
           }
         ]
@@ -295,10 +362,77 @@
             "type": "p",
             "runs": [
               {
-                "text": "R : PROTAI est une brume cosmétique destinée à la peau du contour des yeux. Les collyres et les larmes artificielles s’utilisent dans l’œil ; PROTAI ne doit pas y être vaporisé. Suivez les conseils de votre professionnel de santé pour tout traitement oculaire.",
+                "text": "R : PROTAI est une brume cosmétique pour la peau du contour des yeux ; les collyres et les larmes artificielles s’utilisent dans l’œil. Ce tableau compare leur usage et leur mode d’application. La composition et les consignes des autres produits varient selon la marque.",
                 "bold": false,
                 "italic": false
               }
+            ]
+          },
+          {
+            "type": "table",
+            "rows": [
+              [
+                "Comparaison",
+                "Collyres",
+                "Larmes artificielles",
+                "PROTAI Brume Soin Contour des Yeux"
+              ],
+              [
+                "Type de produit",
+                "Produit pour les yeux ; usage variable selon la formule",
+                "Lubrifiant oculaire",
+                "Cosmétique pour la peau du contour des yeux"
+              ],
+              [
+                "Zone d’application",
+                "Dans l’œil",
+                "Dans l’œil",
+                "Sur la peau du contour des yeux ; ne pas vaporiser dans l’œil"
+              ],
+              [
+                "Mode d’application",
+                "Instillation selon la notice",
+                "Instillation selon la notice",
+                "Brume fine sur la peau du contour des yeux"
+              ],
+              [
+                "Usage principal",
+                "Selon la notice ou l’avis médical",
+                "Lubrifie la surface de l’œil",
+                "Hydrate la peau du contour des yeux ; ne traite pas les maladies oculaires"
+              ]
+            ],
+            "boldCells": [
+              [
+                true,
+                true,
+                true,
+                true
+              ],
+              [
+                true,
+                false,
+                false,
+                false
+              ],
+              [
+                true,
+                false,
+                false,
+                false
+              ],
+              [
+                true,
+                false,
+                false,
+                false
+              ],
+              [
+                true,
+                false,
+                false,
+                false
+              ]
             ]
           }
         ]
@@ -310,10 +444,77 @@
             "type": "p",
             "runs": [
               {
-                "text": "คำตอบ: PROTAI เป็นเครื่องสำอางชนิดสเปรย์สำหรับผิวรอบดวงตา ไม่ใช่ยาหยอดตาหรือน้ำตาเทียม และไม่ควรพ่นเข้าตาโดยตรง หากใช้ยารักษาดวงตา ให้ปฏิบัติตามคำแนะนำของแพทย์",
+                "text": "คำตอบ: PROTAI เป็นเครื่องสำอางชนิดสเปรย์สำหรับผิวรอบดวงตา ส่วนยาหยอดตาและน้ำตาเทียมใช้ในดวงตา ตารางนี้เปรียบเทียบวัตถุประสงค์และวิธีใช้ ส่วนผสมและคำแนะนำของผลิตภัณฑ์อื่นอาจแตกต่างกันตามยี่ห้อ",
                 "bold": false,
                 "italic": false
               }
+            ]
+          },
+          {
+            "type": "table",
+            "rows": [
+              [
+                "หัวข้อเปรียบเทียบ",
+                "ยาหยอดตา",
+                "น้ำตาเทียม",
+                "PROTAI Eye Skin Care Mist"
+              ],
+              [
+                "ประเภทผลิตภัณฑ์",
+                "ผลิตภัณฑ์ใช้ในดวงตา; วัตถุประสงค์ขึ้นอยู่กับสูตร",
+                "ผลิตภัณฑ์หล่อลื่นดวงตา",
+                "เครื่องสำอางสำหรับผิวรอบดวงตา"
+              ],
+              [
+                "บริเวณที่ใช้",
+                "ภายในดวงตา",
+                "ภายในดวงตา",
+                "ผิวรอบดวงตา; ห้ามพ่นเข้าตา"
+              ],
+              [
+                "วิธีใช้",
+                "หยอดตามคำแนะนำบนฉลาก",
+                "หยอดตามคำแนะนำบนฉลาก",
+                "พ่นละอองละเอียดบนผิวรอบดวงตา"
+              ],
+              [
+                "วัตถุประสงค์หลัก",
+                "ตามฉลากหรือคำแนะนำของแพทย์",
+                "หล่อลื่นผิวดวงตา",
+                "เพิ่มความชุ่มชื้นให้ผิวรอบดวงตา; ไม่รักษาโรคตา"
+              ]
+            ],
+            "boldCells": [
+              [
+                true,
+                true,
+                true,
+                true
+              ],
+              [
+                true,
+                false,
+                false,
+                false
+              ],
+              [
+                true,
+                false,
+                false,
+                false
+              ],
+              [
+                true,
+                false,
+                false,
+                false
+              ],
+              [
+                true,
+                false,
+                false,
+                false
+              ]
             ]
           }
         ]
@@ -337,7 +538,7 @@
             "type": "p",
             "runs": [
               {
-                "text": "A: Apply only to the skin around the eyes; do not spray onto contact lenses or directly into the eyes. If you experience discomfort, stop using the product and consult an eye specialist.",
+                "text": "A: You can use PROTAI on the skin around the eyes while wearing contact lenses. Its fine mist moisturizes the surrounding skin, but do not spray onto the lenses or directly into the eyes. If discomfort occurs, stop use and consult an eye specialist.",
                 "bold": false,
                 "italic": false
               }
@@ -352,7 +553,7 @@
             "type": "p",
             "runs": [
               {
-                "text": "A. 本製品は目元の肌に使用する化粧品です。コンタクトレンズや目に直接噴霧しないでください。使用中に違和感がある場合は使用を中止し、眼科医にご相談ください。",
+                "text": "A. コンタクトレンズを装着したままでも、目元の肌にお使いいただけます。細かなミストで肌にうるおいを与えますが、レンズや目に直接噴霧しないでください。違和感がある場合は使用を中止し、眼科医にご相談ください。",
                 "bold": false,
                 "italic": false
               }
@@ -367,7 +568,7 @@
             "type": "p",
             "runs": [
               {
-                "text": "R : Appliquez uniquement sur la peau du contour des yeux ; ne vaporisez pas sur les lentilles ni directement dans les yeux. En cas de gêne, cessez l’utilisation et consultez un ophtalmologue.",
+                "text": "R : Vous pouvez appliquer PROTAI sur la peau du contour des yeux tout en portant des lentilles. Sa brume fine hydrate la peau, mais ne la vaporisez ni sur les lentilles ni directement dans les yeux. En cas de gêne, cessez l’utilisation et consultez un ophtalmologue.",
                 "bold": false,
                 "italic": false
               }
@@ -382,7 +583,7 @@
             "type": "p",
             "runs": [
               {
-                "text": "คำตอบ: ใช้เฉพาะบนผิวรอบดวงตา อย่าพ่นลงบนคอนแทคเลนส์หรือเข้าตาโดยตรง หากรู้สึกไม่สบายตา ให้หยุดใช้และปรึกษาจักษุแพทย์",
+                "text": "คำตอบ: สามารถใช้ PROTAI บนผิวรอบดวงตาขณะใส่คอนแทคเลนส์ได้ ละอองละเอียดช่วยเพิ่มความชุ่มชื้นให้ผิวบริเวณนั้น แต่ห้ามพ่นลงบนเลนส์หรือเข้าตาโดยตรง หากรู้สึกไม่สบายตา ให้หยุดใช้และปรึกษาจักษุแพทย์",
                 "bold": false,
                 "italic": false
               }
@@ -836,7 +1037,7 @@
             "type": "p",
             "runs": [
               {
-                "text": "A: Yes. The ingredient list includes benzalkonium chloride, which is used as a preservative. Check the full ingredients on the packaging before use. If you have a known sensitivity to an ingredient, consult a healthcare professional before using the product; stop use if irritation occurs.",
+                "text": "A: Yes. The ingredient list includes benzalkonium chloride, which is used as a preservative. Preservatives help maintain product quality during use. Check the full ingredients on the packaging before use. If you have a known sensitivity to an ingredient, consult a healthcare professional; stop use if irritation occurs.",
                 "bold": false,
                 "italic": false
               }
@@ -851,7 +1052,7 @@
             "type": "p",
             "runs": [
               {
-                "text": "R : Oui. La liste des ingrédients comprend du chlorure de benzalkonium, utilisé comme conservateur. Vérifiez la liste complète sur l’emballage avant utilisation. En cas de sensibilité connue à un ingrédient, demandez conseil à un professionnel de santé ; cessez l’utilisation en cas d’irritation.",
+                "text": "R : Oui. La liste des ingrédients comprend du chlorure de benzalkonium, utilisé comme conservateur. Les conservateurs contribuent à maintenir la qualité du produit pendant son utilisation. Vérifiez la liste complète sur l’emballage. En cas de sensibilité connue, demandez conseil à un professionnel de santé ; cessez l’utilisation en cas d’irritation.",
                 "bold": false,
                 "italic": false
               }
@@ -866,7 +1067,7 @@
             "type": "p",
             "runs": [
               {
-                "text": "คำตอบ: มีสารเบนซาลโคเนียมคลอไรด์ซึ่งใช้เป็นสารกันเสีย โปรดตรวจสอบส่วนผสมทั้งหมดบนบรรจุภัณฑ์ก่อนใช้ หากทราบว่าแพ้ส่วนผสมใด ควรปรึกษาบุคลากรทางการแพทย์ก่อนใช้ และหยุดใช้หากเกิดการระคายเคือง",
+                "text": "คำตอบ: มีสารเบนซาลโคเนียมคลอไรด์ซึ่งใช้เป็นสารกันเสีย สารกันเสียช่วยรักษาคุณภาพผลิตภัณฑ์ระหว่างการใช้งาน โปรดตรวจสอบส่วนผสมทั้งหมดบนบรรจุภัณฑ์ หากทราบว่าแพ้ส่วนผสมใด ควรปรึกษาบุคลากรทางการแพทย์ และหยุดใช้หากเกิดการระคายเคือง",
                 "bold": false,
                 "italic": false
               }
@@ -1419,42 +1620,7 @@
             "type": "p",
             "runs": [
               {
-                "text": "A:",
-                "bold": true,
-                "italic": false
-              },
-              {
-                "text": " This product is not a medical item like eye drops or artificial tears — it’s a cosmetic designed for caring for the delicate skin around the eyes.",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "\n",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "We’ve chosen a mist spray type because its gentle, even application covers the entire eye area, helping to support skin firmness and elasticity, while leaving the eye area looking brighter and healthier.",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "\n",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "Another benefit of the mist is how easy it is to use — just one simple spray is all it takes. We’ve also carefully selected the spray nozzle to create an ultra-fine, gentle mist that won’t irritate the sensitive skin around the eyes.",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "\n",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "Its compact, portable design makes it easy to carry in your bag, so you can enjoy eye care anytime, anywhere as part of your daily routine.",
+                "text": "A: PROTAI is a cosmetic for the skin around the eyes, not an eye drop. The fine mist is designed to spread gently and evenly over the surrounding skin with a simple press of the nozzle. The compact bottle is convenient to carry for daily skin care. Avoid spraying directly into the eyes.",
                 "bold": false,
                 "italic": false
               }
@@ -1469,47 +1635,7 @@
             "type": "p",
             "runs": [
               {
-                "text": "A. 本製品は、目薬や人工涙液のような医療用品ではなく、",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "\n",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "目元のケアを目的としたコスメティクスです。",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "\n",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "配合成分が肌の弾力や引き締めをサポートし、目元を明るく健康的な印象へ導くため、 目元全体にやさしく行きわたる噴霧タイプを採用しています。",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "\n",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "噴霧はワンアクションで簡単にケアできるのも魅力のひとつ。さらに、スプレーボトルの噴霧口も厳選し、デリケートな目元に負担をかけず、きめ細やかなやさしいミストになるようこだわりました。",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "\n",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "持ち運びにも便利なので、日常のアイケア習慣として、バッグに入れて気軽にお使いいただけると嬉しいです。",
+                "text": "A. 本製品は目薬ではなく、目元の肌をケアする化粧品です。細かなミストが肌にやさしく均一に広がり、ワンプッシュで使えます。持ち運びやすいコンパクトなボトルなので、毎日のスキンケアに取り入れられます。目に直接噴霧しないでください。",
                 "bold": false,
                 "italic": false
               }
@@ -1524,42 +1650,7 @@
             "type": "p",
             "runs": [
               {
-                "text": "R:",
-                "bold": true,
-                "italic": false
-              },
-              {
-                "text": " Ce produit n’est pas un médicament comme les collyres ou les larmes artificielles, mais un cosmétique destiné au soin de la peau délicate du contour des yeux.",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "\n",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "Nous avons choisi le format brume pour son application douce et uniforme, qui couvre toute la zone oculaire, aide à maintenir la fermeté et l’élasticité de la peau, et laisse un regard plus lumineux et reposé.",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "\n",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "Un autre avantage est sa facilité d’utilisation : une simple pulvérisation suffit. L’embout a été conçu pour produire une brume ultra-fine et douce, qui n’irrite pas les peaux sensibles.",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "\n",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "De plus, son design compact et portable vous permet de l’emporter partout et d’en profiter à tout moment, dans votre routine quotidienne.",
+                "text": "R : PROTAI est un cosmétique pour la peau du contour des yeux, pas un collyre. Sa brume fine est conçue pour couvrir doucement et uniformément cette zone d’une simple pression. Le flacon compact s’emporte facilement pour les soins quotidiens. Évitez toute vaporisation directe dans les yeux.",
                 "bold": false,
                 "italic": false
               }
@@ -1574,42 +1665,7 @@
             "type": "p",
             "runs": [
               {
-                "text": "A:",
-                "bold": true,
-                "italic": false
-              },
-              {
-                "text": " ผลิตภัณฑ์นี้ไม่ใช่ผลิตภัณฑ์ทางการแพทย์เหมือนยาหยอดตาหรือน้ำตาเทียม แต่เป็นผลิตภัณฑ์เครื่องสำอางที่ออกแบบมาเพื่อดูแลผิวที่บอบบางรอบดวงตา",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "\n",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "ที่เราเลือกให้ผลิตภัณฑ์เป็นชนิดสเปรย์ละอองน้ำ เพราะให้การสเปรย์ที่อ่อนโยนและสม่ำเสมอทั่วทั้งบริเวณรอบดวงตา ช่วยให้ผิวกระชับและยืดหยุ่น ขณะเดียวกันก็ทำให้บริเวณรอบดวงตาแลดูสดใสและสุขภาพดีขึ้น",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "\n",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "ข้อดีอีกประการของสเปรย์ตัวนี้คือใช้งานง่าย เพียงแค่ฉีดเพียงครั้งเดียวก็เพียงพอแล้ว นอกจากนี้ เรายังคัดเลือกหัวฉีดอย่างพิถีพิถันเพื่อสร้างละอองน้ำที่ละเอียดและอ่อนโยนเป็นพิเศษซึ่งจะไม่ระคายเคืองต่อผิวที่บอบบางรอบดวงตา",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "\n",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "ด้วยดีไซน์กะทัดรัดและพกพาสะดวกทำให้พกพาใส่กระเป๋าได้ คุณจึงสามารถดูแลดวงตาได้ทุกที่ทุกเวลาตลอดจนเป็นส่วนหนึ่งของกิจวัตรประจำวันของคุณ",
+                "text": "คำตอบ: PROTAI เป็นเครื่องสำอางสำหรับผิวรอบดวงตา ไม่ใช่ยาหยอดตา ละอองละเอียดออกแบบมาให้กระจายอย่างอ่อนโยนและสม่ำเสมอบนผิวรอบดวงตา เพียงกดหัวฉีดหนึ่งครั้ง ขวดขนาดกะทัดรัดพกพาสะดวกสำหรับการดูแลผิวประจำวัน หลีกเลี่ยงการพ่นเข้าตาโดยตรง",
                 "bold": false,
                 "italic": false
               }

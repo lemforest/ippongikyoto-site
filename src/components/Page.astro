@@ -14,7 +14,7 @@ import facts from '../data/facts.json'
 import { formCopy, privacyCopy, privacyPath, webinarPrivacyNotice } from '../data/privacy'
 import { resolveFactTokens } from '../data/resolve-facts'
 import { webinarGuideCopy, webinarRegistrationChoices } from '../data/webinar-guide'
-import { zhFaq } from '../data/zh-faq'
+import { zhComparisonRows, zhFaq } from '../data/zh-faq'
 import { purchaseUrl, shopCopy, storeOrigin } from '../data/commerce'
 
 interface Props { page: SitePage }
@@ -97,12 +97,24 @@ type FaqNode =
   | { type: 'table'; rows: string[][]; boldCells: boolean[][] }
   | { type: 'qrGrid'; items: { label: FaqRun[]; url: string; alt: string }[] }
 const zhFaqWebinarLink = '請前往線上講座頁報名。'
+const zhComparisonTable: FaqNode = {
+  type: 'table',
+  rows: zhComparisonRows.map((row) => [...row]),
+  boldCells: zhComparisonRows.map((row, rowIndex) => row.map((_, cellIndex) => rowIndex === 0 || cellIndex === 0)),
+}
+const faqTableHint = {
+  en: 'Swipe sideways to compare all products →',
+  ja: '左右にスクロールして比較 →',
+  fr: 'Balayez pour comparer tous les produits →',
+  th: 'เลื่อนตารางไปด้านข้างเพื่อเปรียบเทียบ →',
+  zh: '左右滑動，查看所有產品比較 →',
+}[lang]
 const faqEntries = isFaq && lang === 'zh' ? zhFaq.map(([question, answer], index) => ({
   id: `zh-${index + 1}`, question,
   nodes: [{ type: 'p' as const, runs: index === 1 ? [
     { text: answer.replace(zhFaqWebinarLink, ''), bold: false, italic: false },
     { text: zhFaqWebinarLink, bold: false, italic: false, href: webinarPath },
-  ] : [{ text: answer, bold: false, italic: false }] }],
+  ] : [{ text: answer, bold: false, italic: false }] }, ...(index === 3 ? [zhComparisonTable] : [])],
 })) : isFaq ? (await getCollection('faq'))
   .sort((a, b) => a.data.order - b.data.order)
   .flatMap((item) => {
@@ -206,7 +218,7 @@ const privacy = resolveFactTokens(privacyCopy[lang], lang)
     <section class="page-hero page-hero-plain faq-hero"><span class="section-number" data-reveal>IPPONGI / {ui.questions}</span><h1 data-reveal>{page.title}</h1></section>
     <section class="faq-section section-wrap">
       <div class="faq-opening-gallery">{faqOpeningGallery.map((item, index) => <figure><SiteImage src={item.url} alt={productPhotoAlt(lang, index === 1)} sizes="(max-width: 780px) calc(100vw - 40px), 560px" loading="eager" fetchpriority={index === 0 ? "high" : "auto"} /></figure>)}</div>
-      <div class="faq-list">{faq?.entries.map((entry, index) => <details class="faq-item" open={index === 0}><summary><span>{String(entry.number).padStart(2, '0')}</span><h2>{entry.question}</h2><i aria-hidden="true">+</i></summary><div class="faq-answer">{entry.nodes.map((node) => node.type === 'p' ? <p set:html={faqMarkup(node.runs as FaqRun[])} /> : node.type === 'li' ? <p class="faq-bullet" set:html={faqMarkup(node.runs as FaqRun[])} /> : node.type === 'image' ? <figure class="faq-inline-image"><SiteImage src={node.url} alt={certificateAlt(lang, node.url)} sizes="(max-width: 780px) calc(100vw - 70px), 650px" /></figure> : node.type === 'table' ? <div class="faq-table-scroll"><table><tbody>{node.rows.map((row, rowIndex) => <tr>{row.map((cell, cellIndex) => rowIndex === 0 || cellIndex === 0 ? <th scope={rowIndex === 0 ? 'col' : 'row'}>{cell}</th> : <td class:list={{ 'faq-cell-bold': node.boldCells[rowIndex][cellIndex] }}>{cell}</td>)}</tr>)}</tbody></table></div> : node.type === 'qrGrid' ? <div class="faq-qr-grid">{node.items.map((item) => <figure><figcaption set:html={faqMarkup(item.label as FaqRun[])} /><SiteImage src={item.url} alt={faqQrAlt(lang, item.url)} sizes="185px" /></figure>)}</div> : null)}</div></details>)}</div>
+      <div class="faq-list">{faq?.entries.map((entry, index) => <details class="faq-item" open={index === 0}><summary><span>{String(entry.number).padStart(2, '0')}</span><h2>{entry.question}</h2><i aria-hidden="true">+</i></summary><div class="faq-answer">{entry.nodes.map((node) => node.type === 'p' ? <p set:html={faqMarkup(node.runs as FaqRun[])} /> : node.type === 'li' ? <p class="faq-bullet" set:html={faqMarkup(node.runs as FaqRun[])} /> : node.type === 'image' ? <figure class="faq-inline-image"><SiteImage src={node.url} alt={certificateAlt(lang, node.url)} sizes="(max-width: 780px) calc(100vw - 70px), 650px" /></figure> : node.type === 'table' ? <div class="faq-table-scroll" role="region" aria-label={faqTableHint} data-hint={faqTableHint} tabindex="0"><table><tbody>{node.rows.map((row, rowIndex) => <tr>{row.map((cell, cellIndex) => rowIndex === 0 || cellIndex === 0 ? <th scope={rowIndex === 0 ? 'col' : 'row'}>{cell}</th> : <td class:list={{ 'faq-cell-bold': node.boldCells[rowIndex][cellIndex] }}>{cell}</td>)}</tr>)}</tbody></table></div> : node.type === 'qrGrid' ? <div class="faq-qr-grid">{node.items.map((item) => <figure><figcaption set:html={faqMarkup(item.label as FaqRun[])} /><SiteImage src={item.url} alt={faqQrAlt(lang, item.url)} sizes="185px" /></figure>)}</div> : null)}</div></details>)}</div>
     </section>
   </> : isProduct ? <>
     <section class="product-hero section-wrap"><div class="product-hero-media" data-reveal><SiteImage src={page.productGallery?.[0] || productImage} alt={productPhotoAlt(lang, page.path.includes("20ml"))} sizes="(max-width: 780px) calc(100vw - 40px), 580px" loading="eager" fetchpriority="high" /></div><div class="product-hero-copy" data-reveal><span class="section-number">PROTAI / {ui.madeInJapan}</span><h1>{lang === 'ja' ? <><span class="product-title-brand">PROTAI</span><span class="product-title-name">{page.title.replace(/^PROTAI\s*[—–-]\s*/, '')}</span></> : page.title}</h1><p class="product-price">{price}</p><p>{productLead}</p>{!page.path.includes('20ml') && <a class="product-refill-entry" href={productTwo}><SiteImage src="/media/2025/11/Refill-Set.webp" alt={productPhotoAlt(lang, true)} sizes="72px" /><span><strong>{dictionary.home.refillLabel}</strong><small>{refillEntryStock}</small></span><span class="product-refill-entry-arrow" aria-hidden="true">↗</span></a>}{page.path.includes("20ml") && !facts.products.refill.available && <p class="product-stock-note">{shop.unavailable}</p>}<a class="primary-link" href={productPurchaseUrl} target="_blank" rel="noopener noreferrer">{ui.original} ↗</a><small>{ui.archive}</small><div class="purchase-links">{purchaseLinks.map((link) => <a href={link.href} hreflang={link.lang}>{link.label} ↗</a>)}</div></div></section>

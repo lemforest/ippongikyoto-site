@@ -446,6 +446,10 @@ html[lang^='zh'] .founder-detail .prose-flow p.founder-quote { margin: 36px 0; p
 .faq-answer p { max-width: 66ch; margin: 0 0 1.15em; line-height: 1.85; overflow-wrap: anywhere; }
 .faq-answer p:last-child { margin-bottom: 0; }
 html:is([lang='ja'], [lang='zh-TW']) .faq-answer p { max-width: 38em; line-height: 1.9; }
+html[lang='zh-TW'] .faq-item-shipping .faq-answer p:nth-child(2) { margin-bottom: 0; }
+@media (min-width: 1024px) {
+  html[lang='zh-TW'] .faq-item-fragrance .faq-answer p { max-width: none; white-space: nowrap; }
+}
 html[lang='th'] .faq-answer p { max-width: 62ch; line-height: 2; }
 .faq-answer strong { color: #52644f; font-weight: 700; }
 .faq-answer a { color: var(--forest); text-decoration: underline; text-underline-offset: 3px; }

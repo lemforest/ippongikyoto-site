@@ -96,7 +96,7 @@ type FaqNode =
   | { type: 'image'; url: string; alt: string }
   | { type: 'table'; rows: string[][]; boldCells: boolean[][] }
   | { type: 'qrGrid'; items: { label: FaqRun[]; url: string; alt: string }[] }
-const zhFaqWebinarLink = '請前往線上講座頁報名。'
+const zhFaqWebinarLink = '線上講座頁'
 const zhFaqPreservativeLink = 'https://edition.cnn.com/2023/01/31/health/ezricare-eye-drops-infections-cdc'
 const zhComparisonTable: FaqNode = {
   type: 'table',
@@ -104,6 +104,11 @@ const zhComparisonTable: FaqNode = {
   boldCells: zhComparisonRows.map((row, rowIndex) => row.map((_, cellIndex) => rowIndex === 0 || cellIndex === 0)),
 }
 const zhRegistrationImage: FaqNode = { type: 'image', url: '/media/2025/10/image-3.webp', alt: 'Pentapeptide-80 INCI 登錄畫面' }
+const zhWebinarQrGrid: FaqNode = { type: 'qrGrid', items: [
+  { label: [{ text: '日文講座報名', bold: false, italic: false }], url: '/media/2025/10/image.webp', alt: '日文線上講座報名 QR 碼' },
+  { label: [{ text: '英語講座報名（附泰語翻譯）', bold: false, italic: false }], url: '/media/2025/10/image-1.webp', alt: '附泰語翻譯的英語線上講座報名 QR 碼' },
+  { label: [{ text: '英語講座報名（附法語翻譯）', bold: false, italic: false }], url: '/media/2025/10/image-2.webp', alt: '附法語翻譯的英語線上講座報名 QR 碼' },
+] }
 const faqTableHint = {
   en: 'Swipe sideways to compare all products →',
   ja: '左右にスクロールして比較 →',
@@ -114,13 +119,14 @@ const faqTableHint = {
 const faqEntries = isFaq && lang === 'zh' ? zhFaq.map(([question, answer], index) => ({
   id: `zh-${index + 1}`, question,
   nodes: [{ type: 'p' as const, runs: index === 1 ? [
-    { text: answer.replace(zhFaqWebinarLink, ''), bold: false, italic: false },
+    { text: answer.split(zhFaqWebinarLink)[0], bold: false, italic: false },
     { text: zhFaqWebinarLink, bold: false, italic: false, href: webinarPath },
+    { text: answer.split(zhFaqWebinarLink)[1], bold: false, italic: false },
   ] : index === 8 ? [
     { text: answer.split(zhFaqPreservativeLink)[0], bold: false, italic: false },
     { text: zhFaqPreservativeLink, bold: false, italic: false, href: zhFaqPreservativeLink },
     { text: answer.split(zhFaqPreservativeLink)[1], bold: false, italic: false },
-  ] : [{ text: answer, bold: false, italic: false }] }, ...(index === 3 ? [zhComparisonTable] : []), ...(index === 9 ? [zhRegistrationImage] : [])],
+  ] : [{ text: answer, bold: false, italic: false }] }, ...(index === 1 ? [zhWebinarQrGrid] : []), ...(index === 3 ? [zhComparisonTable] : []), ...(index === 9 ? [zhRegistrationImage] : [])],
 })) : isFaq ? (await getCollection('faq'))
   .sort((a, b) => a.data.order - b.data.order)
   .flatMap((item) => {
@@ -224,7 +230,7 @@ const privacy = resolveFactTokens(privacyCopy[lang], lang)
     <section class="page-hero page-hero-plain faq-hero"><span class="section-number" data-reveal>IPPONGI / {ui.questions}</span><h1 data-reveal>{page.title}</h1></section>
     <section class="faq-section section-wrap">
       <div class="faq-opening-gallery">{faqOpeningGallery.map((item, index) => <figure><SiteImage src={item.url} alt={productPhotoAlt(lang, index === 1)} sizes="(max-width: 780px) calc(100vw - 40px), 560px" loading="eager" fetchpriority={index === 0 ? "high" : "auto"} /></figure>)}</div>
-      <div class="faq-list">{faq?.entries.map((entry, index) => <details class="faq-item" open={index === 0}><summary><span>{String(entry.number).padStart(2, '0')}</span><h2>{entry.question}</h2><i aria-hidden="true">+</i></summary><div class="faq-answer">{entry.nodes.map((node) => node.type === 'p' ? <p set:html={faqMarkup(node.runs as FaqRun[])} /> : node.type === 'li' ? <p class="faq-bullet" set:html={faqMarkup(node.runs as FaqRun[])} /> : node.type === 'image' ? <figure class="faq-inline-image"><SiteImage src={node.url} alt={certificateAlt(lang, node.url)} sizes="(max-width: 780px) calc(100vw - 70px), 650px" /></figure> : node.type === 'table' ? <div class="faq-table-scroll" role="region" aria-label={faqTableHint} data-hint={faqTableHint} tabindex="0"><table><tbody>{node.rows.map((row, rowIndex) => <tr>{row.map((cell, cellIndex) => rowIndex === 0 || cellIndex === 0 ? <th scope={rowIndex === 0 ? 'col' : 'row'}>{cell}</th> : <td class:list={{ 'faq-cell-bold': node.boldCells[rowIndex][cellIndex] }}>{cell}</td>)}</tr>)}</tbody></table></div> : node.type === 'qrGrid' ? <div class="faq-qr-grid">{node.items.map((item) => <figure><figcaption set:html={faqMarkup(item.label as FaqRun[])} /><SiteImage src={item.url} alt={faqQrAlt(lang, item.url)} sizes="185px" /></figure>)}</div> : null)}</div></details>)}</div>
+      <div class="faq-list">{faq?.entries.map((entry, index) => <details class="faq-item" open={index === 0}><summary><span>{String(entry.number).padStart(2, '0')}</span><h2>{entry.question}</h2><i aria-hidden="true">+</i></summary><div class="faq-answer">{entry.nodes.map((node) => node.type === 'p' ? <p set:html={faqMarkup(node.runs as FaqRun[])} /> : node.type === 'li' ? <p class="faq-bullet" set:html={faqMarkup(node.runs as FaqRun[])} /> : node.type === 'image' ? <figure class="faq-inline-image"><SiteImage src={node.url} alt={certificateAlt(lang, node.url)} sizes="(max-width: 780px) calc(100vw - 70px), 650px" /></figure> : node.type === 'table' ? <div class="faq-table-scroll" role="region" aria-label={faqTableHint} data-hint={faqTableHint} tabindex="0"><table><tbody>{node.rows.map((row, rowIndex) => <tr>{row.map((cell, cellIndex) => rowIndex === 0 || cellIndex === 0 ? <th scope={rowIndex === 0 ? 'col' : 'row'}>{cell}</th> : <td class:list={{ 'faq-cell-bold': node.boldCells[rowIndex][cellIndex] }}>{cell}</td>)}</tr>)}</tbody></table></div> : node.type === 'qrGrid' ? <div class="faq-qr-grid">{node.items.map((item) => <figure><figcaption set:html={faqMarkup(item.label as FaqRun[])} /><SiteImage src={item.url} alt={item.alt || faqQrAlt(lang, item.url)} sizes="185px" /></figure>)}</div> : null)}</div></details>)}</div>
     </section>
   </> : isProduct ? <>
     <section class="product-hero section-wrap"><div class="product-hero-media" data-reveal><SiteImage src={page.productGallery?.[0] || productImage} alt={productPhotoAlt(lang, page.path.includes("20ml"))} sizes="(max-width: 780px) calc(100vw - 40px), 580px" loading="eager" fetchpriority="high" /></div><div class="product-hero-copy" data-reveal><span class="section-number">PROTAI / {ui.madeInJapan}</span><h1>{lang === 'ja' ? <><span class="product-title-brand">PROTAI</span><span class="product-title-name">{page.title.replace(/^PROTAI\s*[—–-]\s*/, '')}</span></> : page.title}</h1><p class="product-price">{price}</p><p>{productLead}</p>{!page.path.includes('20ml') && <a class="product-refill-entry" href={productTwo}><SiteImage src="/media/2025/11/Refill-Set.webp" alt={productPhotoAlt(lang, true)} sizes="72px" /><span><strong>{dictionary.home.refillLabel}</strong><small>{refillEntryStock}</small></span><span class="product-refill-entry-arrow" aria-hidden="true">↗</span></a>}{page.path.includes("20ml") && !facts.products.refill.available && <p class="product-stock-note">{shop.unavailable}</p>}<a class="primary-link" href={productPurchaseUrl} target="_blank" rel="noopener noreferrer">{ui.original} ↗</a><small>{ui.archive}</small><div class="purchase-links">{purchaseLinks.map((link) => <a href={link.href} hreflang={link.lang}>{link.label} ↗</a>)}</div></div></section>

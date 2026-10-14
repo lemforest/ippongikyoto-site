@@ -21,8 +21,8 @@ npm run ci:check
 
 - 舊 WooCommerce 商店須先搬到 `https://shop.ippongikyoto.com`，確認 DNS、HTTPS、商品頁、購物車、結帳、訂單、付款、庫存及退貨規則。本站不提供購物車；英、日、法、繁中購買鈕已預備指向商店子網域，**在子網域可用前不可公開部署此版本**。泰文目前連至已確認的 Shopee 店鋪首頁，仍須取得兩款商品各自的直接網址。
 - `src/data/legacy-routes.json` 是舊路徑映射來源；`scripts/build-redirects.mjs` 產生 `public/_redirects`。不要把舊商品／購物車／結帳路徑轉到新站商品介紹頁。切換當天逐條以 HTTP 301 與最終 200 驗證，且無轉址鏈。
-- 表單使用 Pages Function、Cloudflare Turnstile 與 Cloudflare Email Sending。Pages build 需 `PUBLIC_TURNSTILE_SITE_KEY`；runtime 需 `TURNSTILE_SECRET_KEY`、`CF_ACCOUNT_ID`、`CF_EMAIL_FROM`、`CONTACT_TO`、`CF_EMAIL_API_TOKEN`（secret）。寄件網域、寄件地址與服務額度須先確認；有費用時先報價。未設後端時表單顯示失敗，不會假成功。正式預覽需實寄並核對收件、阻擋機器人與寄送限流；目前只通過模擬服務測試。
-- Cloudflare WAF 尚須設定 `/api/contact` 限流（建議每 IP 每 10 分鐘最多 5 次）。未設定前不可宣稱已完成此項防護。
+- 表單使用 Pages Function、Cloudflare Turnstile 與 Resend 免費寄信方案。Pages build 需 `PUBLIC_TURNSTILE_SITE_KEY`；runtime 需 `TURNSTILE_SECRET_KEY`、`RESEND_API_KEY`（secret）、`RESEND_FROM`、`CONTACT_TO`。預定以 `notify.ippongikyoto.com` 驗證寄件網域，寄送至既有客服信箱，不更動主網域 MX；新增驗證 DNS 前先比對現有紀錄。Resend 免費額度為每月 3,000 封、每日 100 封，超額不自動購買。未設後端時表單顯示失敗，不會假成功。正式預覽需實寄並核對收件、阻擋機器人與寄送限流；目前只通過模擬服務測試。
+- Cloudflare Free 的 WAF 只有 1 條限流規則，計數與封鎖時段固定為 10 秒，無法設定原擬的每 10 分鐘最多 5 次。正式啟用表單前，將該免費規則專用於 `/api/contact` 的短時間突發流量，並配合 Turnstile、蜜罐與 Resend 免費方案每日 100 封上限；實測前不可宣稱已完成限流防護。
 
 ## 搜尋、隱私與正式切換
 

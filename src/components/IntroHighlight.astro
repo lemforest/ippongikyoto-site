@@ -1,0 +1,28 @@
+---
+interface Props { index: number; title: string; body: string }
+const { index, title, body } = Astro.props
+---
+<article class="intro-highlight" data-reveal>
+  <div class="intro-highlight-top">
+    <svg viewBox="0 0 64 64" fill="none" aria-hidden="true" focusable="false">
+      {index === 0 ? <>
+        <circle cx="32" cy="25" r="11" />
+        <path d="M9 43h46M16 50h32" />
+        <circle cx="49" cy="14" r="2.5" class="intro-icon-accent" />
+      </> : index === 1 ? <>
+        <path d="M15 35 29 22l17 13M15 35l14 11 17-11" />
+        <circle cx="15" cy="35" r="5" />
+        <circle cx="29" cy="22" r="5" />
+        <circle cx="29" cy="46" r="5" />
+        <circle cx="46" cy="35" r="5" />
+      </> : <>
+        <path d="M32 10c8 12 17 22 17 32a17 17 0 0 1-34 0c0-10 9-20 17-32Z" />
+        <path d="M20 48 44 24" />
+        <circle cx="47" cy="14" r="2.5" class="intro-icon-accent" />
+      </>}
+    </svg>
+    <span>{String(index + 1).padStart(2, '0')}</span>
+  </div>
+  <h3>{title}</h3>
+  <p>{body}</p>
+</article>

@@ -5,7 +5,7 @@
   "scripts": {
     "content:import": "node scripts/import-content.mjs",
     "dev": "node scripts/build-image-assets.mjs && astro dev --host 127.0.0.1 --port 4321",
-    "build": "node scripts/build-image-assets.mjs && node scripts/check-metadata.mjs && node scripts/check-faq.mjs && node scripts/check-contact-analytics.mjs && node scripts/build-redirects.mjs && astro build && node scripts/check-structured-data.mjs && node scripts/check-social.mjs && node scripts/check-headings.mjs && node scripts/check-fonts.mjs && node scripts/check-images.mjs && node scripts/check-facts.mjs && node scripts/check-content-safety.mjs",
+    "build": "node scripts/build-image-assets.mjs && node scripts/check-metadata.mjs && node scripts/check-faq.mjs && node scripts/check-contact.mjs && node scripts/build-redirects.mjs && astro build && node scripts/prepare-404.mjs && node scripts/check-structured-data.mjs && node scripts/check-social.mjs && node scripts/check-headings.mjs && node scripts/check-fonts.mjs && node scripts/check-images.mjs && node scripts/check-facts.mjs && node scripts/check-content-safety.mjs && node scripts/check-captions.mjs && node scripts/check-founder.mjs",
     "routes:check": "node scripts/check-routes.mjs",
     "seo:check": "node scripts/check-seo.mjs",
     "structured:check": "node scripts/check-structured-data.mjs",
@@ -16,8 +16,11 @@
     "metadata:check": "node scripts/check-metadata.mjs --built",
     "locales:check": "node scripts/check-locales.mjs",
     "sitemap:check": "node scripts/check-sitemap.mjs",
+    "sitemap:stamp": "node scripts/stamp-sitemap.mjs",
     "preview": "astro preview --host 127.0.0.1 --port 4321",
-    "check": "astro check"
+    "check": "astro check",
+    "html:check": "html-validate 'dist/**/*.html'",
+    "ci:check": "npm run check && npm run build && npm run html:check && npm run routes:check && npm run seo:check && npm run locales:check && npm run sitemap:check"
   },
   "license": "UNLICENSED",
   "type": "module",
@@ -32,6 +35,7 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.10",
+    "html-validate": "^11.16.2",
     "typescript": "^6.0.3"
   }
 }

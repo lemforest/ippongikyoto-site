@@ -16,7 +16,7 @@
             "type": "p",
             "runs": [
               {
-                "text": "A: PROTAI Eye Skin Care Mist is a Japanese-made cosmetic mist with a peptide ingredient, designed to moisturize the skin around the eyes. It is not an eye drop or a treatment for eye conditions.",
+                "text": "A: PROTAI Eye Skin Care Mist is a Japanese-made cosmetic mist with a peptide ingredient, designed to moisturize the skin around the eyes. It is not classified as an eye drop and does not claim to treat eye diseases.",
                 "bold": false,
                 "italic": false
               }
@@ -31,7 +31,7 @@
             "type": "p",
             "runs": [
               {
-                "text": "A. PROTAIアイスキンケアミストは、目元の肌にうるおいを与える日本製の化粧品です。ペプチド成分を配合しています。目薬ではなく、目の病気の治療を目的とした製品ではありません。",
+                "text": "A. PROTAIアイスキンケアミストは、目元の肌にうるおいを与える日本製の化粧品です。ペプチド成分を配合しています。目薬には分類されず、眼疾患を治療できるとはうたっていません。",
                 "bold": false,
                 "italic": false
               }
@@ -46,7 +46,7 @@
             "type": "p",
             "runs": [
               {
-                "text": "R : PROTAI est une brume cosmétique fabriquée au Japon, contenant un peptide et destinée à hydrater la peau du contour des yeux. Ce n’est ni un collyre ni un traitement des maladies oculaires.",
+                "text": "R : PROTAI est une brume cosmétique fabriquée au Japon, contenant un peptide et destinée à hydrater la peau du contour des yeux. Il n’est pas classé parmi les collyres et ne prétend pas traiter les maladies oculaires.",
                 "bold": false,
                 "italic": false
               }
@@ -61,7 +61,7 @@
             "type": "p",
             "runs": [
               {
-                "text": "คำตอบ: PROTAI Eye Skin Care Mist เป็นเครื่องสำอางชนิดสเปรย์ที่ผลิตในญี่ปุ่น มีส่วนผสมของเปปไทด์ ใช้เพิ่มความชุ่มชื้นให้ผิวรอบดวงตา ไม่ใช่ยาหยอดตาหรือผลิตภัณฑ์สำหรับรักษาโรคตา",
+                "text": "คำตอบ: PROTAI Eye Skin Care Mist เป็นเครื่องสำอางชนิดสเปรย์ที่ผลิตในญี่ปุ่น มีส่วนผสมของเปปไทด์ ใช้เพิ่มความชุ่มชื้นให้ผิวรอบดวงตา ผลิตภัณฑ์นี้ไม่จัดเป็นยาหยอดตา และไม่ได้กล่าวอ้างว่าสามารถรักษาโรคตาได้",
                 "bold": false,
                 "italic": false
               }
@@ -88,9 +88,15 @@
             "type": "p",
             "runs": [
               {
-                "text": "A: Selected customer comments are shown on our home page. They describe individual experiences and do not guarantee results or safety. To learn about the webinar, visit the Webinar page.",
+                "text": "A: Selected customer comments are shown on our home page. They describe individual experiences and do not guarantee that others will have the same results. ",
                 "bold": false,
                 "italic": false
+              },
+              {
+                "text": "For more detailed customer experiences, visit the Webinar page and register for a session.",
+                "bold": false,
+                "italic": false,
+                "href": "/webinar/"
               }
             ]
           }
@@ -103,9 +109,15 @@
             "type": "p",
             "runs": [
               {
-                "text": "A. お客様の声は、ホームページの体験談をご覧ください。個人の感想であり、効果や安全性を保証するものではありません。セミナーへの参加はウェビナーページからお申し込みいただけます。",
+                "text": "A. お客様の声の一部はホームページでご覧いただけます。個人の感想であり、ほかの方にも同じ結果が得られることを保証するものではありません。",
                 "bold": false,
                 "italic": false
+              },
+              {
+                "text": "より詳しい体験談を知りたい方は、ウェビナーページからご参加をお申し込みください。",
+                "bold": false,
+                "italic": false,
+                "href": "/ja/webinar/"
               }
             ]
           }
@@ -118,9 +130,15 @@
             "type": "p",
             "runs": [
               {
-                "text": "R : Des témoignages sélectionnés figurent sur notre page d’accueil. Ils reflètent des expériences personnelles et ne garantissent ni résultat ni innocuité. Pour le webinaire, consultez la page dédiée.",
+                "text": "R : Des témoignages sélectionnés figurent sur notre page d’accueil. Ils reflètent des expériences personnelles et ne garantissent pas que d’autres personnes obtiendront les mêmes résultats. ",
                 "bold": false,
                 "italic": false
+              },
+              {
+                "text": "Pour découvrir des témoignages plus détaillés, rendez-vous sur la page du webinaire et inscrivez-vous.",
+                "bold": false,
+                "italic": false,
+                "href": "/fr/webinar/"
               }
             ]
           }
@@ -133,9 +151,15 @@
             "type": "p",
             "runs": [
               {
-                "text": "คำตอบ: สามารถอ่านความคิดเห็นจากผู้ใช้บางส่วนได้ที่หน้าแรก ความคิดเห็นเป็นประสบการณ์ส่วนบุคคล ไม่รับประกันผลลัพธ์หรือความปลอดภัย หากสนใจสัมมนาออนไลน์ โปรดดูหน้า Webinar",
+                "text": "คำตอบ: สามารถอ่านความคิดเห็นจากผู้ใช้บางส่วนได้ที่หน้าแรก ความคิดเห็นเหล่านี้เป็นประสบการณ์ส่วนบุคคล ไม่รับประกันว่าผู้อื่นจะได้รับผลลัพธ์เช่นเดียวกัน ",
                 "bold": false,
                 "italic": false
+              },
+              {
+                "text": "หากต้องการทราบประสบการณ์ของผู้ใช้เพิ่มเติม โปรดไปที่หน้าเว็บสัมมนาและลงทะเบียนเข้าร่วม",
+                "bold": false,
+                "italic": false,
+                "href": "/th/webinar/"
               }
             ]
           }
@@ -165,7 +189,7 @@
                 "italic": false
               },
               {
-                "text": " PROTAI Eye Skincare Mist is proudly made in Japan. Each bottle is carefully crafted in specialized domestic factories, following strict quality control standards to ensure safety and peace of mind.",
+                "text": " All PROTAI Eye Skincare Mist products are manufactured in Japan. Each is carefully made, one by one, at specialized factories in Japan under quality controls focused on safety and reliability.",
                 "bold": false,
                 "italic": false
               }
@@ -200,7 +224,7 @@
                 "italic": false
               },
               {
-                "text": " Le ",
+                "text": " Tous les produits ",
                 "bold": false,
                 "italic": false
               },
@@ -210,7 +234,7 @@
                 "italic": false
               },
               {
-                "text": " Brume Soin Contour des Yeux est fabriqué au Japon. Chaque flacon est soigneusement produit dans des usines spécialisées, suivant des normes strictes de contrôle de qualité afin de garantir sécurité et tranquillité d’esprit.",
+                "text": " Brume Soin Contour des Yeux sont fabriqués au Japon. Chacun est réalisé avec soin, un par un, dans des usines spécialisées au Japon, sous un contrôle qualité attentif à la sécurité et à la fiabilité.",
                 "bold": false,
                 "italic": false
               }
@@ -230,7 +254,7 @@
                 "italic": false
               },
               {
-                "text": " PROTAI Eye Skincare Mist ผลิตด้วยความภาคภูมิใจจากประเทศญี่ปุ่น ขวดแต่ละขวดได้ถูกทำขึ้นอย่างพิถีพิถันในโรงงานเฉพาะทางในประเทศโดยปฏิบัติตามมาตรฐานการควบคุมคุณภาพที่เข้มงวด เพื่อความปลอดภัยและความสบายใจของผู้บริโภค",
+                "text": " PROTAI Eye Skincare Mist ทั้งหมดผลิตในประเทศญี่ปุ่น ภายใต้การควบคุมคุณภาพที่ให้ความสำคัญกับความปลอดภัยและความมั่นใจ โดยผลิตอย่างพิถีพิถันทีละชิ้นในโรงงานเฉพาะทางของญี่ปุ่น",
                 "bold": false,
                 "italic": false
               }
@@ -256,10 +280,101 @@
             "type": "p",
             "runs": [
               {
-                "text": "A: PROTAI is a cosmetic mist for the skin around the eyes. Eye drops and artificial tears are intended for use in the eye; PROTAI is not. Avoid spraying it directly into the eyes, and follow the directions for any prescribed eye treatment.",
-                "bold": false,
+                "text": "A:",
+                "bold": true,
                 "italic": false
               }
+            ]
+          },
+          {
+            "type": "table",
+            "rows": [
+              [
+                "Product Type",
+                "Eye Drop",
+                "Artificial Tears",
+                "PROTAI Eye Skin Care Mist"
+              ],
+              [
+                "Usage Method",
+                "Instillation",
+                "Instillation",
+                "Eye Area Spray"
+              ],
+              [
+                "Contains Medicinal Ingredients",
+                "O",
+                "X",
+                "X"
+              ],
+              [
+                "Contains Sulfates",
+                "▲ (Partial)",
+                "X",
+                "X"
+              ],
+              [
+                "Contains Steroids",
+                "▲ (Partial)",
+                "X",
+                "X"
+              ],
+              [
+                "Contains Peptide",
+                "X",
+                "X",
+                "O"
+              ],
+              [
+                "Moisturizing Effect",
+                "▲ (Partial)",
+                "O (Approx.10-20mins)",
+                "O (Approx. 8 hrs)"
+              ]
+            ],
+            "boldCells": [
+              [
+                true,
+                true,
+                true,
+                true
+              ],
+              [
+                true,
+                true,
+                true,
+                true
+              ],
+              [
+                true,
+                true,
+                true,
+                true
+              ],
+              [
+                true,
+                true,
+                true,
+                true
+              ],
+              [
+                true,
+                true,
+                true,
+                true
+              ],
+              [
+                true,
+                true,
+                true,
+                true
+              ],
+              [
+                true,
+                true,
+                true,
+                true
+              ]
             ]
           }
         ]
@@ -271,8 +386,109 @@
             "type": "p",
             "runs": [
               {
-                "text": "R : PROTAI est une brume cosmétique destinée à la peau du contour des yeux. Les collyres et les larmes artificielles s’utilisent dans l’œil ; PROTAI ne doit pas y être vaporisé. Suivez les conseils de votre professionnel de santé pour tout traitement oculaire.",
-                "bold": false,
+                "text": "R:",
+                "bold": true,
+                "italic": false
+              }
+            ]
+          },
+          {
+            "type": "table",
+            "rows": [
+              [
+                "Type de produit",
+                "Collyre",
+                "Larmes artificielles",
+                "PROTAI Brume Soin Contour des Yeux"
+              ],
+              [
+                "Mode d’utilisation",
+                "Instillation",
+                "Instillation",
+                "Vaporisation sur le contour de l’œil"
+              ],
+              [
+                "Contient des ingrédients médicamenteux",
+                "O",
+                "X",
+                "X"
+              ],
+              [
+                "Contient des sulfates",
+                "▲ (certains produits)",
+                "X",
+                "X"
+              ],
+              [
+                "Contient des stéroïdes",
+                "▲ (certains produits)",
+                "X",
+                "X"
+              ],
+              [
+                "Contient des peptides",
+                "X",
+                "X",
+                "O"
+              ],
+              [
+                "Effet hydratant",
+                "▲ (Partiel)",
+                "O (env. 10–20 min)",
+                "O (env. 8 h)"
+              ]
+            ],
+            "boldCells": [
+              [
+                true,
+                false,
+                false,
+                false
+              ],
+              [
+                true,
+                false,
+                false,
+                false
+              ],
+              [
+                true,
+                false,
+                false,
+                false
+              ],
+              [
+                true,
+                false,
+                false,
+                false
+              ],
+              [
+                true,
+                false,
+                false,
+                false
+              ],
+              [
+                true,
+                false,
+                false,
+                false
+              ],
+              [
+                true,
+                false,
+                false,
+                false
+              ]
+            ]
+          },
+          {
+            "type": "p",
+            "runs": [
+              {
+                "text": "Note : ▲ signifie que cela dépend du produit.",
+                "bold": true,
                 "italic": false
               }
             ]
@@ -283,13 +499,200 @@
         "question": "PROTAI Eye Skin Care Mist แตกต่างจากยาหยอดตาหรือน้ำตาเทียมอย่างไร?",
         "nodes": [
           {
+            "type": "table",
+            "rows": [
+              [
+                "ประเภทผลิตภัณฑ์",
+                "ยาหยอดตา",
+                "น้ำตาเทียม",
+                "PROTAI Eye Skin Care Mist"
+              ],
+              [
+                "วิธีใช้",
+                "หยอดตา",
+                "หยอดตา",
+                "สเปรย์รอบดวงตา"
+              ],
+              [
+                "มีส่วนผสมของยา",
+                "มี",
+                "ไม่มี",
+                "ไม่มี"
+              ],
+              [
+                "มีซัลเฟต (สารซัลเฟต)",
+                "บางชนิดมี",
+                "ไม่มี",
+                "ไม่มี"
+              ],
+              [
+                "มีสเตียรอยด์",
+                "บางชนิดมี",
+                "ไม่มี",
+                "ไม่มี"
+              ],
+              [
+                "มีเปปไทด์",
+                "ไม่มี",
+                "ไม่มี",
+                "มี"
+              ],
+              [
+                "ประสิทธิภาพด้านความชุ่มชื้น",
+                "บางชนิด",
+                "มี (ประมาณ 10–20 นาที)",
+                "มี (ประมาณ 8 ชั่วโมง)"
+              ]
+            ],
+            "boldCells": [
+              [
+                true,
+                true,
+                true,
+                true
+              ],
+              [
+                true,
+                true,
+                true,
+                true
+              ],
+              [
+                true,
+                true,
+                true,
+                true
+              ],
+              [
+                true,
+                true,
+                true,
+                true
+              ],
+              [
+                true,
+                true,
+                true,
+                true
+              ],
+              [
+                true,
+                true,
+                true,
+                true
+              ],
+              [
+                true,
+                true,
+                true,
+                true
+              ]
+            ]
+          }
+        ]
+      },
+      "ja": {
+        "question": "PROTAIアイスキンケアミストと目薬・人工涙液には、具体的にどのような違いがありますか？",
+        "nodes": [
+          {
             "type": "p",
             "runs": [
               {
-                "text": "คำตอบ: PROTAI เป็นเครื่องสำอางชนิดสเปรย์สำหรับผิวรอบดวงตา ไม่ใช่ยาหยอดตาหรือน้ำตาเทียม และไม่ควรพ่นเข้าตาโดยตรง หากใช้ยารักษาดวงตา ให้ปฏิบัติตามคำแนะนำของแพทย์",
+                "text": "A:",
                 "bold": false,
                 "italic": false
               }
+            ]
+          },
+          {
+            "type": "table",
+            "rows": [
+              [
+                "製品の種類",
+                "目薬",
+                "人工涙液",
+                "PROTAIアイスキンケアミスト"
+              ],
+              [
+                "使用方法",
+                "点眼",
+                "点眼",
+                "目元へのスプレー"
+              ],
+              [
+                "医薬品成分を含む",
+                "O",
+                "X",
+                "X"
+              ],
+              [
+                "硫酸塩を含む",
+                "▲（一部）",
+                "X",
+                "X"
+              ],
+              [
+                "ステロイドを含む",
+                "▲（一部）",
+                "X",
+                "X"
+              ],
+              [
+                "ペプチドを含む",
+                "X",
+                "X",
+                "O"
+              ],
+              [
+                "保湿効果",
+                "▲（一部）",
+                "O（約10～20分）",
+                "O（約8時間）"
+              ]
+            ],
+            "boldCells": [
+              [
+                true,
+                true,
+                true,
+                true
+              ],
+              [
+                true,
+                true,
+                true,
+                true
+              ],
+              [
+                true,
+                true,
+                true,
+                true
+              ],
+              [
+                true,
+                true,
+                true,
+                true
+              ],
+              [
+                true,
+                true,
+                true,
+                true
+              ],
+              [
+                true,
+                true,
+                true,
+                true
+              ],
+              [
+                true,
+                true,
+                true,
+                true
+              ]
             ]
           }
         ]
@@ -313,7 +716,12 @@
             "type": "p",
             "runs": [
               {
-                "text": "A: Apply only to the skin around the eyes; do not spray onto contact lenses or directly into the eyes. If you experience discomfort, stop using the product and consult an eye specialist.",
+                "text": "A: ",
+                "bold": true,
+                "italic": false
+              },
+              {
+                "text": "Yes, you can use the product while wearing contact lenses. It can be applied comfortably without any issues, providing soothing hydration to the skin around your eyes. The fine mist gently moisturizes, helping to keep the delicate eye area refreshed.",
                 "bold": false,
                 "italic": false
               }
@@ -328,7 +736,27 @@
             "type": "p",
             "runs": [
               {
-                "text": "A. 本製品は目元の肌に使用する化粧品です。コンタクトレンズや目に直接噴霧しないでください。使用中に違和感がある場合は使用を中止し、眼科医にご相談ください。",
+                "text": "A. はい、コンタクトレンズをつけたままでもご使用いただけます。",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "\n",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "そのままでも問題なく、目元のうるおいケアとして心地よくお使いいただけます。",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "\n",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "目のまわりにやさしくミストをあてることで、保湿感も感じていただけます。",
                 "bold": false,
                 "italic": false
               }
@@ -343,7 +771,12 @@
             "type": "p",
             "runs": [
               {
-                "text": "R : Appliquez uniquement sur la peau du contour des yeux ; ne vaporisez pas sur les lentilles ni directement dans les yeux. En cas de gêne, cessez l’utilisation et consultez un ophtalmologue.",
+                "text": "R: ",
+                "bold": true,
+                "italic": false
+              },
+              {
+                "text": "Oui, vous pouvez l’utiliser tout en portant vos lentilles de contact. Il s’applique confortablement, sans aucun problème, et procure une hydratation apaisante à la peau autour des yeux. La fine brume hydrate délicatement et aide à maintenir une sensation de fraîcheur dans la zone oculaire.",
                 "bold": false,
                 "italic": false
               }
@@ -358,7 +791,12 @@
             "type": "p",
             "runs": [
               {
-                "text": "คำตอบ: ใช้เฉพาะบนผิวรอบดวงตา อย่าพ่นลงบนคอนแทคเลนส์หรือเข้าตาโดยตรง หากรู้สึกไม่สบายตา ให้หยุดใช้และปรึกษาจักษุแพทย์",
+                "text": "A: ",
+                "bold": true,
+                "italic": false
+              },
+              {
+                "text": "คุณสามารถใช้ผลิตภัณฑ์นี้ขณะใส่คอนแทคเลนส์ได้โดยไม่มีปัญหาใดๆ ตัวสเปรย์ที่เป็นละอองน้ำขนาดเล็กจะมอบความชุ่มชื้นอย่างอ่อนโยน ช่วยให้บริเวณรอบดวงตาที่บอบบางรู้สึกผ่อนคลายและสดชื่นขึ้น",
                 "bold": false,
                 "italic": false
               }
@@ -384,7 +822,22 @@
             "type": "p",
             "runs": [
               {
-                "text": "A: The feel and appearance of moisturized skin vary by person. This cosmetic does not treat eye fatigue or eye conditions. Stop use if irritation occurs.",
+                "text": "A: ",
+                "bold": true,
+                "italic": false
+              },
+              {
+                "text": "It varies from person to person, but many users report feeling relief and comfort around the eyes within just a few days to a couple of weeks. ",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "Using it regularly as part of your self-care routine",
+                "bold": true,
+                "italic": false
+              },
+              {
+                "text": " can help you notice the benefits more clearly over time.",
                 "bold": false,
                 "italic": false
               }
@@ -399,7 +852,12 @@
             "type": "p",
             "runs": [
               {
-                "text": "R : La sensation et l’aspect de la peau hydratée varient selon les personnes. Ce cosmétique ne traite ni la fatigue oculaire ni les maladies des yeux. Cessez l’utilisation en cas d’irritation.",
+                "text": "R: ",
+                "bold": true,
+                "italic": false
+              },
+              {
+                "text": "Cela varie selon les personnes, mais de nombreux utilisateurs rapportent une sensation de confort et de soulagement autour des yeux après seulement quelques jours à deux semaines d’utilisation. Une utilisation régulière dans le cadre de votre routine de soin permet de constater les bienfaits plus clairement au fil du temps.",
                 "bold": false,
                 "italic": false
               }
@@ -414,7 +872,37 @@
             "type": "p",
             "runs": [
               {
-                "text": "คำตอบ: ความรู้สึกและลักษณะของผิวที่ชุ่มชื้นแตกต่างกันไปในแต่ละคน เครื่องสำอางนี้ไม่ใช้รักษาอาการตาล้าหรือโรคตา หากเกิดการระคายเคืองให้หยุดใช้",
+                "text": "A: ",
+                "bold": true,
+                "italic": false
+              },
+              {
+                "text": "ขึ้นอยู่กับแต่ละบุคคล แต่ผู้ใช้จำนวนมากรายงานว่า ภายในไม่กี่วันถึง 2 สัปดาห์ จะรู้สึกว่าความไม่สบายรอบดวงตาลดลง และรู้สึกสบายขึ้น",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "\n",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": " หากใช้ต่อเนื่องทุกวันเป็นส่วนหนึ่งของการดูแลตัวเอง จะยิ่งเห็นผลได้ชัดเจนมากขึ้น",
+                "bold": false,
+                "italic": false
+              }
+            ]
+          }
+        ]
+      },
+      "ja": {
+        "question": "効果はどのくらいで感じられますか？",
+        "nodes": [
+          {
+            "type": "p",
+            "runs": [
+              {
+                "text": "A: 感じ方には個人差がありますが、数日から2週間ほどで目元がうるおい、心地よく感じられたという使用者の声があります。毎日のセルフケアに継続して取り入れることで、変化をより感じやすくなります。",
                 "bold": false,
                 "italic": false
               }
@@ -682,32 +1170,8 @@
     }
   },
   {
-    "id": "after-opening",
-    "order": 8,
-    "sourceNumber": {
-      "ja": 7
-    },
-    "translations": {
-      "ja": {
-        "question": "製品開封後、どのくらいの期間内に使い切るのが理想ですか？",
-        "nodes": [
-          {
-            "type": "p",
-            "runs": [
-              {
-                "text": "A. 開封後は直射日光や高温多湿を避けて保管し、早めにご使用ください。未開封時の使用期限は実際の外箱表示をご確認ください。期限表示についてご不明な点は、お問い合わせください。",
-                "bold": false,
-                "italic": false
-              }
-            ]
-          }
-        ]
-      }
-    }
-  },
-  {
     "id": "storage",
-    "order": 9,
+    "order": 8,
     "sourceNumber": {
       "en": 8,
       "fr": 8,
@@ -793,12 +1257,27 @@
             ]
           }
         ]
+      },
+      "ja": {
+        "question": "製品はどのように保管すればよいですか？",
+        "nodes": [
+          {
+            "type": "p",
+            "runs": [
+              {
+                "text": "A: 直射日光を避け、涼しく乾燥した場所に保管してください。特に夏場など気温が高いときは、使用しない間、冷蔵庫で保管することをおすすめします。良好な状態でお使いいただくため、使い始めてから2か月以内を目安に使い切ることをおすすめします。",
+                "bold": false,
+                "italic": false
+              }
+            ]
+          }
+        ]
       }
     }
   },
   {
     "id": "preservatives",
-    "order": 10,
+    "order": 9,
     "sourceNumber": {
       "en": 9,
       "fr": 9,
@@ -812,7 +1291,238 @@
             "type": "p",
             "runs": [
               {
-                "text": "A: Yes. The ingredient list includes benzalkonium chloride, which is used as a preservative. Check the full ingredients on the packaging before use. If you have a known sensitivity to an ingredient, consult a healthcare professional before using the product; stop use if irritation occurs.",
+                "text": "A: ",
+                "bold": true,
+                "italic": false
+              },
+              {
+                "text": "Yes, ",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "PROTAI Eye Skin Care Mist",
+                "bold": true,
+                "italic": false
+              },
+              {
+                "text": " contains a ",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "very small amount",
+                "bold": true,
+                "italic": false
+              },
+              {
+                "text": " of preservatives, strictly within the limits allowed by safety regulations.",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "\n",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "Specifically, it includes a ",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "minimal amount of benzalkonium chloride",
+                "bold": true,
+                "italic": false
+              },
+              {
+                "text": ".",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "\n",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "Since this is a product designed for the delicate eye area, ",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "completely removing preservatives could lead to bacterial growth, especially in hot and humid environments",
+                "bold": true,
+                "italic": false
+              },
+              {
+                "text": ", which ",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "may pose a greater risk to users",
+                "bold": true,
+                "italic": false
+              },
+              {
+                "text": ".",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "\n",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "For more details about products that do not use any preservatives,",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "\n",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "we recommend you to refer to the article below:",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "\n",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "\n",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "https://edition.cnn.com/2023/01/31/health/ezricare-eye-drops-infections-cdc",
+                "bold": false,
+                "italic": false,
+                "href": "https://edition.cnn.com/2023/01/31/health/ezricare-eye-drops-infections-cdc"
+              },
+              {
+                "text": "\n",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "\n",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "PROTAI Eye Skin Care Mist",
+                "bold": true,
+                "italic": false
+              },
+              {
+                "text": " is developed with a ",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "unique formulation",
+                "bold": true,
+                "italic": false
+              },
+              {
+                "text": " that carefully balances ",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "maximum safety for consumers and long-term product stability",
+                "bold": true,
+                "italic": false
+              },
+              {
+                "text": ".",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "\n",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "To maintain the product’s best condition and comply with legal standards, we have to add a ",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "very low dose",
+                "bold": true,
+                "italic": false
+              },
+              {
+                "text": " of preservatives.",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "\n",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "While it’s true that preservatives can sometimes cause irritation, the amount used in",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": " PROTAI Eye Skin Care Mist",
+                "bold": true,
+                "italic": false
+              },
+              {
+                "text": " is ",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "extremely minimal",
+                "bold": true,
+                "italic": false
+              },
+              {
+                "text": ", and its potential impact is greatly outweighed by ",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "peptide’s healing and moisturizing benefits",
+                "bold": true,
+                "italic": false
+              },
+              {
+                "text": ".",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "\n",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "Therefore, you can feel confident that ",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "the tiny amount of preservatives used will not compromise your safety",
+                "bold": true,
+                "italic": false
+              },
+              {
+                "text": ".",
                 "bold": false,
                 "italic": false
               }
@@ -827,7 +1537,73 @@
             "type": "p",
             "runs": [
               {
-                "text": "R : Oui. La liste des ingrédients comprend du chlorure de benzalkonium, utilisé comme conservateur. Vérifiez la liste complète sur l’emballage avant utilisation. En cas de sensibilité connue à un ingrédient, demandez conseil à un professionnel de santé ; cessez l’utilisation en cas d’irritation.",
+                "text": "R:",
+                "bold": true,
+                "italic": false
+              },
+              {
+                "text": " Oui, il contient une très faible quantité de conservateurs, strictement dans les limites autorisées par les réglementations de sécurité, en particulier une petite quantité de chlorure de benzalkonium.",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "\n",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "Comme il s’agit d’un produit destiné à la zone sensible du contour des yeux, éliminer totalement les conservateurs pourrait favoriser la prolifération bactérienne, notamment en environnement chaud et humide, ce qui présenterait un risque plus important.",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "\n",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "Pour plus d’informations sur les produits sans conservateurs, nous vous invitons à consulter l’article suivant :",
+                "bold": false,
+                "italic": false
+              }
+            ]
+          },
+          {
+            "type": "p",
+            "runs": [
+              {
+                "text": "https://edition.cnn.com/2023/01/31/health/ezricare-eye-drops-infections-cdc",
+                "bold": false,
+                "italic": false,
+                "href": "https://edition.cnn.com/2023/01/31/health/ezricare-eye-drops-infections-cdc"
+              }
+            ]
+          },
+          {
+            "type": "p",
+            "runs": [
+              {
+                "text": "Le ",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "PROTAI",
+                "bold": true,
+                "italic": false
+              },
+              {
+                "text": " Brume Soin Contour des Yeux est formulé de manière unique afin d’assurer à la fois une sécurité maximale pour l’utilisateur et une stabilité du produit sur le long terme.",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "\n",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "La dose ajoutée de conservateurs est extrêmement faible et largement compensée par les bienfaits cicatrisants et hydratants du peptide. Vous pouvez donc l’utiliser en toute confiance.",
                 "bold": false,
                 "italic": false
               }
@@ -842,7 +1618,78 @@
             "type": "p",
             "runs": [
               {
-                "text": "คำตอบ: มีสารเบนซาลโคเนียมคลอไรด์ซึ่งใช้เป็นสารกันเสีย โปรดตรวจสอบส่วนผสมทั้งหมดบนบรรจุภัณฑ์ก่อนใช้ หากทราบว่าแพ้ส่วนผสมใด ควรปรึกษาบุคลากรทางการแพทย์ก่อนใช้ และหยุดใช้หากเกิดการระคายเคือง",
+                "text": "A: ",
+                "bold": true,
+                "italic": false
+              },
+              {
+                "text": "มีค่ะ แต่ใส่ในปริมาณที่น้อยที่สุดตามเกณฑ์ความปลอดภัยที่กฎหมายกำหนด โดยใช้ ",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "เบนซาลโคเนียมคลอไรด์",
+                "bold": true,
+                "italic": false
+              },
+              {
+                "text": " ในปริมาณเล็กน้อยเท่านั้น",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "\n",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "เนื่องจากเป็นผลิตภัณฑ์ดูแลเฉพาะรอบดวงตา หากไม่ใช้สารกันเสียเลย อาจทำให้เชื้อโรคเจริญเติบโตได้ง่ายในสภาพอากาศร้อนชื้น และจะยิ่งเป็นอันตรายต่อผู้ใช้",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "\n",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "ผลิตภัณฑ์ PROTAI Eye Skin Care Mist ได้รับการพัฒนาด้วยสูตรเฉพาะที่คำนึงถึงความปลอดภัยสูงสุดของผู้ใช้ พร้อมทั้งรักษาคุณภาพให้นานขึ้น โดยปฏิบัติตามกฎหมายอย่างเคร่งครัด แม้ว่าสารกันเสียอาจก่อการระคายเคืองบ้าง แต่ปริมาณที่ใส่ไว้น้อยมาก และผลข้างเคียงนั้นถูกชดเชยด้วยคุณสมบัติฟื้นฟูและเพิ่มความชุ่มชื้นของผลิตภัณฑ์เอง",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "\n",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "ดังนั้น คุณไม่จำเป็นต้องกังวลเกี่ยวกับความปลอดภัยจากสารกันเสียค่ะ",
+                "bold": false,
+                "italic": false
+              }
+            ]
+          }
+        ]
+      },
+      "ja": {
+        "question": "PROTAIアイスキンケアミストに防腐剤は含まれていますか？",
+        "nodes": [
+          {
+            "type": "p",
+            "runs": [
+              {
+                "text": "A: はい。PROTAIアイスキンケアミストには、安全に関する規制で認められた範囲内の、ごく少量の防腐剤が含まれています。具体的には、塩化ベンザルコニウムを微量配合しています。\n目元のデリケートな肌に使う製品のため、防腐剤を完全に除くと、特に高温多湿の環境では細菌が繁殖し、使用者にとってより大きなリスクになる可能性があります。防腐剤を使用しない製品については、以下の記事もご参照ください。\n\n",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "https://edition.cnn.com/2023/01/31/health/ezricare-eye-drops-infections-cdc",
+                "bold": false,
+                "italic": false,
+                "href": "https://edition.cnn.com/2023/01/31/health/ezricare-eye-drops-infections-cdc"
+              },
+              {
+                "text": "\n\nPROTAIアイスキンケアミストは、使用者の安全性と製品の長期的な安定性の両立を考えて設計されています。製品を良好な状態に保ち、法的基準に適合させるため、ごく低用量の防腐剤を配合しています。防腐剤が刺激の原因になることもありますが、本製品の配合量は極めて少なく、その影響よりもペプチドによる修復・保湿の利点が大きいと考えています。そのため、微量の防腐剤が安全性を損なうことはないと考えています。",
                 "bold": false,
                 "italic": false
               }
@@ -854,7 +1701,7 @@
   },
   {
     "id": "ingredient-registration",
-    "order": 11,
+    "order": 10,
     "sourceNumber": {
       "en": 10,
       "fr": 10,
@@ -868,11 +1715,21 @@
             "type": "p",
             "runs": [
               {
-                "text": "A: Pentapeptide-80 is an ingredient name in the INCI nomenclature. Patents and ingredient naming do not constitute approval of this finished cosmetic or proof of medical efficacy.",
+                "text": "A:",
+                "bold": true,
+                "italic": false
+              },
+              {
+                "text": " Yes, the main ingredient, Pentapeptide-80, is officially registered under the INCI system and protected by multiple international patents, including in Taiwan, the U.S., and China.",
                 "bold": false,
                 "italic": false
               }
             ]
+          },
+          {
+            "type": "image",
+            "url": "/media/2025/10/image-3.webp",
+            "alt": ""
           }
         ]
       },
@@ -883,11 +1740,21 @@
             "type": "p",
             "runs": [
               {
-                "text": "R : Pentapeptide-80 est un nom d’ingrédient dans la nomenclature INCI. Un brevet ou une dénomination d’ingrédient ne constitue pas une approbation du produit fini ni une preuve d’efficacité médicale.",
+                "text": "R:",
+                "bold": true,
+                "italic": false
+              },
+              {
+                "text": " Oui. L’ingrédient principal, le Pentapeptide-80, est officiellement enregistré dans le système INCI et protégé par plusieurs brevets internationaux, notamment à Taïwan, aux États-Unis et en Chine.",
                 "bold": false,
                 "italic": false
               }
             ]
+          },
+          {
+            "type": "image",
+            "url": "/media/2025/10/image-8.webp",
+            "alt": ""
           }
         ]
       },
@@ -898,11 +1765,76 @@
             "type": "p",
             "runs": [
               {
-                "text": "คำตอบ: Pentapeptide-80 เป็นชื่อส่วนผสมตามระบบ INCI การมีสิทธิบัตรหรือชื่อส่วนผสมไม่ได้หมายความว่าผลิตภัณฑ์สำเร็จรูปได้รับการรับรองจากหน่วยงานรัฐ หรือมีผลทางการแพทย์",
+                "text": "A:",
+                "bold": true,
+                "italic": false
+              },
+              {
+                "text": " ได้รับการยอมรับค่ะ ส่วนผสมทั้งหมดได้ลงทะเบียนอย่างเป็นทางการภายใต้ INCI (International Nomenclature of Cosmetic Ingredients) แล้ว",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "\n",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "โดยสารสำคัญหลักคือ Pentapeptide-80 (ซึ่งมีการรับรองชื่ออย่างเป็นทางการโดยสมาคมเครื่องสำอางญี่ปุ่น) และยังได้รับสิทธิบัตรในหลายประเทศ เช่น ไต้หวัน สหรัฐอเมริกา และจีน",
                 "bold": false,
                 "italic": false
               }
             ]
+          },
+          {
+            "type": "image",
+            "url": "/media/2025/09/image-4.webp",
+            "alt": ""
+          },
+          {
+            "type": "p",
+            "runs": [
+              {
+                "text": "ส่วนประกอบ PROTAI ของเรา ได้รับการจดทะเบียนอย่างเป็นทางการกับ อย. ไทยแล้ว",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "\n",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "ซึ่งหมายความว่า เปปไทด์ของเราได้รับการยอมรับว่าเป็นส่วนประกอบเครื่องสำอางที่ปลอดภัยและถูกกฎหมาย โดยรัฐบาลไทย",
+                "bold": false,
+                "italic": false
+              }
+            ]
+          },
+          {
+            "type": "image",
+            "url": "/media/2025/09/image-5.webp",
+            "alt": ""
+          }
+        ]
+      },
+      "ja": {
+        "question": "PROTAIアイスキンケアミストの主成分は、国際機関の承認を受けていますか？",
+        "nodes": [
+          {
+            "type": "p",
+            "runs": [
+              {
+                "text": "A: はい。主成分のPentapeptide-80は、国際化粧品成分名（INCI）の体系に正式に登録されています。また、台湾・米国・中国を含む複数の国・地域で特許により保護されています。",
+                "bold": false,
+                "italic": false
+              }
+            ]
+          },
+          {
+            "type": "image",
+            "url": "/media/2025/10/image-3.webp",
+            "alt": ""
           }
         ]
       }
@@ -910,7 +1842,7 @@
   },
   {
     "id": "ingredients",
-    "order": 12,
+    "order": 11,
     "sourceNumber": {
       "en": 11,
       "fr": 11,
@@ -1036,12 +1968,27 @@
             ]
           }
         ]
+      },
+      "ja": {
+        "question": "PROTAIアイスキンケアミストに医薬品成分や天然植物エキスは含まれていますか？",
+        "nodes": [
+          {
+            "type": "p",
+            "runs": [
+              {
+                "text": "A: いいえ。PROTAIアイスキンケアミストには、医薬品成分、動物由来成分、植物エキスは含まれていません。主要成分は純粋なアミノ酸からなる高純度のペプチド配列です。このペプチドは高度な科学的合成によって開発された純粋な物質で、動物や植物から抽出したものではありません。",
+                "bold": false,
+                "italic": false
+              }
+            ]
+          }
+        ]
       }
     }
   },
   {
     "id": "packaging",
-    "order": 13,
+    "order": 12,
     "sourceNumber": {
       "en": 12,
       "ja": 3,
@@ -1233,7 +2180,7 @@
   },
   {
     "id": "bottle-color",
-    "order": 14,
+    "order": 13,
     "sourceNumber": {
       "en": 13,
       "ja": 4,
@@ -1380,7 +2327,7 @@
   },
   {
     "id": "spray-format",
-    "order": 15,
+    "order": 14,
     "sourceNumber": {
       "en": 14,
       "ja": 5,
@@ -1597,7 +2544,7 @@
   },
   {
     "id": "accidental-eye-contact",
-    "order": 16,
+    "order": 15,
     "sourceNumber": {
       "en": 15,
       "ja": 9,
@@ -1612,7 +2559,22 @@
             "type": "p",
             "runs": [
               {
-                "text": "A: Avoid spraying directly into the eyes. If the mist gets into an eye, rinse it promptly with water. If discomfort persists, consult an eye specialist.",
+                "text": "A:",
+                "bold": true,
+                "italic": false
+              },
+              {
+                "text": " No need to worry. If the mist accidentally gets into your eyes while spraying, it is completely safe. The product is made without any chemicals or steroids, using only high-purity, amino acid-based ingredients — so there’s no risk of side effects or dependency.",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "\n",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "If it does enter your eyes, simply blink a few times to let it naturally settle. You can continue using it with confidence.",
                 "bold": false,
                 "italic": false
               }
@@ -1627,7 +2589,17 @@
             "type": "p",
             "runs": [
               {
-                "text": "A. 目に直接噴霧しないでください。誤って目に入った場合は、すぐに水で洗い流してください。違和感が続く場合は眼科医にご相談ください。",
+                "text": "A. ご安心ください。スプレー使用中に誤って目の中に入ってしまっても、問題はありません。本製品は、薬品やステロイドを一切使用せず、高純度のアミノ酸由来成分のみで作られているため、副作用や依存性の心配もありません。",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "\n",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "もし目に入った場合は、軽くまばたきをしてなじませてください。安心してご使用ください。",
                 "bold": false,
                 "italic": false
               }
@@ -1642,7 +2614,22 @@
             "type": "p",
             "runs": [
               {
-                "text": "R : Évitez toute vaporisation directe dans les yeux. En cas de contact accidentel, rincez rapidement à l’eau. Si la gêne persiste, consultez un ophtalmologue.",
+                "text": "R:",
+                "bold": true,
+                "italic": false
+              },
+              {
+                "text": " Pas d’inquiétude. Si le produit entre accidentellement dans vos yeux, il est totalement sûr. Il ne contient ni produits chimiques agressifs, ni stéroïdes, uniquement des ingrédients de haute pureté à base d’acides aminés — sans risque d’effets secondaires ou de dépendance.",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "\n",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "Si cela se produit, clignez simplement des yeux quelques fois pour laisser la brume se dissiper naturellement. Vous pouvez continuer à l’utiliser en toute sérénité.",
                 "bold": false,
                 "italic": false
               }
@@ -1657,7 +2644,22 @@
             "type": "p",
             "runs": [
               {
-                "text": "คำตอบ: หลีกเลี่ยงการพ่นเข้าตาโดยตรง หากละอองเข้าตาให้ล้างด้วยน้ำทันที หากยังรู้สึกไม่สบายตาให้ปรึกษาจักษุแพทย์",
+                "text": "A:",
+                "bold": true,
+                "italic": false
+              },
+              {
+                "text": " ไม่ต้องกังวล หากละอองเข้าตาโดยบังเอิญขณะฉีด ก็ถือว่าปลอดภัยอย่างแน่นอน ผลิตภัณฑ์นี้ผลิตขึ้นโดยไม่ใช้สารเคมีหรือสเตียรอยด์ ใช้เฉพาะส่วนผสมที่มีกรดอะมิโนบริสุทธิ์สูงเท่านั้น ดังนั้นจึงไม่มีความเสี่ยงต่อผลข้างเคียงที่จะตามมา",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "\n",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "โปรดวางใจได้ หากผลิตภัณฑ์เข้าตา ให้กระพริบตาเบาๆ เพื่อให้ผลิตภัณฑ์สามารถซึมเข้าตาได้อย่างเป็นธรรมชาติ",
                 "bold": false,
                 "italic": false
               }
@@ -1669,7 +2671,7 @@
   },
   {
     "id": "medical-conditions",
-    "order": 17,
+    "order": 16,
     "sourceNumber": {
       "en": 16,
       "fr": 16,
@@ -1683,7 +2685,12 @@
             "type": "p",
             "runs": [
               {
-                "text": "A: If you have an eye condition, a blocked tear duct, or have recently had eye surgery, ask your eye specialist before using any product near the eyes. PROTAI is a cosmetic for the surrounding skin, not a treatment for these conditions.",
+                "text": "A:",
+                "bold": true,
+                "italic": false
+              },
+              {
+                "text": " Yes, this product can be used by people with conjunctivitis, keratitis, blocked tear ducts or even right after eye surgery. It is made with gentle, non-medicated, steroid-free ingredients, making it safe and comfortable even for those with sensitive eye areas.",
                 "bold": false,
                 "italic": false
               }
@@ -1698,7 +2705,7 @@
             "type": "p",
             "runs": [
               {
-                "text": "R : Si vous souffrez d’une maladie des yeux, d’une obstruction des voies lacrymales ou si vous avez récemment subi une chirurgie oculaire, demandez conseil à votre ophtalmologue avant d’utiliser un produit près des yeux. PROTAI est un cosmétique pour la peau du contour des yeux, et non un traitement.",
+                "text": "A. Oui. Ce produit convient à ces cas. Il est formulé avec des ingrédients doux, non médicamenteux et sans stéroïdes, ce qui le rend sûr et confortable même pour les zones oculaires sensibles.",
                 "bold": false,
                 "italic": false
               }
@@ -1713,151 +2720,37 @@
             "type": "p",
             "runs": [
               {
-                "text": "คำตอบ: หากมีโรคตา ท่อน้ำตาอุดตัน หรือเพิ่งผ่าตัดตา โปรดปรึกษาจักษุแพทย์ก่อนใช้ผลิตภัณฑ์ใด ๆ ใกล้ดวงตา PROTAI เป็นเครื่องสำอางสำหรับผิวรอบดวงตา ไม่ใช่ผลิตภัณฑ์รักษาอาการเหล่านี้",
+                "text": "A:",
+                "bold": true,
+                "italic": false
+              },
+              {
+                "text": " ใช่ สามารถใช้ได้โดยไม่มีปัญหา",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "\n",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "ผลิตภัณฑ์นี้ ไม่ผสมสารเคมีหรือสเตียรอยด์ จึงอ่อนโยนต่อดวงตาที่บอบบาง สามารถใช้ได้อย่างมั่",
                 "bold": false,
                 "italic": false
               }
             ]
           }
         ]
-      }
-    }
-  },
-  {
-    "id": "conjunctivitis",
-    "order": 18,
-    "sourceNumber": {
-      "ja": 10
-    },
-    "translations": {
+      },
       "ja": {
-        "question": "結膜炎（けつまくえん）の方は使用できますか？",
+        "question": "結膜炎・角膜炎・涙管閉塞の方や、眼科手術の直後でも使用できますか？",
         "nodes": [
           {
             "type": "p",
             "runs": [
               {
-                "text": "A. 目の病気や涙道の詰まりがある方、または目の手術後の方は、目元に使用する前に眼科医にご相談ください。本製品は目元の肌用の化粧品であり、眼疾患の治療を目的としていません。",
-                "bold": false,
-                "italic": false
-              }
-            ]
-          }
-        ]
-      }
-    }
-  },
-  {
-    "id": "keratitis",
-    "order": 19,
-    "sourceNumber": {
-      "ja": 11
-    },
-    "translations": {
-      "ja": {
-        "question": "角膜炎（かくまくえん）の方は使用できますか？",
-        "nodes": [
-          {
-            "type": "p",
-            "runs": [
-              {
-                "text": "A. 目の病気や涙道の詰まりがある方、または目の手術後の方は、目元に使用する前に眼科医にご相談ください。本製品は目元の肌用の化粧品であり、眼疾患の治療を目的としていません。",
-                "bold": false,
-                "italic": false
-              }
-            ]
-          }
-        ]
-      }
-    }
-  },
-  {
-    "id": "after-eye-surgery",
-    "order": 20,
-    "sourceNumber": {
-      "ja": 12
-    },
-    "translations": {
-      "ja": {
-        "question": "目の手術を受けた直後でも使用できますか？",
-        "nodes": [
-          {
-            "type": "p",
-            "runs": [
-              {
-                "text": "A. 目の病気や涙道の詰まりがある方、または目の手術後の方は、目元に使用する前に眼科医にご相談ください。本製品は目元の肌用の化粧品であり、眼疾患の治療を目的としていません。",
-                "bold": false,
-                "italic": false
-              }
-            ]
-          }
-        ]
-      }
-    }
-  },
-  {
-    "id": "antibiotics",
-    "order": 21,
-    "sourceNumber": {
-      "ja": 13
-    },
-    "translations": {
-      "ja": {
-        "question": "抗生物質を服用しながらPROTAIアイスキンケアミストを使用できますか？",
-        "nodes": [
-          {
-            "type": "p",
-            "runs": [
-              {
-                "text": "A. 服薬中や点眼薬を使用中の方は、併用について医師または薬剤師にご相談ください。本製品は目元の肌用の化粧品です。薬との相互作用がないとは保証できません。",
-                "bold": false,
-                "italic": false
-              }
-            ]
-          }
-        ]
-      }
-    }
-  },
-  {
-    "id": "eye-drops",
-    "order": 22,
-    "sourceNumber": {
-      "ja": 14
-    },
-    "translations": {
-      "ja": {
-        "question": "他の点眼薬と併用できますか？",
-        "nodes": [
-          {
-            "type": "p",
-            "runs": [
-              {
-                "text": "A. 服薬中や点眼薬を使用中の方は、併用について医師または薬剤師にご相談ください。本製品は目元の肌用の化粧品です。薬との相互作用がないとは保証できません。",
-                "bold": false,
-                "italic": false
-              }
-            ]
-          }
-        ]
-      }
-    }
-  },
-  {
-    "id": "liver-medicine",
-    "order": 23,
-    "sourceNumber": {
-      "ja": 15
-    },
-    "translations": {
-      "ja": {
-        "question": "肝臓病の薬や肝機能サポートの健康食品を摂取している場合、本製品を使用できますか？",
-        "nodes": [
-          {
-            "type": "p",
-            "runs": [
-              {
-                "text": "A. 服薬中や点眼薬を使用中の方は、併用について医師または薬剤師にご相談ください。本製品は目元の肌用の化粧品です。薬との相互作用がないとは保証できません。",
+                "text": "A: はい。結膜炎、角膜炎、涙管閉塞の方や、眼科手術の直後でも使用できます。医薬品成分やステロイドを含まない穏やかな成分で作られているため、敏感な目元にも安全かつ快適にお使いいただけます。",
                 "bold": false,
                 "italic": false
               }
@@ -1869,7 +2762,7 @@
   },
   {
     "id": "co-use",
-    "order": 24,
+    "order": 17,
     "sourceNumber": {
       "en": 17,
       "fr": 17,
@@ -1883,7 +2776,32 @@
             "type": "p",
             "runs": [
               {
-                "text": "A: If you use eye drops, medicines or supplements, ask your doctor or pharmacist before combining products near the eyes. Do not spray PROTAI into the eyes or assume that spacing applications removes any risk.",
+                "text": "A: ",
+                "bold": true,
+                "italic": false
+              },
+              {
+                "text": "Yes, it can be used alongside other eye drops or supplements.",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "\n",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "However, we recommend leaving a ",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "1 to 2 hour gap",
+                "bold": true,
+                "italic": false
+              },
+              {
+                "text": " between using other eye drops and this product, as a precaution to ensure the best and safest care for your eyes.",
                 "bold": false,
                 "italic": false
               }
@@ -1898,7 +2816,12 @@
             "type": "p",
             "runs": [
               {
-                "text": "R : Si vous utilisez des collyres, des médicaments ou des compléments, demandez conseil à votre médecin ou pharmacien avant d’associer des produits près des yeux. Ne vaporisez pas PROTAI dans les yeux ; espacer les applications ne garantit pas l’absence de risque.",
+                "text": "R: ",
+                "bold": true,
+                "italic": false
+              },
+              {
+                "text": "Oui, il peut être utilisé avec d’autres collyres ou compléments. Toutefois, par précaution, nous recommandons d’attendre 1 à 2 heures entre l’utilisation de ces collyres et l’application du spray, afin d’assurer une efficacité et une sécurité optimale.",
                 "bold": false,
                 "italic": false
               }
@@ -1913,7 +2836,37 @@
             "type": "p",
             "runs": [
               {
-                "text": "คำตอบ: หากใช้ยาหยอดตา ยา หรือผลิตภัณฑ์เสริมอาหาร โปรดปรึกษาแพทย์หรือเภสัชกรก่อนใช้ผลิตภัณฑ์ร่วมกันใกล้ดวงตา อย่าพ่น PROTAI เข้าตา และอย่าถือว่าการเว้นช่วงเวลาจะป้องกันความเสี่ยงได้ทั้งหมด",
+                "text": "A: ",
+                "bold": true,
+                "italic": false
+              },
+              {
+                "text": "ใช่ สามารถใช้ร่วมกันได้",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "\n",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": " อย่างไรก็ตาม หากใช้ยาหยอดตาอื่นๆ แนะนำให้เว้นระยะ ประมาณ 1–2 ชั่วโมง ก่อนใช้ผลิตภัณฑ์นี้ เป็นแนวทางเพื่อให้สามารถดูแลดวงตาได้อย่างปลอดภัยมากยิ่งขึ้น",
+                "bold": false,
+                "italic": false
+              }
+            ]
+          }
+        ]
+      },
+      "ja": {
+        "question": "ほかの目薬やサプリメントと併用できますか？",
+        "nodes": [
+          {
+            "type": "p",
+            "runs": [
+              {
+                "text": "A: はい。ほかの目薬やサプリメントと併用できます。ただし、目元をより慎重にケアするため、ほかの目薬と本製品を使用する際は、1～2時間ほど間隔を空けることをおすすめします。",
                 "bold": false,
                 "italic": false
               }
@@ -1925,7 +2878,7 @@
   },
   {
     "id": "milia",
-    "order": 25,
+    "order": 18,
     "sourceNumber": {
       "en": 18,
       "ja": 16,
@@ -1940,7 +2893,12 @@
             "type": "p",
             "runs": [
               {
-                "text": "A: If you have milia or another concern around the eyes, consult a dermatologist before use. PROTAI is a cosmetic for moisturizing the skin, not a treatment for milia.",
+                "text": "A: ",
+                "bold": true,
+                "italic": false
+              },
+              {
+                "text": "Yes, you can safely use this product even if you have milia around your eyes. In fact, the mist supports healthy circulation and metabolism around the eye area, making it a helpful part of your daily eye care routine.",
                 "bold": false,
                 "italic": false
               }
@@ -1955,7 +2913,27 @@
             "type": "p",
             "runs": [
               {
-                "text": "A. 白いポツポツなど目元の肌に気になる症状がある場合は、使用前に皮膚科医にご相談ください。本製品は肌の保湿を目的とした化粧品で、症状の治療や血行・代謝の改善を目的としていません。",
+                "text": "A. はい、ご使用いただけます。",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "\n",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "さらに、本製品は目元の血行促進や代謝のサポートにも役立つため、",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "\n",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "目元全体の健やかさを保つケアとしてもおすすめです。",
                 "bold": false,
                 "italic": false
               }
@@ -1970,7 +2948,12 @@
             "type": "p",
             "runs": [
               {
-                "text": "R : Si vous avez des grains de milium ou toute autre préoccupation concernant la peau du contour des yeux, consultez un dermatologue avant utilisation. PROTAI est un cosmétique hydratant, pas un traitement du milium.",
+                "text": "R: ",
+                "bold": true,
+                "italic": false
+              },
+              {
+                "text": "Oui, vous pouvez l’utiliser en toute sécurité même en présence de grains de milium. La brume favorise une bonne circulation et un métabolisme sain autour de la zone oculaire, ce qui en fait un allié utile dans votre routine quotidienne de soin des yeux.",
                 "bold": false,
                 "italic": false
               }
@@ -1985,55 +2968,12 @@
             "type": "p",
             "runs": [
               {
-                "text": "คำตอบ: หากมีสิวหัวข้าวสารหรือกังวลเรื่องผิวรอบดวงตา โปรดปรึกษาแพทย์ผิวหนังก่อนใช้ PROTAI เป็นเครื่องสำอางสำหรับเพิ่มความชุ่มชื้นให้ผิว ไม่ใช่ผลิตภัณฑ์รักษาสิวหัวข้าวสาร",
-                "bold": false,
+                "text": "A: ",
+                "bold": true,
                 "italic": false
-              }
-            ]
-          }
-        ]
-      }
-    }
-  },
-  {
-    "id": "blocked-tear-duct",
-    "order": 26,
-    "sourceNumber": {
-      "ja": 17
-    },
-    "translations": {
-      "ja": {
-        "question": "涙腺の詰まりがある場合、使用できますか？",
-        "nodes": [
-          {
-            "type": "p",
-            "runs": [
+              },
               {
-                "text": "A. 目の病気や涙道の詰まりがある方、または目の手術後の方は、目元に使用する前に眼科医にご相談ください。本製品は目元の肌用の化粧品であり、眼疾患の治療を目的としていません。",
-                "bold": false,
-                "italic": false
-              }
-            ]
-          }
-        ]
-      }
-    }
-  },
-  {
-    "id": "permanent-makeup",
-    "order": 27,
-    "sourceNumber": {
-      "ja": 18
-    },
-    "translations": {
-      "ja": {
-        "question": "アートメイク（眉）の施術をしている場合、使用できますか？",
-        "nodes": [
-          {
-            "type": "p",
-            "runs": [
-              {
-                "text": "A. 眉のアートメイク施術後は、施術者または医師の案内に従ってください。皮膚に赤みや刺激が残っている間は使用せず、異常があれば皮膚科医にご相談ください。",
+                "text": "คุณสามารถใช้ผลิตภัณฑ์นี้ได้อย่างปลอดภัย แม้ว่าจะมีสิวหัวข้าวสารรอบดวงตา ในความเป็นจริงสเปรย์นี้ช่วยให้ระบบไหลเวียนโลหิตและการเผาผลาญอาหารบริเวณรอบดวงตาดีขึ้น จึงเป็นส่วนที่มีประโยชน์ในการดูแลดวงตาของคุณในทุกวัน",
                 "bold": false,
                 "italic": false
               }
@@ -2045,7 +2985,7 @@
   },
   {
     "id": "irritation",
-    "order": 28,
+    "order": 19,
     "sourceNumber": {
       "en": 19,
       "ja": 19,
@@ -2060,7 +3000,12 @@
             "type": "p",
             "runs": [
               {
-                "text": "A: Stop using the product if redness, itching or swelling occurs, and consult a dermatologist. Do not continue using it on the assumption that irritation is a normal part of skin care. If the eye itself is affected, consult an eye specialist.",
+                "text": "A:",
+                "bold": true,
+                "italic": false
+              },
+              {
+                "text": " Mild redness, itching, or swelling rarely occur, but these are temporary reactions and usually subside naturally within a few days. If you are concerned, we recommend discontinuing use temporarily and monitoring the situation. In most cases, these reactions are part of the natural process of refreshing and caring for the eye area, so you can use the product with confidence.",
                 "bold": false,
                 "italic": false
               }
@@ -2075,7 +3020,27 @@
             "type": "p",
             "runs": [
               {
-                "text": "A. 赤み、かゆみ、腫れなどが出た場合は、使用を中止し、皮膚科医にご相談ください。正常なケア過程として使用を続けないでください。目にも症状がある場合は眼科医にご相談ください。",
+                "text": "A. 軽度の赤みやかゆみ、腫れが生じることがありますが、これは一時的な反応であり、通常は数日以内に自然に改善されます。",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "\n",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "もし不安な場合は、一時的に使用をお控えいただき、様子を見てください。",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "\n",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "多くの場合、これらの反応は目元のリフレッシュやケアをサポートする過程の一環ですので、安心してご使用いただけます。",
                 "bold": false,
                 "italic": false
               }
@@ -2090,7 +3055,12 @@
             "type": "p",
             "runs": [
               {
-                "text": "R : En cas de rougeur, démangeaison ou gonflement, cessez l’utilisation et consultez un dermatologue. Ne poursuivez pas en supposant qu’il s’agit d’une réaction normale. Si l’œil lui-même est touché, consultez un ophtalmologue.",
+                "text": "R:",
+                "bold": true,
+                "italic": false
+              },
+              {
+                "text": " De légères rougeurs, démangeaisons ou gonflements peuvent survenir rarement, mais il s’agit de réactions temporaires qui disparaissent généralement d’elles-mêmes en quelques jours. Si cela vous inquiète, nous vous conseillons d’interrompre l’utilisation momentanément et d’observer l’évolution. Dans la plupart des cas, ces réactions font partie du processus naturel de régénération et de soin du contour des yeux.",
                 "bold": false,
                 "italic": false
               }
@@ -2105,55 +3075,12 @@
             "type": "p",
             "runs": [
               {
-                "text": "คำตอบ: หากเกิดรอยแดง คัน หรือบวม ให้หยุดใช้และปรึกษาแพทย์ผิวหนัง อย่าใช้ต่อโดยคิดว่าอาการระคายเคืองเป็นขั้นตอนปกติของการดูแลผิว หากมีอาการที่ดวงตา ให้ปรึกษาจักษุแพทย์",
-                "bold": false,
+                "text": "A:",
+                "bold": true,
                 "italic": false
-              }
-            ]
-          }
-        ]
-      }
-    }
-  },
-  {
-    "id": "eye-contact-irritation",
-    "order": 29,
-    "sourceNumber": {
-      "ja": 20
-    },
-    "translations": {
-      "ja": {
-        "question": "本製品が目にかかった場合、腫れや刺激を感じることがあるのはなぜですか？",
-        "nodes": [
-          {
-            "type": "p",
-            "runs": [
+              },
               {
-                "text": "A. 目に入って刺激や腫れを感じた場合は、すぐに水で洗い流し、使用を中止してください。違和感が続く場合は眼科医にご相談ください。不快感があるまま使い続けないでください。",
-                "bold": false,
-                "italic": false
-              }
-            ]
-          }
-        ]
-      }
-    }
-  },
-  {
-    "id": "blurry-vision",
-    "order": 30,
-    "sourceNumber": {
-      "ja": 21
-    },
-    "translations": {
-      "ja": {
-        "question": "本製品を使用した後、一時的に目がぼやけることがあるのはなぜですか？",
-        "nodes": [
-          {
-            "type": "p",
-            "runs": [
-              {
-                "text": "A. 使用後に視界がぼやけた場合は、使用を中止して目を水で洗い流し、速やかに眼科医にご相談ください。正常な反応として放置しないでください。",
+                "text": " รอยแดง คัน หรือบวมเล็กน้อยเกิดขึ้นได้ไม่บ่อยนัก แต่เป็นเพียงปฏิกิริยาชั่วคราวและมักจะหายไปเองภายในไม่กี่วัน หากคุณกังวล เราขอแนะนำให้หยุดใช้ชั่วคราวและเฝ้าติดตามอาการ ส่วนใหญ่ปฏิกิริยาเหล่านี้เป็นส่วนหนึ่งของกระบวนการตามธรรมชาติของการฟื้นฟูและดูแลบริเวณรอบดวงตา ดังนั้นคุณจึงสามารถใช้ผลิตภัณฑ์ได้อย่างมั่นใจ",
                 "bold": false,
                 "italic": false
               }
@@ -2165,7 +3092,7 @@
   },
   {
     "id": "fragrance",
-    "order": 31,
+    "order": 20,
     "sourceNumber": {
       "en": 20,
       "fr": 20,
@@ -2261,12 +3188,27 @@
             ]
           }
         ]
+      },
+      "ja": {
+        "question": "PROTAIアイスキンケアミストに香りはありますか？",
+        "nodes": [
+          {
+            "type": "p",
+            "runs": [
+              {
+                "text": "A: いいえ。PROTAIアイスキンケアミストには香料を一切加えていません。香りに敏感な方や、無香料の製品を好む方にも適しています。",
+                "bold": false,
+                "italic": false
+              }
+            ]
+          }
+        ]
       }
     }
   },
   {
     "id": "international-shipping",
-    "order": 32,
+    "order": 21,
     "sourceNumber": {
       "en": 21,
       "fr": 21,
@@ -2280,9 +3222,116 @@
             "type": "p",
             "runs": [
               {
-                "text": "A: Availability and shipping vary by destination. For Thailand, please check the current listing on Shopee Thailand. For Malaysia or other destinations, contact support@ippongikyoto.com before ordering; we do not have a verified partner purchase link to publish here.",
+                "text": "A: ",
+                "bold": true,
+                "italic": false
+              },
+              {
+                "text": "Yes, we do! We currently provide international shipping to select countries and regions. Depending on your country, your order may be shipped directly from Japan or fulfilled by our trusted local partners.",
                 "bold": false,
                 "italic": false
+              }
+            ]
+          },
+          {
+            "type": "li",
+            "runs": [
+              {
+                "text": "Thailand:",
+                "bold": true,
+                "italic": false
+              },
+              {
+                "text": " Shipped ",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "directly from Japan",
+                "bold": true,
+                "italic": false
+              }
+            ]
+          },
+          {
+            "type": "li",
+            "runs": [
+              {
+                "text": "Malaysia:",
+                "bold": true,
+                "italic": false
+              },
+              {
+                "text": " Fulfilled by our local partner",
+                "bold": false,
+                "italic": false
+              }
+            ]
+          },
+          {
+            "type": "p",
+            "runs": [
+              {
+                "text": "For the latest shipping information and details, please refer to the appropriate link below based on your country:",
+                "bold": false,
+                "italic": false
+              }
+            ]
+          },
+          {
+            "type": "li",
+            "runs": [
+              {
+                "text": "Thailand:",
+                "bold": true,
+                "italic": false
+              },
+              {
+                "text": " ",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "https://shopee.co.th/shop/1547555143/",
+                "bold": false,
+                "italic": false,
+                "href": "https://shopee.co.th/shop/1547555143/"
+              }
+            ]
+          },
+          {
+            "type": "li",
+            "runs": [
+              {
+                "text": "Malaysia:",
+                "bold": true,
+                "italic": false
+              },
+              {
+                "text": "\n",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "If you’re located in another country and would like to place an order, feel free to contact us at:",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "\n",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "📩 ",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "support@ippongikyoto.com",
+                "bold": true,
+                "italic": false,
+                "href": "mailto:support@ippongikyoto.com"
               }
             ]
           }
@@ -2295,9 +3344,96 @@
             "type": "p",
             "runs": [
               {
-                "text": "R : La disponibilité et la livraison dépendent du pays. Pour la Thaïlande, consultez la boutique Shopee Thaïlande. Pour la Malaisie ou d’autres destinations, contactez support@ippongikyoto.com avant de commander ; aucun lien d’achat partenaire vérifié n’est publié ici.",
+                "text": "R: ",
+                "bold": true,
+                "italic": false
+              },
+              {
+                "text": "Oui, tout à fait. Nous proposons actuellement une livraison internationale vers certains pays. Selon le pays, la commande peut être expédiée directement du Japon ou via nos partenaires locaux de confiance.",
                 "bold": false,
                 "italic": false
+              }
+            ]
+          },
+          {
+            "type": "li",
+            "runs": [
+              {
+                "text": "Thaïlande : expédié directement du Japon",
+                "bold": false,
+                "italic": false
+              }
+            ]
+          },
+          {
+            "type": "li",
+            "runs": [
+              {
+                "text": "Malaisie : expédié par notre partenaire local",
+                "bold": false,
+                "italic": false
+              }
+            ]
+          },
+          {
+            "type": "p",
+            "runs": [
+              {
+                "text": "Pour les dernières informations sur la livraison, veuillez consulter le lien correspondant à votre pays :",
+                "bold": false,
+                "italic": false
+              }
+            ]
+          },
+          {
+            "type": "li",
+            "runs": [
+              {
+                "text": "Thaïlande : ",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "Shopee Thaïlande",
+                "bold": false,
+                "italic": false,
+                "href": "https://shopee.co.th/shop/1547555143/"
+              }
+            ]
+          },
+          {
+            "type": "li",
+            "runs": [
+              {
+                "text": "Malaisie : (lien partenaire)",
+                "bold": false,
+                "italic": false
+              }
+            ]
+          },
+          {
+            "type": "p",
+            "runs": [
+              {
+                "text": "Si vous résidez dans un autre pays et souhaitez passer commande,",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "\n",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "contactez-nous à : 📩 ",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "support@ippongikyoto.com",
+                "bold": false,
+                "italic": false,
+                "href": "mailto:support@ippongikyoto.com"
               }
             ]
           }
@@ -2310,9 +3446,187 @@
             "type": "p",
             "runs": [
               {
-                "text": "คำตอบ: สินค้าและการจัดส่งขึ้นอยู่กับประเทศ สำหรับประเทศไทย โปรดตรวจสอบร้าน Shopee Thailand ปัจจุบัน สำหรับมาเลเซียหรือประเทศอื่น ๆ โปรดติดต่อ support@ippongikyoto.com ก่อนสั่งซื้อ ขณะนี้ยังไม่มีลิงก์ร้านค้าพาร์ทเนอร์ที่ตรวจสอบแล้วสำหรับเผยแพร่",
+                "text": "A: ",
+                "bold": true,
+                "italic": false
+              },
+              {
+                "text": "ได้ค่ะ ขณะนี้สามารถจัดส่งไปยังบางประเทศและภูมิภาค โดยขึ้นอยู่กับพื้นที่ที่คุณอาศัย",
                 "bold": false,
                 "italic": false
+              },
+              {
+                "text": "\n",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "\n",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "● ประเทศไทย: จัดส่งตรงจากญี่ปุ่น (Direct From Japan)",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "\n",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "● มาเลเซีย: จัดส่งผ่านพาร์ทเนอร์ท้องถิ่น",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "\n",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "สำหรับข้อมูลการจัดส่งล่าสุด สามารถตรวจสอบได้จากลิงก์ด้านล่าง:",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "\n",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "●ไทย: ",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "https://shopee.co.th/shop/1547555143/",
+                "bold": false,
+                "italic": false,
+                "href": "https://shopee.co.th/shop/1547555143/"
+              },
+              {
+                "text": "\n",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "● มาเลเซีย: [ลิงค์]",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "\n",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "\n",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "สำหรับประเทศอื่น ๆ หากต้องการสั่งซื้อ สามารถติดต่อได้ที่: ",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "\n",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "📩 support@ippongikyoto.com",
+                "bold": false,
+                "italic": false
+              }
+            ]
+          }
+        ]
+      },
+      "ja": {
+        "question": "海外への配送はできますか？",
+        "nodes": [
+          {
+            "type": "p",
+            "runs": [
+              {
+                "text": "A: はい。一部の国・地域へ海外配送を行っています。お届け先によって、日本から直接発送する場合と、信頼できる現地の提携先からお届けする場合があります。",
+                "bold": false,
+                "italic": false
+              }
+            ]
+          },
+          {
+            "type": "li",
+            "runs": [
+              {
+                "text": "タイ：",
+                "bold": true,
+                "italic": false
+              },
+              {
+                "text": "日本から直接発送",
+                "bold": false,
+                "italic": false
+              }
+            ]
+          },
+          {
+            "type": "li",
+            "runs": [
+              {
+                "text": "マレーシア：",
+                "bold": true,
+                "italic": false
+              },
+              {
+                "text": "現地の提携先からお届け",
+                "bold": false,
+                "italic": false
+              }
+            ]
+          },
+          {
+            "type": "p",
+            "runs": [
+              {
+                "text": "最新の配送情報や詳細は、お住まいの国に応じて以下をご確認ください。",
+                "bold": false,
+                "italic": false
+              }
+            ]
+          },
+          {
+            "type": "li",
+            "runs": [
+              {
+                "text": "タイ：",
+                "bold": true,
+                "italic": false
+              },
+              {
+                "text": "https://shopee.co.th/shop/1547555143/",
+                "bold": false,
+                "italic": false,
+                "href": "https://shopee.co.th/shop/1547555143/"
+              }
+            ]
+          },
+          {
+            "type": "p",
+            "runs": [
+              {
+                "text": "上記以外の国からご注文を希望される場合は、以下までお気軽にお問い合わせください。\n",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "support@ippongikyoto.com",
+                "bold": false,
+                "italic": false,
+                "href": "mailto:support@ippongikyoto.com"
               }
             ]
           }
@@ -2322,7 +3636,7 @@
   },
   {
     "id": "other-countries",
-    "order": 33,
+    "order": 22,
     "sourceNumber": {
       "en": 22,
       "fr": 22,
@@ -2330,13 +3644,28 @@
     },
     "translations": {
       "en": {
-        "question": "Has PROTAI Eye Skin Care Mist been sold in other countries?",
+        "question": "Has PROTAI been sold in other countries?",
         "nodes": [
           {
             "type": "p",
             "runs": [
               {
-                "text": "A: PROTAI has been sold outside Japan, including in Taiwan. For current sales figures, please contact IPPONGI; historical figures should not be presented as current without a verified source.",
+                "text": "A:",
+                "bold": true,
+                "italic": false
+              },
+              {
+                "text": " Yes. Products containing PROTAI (INCI: Pentapeptide-80) have been sold in Taiwan, Japan, Singapore, Malaysia, and Thailand.\nAs of September 2026, cumulative sales of products made with the same PROTAI-containing formula had exceeded ",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "150,000\u00a0bottles",
+                "bold": true,
+                "italic": false
+              },
+              {
+                "text": ".",
                 "bold": false,
                 "italic": false
               }
@@ -2345,13 +3674,28 @@
         ]
       },
       "fr": {
-        "question": "Le PROTAI Brume Soin Contour des Yeux a-t-il déjà été commercialisé dans d’autres pays ?",
+        "question": "Le PROTAI a-t-il été commercialisé dans d’autres pays ?",
         "nodes": [
           {
             "type": "p",
             "runs": [
               {
-                "text": "R : PROTAI a été commercialisé hors du Japon, notamment à Taïwan. Pour obtenir les chiffres de vente actuels, veuillez contacter IPPONGI ; un chiffre historique ne doit pas être présenté comme actuel sans source vérifiée.",
+                "text": "R:",
+                "bold": true,
+                "italic": false
+              },
+              {
+                "text": " Oui. Des produits contenant le peptide PROTAI (nom INCI : Pentapeptide-80) ont été vendus à Taïwan, au Japon, à Singapour, en Malaisie et en Thaïlande.\nEn septembre 2026, les ventes cumulées de produits utilisant la même formule contenant du PROTAI dépassaient ",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "150\u00a0000\u00a0flacons",
+                "bold": true,
+                "italic": false
+              },
+              {
+                "text": ".",
                 "bold": false,
                 "italic": false
               }
@@ -2360,13 +3704,48 @@
         ]
       },
       "th": {
-        "question": "PROTAI Eye Skin Care Mist มีการจำหน่ายในต่างประเทศหรือไม่?",
+        "question": "PROTAI มีจำหน่ายในประเทศอื่นหรือไม่?",
         "nodes": [
           {
             "type": "p",
             "runs": [
               {
-                "text": "คำตอบ: PROTAI มีจำหน่ายนอกประเทศญี่ปุ่น รวมถึงไต้หวัน หากต้องการยอดขายล่าสุด โปรดติดต่อ IPPONGI ไม่ควรนำตัวเลขในอดีตมาแสดงเป็นยอดปัจจุบันโดยไม่มีแหล่งข้อมูลที่ตรวจสอบได้",
+                "text": "A:",
+                "bold": true,
+                "italic": false
+              },
+              {
+                "text": " มีค่ะ ผลิตภัณฑ์ที่มีส่วนผสมของเปปไทด์ PROTAI (ชื่อ INCI: Pentapeptide-80) มีการจำหน่ายในไต้หวัน ญี่ปุ่น สิงคโปร์ มาเลเซีย และไทย\nณ เดือนกันยายน 2026 ยอดขายสะสมของผลิตภัณฑ์ที่ใช้สูตรเดียวกันซึ่งมี PROTAI เป็นส่วนผสมมากกว่า ",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "150,000\u00a0ขวด",
+                "bold": true,
+                "italic": false
+              }
+            ]
+          }
+        ]
+      },
+      "ja": {
+        "question": "PROTAIはほかの国でも販売されていますか？",
+        "nodes": [
+          {
+            "type": "p",
+            "runs": [
+              {
+                "text": "A: はい。PROTAI（INCI名：ペンタペプチド-80）を配合した製品は、台湾、日本、シンガポール、マレーシア、タイで販売されています。\n2026年9月時点で、同じPROTAI配合処方を用いた製品の累計販売本数は",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "15万本",
+                "bold": true,
+                "italic": false
+              },
+              {
+                "text": "を超えています。",
                 "bold": false,
                 "italic": false
               }

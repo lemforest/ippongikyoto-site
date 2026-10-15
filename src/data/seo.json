@@ -1,7 +1,7 @@
 {
   "/": {
     "lang": "en",
-    "title": "PROTAI Eye Skin Care Mist",
+    "title": "IPPONGI KYOTO | Official Site",
     "description": "Discover PROTAI eye-area skincare mist from IPPONGI Kyoto, with product details and the story behind the brand."
   },
   "/about/": {
@@ -26,7 +26,7 @@
   },
   "/founder-message/": {
     "lang": "en",
-    "title": "A Message from Our Representative",
+    "title": "Founder’s note",
     "description": "Read a message from IPPONGI Kyoto representative WEIFAN CHIA about the people and ideas behind the brand."
   },
   "/online-shop/": {
@@ -56,7 +56,7 @@
   },
   "/fr/": {
     "lang": "fr",
-    "title": "Brume de soin contour des yeux PROTAI",
+    "title": "IPPONGI KYOTO | Site officiel",
     "description": "Découvrez PROTAI, une brume de soin pour le contour des yeux présentée par IPPONGI Kyoto, ainsi que l’histoire de la marque."
   },
   "/fr/about/": {
@@ -79,6 +79,11 @@
     "title": "Le mot du fondateur",
     "description": "Lisez le message de WEIFAN CHIA sur les personnes et les idées à l’origine d’IPPONGI Kyoto."
   },
+  "/fr/online-shop/": {
+    "lang": "fr",
+    "title": "Boutique en ligne PROTAI",
+    "description": "Comparez les deux formats de la brume PROTAI avant de consulter la boutique en ligne."
+  },
   "/fr/product/protai-eye-skin-care-mist-10ml-x-2-20ml/": {
     "lang": "fr",
     "title": "PROTAI Brume contour des yeux, 2 recharges de 10 ml",
@@ -96,12 +101,12 @@
   },
   "/ja/": {
     "lang": "ja",
-    "title": "PROTAI 目もと用スキンケアミスト",
+    "title": "IPPONGI KYOTO｜公式サイト",
     "description": "IPPONGI KYOTOの目もと用スキンケアミスト「PROTAI」。製品情報とブランドの背景をご紹介します。"
   },
   "/ja/about/": {
     "lang": "ja",
-    "title": "一凡木合同会社について",
+    "title": "会社案内",
     "description": "京都を拠点とする一凡木合同会社の理念と、PROTAIに込めた想いをご紹介します。"
   },
   "/ja/commercial-disclosure/": {
@@ -121,7 +126,7 @@
   },
   "/ja/founder-message/": {
     "lang": "ja",
-    "title": "代表からのご挨拶",
+    "title": "創業者の言葉",
     "description": "一凡木合同会社の代表社員から、ブランドの背景と製品に込めた想いをお伝えします。"
   },
   "/ja/online-shop/": {
@@ -151,7 +156,7 @@
   },
   "/th/": {
     "lang": "th",
-    "title": "PROTAI สเปรย์ดูแลผิวรอบดวงตา",
+    "title": "IPPONGI KYOTO | เว็บไซต์ทางการ",
     "description": "รู้จัก PROTAI สเปรย์ดูแลผิวรอบดวงตาจาก IPPONGI Kyoto พร้อมข้อมูลผลิตภัณฑ์และเรื่องราวของแบรนด์."
   },
   "/th/about/": {
@@ -171,7 +176,7 @@
   },
   "/th/founder-message/": {
     "lang": "th",
-    "title": "ข้อความจากผู้แทนบริษัท",
+    "title": "ข้อความจากผู้ก่อตั้ง",
     "description": "อ่านสารจาก WEIFAN CHIA เกี่ยวกับผู้คนและแนวคิดเบื้องหลังแบรนด์ IPPONGI Kyoto."
   },
   "/th/online-shop/": {
@@ -221,7 +226,7 @@
   },
   "/zh/": {
     "lang": "zh",
-    "title": "PROTAI 眼周保養噴霧",
+    "title": "IPPONGI KYOTO｜官方網站",
     "description": "認識 IPPONGI Kyoto 的日本製 PROTAI 眼周保養噴霧、品牌故事與產品資訊。"
   },
   "/zh/about/": {
@@ -267,7 +272,7 @@
   "/zh/online-shop/": {
     "lang": "zh",
     "title": "PROTAI 線上商店",
-    "description": "查看 PROTAI 眼周保養噴霧與補充組的產品資訊和原站購買入口。"
+    "description": "比較 PROTAI 眼周保養噴霧與補充組的容量、價格與使用方式，並前往商店查看供貨。"
   },
   "/zh/commercial-disclosure/": {
     "lang": "zh",

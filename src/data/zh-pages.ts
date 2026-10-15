@@ -3,7 +3,21 @@ import type { ContentBlock, SitePage } from './types'
 type PageSpec = { source: string; path: string; title: string; description: string; blocks: ContentBlock[]; text?: string; videos?: string[] }
 const h2 = (text: string): ContentBlock => ({ type: 'h2', text })
 const p = (text: string): ContentBlock => ({ type: 'p', text })
-const img = (url: string): ContentBlock => ({ type: 'image', url })
+const pWithBold = (text: string, phrases: string[]): ContentBlock => {
+  const runs: NonNullable<ContentBlock['runs']> = []
+  let cursor = 0
+  for (const phrase of phrases) {
+    const start = text.indexOf(phrase, cursor)
+    if (start < 0) throw new Error(`Missing founder emphasis: ${phrase}`)
+    if (start > cursor) runs.push({ text: text.slice(cursor, start), bold: false, italic: false })
+    runs.push({ text: phrase, bold: true, italic: false })
+    cursor = start + phrase.length
+  }
+  if (cursor < text.length) runs.push({ text: text.slice(cursor), bold: false, italic: false })
+  return { type: 'p', text, runs }
+}
+const webinarSubstep = (text: string): ContentBlock => ({ type: 'webinar-substep', text })
+const img = (url: string, alt?: string): ContentBlock => ({ type: 'image', url, alt })
 
 const specs: PageSpec[] = [
   {
@@ -16,26 +30,62 @@ const specs: PageSpec[] = [
     source: '/about/', path: '/zh/about/', title: '關於 IPPONGI Kyoto',
     description: '了解 IPPONGI Kyoto 在京都的品牌起點，以及 PROTAI 眼周保養品背後的理念。',
     blocks: [
-      h2('從京都出發'), img('/media/2025/05/S__6561812.webp'),
-      p('IPPONGI LLC 以京都為據點，從「眼睛是心靈之窗」的信念出發，思考如何在忙碌的日常裡照顧眼周肌膚。'),
-      h2('我們的理念'), p('我們相信保養可以回到簡單的日常：了解成分、尊重身體感受，也清楚區分化妝品與醫療用品。PROTAI 是為眼周肌膚補水的日本製保養噴霧，並非眼藥水。'),
-      h2('我們做什麼'), p('除了介紹 PROTAI 產品，我們也透過線上講座分享眼周保養與數位生活的相關知識，並連結臺灣的研發與日本的製造。'),
-      h2('公司資訊'), p('公司名稱：IPPONGI LLC（一凡木合同会社）'), p('成立日期：2025 年 3 月 10 日'),
+      h2('關於 IPPONGI Kyoto'), h2('關於 IPPONGI'), img('/media/2025/05/S__6561812.webp'),
+      h2('眼睛是心靈之窗'),
+      p('一凡木合同会社座落於歷史悠久的京都。\n我們相信，照顧自己可以從留意日常生活開始。\n創立 IPPONGI，是希望以清楚、真誠的方式，陪伴每個人走在各自多彩的人生旅程中。'),
+      p('我們推出的 PROTAI，是日本製造、為眼周肌膚補充水分的化妝品噴霧；\n它不是眼藥水，也不是治療眼部疾病的產品。'),
+      h2('我們的理念'),
+      p('「運用胜肽的本質，將細緻的照顧帶入生活。」這份想法引領了 PROTAI 的誕生。\n我們認為，眼周保養可以是日常自我照顧的一部分，與適度休息、放慢腳步同樣重要。'),
+      p('我們的做法建立在三個信念上：● Less is more——讓簡單的習慣留下照顧自己的空間 ● Nature knows best——尊重身體與生活的節奏 ● No shortcuts——用時間與持續的用心，建立適合自己的日常。'),
+      p('我們並不販售「治癒」。我們希望提供一個溫和的選擇，讓想照顧眼周肌膚的人能自在地將它融入生活。'),
+      h2('我們的工作'),
+      p('眼周肌膚保養——PROTAI：我們提供日本製的化妝品噴霧，供日常保養時為眼周肌膚補水。\n產品並非眼藥水或眼疾治療用品。'),
+      p('教育與知識分享：透過線上講座及與專業人士合作，分享眼周肌膚保養、數位生活與日常自我照顧的相關資訊。'),
+      p('國際業務與顧問服務：除了保養品業務，我們也從事多語翻譯與口譯、國際貿易，以及海外拓展支援與顧問服務。'),
+      h2('我們的願景'),
+      p('從京都出發，走向世界。\n我們希望建立一個值得信任的品牌，也盼望孩子有遠離螢幕、自在休息與玩耍的時間；\n家庭能根據清楚資訊選擇適合自己的日常照顧方式；每個人都能重新看見緩慢而簡單的生活價值。'),
+      h2('公司簡介'), p('公司名稱：一凡木合同会社（IPPONGI LLC）'), p('成立日期：2025 年 3 月 10 日'),
       p('京都辦公室：{{CONTACT_ADDRESS}}'), p('營業時間：{{BUSINESS_HOURS}}'), p('電子郵件：{{EMAIL}}'),
     ],
   },
   {
     source: '/founder-message/', path: '/zh/founder-message/', title: '創辦人的話',
-    description: '閱讀 IPPONGI Kyoto 代表 WEIFAN CHIA 對品牌起點、家人與 PROTAI 的分享。',
+    description: '閱讀 IPPONGI Kyoto 代表 WEIFAN CHIA 對 PROTAI 的起點、家人、品牌信念，以及相關檢驗與專利資料的分享。',
     blocks: [
+      h2('創辦人的話'),
       img('/media/2025/11/image.webp'),
-      p('大家好，我是 IPPONGI LLC Japan 的代表 WEIFAN CHIA，也是臺灣普晟福生技研發公司的特別助理。'),
-      p('我想和您分享 PROTAI 背後的信念，以及這段旅程為什麼對我如此重要。'),
-      p('PROTAI 的起點在臺灣的胜肽研究。2022 年父親生病時，我回到臺灣，開始更深入認識他的公司與團隊長年投入的工作，也重新思考自己想為人們帶來什麼。'),
-      p('後來，我從零開始尋找合作夥伴，並在日本建立 PROTAI Beauty & Wellness。對我而言，產品不只是技術，也承載了人與人之間的關心。'),
-      p('有人在忙碌的螢幕工作之後，希望為自己留一點照顧眼周肌膚的時間；也有人單純喜歡每天使用時的清爽感。這些都是個人的感受，不代表每個人都會有相同結果。'),
-      p('我希望將臺灣的研發背景與日本的製造工藝連結，從京都出發，讓大家更容易認識 PROTAI，也能以自己的步調選擇日常保養。'),
-      p('謝謝您閱讀這封信。'),
+      p('大家好，'),
+      pWithBold('我是 WEIFAN CHIA，IPPONGI LLC Japan 的執行合夥人，\n也是臺灣三凡生技研發股份有限公司的特別助理。', ['WEIFAN CHIA', 'IPPONGI LLC Japan', '臺灣三凡生技研發股份有限公司']),
+      pWithBold('我想和您分享品牌 PROTAI 背後的願景，以及推動我們前行的信念——\n讓美好的身心狀態成為生活的一部分。', ['PROTAI']),
+      pWithBold('用一句簡單的話說，PROTAI 是「幸福的胜肽」。', ['PROTAI 是「幸福的胜肽」']),
+      p('請讓我說說，為什麼這份使命對我有如此深刻的個人意義，以及一切是如何開始的。'),
+      pWithBold('我在日本創立了 PROTAI Beauty & Wellness 品牌，但它的起點在臺灣三凡生技。\n這家公司花了十多年研究數千種胜肽序列。認識這項工作後，我希望把它的故事帶到日本。', ['PROTAI Beauty & Wellness', '臺灣三凡生技']),
+      p('2022 年，父親生病時，我在離開臺灣多年後回到家鄉。\n在那之前，我並未充分了解他的公司正在進行什麼研究。第一次閱讀 PROTAI 的研究資料時，我立刻感覺到：這是值得讓世界認識的特別事物。'),
+      pWithBold('從那時起，我在臺灣從零開始尋找銷售管道，以及懷抱同樣熱情的合作夥伴。\n在大家的大力支持下，截至 2025 年 9 月，我們累計售出 {{BOTTLES_SOLD}} 瓶。我由衷感謝一路同行的每一位。', ['截至 2025 年 9 月，我們累計售出 {{BOTTLES_SOLD}} 瓶']),
+      pWithBold('經歷這一切，我深刻體會到：重要的不只是胜肽本身，也包括希望善用它、認真投入其中的人們的心意。', ['胜肽本身', '人們的心意']),
+      pWithBold('與其把 PROTAI 當作另一項生物科技產品，我更願意把它看成一份溫柔的關心——在疲倦與忙碌的日子裡，為日常肌膚保養留一點空間。', ['一份溫柔的關心']),
+      p('我們常說：「眼睛是靈魂之窗。」當這扇窗感到疲倦時，許多人曾告訴我們：'),
+      p('「PROTAI 真的讓我感到安慰。」'),
+      pWithBold('分享這些心聲的，不只有年長者，也有正在準備考試的學生、長時間面對螢幕工作的專業人士，以及數位生活中的許多人。我們希望為他們提供一段用心照顧眼周肌膚的時光。', ['用心照顧眼周肌膚的時光']),
+      pWithBold('這就是我稱 PROTAI 為「幸福的胜肽」的原因。它的使命簡單而有力量：讓我們的世界與日常生活更加明亮、更加充實。對我而言，這才是 PROTAI 真正的價值。', ['「幸福的胜肽」']),
+      p('結合臺灣母公司的先進生物科技，以及日本的精準製造與職人工藝，我希望以最真誠、最有人情味的方式，把這份心意帶給需要的人。這不只是我的夢想，也成為我一生投入的目標。'),
+      p('自從遇見 PROTAI，這份工作也讓我找到個人的使命感。每當有人理解它為何對我重要，我都感到深深的喜悅與意義。'),
+      p('2025 年，我將全部的時間與心力投入 PROTAI 在日本的發展。比任何成果更重要的，是我們的工作能持續為他人帶來幸福。'),
+      p('在臺灣，我遇見許多人，他們分享自己的故事，讓這段旅程對我更有意義。每一次相遇，都留在我的心中。'),
+      pWithBold('現在，我想邀請您透過誕生於日本京都的生活保養品牌 IPPONGI，走進這段故事，與我們一起懷抱夢想。', ['日本京都', 'IPPONGI']),
+      p('衷心感謝您撥空閱讀這封信。我由心底向您致上最深的謝意。'),
+      { type: 'h3', text: '【PROTAI－安全檢驗與發明專利】' },
+      { type: 'h5', text: '已於美國個人護理產品協會（PCPC）登錄，國際化妝品成分名稱（INCI）為「Pentapeptide-80」。' },
+      img('/media/2025/11/image-1.webp'),
+      { type: 'h5', text: '美國發明專利編號：ASB0004US' },
+      img('/media/2025/11/image-2.webp'),
+      { type: 'h5', text: '臺灣發明專利編號：I674124' },
+      img('/media/2025/11/image-3.webp'),
+      { type: 'h5', text: 'SGS 試驗報告：在報告記載的檢測條件下，提交的樣本未檢出列示的重金屬與微生物。' },
+      img('/media/2025/11/image-6.webp'),
+      img('/media/2025/11/image-8.webp'),
+      img('/media/2025/11/image-9.webp'),
+      img('/media/2025/11/image-7.webp'),
     ],
   },
   {
@@ -49,21 +99,46 @@ const specs: PageSpec[] = [
       p('點選本頁的「前往報名」按鈕，前往外部報名頁面。'),
       h2('步驟 2：查看講座資訊'),
       p('先閱讀講座內容，再往下查看可報名的日期、時間與剩餘名額。'),
-      img('/media/2026/06/1.webp'),
+      img('/media/2026/10/webinar-zh-step-2.png', '繁體中文報名頁顯示兩個線上講座場次及時間'),
       h2('步驟 3：選擇場次'),
       p('選擇適合自己的時段。外部平台可能以「Select」或「Added to cart」顯示已選擇的場次；這場講座不收取報名費。'),
-      img('/media/2026/06/2.webp'),
+      img('/media/2026/10/webinar-zh-step-3.png', '繁體中文報名頁選擇晚間線上講座場次的按鈕'),
       h2('步驟 4：填寫資料'),
       p('依外部表單填寫姓名、電話號碼與電子郵件，並再次確認聯絡資訊正確，以便接收講座連結及提醒。'),
-      img('/media/2026/06/5.webp'),
+      img('/media/2026/10/webinar-zh-step-4.png', '繁體中文報名表單的姓名、電話與其他資料欄位'),
       h2('步驟 5：確認報名'),
       p('送出前請檢查場次與個人資料，並閱讀外部網站的相關說明。'),
-      img('/media/2026/06/7.webp'),
+      img('/media/2026/10/webinar-zh-step-5.png', '繁體中文確認個人資料視窗及確認報名按鈕'),
       h2('步驟 6：收取參加連結'),
       p('報名完成後，請留意確認郵件或簡訊中的參加連結。若沒有收到，請檢查垃圾郵件與填寫的聯絡資訊。'),
-      img('/media/2026/06/8.webp'),
+      img('/media/2026/10/webinar-zh-step-6.png', '繁體中文報名成功通知及參加場次資訊'),
+      p('幾分鐘內，您將收到一封確認電子郵件'),
+      p('電子郵件主旨：感謝您的報名參加線上研討會！準備好揭開護眼健康的三大秘密'),
+      p('當天我們將與您分享「守護眼睛健康的 3 個秘密」，敬請期待！'),
+      img('/media/2026/10/webinar-zh-step-6-email-top.png', '繁體中文線上講座確認郵件的主旨與內文上半部'),
+      p('此電子郵件下方附有進入線上講座的連結'),
+      img('/media/2026/10/webinar-zh-step-6-email-bottom.png', '繁體中文線上講座確認郵件的參加連結與內文下半部'),
       h2('步驟 7：準時加入講座'),
       p('講座開始前，使用通知中的專屬連結進入線上會場。若平台要求設定顯示名稱，請依畫面指示完成。'),
+      h2('步驟 8：當日線上研討會登入'),
+      p('線上講座開始前，請使用透過電子郵件或 SMS 簡訊收到的登入連結進入線上講座'),
+      webinarSubstep('步驟 1：若要將個人資料設定畫面切換為中文，請在語言設定中選擇「中文（繁體或簡體）」'),
+      img('/media/2026/10/webinar-zh-step-8-1.png', '個人資料設定畫面中的繁體中文、英文、日文及簡體中文語言選項'),
+      webinarSubstep('步驟 2：選擇個人頭像'),
+      p('請選擇您喜歡的個人頭像'),
+      img('/media/2026/10/webinar-zh-step-8-2.png', '個人資料設定畫面中選擇個人頭像的位置'),
+      webinarSubstep('步驟 3：輸入顯示名稱（本名或自訂名稱）'),
+      p('請輸入您希望在線上研討會期間顯示的名稱（您可以依照個人喜好，使用本名或暱稱）'),
+      img('/media/2026/10/webinar-zh-step-8-3.png', '個人資料設定畫面中輸入顯示名稱的欄位'),
+      webinarSubstep('步驟 4：點擊藍色按鈕'),
+      p('請點擊藍色按鈕以繼續'),
+      img('/media/2026/10/webinar-zh-step-8-4.png', '設定個人資料後按下藍色下一步按鈕'),
+      webinarSubstep('步驟 5：系統自動確認後，再次點擊藍色按鈕，即可完成連線'),
+      p('系統會自動確認您的個人資料'),
+      p('只需再次點擊藍色按鈕，即可完成登入'),
+      img('/media/2026/10/webinar-zh-step-8-5.png', '確認個人資料後按下藍色進入直播按鈕'),
+      p('完成上述步驟後，即可成功進入線上講座'),
+      img('/media/2026/10/webinar-zh-step-8-6.png', '線上講座連線成功後的直播畫面'),
     ],
   },
   {
@@ -76,7 +151,7 @@ const specs: PageSpec[] = [
   },
   {
     source: '/online-shop/', path: '/zh/online-shop/', title: 'PROTAI 線上商店',
-    description: '查看 PROTAI 眼周保養噴霧與補充組的產品資訊和原站購買入口。', blocks: [],
+    description: '比較 PROTAI 眼周保養噴霧與補充組的容量、價格與使用方式，並前往商店查看供貨。', blocks: [],
   },
   {
     source: '/commercial-disclosure/', path: '/zh/commercial-disclosure/', title: '特定商業交易資訊',
@@ -85,8 +160,8 @@ const specs: PageSpec[] = [
       h2('營業者與聯絡方式'), p('營業者：{{LEGAL_NAME}}（IPPONGI LLC）'), p('負責人：WEIFAN CHIA'),
       p('地址：{{CONTACT_ADDRESS}}'), p('電話：+81 80-1524-3643'), p('電子郵件：{{EMAIL}}'),
       p('受理時間：{{BUSINESS_HOURS}}'),
-      h2('售價與其他費用'), p('商品售價請以實際購買頁面所示為準。消費稅及運費依結帳頁面顯示；原站標示每筆訂單運費為 ¥1,000，商品金額超過 ¥10,000 免運。'),
-      h2('付款與配送'), p('原站列示可用信用卡或銀行轉帳付款。訂單確認後通常於 3 至 5 個工作天內出貨，出貨後通常於 7 至 14 天內送達；實際時間請以購買網站公告為準。'),
+      h2('售價與其他費用'), p('商品售價請以商店購買頁面所示為準。目前販售商品金額均達日本國內免運門檻，國內配送免運；海外配送與可能費用請於下單前向商店確認。'),
+      h2('付款與配送'), p('可用信用卡或銀行轉帳付款；實際可用方式以商店結帳頁為準。訂單確認後通常於 3 至 5 個工作天內出貨，出貨後通常於 7 至 14 天內送達；實際時間請以購買網站公告為準。'),
       h2('退換貨條件'), p('未拆封商品可於送達後七日內申請退貨。商品若有瑕疵、損壞或寄錯，請透過聯絡表單或 {{EMAIL}} 與我們聯繫。退貨申請方式與相關細節請參閱退換貨資訊頁。'),
     ],
   },

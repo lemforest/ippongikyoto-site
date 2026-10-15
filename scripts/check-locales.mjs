@@ -47,7 +47,7 @@ if (frenchWebinar('html').attr('lang') !== 'fr' || !/S’inscrire au webinaire/.
 const englishReturns = read('/returns-and-exchanges/')
 if (/[\u3040-\u30ff\u3400-\u9fff]/u.test(englishReturns('main').text())) failures.push('/returns-and-exchanges/: Japanese text remains in English content')
 const chineseWebinar = read('/zh/webinar/')
-const registration = chineseWebinar('a[data-track-external="webinar"]')
+const registration = chineseWebinar('a.primary-link[href*="prosunfun.protai.com.tw"]')
 if (registration.attr('href') !== 'https://prosunfun.protai.com.tw/f/eyecareseminar') failures.push('/zh/webinar/: Chinese registration URL differs from requested page')
 if (!/[\u3400-\u9fff]/u.test(chineseWebinar('main').text())) failures.push('/zh/webinar/: Chinese content missing')
 

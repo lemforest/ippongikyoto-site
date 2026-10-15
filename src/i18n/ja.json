@@ -1,7 +1,7 @@
 {
   "nav": {
     "home": "ホーム",
-    "message": "代表挨拶",
+    "message": "創業者の言葉",
     "about": "会社案内",
     "webinar": "ウェビナー",
     "product": "PROTAI",
@@ -35,18 +35,18 @@
     "product": "日々のケア",
     "productText": "毎日の習慣に寄り添う、ふたつの形。",
     "view": "製品を見る",
-    "original": "元のショップで購入する",
+    "original": "ショップで製品を見る",
     "contact": "お問い合わせ",
     "questions": "よくある質問",
     "register": "お申し込み",
     "source": "元のページを見る",
-    "archive": "お買い物は現在、元のサイトで承っています。",
+    "archive": "ご注文とお支払いはショップサイトで完了します。",
     "details": "製品について",
     "gallery": "写真資料",
     "productOverview": "製品概要",
     "productName": "アイスキンケアミスト",
     "madeInJapan": "日本製",
-    "founderNote": "代表挨拶",
+    "founderNote": "創業者の言葉",
     "certification": "安全性に関する認証・発明特許",
     "kind": {
       "about": "会社案内",
@@ -65,6 +65,11 @@
       "ペプチド成分を配合し、香料とアルコールを加えない処方です。",
       "目薬ではなく、目元の肌にうるおいを与える化粧品です。"
     ],
+    "highlights": [
+      { "title": "日本製", "body": "目元の肌にうるおいを与える、日本製の化粧品ミスト。" },
+      { "title": "ペプチド成分", "body": "ペプチド成分を配合。成分名は医療効果を示すものではありません。" },
+      { "title": "香料・アルコール無添加", "body": "香料とアルコールを加えない処方。使用前に全成分をご確認ください。" }
+    ],
     "heroProduct": "目もと用スキンケアミスト",
     "sectionLabels": {
       "intro": "はじめに",
@@ -78,8 +83,9 @@
       "PROTAI 誕生の物語"
     ],
     "closingQuote": "目は心の窓。",
-    "heroAudience": "長時間画面を見る毎日に。目元の肌へ、ひと吹きのうるおい。",
-    "heroPoem": "宇宙と世界をつなぐ、あなたの内なる光へ。",
+    "quoteOpen": "「", "quoteClose": "」",
+    "heroAudience": "長時間画面を見る毎日に。\n目元の肌へ、ひと吹きのうるおい。",
+    "heroPoem": "宇宙と世界を、あなたの瞳に宿る光へつなぐ。",
     "webinarAction": "無料ウェビナーを見る",
     "originCopy": [
       "PROTAIは台湾のPROSUNFUN Biotechによるペプチド研究に着想を得て、日本で製造する目元用化粧品として届けられています。",

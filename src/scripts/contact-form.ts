@@ -28,6 +28,9 @@ if (form) {
     } catch {
       status.textContent = form.dataset.error || ''
     } finally {
+      const challenge = form.querySelector<HTMLElement>('.cf-turnstile')
+      const turnstile = (window as typeof window & { turnstile?: { reset: (element: HTMLElement) => void } }).turnstile
+      if (challenge && turnstile) turnstile.reset(challenge)
       button.disabled = false
       button.textContent = form.dataset.send || ''
     }

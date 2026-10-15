@@ -24,7 +24,7 @@ export function productPath(locale: Locale, format: ProductFormat = 'single') {
 const routeMap = legacyRoutes as Record<string, string>
 export const currentPath = (path: string) => routeMap[path] || path
 
-const sourcePages = resolveFactTokens((pages as SitePage[]).map(applyEditorialOverrides))
+const sourcePages = (pages as SitePage[]).map((page) => resolveFactTokens(applyEditorialOverrides(page), page.lang))
   .filter((page) => !new Set([
     '/front-page/', '/fr/accueil/', '/fr/home-francais/', '/ja/ホーム/', '/ja/home-日本語/', '/th/หน้าแรก/', '/th/home-ไทย/',
     '/ja/category/uncategorized/', '/product-category/uncategorized/', '/shop/', '/testimonials/',
@@ -43,6 +43,11 @@ const sourcePages = resolveFactTokens((pages as SitePage[]).map(applyEditorialOv
 const formatOf = (path: string): ProductFormat => path.includes('20ml') ? 'refill' : 'single'
 
 const localizedPages = sourcePages.map((page) => {
+  if (page.path === '/fr/faq/') return { ...page, title: 'Questions fréquentes' }
+  if (page.path === '/founder-message/') return { ...page, title: 'Founder’s note' }
+  if (page.path === '/ja/founder-message/') return { ...page, title: '創業者の言葉' }
+  if (page.path === '/fr/founder-message/') return { ...page, title: 'Le mot du fondateur' }
+  if (page.path === '/th/founder-message/') return { ...page, title: 'ข้อความจากผู้ก่อตั้ง' }
   if (page.kind === 'product') {
     const format = formatOf(page.path)
     return { ...page, alternates: Object.fromEntries((['en', 'ja', 'fr', 'th', 'zh'] as Locale[]).map((locale) => [locale, productPath(locale, format)])) }
@@ -83,6 +88,13 @@ const frenchWebinar: SitePage = {
   blocks: frenchWebinarBlocks, images: [],
 }
 
+const frenchShop: SitePage = {
+  ...localizedPages.find((page) => page.path === '/online-shop/')!,
+  path: '/fr/online-shop/', lang: 'fr', kind: 'shop', title: 'Boutique en ligne PROTAI',
+  description: 'Comparez les deux formats de la brume PROTAI et consultez leurs informations avant de rejoindre la boutique.',
+  text: '', blocks: [], images: [],
+}
+
 const privacyPages: SitePage[] = (['en', 'ja', 'fr', 'th', 'zh'] as Locale[]).map((locale) => ({
   path: privacyPath(locale), lang: locale, kind: 'privacy', title: privacyCopy[locale].title,
   description: privacyCopy[locale].description, sourceUrl: '/', text: '', blocks: [], images: [],
@@ -92,10 +104,11 @@ const privacyPages: SitePage[] = (['en', 'ja', 'fr', 'th', 'zh'] as Locale[]).ma
 const chinesePages = resolveFactTokens(createChinesePages(localizedPages), 'zh')
 const chineseByEnglish = new Map(chinesePages.map((page) => [page.alternates.en, page.path]))
 
-export const catalogPages: SitePage[] = [...localizedPages, ...generatedProductPages, frenchWebinar, ...privacyPages, ...chinesePages].map((page) => {
+export const catalogPages: SitePage[] = [...localizedPages, ...generatedProductPages, frenchWebinar, frenchShop, ...privacyPages, ...chinesePages].map((page) => {
   const englishPath = page.lang === 'en' ? page.path : page.alternates.en
   const chinesePath = englishPath ? chineseByEnglish.get(englishPath) : undefined
   const withChinese = chinesePath ? { ...page, alternates: { ...page.alternates, zh: chinesePath } } : page
+  if (withChinese.kind === 'shop') return { ...withChinese, alternates: Object.fromEntries((['en', 'ja', 'fr', 'th', 'zh'] as Locale[]).map((locale) => [locale, `${locale === 'en' ? '' : `/${locale}`}/online-shop/`])) }
   return withChinese.path === '/fr/webinar/' ? withChinese
     : withChinese.path === '/ja/webinar/' || withChinese.path === '/th/webinar/' || withChinese.path === '/zh/webinar/'
       ? { ...withChinese, alternates: { ...withChinese.alternates, fr: '/fr/webinar/' } }

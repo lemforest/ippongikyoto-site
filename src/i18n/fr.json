@@ -35,12 +35,12 @@
     "product": "Le rituel quotidien",
     "productText": "Deux formats pour une routine attentive.",
     "view": "Découvrir le produit",
-    "original": "Continuer vers la boutique d’origine",
+    "original": "Voir dans la boutique",
     "contact": "Nous contacter",
     "questions": "Questions fréquentes",
     "register": "Accéder à l’inscription",
     "source": "Voir la page d’origine",
-    "archive": "Les achats restent disponibles sur le site d’origine.",
+    "archive": "La commande et le paiement se terminent sur le site de la boutique.",
     "details": "Détails du produit",
     "gallery": "Images",
     "productOverview": "Présentation du produit",
@@ -65,6 +65,11 @@
       "Formulée avec un peptide, sans parfum ni alcool ajoutés.",
       "Un cosmétique hydratant, ni collyre ni traitement médical."
     ],
+    "highlights": [
+      { "title": "Fabriqué au Japon", "body": "Une brume cosmétique japonaise pour hydrater la peau du contour des yeux." },
+      { "title": "Ingrédient peptidique", "body": "Contient un peptide ; son nom ne constitue pas une allégation médicale." },
+      { "title": "Sans parfum ni alcool ajoutés", "body": "Sans parfum ni alcool ajoutés. Vérifiez la liste complète des ingrédients avant usage." }
+    ],
     "heroProduct": "Brume de soin contour des yeux",
     "sectionLabels": {
       "intro": "INTRODUCTION",
@@ -78,8 +83,9 @@
       "Les origines de PROTAI"
     ],
     "closingQuote": "Les yeux sont le miroir de l’âme.",
+    "quoteOpen": "« ", "quoteClose": " »",
     "heroAudience": "Pour les journées devant les écrans. Une touche d’hydratation pour la peau du contour des yeux.",
-    "heroPoem": "Relier l’univers et le monde à votre lumière intérieure.",
+    "heroPoem": "Relier l’univers et le monde à la lumière qui brille dans vos yeux.",
     "webinarAction": "Découvrir le webinaire gratuit",
     "originCopy": [
       "PROTAI s’inspire des recherches sur les peptides de PROSUNFUN Biotech à Taïwan et est fabriqué au Japon comme soin cosmétique du contour des yeux.",

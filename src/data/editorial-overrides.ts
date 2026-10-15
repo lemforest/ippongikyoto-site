@@ -1,8 +1,9 @@
 import type { ContentBlock, SitePage } from './types'
+import { restoreFounderBlocks } from './founder-restoration'
+import facts from './facts.json'
 
-// The archived source copy contained medical claims that are not appropriate for
-// an eye-area cosmetic. Keep the archive untouched in pages.json and publish
-// these reviewable, locale-specific replacements instead.
+// Keep the archive untouched in pages.json. Founder letters retain their source
+// narrative and documents, with a few scoped copy edits in founder-restoration.
 const founderPaths = new Set([
   '/a-message-from-the-representative-2/',
   '/ja/a-message-from-the-representative/',
@@ -11,98 +12,75 @@ const founderPaths = new Set([
 ])
 const companyPaths = new Set(['/about/', '/ja/会社案内/', '/fr/qui-sommes-nous/', '/th/ข้อมูลบริษัท/'])
 
-const founder: Record<string, string[]> = {
-  ja: [
-    '皆さま、こんにちは。一凡木合同会社の代表社員、CHIA WEIFANです。',
-    'PROTAIの原点は、台湾のPROSUNFUNバイオテック研究開発社が続けてきたペプチド研究にあります。2022年、父の病気をきっかけに台湾へ戻り、その研究に初めて深く触れました。',
-    '私はこの素材を、日本で製造する目元の肌用化粧品として届けることにしました。PROTAIアイスキンケアミストは、目元の肌にうるおいを与えるための製品です。目薬ではなく、眼疾患の治療を目的としていません。',
-    '「幸せのペプチド」は、私たちが日々の小さなケアに込めた気持ちを表す言葉です。これからも製品の情報を正確に伝え、安心して選んでいただけるブランドを京都から育てていきます。',
-    '最後までお読みいただいた皆さまに、心より感謝申し上げます。',
-  ],
-  en: [
-    'Hello, I am WEIFAN CHIA, Managing Partner of IPPONGI LLC in Japan.',
-    'PROTAI began with peptide research at PROSUNFUN Biotech in Taiwan. When I returned to Taiwan in 2022 during my father’s illness, I took a closer look at that research and began exploring how to bring the ingredient to Japan.',
-    'We now present PROTAI as a Japanese-made cosmetic mist for moisturizing the skin around the eyes. It is not an eye drop and is not intended to treat eye conditions.',
-    '“The peptide of happiness” expresses the care we put into an everyday ritual; it is not a claim of medical effect. From Kyoto, I want to build a brand that speaks clearly about what its product is and what it is not.',
-    'Thank you for taking the time to read my message.',
-  ],
-  fr: [
-    'Bonjour, je suis WEIFAN CHIA, associé gérant de IPPONGI LLC au Japon.',
-    'PROTAI trouve son origine dans les recherches sur les peptides menées par PROSUNFUN Biotech à Taïwan. De retour à Taïwan en 2022, lors de la maladie de mon père, j’ai découvert ces travaux de plus près et commencé à envisager leur développement au Japon.',
-    'Nous présentons aujourd’hui PROTAI comme une brume cosmétique fabriquée au Japon pour hydrater la peau du contour des yeux. Ce n’est pas un collyre et elle n’est pas destinée à traiter les maladies oculaires.',
-    '« Le peptide du bonheur » exprime l’attention que nous portons aux petits gestes du quotidien ; ce n’est pas une promesse d’effet médical. Depuis Kyoto, je souhaite développer une marque qui décrit son produit avec clarté.',
-    'Merci d’avoir pris le temps de lire ce message.',
-  ],
-  th: [
-    'สวัสดีครับ ผม WEIFAN CHIA หุ้นส่วนผู้จัดการของ IPPONGI LLC ในประเทศญี่ปุ่น',
-    'จุดเริ่มต้นของ PROTAI มาจากงานวิจัยเปปไทด์ของ PROSUNFUN Biotech ในไต้หวัน เมื่อผมกลับไต้หวันในปี 2022 ระหว่างที่คุณพ่อป่วย ผมได้ศึกษางานวิจัยนี้อย่างใกล้ชิดและเริ่มคิดว่าจะนำส่วนผสมนี้มาพัฒนาในญี่ปุ่นอย่างไร',
-    'ปัจจุบัน PROTAI เป็นเครื่องสำอางชนิดสเปรย์ที่ผลิตในญี่ปุ่น เพื่อเพิ่มความชุ่มชื้นให้ผิวรอบดวงตา ไม่ใช่ยาหยอดตาและไม่ได้มีไว้รักษาโรคตา',
-    '“เปปไทด์แห่งความสุข” เป็นถ้อยคำที่สื่อถึงความใส่ใจในกิจวัตรเล็ก ๆ ของทุกวัน ไม่ใช่คำกล่าวอ้างผลทางการแพทย์ ผมต้องการสร้างแบรนด์จากเกียวโตที่สื่อสารข้อมูลสินค้าอย่างชัดเจน',
-    'ขอบคุณที่สละเวลาอ่านข้อความนี้ครับ',
-  ],
-}
-
-const company: Record<string, { headings: string[]; paragraphs: string[] }> = {
-  ja: {
-    headings: ['京都の一凡木', '事業内容', '会社概要'],
-    paragraphs: [
-      '一凡木合同会社は京都を拠点に、目元の肌の保湿を目的とした化粧品PROTAIをご紹介しています。PROTAIは日本製のアイスキンケアミストであり、目薬や眼疾患の治療薬ではありません。',
-      '製品の情報を明確に伝え、日々のスキンケアに取り入れやすい形でお届けすることを大切にしています。',
-      '化粧品事業に加え、オンラインセミナーや多言語翻訳・通訳、国際取引に関する業務にも取り組んでいます。',
-      '会社名：一凡木合同会社。設立：2025年3月10日。所在地：〒{{POSTAL_CODE}} 京都府京都市下京区大黒町227 第2京都ビル402。お問い合わせ：{{EMAIL}}。',
-    ],
-  },
+// Restore the archived About pages' full structure and image. Only product
+// efficacy wording is updated; the Kyoto story, values, services, vision and
+// company facts remain in their original order.
+const companyEdits: Record<string, Record<number, string>> = {
   en: {
-    headings: ['IPPONGI in Kyoto', 'Our work', 'Company details'],
-    paragraphs: [
-      'Based in Kyoto, IPPONGI LLC presents PROTAI, a Japanese-made cosmetic mist for moisturizing the skin around the eyes. It is not an eye drop or a treatment for eye conditions.',
-      'We aim to describe the product clearly so customers can decide whether it belongs in their skincare routine.',
-      'Alongside cosmetics, the company works on online seminars, multilingual translation and interpretation, and international business support.',
-      'Company: IPPONGI LLC. Established: 10 March 2025. Office: #402 Daini-Kyoto-Bldg., 227 Daikokucho, Shimogyo-ku, Kyoto {{POSTAL_CODE}}, Japan. Contact: {{EMAIL}}.',
-    ],
+    4: 'Based in the historic city of Kyoto, IPPONGI LLC was founded with a belief that caring for ourselves begins with attention to everyday life. We created PROTAI, a Japanese-made cosmetic mist for moisturizing the skin around the eyes. It is not an eye drop or a treatment for eye conditions. Through our work, we hope to accompany each person’s colorful journey in life with care, clarity and balance.',
+    7: 'This principle guides the care we put into PROTAI. For us, eye-area skincare is one small part of a considered daily routine, alongside moments of rest and attention to well-being.',
+    8: 'Our approach is rooted in: ● Less is more – Simplicity leaves room for mindful care ● Nature knows best – Respect the body and its everyday rhythms ● No shortcuts – Thoughtful care takes time and consistency',
+    9: 'We are not here to “sell cures.” We offer a gentle choice for people who want to make eye-area skincare part of their daily routine.',
+    11: 'Eye-Area Skincare – PROTAI We develop and offer a Japanese-made cosmetic mist to moisturize the skin around the eyes as part of daily skincare. PROTAI is non-medicated; it is not an eye drop or a treatment for eye conditions.',
+    12: 'Education & Awareness We host webinars and collaborate with professionals to share information about eye-area skincare, digital lifestyles and everyday self-care.',
+    16: 'We hope for a world where: ● Children have time to rest and play beyond their screens ● Families can make informed choices about everyday self-care ● People rediscover the value of slowing down and keeping things simple',
+  },
+  ja: {
+    5: '私たちは、現代のデジタル社会に寄り添い、毎日のスキンケアとして取り入れやすい製品をご紹介しています。',
+    6: 'PROTAI（プロタイ）は、目元の肌にうるおいを与える日本製の化粧品ミストです。目薬や眼疾患の治療薬ではありません。',
+    10: 'この信念のもと、PROTAIは生まれました。目元の肌をいたわることも、自分と向き合う日々のセルフケアのひとつだと考えています。',
+    12: '私たちのものづくりを支える価値観： ● Less is more（少ないことは豊かさ） – シンプルな習慣を大切にすること ● Nature knows best（自然を尊重する） – 身体と日々のリズムに目を向けること ● No shortcuts（近道ではなく、丁寧な歩みを） – 時間をかけて、継続して取り組むこと',
+    13: '私たちは「治すもの」を売るために存在しているのではありません。目元のスキンケアを見つめなおす日々に、そっと寄り添う選択肢のひとつでありたいと願っています。',
+    15: '1. 目元のスキンケア製品 – PROTAI（プロタイ） 目元の肌にうるおいを与える日本製の化粧品ミストをご紹介しています。目薬や眼疾患の治療薬ではなく、毎日のスキンケアに取り入れるための製品です。',
+    20: '私たちが目指す世界： ● 子どもたちが画面から離れて休む時間も大切にできること ● 家族みんなが、日々のセルフケアについて納得して選べること ● 人々が、ゆっくりとしたシンプルな暮らしのよさを見つめなおせること',
+    24: '所在地：{{CONTACT_ADDRESS}}',
   },
   fr: {
-    headings: ['IPPONGI à Kyoto', 'Nos activités', 'L’entreprise'],
-    paragraphs: [
-      'Basée à Kyoto, IPPONGI LLC présente PROTAI, une brume cosmétique fabriquée au Japon pour hydrater la peau du contour des yeux. Ce n’est ni un collyre ni un traitement des maladies oculaires.',
-      'Nous souhaitons décrire le produit avec clarté afin que chacun puisse décider de sa place dans sa routine de soin.',
-      'En complément des cosmétiques, l’entreprise organise des webinaires et propose des services de traduction, d’interprétation et d’accompagnement du commerce international.',
-      'Entreprise : IPPONGI LLC. Création : 10 mars 2025. Adresse : #402 Daini-Kyoto-Bldg., 227 Daikokucho, Shimogyo-ku, Kyoto {{POSTAL_CODE}}, Japon. Contact : {{EMAIL}}.',
-    ],
+    5: 'Notre mission : proposer un soin cosmétique simple pour la peau du contour des yeux, adapté au rythme de la vie numérique, sans renoncer à l’harmonie ni à la simplicité.',
+    6: 'Nous avons créé PROTAI, une brume cosmétique fabriquée au Japon pour hydrater la peau du contour des yeux. Ce n’est ni un collyre ni un traitement des maladies oculaires.',
+    10: 'Ce principe guide le soin apporté à PROTAI. Pour nous, prendre soin de la peau du contour des yeux fait partie d’une routine quotidienne attentive, aux côtés du repos et du bien-être.',
+    11: 'Notre approche repose sur : ● Moins, c’est mieux — La simplicité laisse place à une attention quotidienne ● Respecter la nature — Écouter son corps et son rythme ● Pas de raccourcis — Une routine réfléchie demande du temps et de la régularité',
+    12: 'Nous ne sommes pas là pour « vendre des remèdes ». Nous proposons un choix doux pour celles et ceux qui souhaitent intégrer le soin du contour des yeux à leur quotidien.',
+    14: '1. Soin du contour des yeux – PROTAI Nous proposons une brume cosmétique fabriquée au Japon pour hydrater la peau du contour des yeux au quotidien. PROTAI n’est ni un médicament, ni un collyre, ni un traitement des maladies oculaires.',
+    19: 'Nous imaginons un monde où : ● Les enfants ont aussi le temps de se reposer loin des écrans ● Les familles font des choix éclairés pour leurs soins quotidiens ● Chacun redécouvre la valeur d’une vie plus lente et plus simple',
   },
   th: {
-    headings: ['IPPONGI ในเกียวโต', 'การดำเนินงาน', 'ข้อมูลนิติบุคคล'],
-    paragraphs: [
-      'IPPONGI LLC ตั้งอยู่ในเกียวโตและนำเสนอ PROTAI สเปรย์เครื่องสำอางที่ผลิตในญี่ปุ่นเพื่อเพิ่มความชุ่มชื้นให้ผิวรอบดวงตา ไม่ใช่ยาหยอดตาหรือผลิตภัณฑ์รักษาโรคตา',
-      'เรามุ่งสื่อสารข้อมูลสินค้าอย่างชัดเจน เพื่อให้ลูกค้าตัดสินใจได้ว่าสินค้าเหมาะกับกิจวัตรดูแลผิวของตนหรือไม่',
-      'นอกจากธุรกิจเครื่องสำอาง บริษัทยังจัดสัมมนาออนไลน์และให้บริการแปล ล่าม และสนับสนุนธุรกิจระหว่างประเทศ',
-      'บริษัท: IPPONGI LLC ก่อตั้ง: 10 มีนาคม 2025 ที่ตั้ง: ห้อง 402 อาคาร Daini-Kyoto, 227 Daikokucho, Shimogyo-ku, Kyoto {{POSTAL_CODE}}, ญี่ปุ่น ติดต่อ: {{EMAIL}}',
-    ],
+    1: 'เกี่ยวกับ IPPONGI',
+    4: 'IPPONGI LLC ตั้งอยู่ในเมืองเกียวโตที่มีประวัติศาสตร์ยาวนาน เราเชื่อว่าการดูแลตนเองเริ่มจากการใส่ใจชีวิตประจำวัน PROTAI คือสเปรย์เครื่องสำอางที่ผลิตในญี่ปุ่นเพื่อเพิ่มความชุ่มชื้นให้ผิวรอบดวงตา ไม่ใช่ยาหยอดตาหรือผลิตภัณฑ์รักษาโรคตา เราหวังว่าจะร่วมเดินทางกับทุกคนด้วยความใส่ใจ ความชัดเจน และความสมดุล',
+    7: 'ความเชื่อนี้เป็นแนวทางในการพัฒนา PROTAI สำหรับเรา การดูแลผิวรอบดวงตาเป็นส่วนหนึ่งของกิจวัตรประจำวันที่ใส่ใจตนเอง ควบคู่ไปกับการพักผ่อน',
+    8: 'แนวทางของเรายึดถือคุณค่าต่อไปนี้: ● Less is more (น้อยแต่มาก) – ให้ความสำคัญกับความเรียบง่ายในชีวิตประจำวัน ● Nature knows best (เคารพธรรมชาติ) – ใส่ใจร่างกายและจังหวะชีวิตของตนเอง ● No shortcuts (ไม่มีทางลัด) – การดูแลอย่างตั้งใจต้องใช้เวลาและความสม่ำเสมอ',
+    9: 'เราไม่ได้ขายผลิตภัณฑ์เพื่อรักษาโรค แต่ต้องการเสนอทางเลือกที่อ่อนโยนสำหรับผู้ที่อยากดูแลผิวรอบดวงตาในชีวิตประจำวัน',
+    11: '1. ผลิตภัณฑ์ดูแลผิวรอบดวงตา – PROTAI เรานำเสนอสเปรย์เครื่องสำอางที่ผลิตในญี่ปุ่นเพื่อเพิ่มความชุ่มชื้นให้ผิวรอบดวงตา เป็นผลิตภัณฑ์สำหรับกิจวัตรดูแลผิวประจำวัน ไม่ใช่ยาหยอดตาหรือผลิตภัณฑ์รักษาโรคตา',
+    16: 'โลกที่เราอยากเห็น: ● เด็ก ๆ มีเวลาพักผ่อนและเล่นโดยห่างจากหน้าจอ ● ครอบครัวเลือกวิธีดูแลตนเองในชีวิตประจำวันจากข้อมูลที่ชัดเจน ● ผู้คนเห็นคุณค่าของชีวิตที่เรียบง่ายและไม่เร่งรีบ',
+    18: 'ชื่อบริษัท: IPPONGI LLC',
+    20: 'ที่ตั้ง: {{CONTACT_ADDRESS}}',
   },
 }
 
 function editorialBlocks(page: SitePage): ContentBlock[] {
-  if (founderPaths.has(page.path)) {
-    const portrait = page.blocks.find((block) => block.type === 'image')
-    return [
-      { type: 'h2', text: page.title },
-      ...(portrait ? [portrait] : []),
-      ...founder[page.lang].map((text) => ({ type: 'p', text })),
-    ]
-  }
-  const copy = company[page.lang]
-  return [
-    { type: 'h2', text: page.title },
-    ...copy.headings.flatMap((heading, index) => [
-      { type: 'h2', text: heading },
-      ...copy.paragraphs.slice(index === 0 ? 0 : index === 1 ? 2 : 3, index === 0 ? 2 : index === 1 ? 3 : 4).map((text) => ({ type: 'p', text })),
-    ]),
-  ]
+  if (founderPaths.has(page.path)) return restoreFounderBlocks(page)
+  const edits = companyEdits[page.lang]
+  return page.blocks.map((block, index) => edits[index] ? { ...block, text: edits[index] } : block)
 }
 
 export function applyEditorialOverrides(page: SitePage): SitePage {
+  if (page.kind === 'product' && page.lang === 'en') {
+    const oldShelfLife = '2 years'
+    const newShelfLife = `${facts.products.shelfLifeMonths / 12} years`
+    const oldSection = `【Shelf Life】\n${oldShelfLife}`
+    if (page.blocks.filter((block) => block.text === oldShelfLife).length !== 1 || !page.text.includes(oldSection)) {
+      throw new Error(`Unexpected product shelf-life source: ${page.path}`)
+    }
+    return {
+      ...page,
+      blocks: page.blocks.map((block) => block.text === oldShelfLife ? { ...block, text: newShelfLife } : block),
+      text: page.text.replace(oldSection, `【Shelf Life】\n${newShelfLife}`),
+    }
+  }
   if (page.path === '/ja/特定商取引法に基づく表記/') {
     const text = page.text
+      .replace('〒{{POSTAL_CODE}} 京都府京都市下京区七条通油小路東入大黒町227番地\n第2キョートビル402', '{{CONTACT_ADDRESS}}')
+      .replace('消費税、送料（全国一律 ¥1,000（税込）、商品10,000円以上の購入で送料無料。）', '商品価格・消費税は購入ページでご確認ください。現在の取扱商品は日本国内への配送が無料です。海外への配送可否・送料はご注文前にお問い合わせください。')
       .replace('商品発送後の返品・返却等はお受け致しかねます。 商品が不良の場合のみ良品と交換致します。', '未開封の商品は、商品到着後7日以内に返品をお申し出いただけます。不良品・破損品・誤配送の場合はお問い合わせください。')
       .replace('商品出荷より７日以内にご連絡下さい。', '商品到着後7日以内にご連絡ください。')
     // The archived table is a flat list rather than renderable table rows.
@@ -119,7 +97,7 @@ export function applyEditorialOverrides(page: SitePage): SitePage {
         if (text === 'Choose a profile icon that you prefer.' && page.blocks.indexOf(block) === 65) text = 'Select English in the language settings if needed.'
       }
       if (page.lang === 'th') text = text.replace('หรือ or', 'หรือ')
-      return { ...block, text }
+      return { ...block, text: text.replace(/[👉⚠]\uFE0F?/gu, '').trim() }
     }).filter((_, index) => !(page.lang === 'th' && index === 19))
     return { ...page, blocks, text: blocks.map((block) => block.text || '').join('\n') }
   }

@@ -2,10 +2,11 @@
 import type { ContentBlock } from '../data/types'
 import type { SitePage } from '../data/types'
 import SiteImage from './SiteImage.astro'
+import WebinarRegistrationOptions from './WebinarRegistrationOptions.astro'
 import { contentImageAlt } from '../data/image-alt'
 
-interface Props { page: SitePage; blocks?: ContentBlock[]; skipFirstHeading?: boolean; certificationDescriptions?: boolean }
-const { page, blocks = [], skipFirstHeading = false, certificationDescriptions = false } = Astro.props
+interface Props { page: SitePage; blocks?: ContentBlock[]; skipFirstHeading?: boolean; certificationDescriptions?: boolean; founderNarrative?: boolean }
+const { page, blocks = [], skipFirstHeading = false, certificationDescriptions = false, founderNarrative = false } = Astro.props
 let headingSkipped = false
 const filtered = blocks.filter((block) => {
   if (skipFirstHeading && !headingSkipped && /^h[1-4]$/.test(block.type)) { headingSkipped = true; return false }
@@ -13,20 +14,45 @@ const filtered = blocks.filter((block) => {
 })
 const bulletParts = (text: string) => text.split(/\s*●\s*/).map((part) => part.trim()).filter(Boolean)
 const headingText = (text = '') => text.replace(/^🌿\s*/, '')
+const japaneseWebinarRegistration = page.path === '/ja/webinar/'
+  ? page.links.find((link) => link.href.startsWith('https://prosunfun.protai.com.tw/f/'))?.href
+  : undefined
+const founderEmphasis = founderNarrative && page.lang !== 'zh'
+const statementParagraph = { en: 3, ja: 5, fr: 3, th: 3, zh: -1 }[page.lang]
+const reflectionParagraph = { en: 8, ja: 11, fr: 8, th: 9, zh: -1 }[page.lang]
+const quotationParagraph = { en: 11, ja: -1, fr: 11, th: -1, zh: -1 }[page.lang]
 ---
-<div class="prose-flow">
+<div class:list={['prose-flow', filtered.some((block) => block.type === 'registration-options') && 'webinar-registration-flow']}>
   {filtered.map((block, index) => {
-    if (block.type === 'image' && block.url) return <figure class="inline-source-image" data-reveal><SiteImage src={block.url} alt={contentImageAlt(page, block, index, filtered)} sizes="(max-width: 780px) calc(100vw - 40px), 820px" /></figure>
+    const founderParagraphOrdinal = founderEmphasis && block.type === 'p'
+      ? filtered.slice(0, index + 1).filter((item) => item.type === 'p').length - 1
+      : -1
+    if (block.type === 'registration-options') return <WebinarRegistrationOptions locale={page.lang} />
+    if (block.type === 'image' && block.url) {
+      const alt = contentImageAlt(page, block, index, filtered)
+      return <figure class:list={['inline-source-image', certificationDescriptions && 'certification-image']} data-reveal>{certificationDescriptions ? <a href={block.url} target="_blank" rel="noopener noreferrer"><SiteImage src={block.url} alt={alt} sizes="(max-width: 780px) calc(100vw - 40px), 400px" /></a> : <SiteImage src={block.url} alt={alt} sizes="(max-width: 780px) calc(100vw - 40px), 820px" />}{certificationDescriptions && <figcaption aria-hidden="true">{alt}</figcaption>}</figure>
+    }
     if (block.type === 'table') return <div class="table-scroll"><table><tbody>{block.rows?.map((row) => <tr>{row.map((cell) => <td>{cell}</td>)}</tr>)}</tbody></table></div>
+    if (block.type === 'webinar-substep') return <h4 class="webinar-substep" data-reveal>{block.text}</h4>
     if (certificationDescriptions && /^h[5-6]$/.test(block.type)) return <p class="certification-description" data-reveal>{block.text}</p>
     if (/^h[5-6]$/.test(block.type)) return <h3 data-reveal>{headingText(block.text)}</h3>
     if (/^h[1-4]$/.test(block.type)) return <h2 data-reveal>{headingText(block.text)}</h2>
     if (block.type === 'blockquote') return <blockquote data-reveal>{block.text}</blockquote>
     if (block.type === 'li') return <p class="list-line" data-reveal>{block.text}</p>
+    if (block.type === 'p' && japaneseWebinarRegistration && block.text?.includes(japaneseWebinarRegistration)) {
+      const [before, after] = block.text.split(japaneseWebinarRegistration)
+      return <p data-reveal>{before}<a href={japaneseWebinarRegistration} target="_blank" rel="noopener noreferrer">{japaneseWebinarRegistration}</a>{after}</p>
+    }
     if (block.type === 'p' && (block.text?.match(/●/g)?.length || 0) >= 2) {
       const [intro, ...items] = bulletParts(block.text || '')
       return <div class="prose-bullet-group" data-reveal><p class="prose-bullet-intro">{intro}</p><ul>{items.map((item) => <li>{item}</li>)}</ul></div>
     }
-    return <p data-reveal>{block.runs ? block.runs.map((run) => run.bold && run.italic ? <strong><em>{run.text}</em></strong> : run.bold ? <strong>{run.text}</strong> : run.italic ? <em>{run.text}</em> : run.text) : block.text}</p>
+    return <p class:list={{
+      'intentional-line-breaks': (page.path === '/zh/about/' || page.path === '/zh/founder-message/') && block.text?.includes('\n'),
+      'founder-quote': page.path === '/zh/founder-message/' && block.text === '「PROTAI 真的讓我感到安慰。」',
+      'founder-statement': founderParagraphOrdinal >= 0 && founderParagraphOrdinal === statementParagraph,
+      'founder-reflection': founderParagraphOrdinal >= 0 && founderParagraphOrdinal === reflectionParagraph,
+      'founder-quotation': founderParagraphOrdinal >= 0 && founderParagraphOrdinal === quotationParagraph,
+    }} data-reveal>{block.runs ? block.runs.map((run) => run.bold && run.italic ? <strong><em>{run.text}</em></strong> : run.bold ? <strong>{run.text}</strong> : run.italic ? <em>{run.text}</em> : run.text) : block.text}</p>
   })}
 </div>

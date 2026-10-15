@@ -7,13 +7,15 @@ const routes = JSON.parse(readFileSync(new URL('../src/data/legacy-routes.json',
 const redirects = readFileSync(new URL('../dist/_redirects', import.meta.url), 'utf8')
 const root = new URL('../dist/', import.meta.url).pathname
 const failures = []
-const current = (path) => routes[path] || path
+const previewStoreOrigin = process.env.PUBLIC_PREVIEW === '1' ? 'https://ippongikyoto.com' : 'https://shop.ippongikyoto.com'
+const current = (path) => (routes[path] || path).replace(/^https:\/\/shop\.ippongikyoto\.com\//, `${previewStoreOrigin}/`)
+const isStoreUrl = (url) => url.startsWith(`${previewStoreOrigin}/`)
 const built = (path) => existsSync(join(root, path, 'index.html')) || existsSync(join(root, path.slice(1)))
 
 for (const page of pages) {
   const destination = current(page.path)
-  if (!/^\/[\x20-\x7e]*$/.test(destination)) failures.push(`Non-ASCII route: ${destination}`)
-  if (!built(destination)) failures.push(`Missing page: ${page.path} -> ${destination}`)
+  if (!isStoreUrl(destination) && !/^\/[\x20-\x7e]*$/.test(destination)) failures.push(`Non-ASCII route: ${destination}`)
+  if (!isStoreUrl(destination) && !built(destination)) failures.push(`Missing page: ${page.path} -> ${destination}`)
   if (destination !== page.path) {
     for (const encoded of new Set([encodeURI(page.path), encodeURI(page.path).replace(/%[0-9A-F]{2}/g, (part) => part.toLowerCase())])) {
       if (!redirects.split('\n').includes(`${encoded} ${destination} 301`)) failures.push(`Missing 301: ${page.path} -> ${destination}`)

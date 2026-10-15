@@ -3660,7 +3660,7 @@
                 "italic": false
               },
               {
-                "text": "150,000 bottles",
+                "text": "150,000\u00a0bottles",
                 "bold": true,
                 "italic": false
               },
@@ -3690,7 +3690,7 @@
                 "italic": false
               },
               {
-                "text": "150 000 flacons",
+                "text": "150\u00a0000\u00a0flacons",
                 "bold": true,
                 "italic": false
               },
@@ -3720,7 +3720,7 @@
                 "italic": false
               },
               {
-                "text": "150,000 ขวด",
+                "text": "150,000\u00a0ขวด",
                 "bold": true,
                 "italic": false
               }

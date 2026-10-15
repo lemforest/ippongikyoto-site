@@ -450,6 +450,9 @@ html[lang='zh-TW'] .faq-item-shipping .faq-answer p:nth-child(2) { margin-bottom
 @media (min-width: 1024px) {
   html[lang='zh-TW'] .faq-item-fragrance .faq-answer p { max-width: none; white-space: nowrap; }
 }
+@media (min-width: 900px) {
+  html[lang='ja'] .faq-item-ja-packaging .faq-answer p:nth-child(2) { max-width: none; white-space: nowrap; }
+}
 html[lang='th'] .faq-answer p { max-width: 62ch; line-height: 2; }
 .faq-answer strong { color: #52644f; font-weight: 700; }
 .faq-answer a { color: var(--forest); text-decoration: underline; text-underline-offset: 3px; }

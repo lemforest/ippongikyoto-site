@@ -3644,7 +3644,7 @@
     },
     "translations": {
       "en": {
-        "question": "Has PROTAI been sold in other countries?",
+        "question": "Has PROTAI Eye Skin Care Mist been sold in other countries?",
         "nodes": [
           {
             "type": "p",
@@ -3655,17 +3655,27 @@
                 "italic": false
               },
               {
-                "text": " Yes. Products containing PROTAI (INCI: Pentapeptide-80) have been sold in Taiwan, Japan, Singapore, Malaysia, and Thailand.\nAs of September 2026, cumulative sales of products made with the same PROTAI-containing formula had exceeded ",
+                "text": " Yes. In Taiwan, ",
                 "bold": false,
                 "italic": false
               },
               {
-                "text": "150,000 bottles",
+                "text": "PROTAI Skin Care Mist",
                 "bold": true,
                 "italic": false
               },
               {
-                "text": ".",
+                "text": " has already been used by more than tens of thousands of people. ",
+                "bold": false,
+                "italic": false
+              },
+              {
+                "text": "As of December 2024, it has achieved sales of over 50,000 units",
+                "bold": true,
+                "italic": false
+              },
+              {
+                "text": ", with a high level of customer satisfaction.",
                 "bold": false,
                 "italic": false
               }
@@ -3674,7 +3684,7 @@
         ]
       },
       "fr": {
-        "question": "Le PROTAI a-t-il été commercialisé dans d’autres pays ?",
+        "question": "Le PROTAI Brume Soin Contour des Yeux a-t-il déjà été commercialisé dans d’autres pays ?",
         "nodes": [
           {
             "type": "p",
@@ -3685,17 +3695,17 @@
                 "italic": false
               },
               {
-                "text": " Oui. Des produits contenant le peptide PROTAI (nom INCI : Pentapeptide-80) ont été vendus à Taïwan, au Japon, à Singapour, en Malaisie et en Thaïlande.\nEn septembre 2026, les ventes cumulées de produits utilisant la même formule contenant du PROTAI dépassaient ",
+                "text": " Oui. À Taïwan, le ",
                 "bold": false,
                 "italic": false
               },
               {
-                "text": "150 000 flacons",
+                "text": "PROTAI",
                 "bold": true,
                 "italic": false
               },
               {
-                "text": ".",
+                "text": " Brume Soin Contour des Yeux est déjà utilisé par des dizaines de milliers de personnes. En septembre 2025, la marque a dépassée les 80 000 unités vendues, avec un haut niveau de satisfaction client.",
                 "bold": false,
                 "italic": false
               }
@@ -3704,7 +3714,7 @@
         ]
       },
       "th": {
-        "question": "PROTAI มีจำหน่ายในประเทศอื่นหรือไม่?",
+        "question": "PROTAI Eye Skin Care Mist มีการจำหน่ายในต่างประเทศหรือไม่?",
         "nodes": [
           {
             "type": "p",
@@ -3715,13 +3725,8 @@
                 "italic": false
               },
               {
-                "text": " มีค่ะ ผลิตภัณฑ์ที่มีส่วนผสมของเปปไทด์ PROTAI (ชื่อ INCI: Pentapeptide-80) มีการจำหน่ายในไต้หวัน ญี่ปุ่น สิงคโปร์ มาเลเซีย และไทย\nณ เดือนกันยายน 2026 ยอดขายสะสมของผลิตภัณฑ์ที่ใช้สูตรเดียวกันซึ่งมี PROTAI เป็นส่วนผสมมากกว่า ",
+                "text": " มีค่ะ ปัจจุบันมีผู้ใช้จำนวนหลายหมื่นคนใน ไต้หวัน และมียอดขายสะสมมากกว่า 50,000 ชิ้นภายในเดือนธันวาคม 2024 พร้อมกับได้รับความพึงพอใจในระดับสูงจากลูกค้า",
                 "bold": false,
-                "italic": false
-              },
-              {
-                "text": "150,000 ขวด",
-                "bold": true,
                 "italic": false
               }
             ]
@@ -3729,23 +3734,13 @@
         ]
       },
       "ja": {
-        "question": "PROTAIはほかの国でも販売されていますか？",
+        "question": "PROTAIアイスキンケアミストは、ほかの国でも販売されていますか？",
         "nodes": [
           {
             "type": "p",
             "runs": [
               {
-                "text": "A: はい。PROTAI（INCI名：ペンタペプチド-80）を配合した製品は、台湾、日本、シンガポール、マレーシア、タイで販売されています。\n2026年9月時点で、同じPROTAI配合処方を用いた製品の累計販売本数は",
-                "bold": false,
-                "italic": false
-              },
-              {
-                "text": "15万本",
-                "bold": true,
-                "italic": false
-              },
-              {
-                "text": "を超えています。",
+                "text": "A: はい。台湾では、PROTAIアイスキンケアミストをすでに数万人の方にご使用いただいています。2024年12月時点で累計販売数は5万点を超え、高い顧客満足度を得ています。",
                 "bold": false,
                 "italic": false
               }

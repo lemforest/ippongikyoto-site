@@ -17,7 +17,7 @@
   },
   "/faq/": {
     "date": "2026-10-15",
-    "hash": "407c831076eb908808e174b043a7856d4c161924a8acefd920566f5e1825b6aa"
+    "hash": "e9a333256a65c7a4e1223ee46b9c96cb2891b2c3657a2457de4e51c212d4d47c"
   },
   "/founder-message/": {
     "date": "2026-10-13",
@@ -37,7 +37,7 @@
   },
   "/fr/faq/": {
     "date": "2026-10-15",
-    "hash": "69a2c4e6c720f0b3134878687a638fca3a9415c4d993edc31a0f5d9537e706a0"
+    "hash": "c9466fa9339fd2e8a893ebeb4d201d5df353fb928c83c957f1c5759781319dd9"
   },
   "/fr/founder-message/": {
     "date": "2026-10-13",
@@ -81,7 +81,7 @@
   },
   "/ja/faq/": {
     "date": "2026-10-15",
-    "hash": "753f4ea4c7367c4f1e82c38bc98fe7cf86df8fefc3d8ed5b291d20c76910986c"
+    "hash": "bb09b5b51b26d8f937ad47c4f2a4c12ada664df7d5b4f4de4374953aeb441c36"
   },
   "/ja/founder-message/": {
     "date": "2026-10-13",
@@ -145,7 +145,7 @@
   },
   "/th/faq/": {
     "date": "2026-10-15",
-    "hash": "d7a9cf47439f63145c5a299fbc25266aca930cf60e29570df43cf4af136d3585"
+    "hash": "0b4558cccdf7bae411a5cda18477fff8279509fa02bcb77f8296c9df3d4d9d4f"
   },
   "/th/founder-message/": {
     "date": "2026-10-13",
@@ -193,7 +193,7 @@
   },
   "/zh/faq/": {
     "date": "2026-10-15",
-    "hash": "38dcba6682d73956b2cd92f299da47bb1248dadf3772b8ee274ae70b69f96f6b"
+    "hash": "01fc28663b982108a87db666c57b72952381ca4588080a8909c013b0cfe96126"
   },
   "/zh/founder-message/": {
     "date": "2026-10-13",

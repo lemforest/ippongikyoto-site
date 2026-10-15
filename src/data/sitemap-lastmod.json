@@ -60,8 +60,8 @@
     "hash": "ee65c2042ca3747b74ada59d5c97510057e9a1e2c2fb8c13ea07df2b6d9ef04a"
   },
   "/fr/webinar/": {
-    "date": "2026-10-13",
-    "hash": "d348da394eb2c3fbd8875555ec35c092292f2aca6ae6a63f654247f002c349f8"
+    "date": "2026-10-15",
+    "hash": "a645469ee352a48849d1c9e0b441b9b15735789b0e013cc0072cb9a162cc9b81"
   },
   "/ja/": {
     "date": "2026-10-13",
@@ -108,8 +108,8 @@
     "hash": "404b3d9364ad99134d14622ef8e346de6af3b201645dc07ef8eb0cbadb2750a4"
   },
   "/ja/webinar/": {
-    "date": "2026-10-13",
-    "hash": "eb8cba1823665c5317151304ab9cf5bee8999c12f517950d5639e183acc24e6c"
+    "date": "2026-10-15",
+    "hash": "f84954dd0459456228033a67865ed63ce13420b0aabe49dbee1b8e3ae3c728bf"
   },
   "/online-shop/": {
     "date": "2026-10-13",
@@ -168,12 +168,12 @@
     "hash": "6b695dd70d38581e13e4dd6bf434ba5fdfce736fe5af1ddf47016024b106f1e5"
   },
   "/th/webinar/": {
-    "date": "2026-10-13",
-    "hash": "583b1b4dbda831592200b84587175546723ad386f2512a292886ab575c899c3a"
+    "date": "2026-10-15",
+    "hash": "6ec2790a9a614a340e058176ca2140453bd5dc0f004970d8a21ac22b9733e4f5"
   },
   "/webinar/": {
-    "date": "2026-10-13",
-    "hash": "d4bb2daaee50920dac3686014aad1d92a79ff549c54287120a43a5a33157627c"
+    "date": "2026-10-15",
+    "hash": "ac1687d81a25f44cfed09ae39c9409cecab7504c332b4127e8d9ccaa3c0bcc11"
   },
   "/zh/": {
     "date": "2026-10-13",
@@ -220,7 +220,7 @@
     "hash": "91e7d74a7e7d963915b14fbab0d397208b9feadf53f7b8b77db34a2f0dd4f35b"
   },
   "/zh/webinar/": {
-    "date": "2026-10-13",
-    "hash": "b7f8fb9c408f340883b2c627b0554c9843810fee129ebadb4454561ad51c185b"
+    "date": "2026-10-15",
+    "hash": "d753954a722d632c8f2b58e3b140ff74650cf67622b87731c3c9988eca1761d7"
   }
 }

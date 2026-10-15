@@ -375,7 +375,12 @@ html[lang^='zh'] .founder-detail .prose-flow p { max-width: 100%; margin-bottom:
 html[lang^='zh'] .founder-detail .prose-flow p:first-of-type { margin-bottom: 18px; font-size: 21px; }
 html[lang^='zh'] .founder-detail .prose-flow p.founder-quote { margin: 36px 0; padding: 10px 0 10px 22px; border-left: 2px solid var(--forest); font-size: 21px; }
 .certification-topic { margin-top: 72px; padding: clamp(26px, 4vw, 48px); border: 1px solid var(--line); background: var(--paper); }
-.webinar-guide-lead { margin: 0 0 34px; max-width: 65ch; color: var(--muted); }
+.webinar-guide-facts { max-width: 720px; margin: 0 0 40px; border-top: 1px solid var(--forest); border-bottom: 1px solid var(--line); }
+.webinar-guide-fact { display: grid; grid-template-columns: minmax(120px, 28%) minmax(0, 1fr); gap: 20px; padding: 15px 0; }
+.webinar-guide-fact + .webinar-guide-fact { border-top: 1px solid var(--line); }
+.webinar-guide-fact dt { color: var(--forest); font-size: 14px; font-weight: 600; line-height: 1.6; }
+.webinar-guide-fact dd { margin: 0; color: var(--muted); font-size: 16px; line-height: 1.65; }
+.webinar-guide-fact:last-child dd { color: var(--forest); font-weight: 600; }
 .webinar-guide-heading { margin: 0 0 22px; color: var(--forest); font-family: var(--display); font-size: clamp(34px, 3vw, 46px); font-weight: 500; }
 .webinar-guide-steps details { border-top: 1px solid var(--line); }
 .webinar-guide-steps details:last-child { border-bottom: 1px solid var(--line); }
@@ -662,6 +667,7 @@ html[lang='ja'] .product-hero-copy h1 { font-size: clamp(32px, 3.2vw, 50px); lin
   .page-hero-plain { padding: 76px 30px; min-height: 0; }
   .detail-section { grid-template-columns: 1fr; gap: 36px; padding-top: 80px; padding-bottom: 95px; }
   .detail-sidebar { position: static; }
+  .webinar-guide-fact { grid-template-columns: 1fr; gap: 3px; padding: 13px 0; }
   .webinar-guide-steps .webinar-registration-flow { padding-left: 0; }
   .webinar-registration-options li, .webinar-registration-options li + li { grid-template-columns: 22px minmax(0, 1fr); gap: 10px; padding: 18px; }
   .webinar-registration-options img { grid-column: 2; margin-top: 12px; }
